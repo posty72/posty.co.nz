@@ -1,0 +1,28 @@
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely need to edit after that.
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'jekyll serve'. If you change this file, please restart the server process.
+
+# Site settings
+title: Josh Post
+email: your-email@domain.com
+description: > # this means to ignore newlines until "baseurl:"
+  I am a web developer from New Zealand. I build great products using great tools.
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "http://posty.co.nz.s3-website-ap-southeast-2.amazonaws.com" # the base hostname & protocol for your site
+twitter_username: posty72
+github_username:  posty72
+linkedin_url: http://nz.linkedin.com/in/joshpost
+google_fonts:
+  - "Open+Sans:400,300,700,600"
+
+collections: 
+  websites:
+    output: true
+
+# Build settings
+markdown: kramdown
+
+exclude: ['node_modules', 'gulpfile.js', 'package.json', 'aws.json', 'README.md']

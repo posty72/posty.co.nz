@@ -1,0 +1,40 @@
+---
+layout: default
+---
+
+<div class="home">
+
+  <div class="wrapper">
+    <h1 class="page-heading">(Josh) Posts</h1>
+
+    <ul class="post-list">
+      {% for post in site.posts limit 3 %}
+        <li>
+          <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+
+          <h2>
+            <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+          </h2>
+        </li>
+      {% endfor %}
+
+    </ul>
+
+    <p class="rss-subscribe"><a href="{{ "/feed.xml" | prepend: site.baseurl }}">Remember RSS?</a></p>
+  </div>
+
+  <ul class="website-list">
+    {% for website in site.websites %}
+      <li class="website half" style="background-image: url('{{ website.coverimage }}');" class="website-tile">
+        <a href="{{ website.link }}" class="overlay" target="_blank"></a>
+        <p class="title"><a href="{{ website.link }}">{{ website.title }}</a></p>
+        <div class="description">
+          {{ website.content }}
+        </div>
+      </li>
+    {% endfor %}
+    <div class="clear"></div>
+    </div>
+  </ul>
+
+</div>

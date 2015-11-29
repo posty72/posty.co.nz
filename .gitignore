@@ -1,0 +1,15 @@
+
+# Jekyll
+_site
+.sass-cache
+.jekyll-metadata
+
+#NPM
+node_modules
+
+#Bower
+bower_components
+assets/components
+
+#AWS
+aws.json
