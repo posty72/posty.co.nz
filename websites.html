@@ -1,5 +1,7 @@
 ---
 layout: default
+title: Websites
+permalink: /websites/
 ---
 
 <section class="main" id="portfolio-page">
@@ -8,7 +10,7 @@ layout: default
       <h1>Websites</h1> 
       <p>Every website or piece of internet goodness created by yours truly.</p>
       {% for website in site.websites %}
-        <a class="website-scroll-to-link large-3 small-6 columns pointer animate" href="#{{ website.title | escape | strip_newlines }}">
+        <a class="website-scroll-to-link large-3 small-6 columns pointer animate" href="#{{ website.title | downcase | replace:' ', '' }}">
           <p>{{ website.title }}</p>
           <img data-src="/assets/images/{{ website.coverimage }}" alt="{{ website.title }}" />
         </a>
@@ -17,15 +19,15 @@ layout: default
     <div class="clear show-scroll-top"></div>
     <div class="row">
       {% for website in site.websites %}
-      <article id="{{ website.title }}" class="website large-12 small-12 columns" data-section="{{ website.title }}">
+      <article id="{{ website.title | downcase | replace:' ', '' }}" class="website large-12 small-12 columns">
         <h1 class="website-title"><a href="{{ website.link }}">{{ website.title }}</a></h1> 
         <img data-src="/assets/images/{{ website.coverimage }}" alt="{{ website.title }}" />
         <div class="website-info animate">
           {{ website.content }}
-         <!--  <% if GithubLink %>
+          {% if website.githublink %}
             <p class="website-github"><a href="$GithubLink" target="_blank">View the source for this project on Github</a></p>
-          <% end_if %>
-          <% if Company %>
+          {% endif %}
+          <!--<% if Company %>
             <p class="website-company">Made for $Company</p>
           <% end_if %>
           <% if Link %>

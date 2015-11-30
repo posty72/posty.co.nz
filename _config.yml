@@ -26,4 +26,4 @@ collections:
 # Build settings
 markdown: kramdown
 
-exclude: ['node_modules', 'gulpfile.js', 'package.json', 'aws.json', 'README.md']
+exclude: ['node_modules', 'gulpfile.js', 'package.json', 'aws.json', 'README.md', 'bower.json', '*.log', 'assets/components']
