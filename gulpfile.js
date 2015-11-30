@@ -7,7 +7,6 @@ var concat = require('gulp-concat')
 var shell = require('gulp-shell');
 var connect = require('gulp-connect');
 var uglify = require('gulp-uglify');
-// var sass = require('gulp-sass');
 var s3 = require("gulp-s3");
 
 var bower_dir = function(component) {
@@ -18,8 +17,7 @@ var bower_dir = function(component) {
 gulp.task('dev:serve', function() {
   connect.server({
     root: '_site',
-    port: '8081',
-    livereload: true
+    port: '8081'
   });
 });
 
@@ -28,18 +26,6 @@ gulp.task('dev:build', shell.task([
   ], {
     ignoreErrors: true
 }));
-
-
-// gulp.task('dev:sass', function(){
-  
-//   gulp.src('./css/main.scss')
-//     .pipe(sass({
-//       outputStyle: 'compressed'
-//     }).on('error', sass.logError))
-//     .pipe(concat('mina.css'))
-//     .pipe(gulp.dest('./_site/css'));
-
-// });
 
 gulp.task('dev:scripts', function(){
 
@@ -56,7 +42,9 @@ gulp.task('dev:scripts', function(){
 
 gulp.task('default', ['dev:serve', 'dev:scripts', 'dev:build'], function() {
   gulp.watch([
+    './_config.yml',
     './*.md',
+    './*.html',
     './_posts/**',
     './_layouts/**',
     './_websites/**',

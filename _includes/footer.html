@@ -1,38 +1,27 @@
-<footer class="site-footer">
-
-  <div class="wrapper">
-
-    <h2 class="footer-heading">{{ site.title }}</h2>
-
-    <div class="footer-col-wrapper">
-      <div class="footer-col footer-col-1">
-        <ul class="contact-list">
-          <li>{{ site.title }}</li>
-          <li><a href="mailto:{{ site.email }}">{{ site.email }}</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-col footer-col-2">
-        <ul class="social-media-list">
-          {% if site.github_username %}
-          <li>
-            {% include icon-github.html username=site.github_username %}
-          </li>
-          {% endif %}
-
-          {% if site.twitter_username %}
-          <li>
-            {% include icon-twitter.html username=site.twitter_username %}
-          </li>
-          {% endif %}
-        </ul>
-      </div>
-
-      <div class="footer-col footer-col-3">
-        <p>{{ site.description }}</p>
-      </div>
+<footer>
+  <div class="container row">   
+    <div class="footer-section large-4 small-6 columns">
+      {{ site.description }}
     </div>
+    <div class="footer-section large-4 small-6 columns">
+      <h6>Connect</h6>
+      <ul class="row">
+        <li class="large-12 small-12 columns"><a class="animate" href="http://nz.linkedin.com/in/joshpost" target="_blank">LinkedIn</a></li>
+        <li class="large-12 small-12 columns"><a class="animate" href="http://gplus.to/joshpost" target="_blank">Google+</a></li>
+        <li class="large-12 small-12 columns"><a class="animate" href="http://twitter.com/posty72" target="_blank">Twitter</a></li>
+        <li class="large-12 small-12 columns"><a class="animate" href="http://github.com/posty72" target="_blank">Github</a></li>
+      </ul>
+    </div>
+    <div class="footer-section contact-info large-4 small-12 columns">
+      <h6>Contact</h6>
+      <ul class="row">
+        <li class="large-12 small-12 columns"><span class="green">Phone:</span> +64 27 253 0285</li>
+        <li class="large-12 small-12 columns"><span class="green">Email:</span> josh@josh-post.com</li>
+        <li class="large-12 small-12 columns"><span class="green">Twitter:</span> @posty72</li>
+      </ul>
+    </div>
+    <div class="clear"></div>
 
   </div>
-
 </footer>
+
