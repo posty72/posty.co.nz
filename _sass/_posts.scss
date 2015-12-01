@@ -4,6 +4,12 @@
 
   p {
     font-size: 1.1em;
+    overflow-wrap: break-word;
+  }
+
+  ul, ol {
+    list-style: normal;
+    margin-left: 50px;
   }
 }
 
