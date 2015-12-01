@@ -4,6 +4,7 @@ title:  "My favourite games ever"
 date:   2015-12-01 13:14:08 +1300
 categories: gaming
 coverimage: "IMG_20131125_092959.jpg"
+author: "Josh Post"
 ---
 
 As decided by this tool here: <http://slimedrippings.tumblr.com/gamefaqssort>
