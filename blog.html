@@ -3,37 +3,22 @@ layout: default
 title: Blog
 permalink: /blog/
 ---
-<!-- 
-<div class="home">
-  <div class="wrapper">
-    <h1 class="page-heading">Blog</h1>
-    <ul class="post-list">
-      <li class="post">
-        <h2>
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-        </h2>
-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
-        <img src="{{ site.baseurl }}/assets/images/{{ post.coverimage }}" alt="{{ post.title }}" />
-      </li>
-    </ul>
-  </div>
-</ul>
-</div> -->
 
 
-      {% for post in site.posts limit 3 %}
-        <article class="blog-summary">
-          <h2 class="post-title red-under"><a class="black" href="{{ post.url | prepend: site.baseurl }}" title="{{ post.title }}">{{ post.title }}</a></h2>
-          
-          <img class="center" title="{{ post.title }}" src="{{ site.baseurl }}/assets/images/{{ post.coverimage }}" alt="{{ post.title }}" width="1920" height="1280">
-          
-          {{ post.content | truncatewords: 50, '...' }}
+{% for post in site.posts limit 3 %}
+  <article class="blog-summary">
+    <h2 class="post-title red-under"><a class="black" href="{{ post.url | prepend: site.baseurl }}" title="{{ post.title }}">{{ post.title }}</a></h2>
+    
+    <img class="center" title="{{ post.title }}" src="{{ site.baseurl }}/assets/images/{{ post.coverimage }}" alt="{{ post.title }}" width="1920" height="1280">
+    
+    <p>{{ post.content | strip_html | newline_to_br | truncatewords: 50, '...' }}</p>
 
-          <div class="blog-vitals">
-            <h6 class="readmore"><a href="{{ post.url | prepend: site.baseurl }}">Read more...</a></h6>
-          </div>
-          <div class="clear"></div>
-        </article>
+    <div class="blog-vitals">
+      <h6 class="readmore"><a href="{{ post.url | prepend: site.baseurl }}">Read more...</a></h6>
+    </div>
+    <div class="clear"></div>
+  </article>
 
-        <p class="rss-subscribe"><a href="{{ " /feed.xml " | prepend: site.baseurl }}">Remember RSS?</a></p>
-      {% endfor %}
+{% endfor %}
+
+<p class="rss-subscribe"><a href="{{ " /feed.xml " | prepend: site.baseurl }}">Remember RSS?</a></p>

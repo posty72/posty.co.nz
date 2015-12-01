@@ -49,7 +49,8 @@ gulp.task('default', ['dev:serve', 'dev:scripts', 'dev:build'], function() {
     './_layouts/**',
     './_websites/**',
     './_includes/**',
-    './_sass/**'
+    './_sass/**',
+    './assets/**'
   ], [
     'dev:build'
   ]);

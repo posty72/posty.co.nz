@@ -415,6 +415,18 @@ header nav #navLinks li.current { border-bottom: 3px solid #A11222; }
     border: none; }
 
 
+.post-meta {
+    padding: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    color: #A11222;
+    font-style: italic;
+
+    time {
+        float: right;
+    }
+}
+
 
 /* FOOTER */
 
