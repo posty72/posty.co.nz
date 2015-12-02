@@ -26,5 +26,7 @@ collections:
 
 # Build settings
 markdown: kramdown
+sass:
+  style: compressed
 
 exclude: ['node_modules', 'gulpfile.js', 'package.json', 'aws.json', 'README.md', 'bower.json', '*.log', 'assets/components']

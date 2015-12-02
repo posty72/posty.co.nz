@@ -2,13 +2,10 @@
 
   var imageList = document.getElementsByTagName('img');
 
-  _.each(imageList, function(i, t) {
-    console.log(i.src);
-    if(i.src.length <= 0) {
-      i.src = i.getAttribute('data-src');
+  for (var i = 0, k = imageList.length; i < k; i++) {
+    if (imageList[i].src.length <= 0) {
+      imageList[i].src = imageList[i].getAttribute('data-src');
     }
-  });
-
+  }
 
 })();
-

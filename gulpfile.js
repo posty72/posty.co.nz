@@ -30,11 +30,11 @@ gulp.task('dev:build', shell.task([
 gulp.task('dev:scripts', function(){
 
   gulp.src([
-    bower_dir('/underscore/underscore.js'),
+    // bower_dir('/underscore/underscore.js'),
     './javascript/main.js'
   ])
-    .pipe(concat('all.js'))
     .pipe(uglify())
+    .pipe(concat('all.js'))
     .pipe(gulp.dest('./javascript/'));
 
 });

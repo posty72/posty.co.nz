@@ -4,6 +4,7 @@
   "description": "Jekyll",
   "author": "",
   "license": "ISC",
+  "repository": "https://github.com/posty72/posty.co.nz"
   "devDependencies": {
     "gulp": "^3.9.0",
     "gulp-awspublish": "^3.0.1",

@@ -1,33 +1,24 @@
 <header itemscope>
   <div class="container">
     <div class="headerText">
-      <h2 itemprop="name"><a href="/">{{ site.title }}</a></h2>
+      <h2 class="headerTitle" itemprop="name"><a href="/">{{ site.title }}</a></h2>
       <p itemprop="title">Web Development / <strong class="red">New Zealand</strong></p>
     </div>
     <div class="clear"></div>
 
     <nav>
-      <div class="row">
-        <ul id="navLinks">
-          {% for my_page in site.pages %}
-            {% if my_page.title %}
-            <li class="large-3 small-6 columns"><a href="{{ my_page.url | prepend: site.baseurl }}" class="{{ my_page.title }} animate">{{ my_page.title }}</a>
-            {% endif %}
-          {% endfor %}
-          <li class="clear"></li>
-        </ul>
-      </div>
+      <ul id="navLinks">
+        {% for my_page in site.pages %}
+          {% if my_page.title %}
+          <li><a href="{{ my_page.url | prepend: site.baseurl }}">{{ my_page.title }}</a>
+          {% endif %}
+        {% endfor %}
+        <li class="clear"><a href="mailto: posty72@gmail.com">Contact Me</a></li>
+        <li class="clear"></li>
+      </ul>
     </nav>
 
 
     <div class="clear"></div>
   </div>
-  <div class="clear"></div>
 </header>
-
-<ul id="externalLinks">
-  <li><a id="LinkedInLink" href="http://nz.linkedin.com/in/joshpost" target="_blank">LinkedIn</a></li>
-  <li><a id="RdioLink" href="http://www.rdio.com/people/posty72/" target="_blank">Google+</a></li>
-  <li><a id="TwitterLink" href="http://twitter.com/posty72" target="_blank">Twitter</a></li>
-  <li><a id="GithubLink" href="http://github.com/posty72" target="_blank">Github</a></li>
-</ul>
