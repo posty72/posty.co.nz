@@ -1,40 +1,26 @@
 ---
-layout: default
+layout: homepage
 ---
 
-<div class="home">
-
-  <div class="wrapper">
-    <h1 class="page-heading">(Josh) Posts</h1>
-
-    <ul class="post-list">
-      {% for post in site.posts limit 3 %}
-        <li>
-          <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
-
-          <h2>
-            <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-          </h2>
-        </li>
-      {% endfor %}
-
-    </ul>
-
-    <p class="rss-subscribe"><a href="{{ "/feed.xml" | prepend: site.baseurl }}">Remember RSS?</a></p>
-  </div>
-
-  <ul class="website-list">
-    {% for website in site.websites %}
-      <li class="website half" style="background-image: url('{{ website.coverimage }}');" class="website-tile">
-        <a href="{{ website.link }}" class="overlay" target="_blank"></a>
-        <p class="title"><a href="{{ website.link }}">{{ website.title }}</a></p>
-        <div class="description">
-          {{ website.content }}
-        </div>
-      </li>
-    {% endfor %}
-    <div class="clear"></div>
+<section id="home-page">
+  <div class="container">
+    <div id="home-callout" class="home-div large-12 small-12" style="background-image: url('/assets/images/{{ site.coverimage }}');">
+      <h2>
+        <img class="leftAlone" title="" src="assets/images/ResizedImage600611-linkedin-profile-1.jpg" alt="linkedin profile 1" width="600" height="611">
+      </h2>
+      <h2>Josh Post</h2>
     </div>
-  </ul>
+  </div>
+</section>
 
+<div class="row">
+  <div id="home-portfolio" class="home-div large-6 small-12 columns">
+    <h3><a class="home-div-link" href="websites">Websites</a></h3>
+    <!--<h5 class="call-to-action"><a href="websites">Latest Work</a></h5>-->
+  </div>
+  <div id="home-blog" class="home-div large-6 small-12 columns">
+    <h3><a class="home-div-link" href="blog">Blog</a></h3>
+    <!--<h5 class="call-to-action"><a href="blog">Read More</a></h5>-->
+  </div>
+  <div class="clear"></div>
 </div>

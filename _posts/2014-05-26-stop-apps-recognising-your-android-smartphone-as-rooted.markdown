@@ -4,6 +4,7 @@ title:  "Stop apps recognising your Android smartphone as rooted"
 date:   2014-05-26 10:01:08 +1300
 categories: android hacks
 coverimage: "ResizedImage19201280-nexus-5.jpg"
+author: "Josh Post"
 ---
 
 There is nothing more frustrating than downloading an app only to find it's functionality is limited because your phone has been rooted. There are a few reasons why developers would want to do this, the chief among them being it stops users from being able to download the content of the app, or it makes the device a lot less secure. But this is Android, the free, open-source platform, where there is a way around everything. This will quickly and easily walk you through making your device invisible to these apps.

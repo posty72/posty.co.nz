@@ -1,0 +1,412 @@
+/** 
+ * SilverStripe Mobile Theme
+ * http://www.silverstripe.com
+ *
+ * This typography file is included in the WYSIWYG editor and the front end. It provides
+ * a place to add link styles and font styles you would like in the CMS and the Front End.
+ */ 
+
+/* LOAD FONTS */
+
+
+
+@font-face {
+  font-family: "Bebas";
+  src: url(../fonts/bebas-neue.otf);
+}
+
+
+/* GENERIC STYLES */
+
+* { 
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6, p, li, div, input, label, ul, ol {
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  font-weight: lighter;
+}
+
+
+/* PARAGRAPHS */
+
+
+ p {
+  color: #333; 
+  font-weight: normal; 
+  font-size: 1em; 
+  line-height: 1.4em;
+ }
+
+/* QUOTES */
+
+blockquote { 
+  color: #A11222; 
+  font-size: 1.4em; 
+  font-style: italic; 
+  margin: 10px; 
+}
+
+
+
+/* LINKS  */
+a { 
+  color: #2FBC42; 
+  text-decoration: none; 
+  font-family: inherit;
+}
+a:hover {
+  opacity: .7;
+}
+
+
+
+/* LINK ICONS - shows type of file */
+
+a[href$=".pdf"], 
+a[href$=".PDF"], 
+a.pdf { 
+  background: url(../images/icons/page_white_acrobat.png) no-repeat left center; 
+  padding: 2px; 
+  padding-left: 20px;
+}
+
+a[href$=".doc"], 
+a[href$=".DOC"], 
+a.doc { 
+  background: url(../images/icons/page_word.png) no-repeat left center; 
+  padding: 2px;
+  padding-left: 20px; 
+}
+
+a[href$=".xls"], 
+a[href$=".XLS"], 
+a.xls { 
+  background:url(../images/icons/page_excel.png) no-repeat left center; 
+  padding: 2px;
+  padding-left: 20px; 
+}
+
+a[href$=".gz"], 
+a[href$=".GZ"], 
+a[href$=".gzip"], 
+a[href$=".GZIP"], 
+a[href$=".zip"], 
+a[href$=".ZIP"], 
+a.archive { 
+  background: url(../images/icons/page_white_zip.png) no-repeat left center; 
+  padding: 2px; 
+  padding-left: 20px; 
+}
+
+a[href$=".exe"], 
+a[href$=".EXE"], 
+a.application { 
+  background: url(../images/icons/application.png) no-repeat left center; 
+  padding: 2px; 
+  padding-left: 20px; 
+}
+
+
+
+/* LIST STYLES  */
+
+ul {
+  color: #666; 
+  list-style: none;
+}
+
+li { 
+  font-size: 1em; 
+  font-weight: normal;
+}
+
+li li { }
+
+
+
+/* HEADER STYLES */
+
+h1, h2, h3, h4, h5, h6,
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+  font-weight: bolder;
+}
+
+h1 { 
+  color: #000; 
+  font-size: 3.3em;
+}
+
+h2 { 
+  color: #000;
+  font-weight: lighter;
+  font-size: 2.4em;
+} 
+
+h3 { 
+  color:#000;
+  font-size: 1.6em;
+  font-weight: lighter;
+}
+
+h4 { 
+  clear:both; 
+  color:#000; 
+  font-size: 1.4em;
+}
+
+h5 { 
+  color:#000; 
+  font-size: 1.2em;
+}
+
+h6 { 
+  color:#000; 
+  font-size: 1.2em;
+}
+
+
+
+/* PRE STYLES */  
+
+pre { 
+  display:block; 
+  font-family:"Courier New",Courier; 
+  font-size:1.2em; 
+  margin:2em 5em; 
+  padding:0.5em; 
+  border:1px #ccc solid; 
+  background:#eee; 
+}
+
+
+
+/* TABLE STYLING */
+
+table { 
+  border-collapse:collapse;
+  border:1px dotted #CCCCCC; 
+  color:#666; 
+  font-size:12px; 
+  margin:0 0 18px 0; 
+}
+
+tr {}
+
+th { 
+  background:#4EA3D7; 
+  border:1px dotted #CCCCCC; 
+  color:#FFFFFF; 
+  font-weight:bold; 
+  padding:6px 5px 3px 5px; 
+}
+
+td { 
+  border:1px dotted #CCCCCC; 
+  font-weight:bold;
+   padding:6px 5px 3px 5px; 
+}
+
+
+
+/* WYSIWYG EDITOR ALIGNMENT CLASSES */
+
+.red { color: #A11222; }
+.green { color: #2FBC42; }
+
+
+/* GLOBAL */
+
+.contact-info li { 
+  font-size: .8em; 
+  color: #aaa;
+}
+
+.scroll-top {
+  font-weight: bold;
+  font-style: italic;
+  text-transform: uppercase;
+}
+
+
+/* HEADER */
+
+header h2 { 
+  font-size: 6em; 
+  letter-spacing: -6px;
+  text-align: center;
+}
+
+header h2 a {
+  font-family: "Open sans", Helvetica, Arial, sans-serif;
+  color: #000;
+}
+
+header li { text-align: center;}
+
+header p { 
+  text-align: center;
+  text-transform: uppercase;
+  font-style: italic;
+  font-size: .8em; }
+
+
+/* Body */
+
+.main h1 {
+  letter-spacing: -2px;
+  font-weight: lighter;
+}
+
+/* HOMEPAGE */
+
+.home-div h2,
+.home-div h5,
+.home-div p {
+  color: #000;
+  text-align: center;
+}
+
+.home-div h2 {
+  color: #fff;
+  font-size: 4em;
+  text-shadow: 3px 3px 0px #000;
+  letter-spacing: -3px;
+  font-weight: normal;
+}
+
+.home-div h3 a {
+  text-align: center;
+  margin: 2% 0;
+  padding: 10% 0;
+  font-size: 2em;
+  letter-spacing: -3px;
+  background-color: #efefef;
+}
+.home-div p {
+  font-size: 1.4em;
+  color: #ededed  ;
+  text-align: center;
+}
+
+/* PORTFOLIO */
+
+#portfolio-page .website-scroll-to-link p {
+  text-transform: uppercase;
+  font-style: italic;
+  font-weight: bold;
+  color: #2FBC42;
+}
+
+#portfolio-page .website .website-link a {
+  font-weight: bold;
+  font-style: italic;
+  font-size: 1.2em;
+  text-transform: uppercase;
+}
+
+#portfolio-page .website .website-company {
+  font-style: italic;
+  font-size: .8em;
+}
+
+
+/* BLOG */
+
+
+.blog-tree-title a {
+  font-size: .8em !important;
+}
+
+.blog-tree-title a {
+  font-style: italic;
+  font-weight: bolder;
+  text-transform: uppercase;
+  color: #000;
+}
+
+.author-date, .blog-date, #Breadcrumbs {
+  text-transform: uppercase;
+  font-style: italic;
+  font-weight: bolder;
+  font-size: .8em;
+}
+
+.blog-summary p {
+  font-size: 1.3em;
+  line-height: 1.5em;
+}
+
+.blog-summary .readmore {
+  text-align: right;
+  font-size: .1;
+  font-weight: lighter;
+}
+
+.blog-entry p {
+  font-size: 1.3em;
+  line-height: 1.5em;
+}
+
+.readmore a {
+  color: #7b7b7b;
+}
+
+.tag-start { text-indent: 10px; }
+
+.tag-start, .tags {
+  text-transform: uppercase;
+  font-weight: bolder;
+  font-style: italic;
+  font-size: 0.8em;
+}
+
+/* FOOTER */
+
+.footer-section h6 { font-size: .9em; }
+.footer-section li { font-size: .8em; }
+.footer-section.contact-info { font-size: 1em; }
+
+.footer-info {
+  font-size: .7em;
+  text-align: center; 
+}
+
+
+@media only all and (max-width: 480px) {
+
+
+  h1 { 
+    color: #000; 
+    font-size: 2em;
+  }
+
+  h2 { 
+    color: #000;
+    font-style: lighter;
+    font-size: 1.8em;
+  } 
+
+  h3 { 
+    color:#000;
+    font-size: 1.6em;
+  }
+
+  h4 { 
+    clear:both; 
+    color:#000; 
+    font-size: 1.4em;
+  }
+
+  h5 { 
+    color:#000; 
+    font-size: 1.2em;
+  }
+
+  h6 { 
+    color:#000; 
+    font-size: 1.2em;
+  }
+
+}

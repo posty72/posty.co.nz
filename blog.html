@@ -1,0 +1,24 @@
+---
+layout: default
+title: Blog
+permalink: /blog/
+---
+
+
+{% for post in site.posts limit 3 %}
+  <article class="blog-summary">
+    <h2 class="post-title red-under"><a class="black" href="{{ post.url | prepend: site.baseurl }}" title="{{ post.title }}">{{ post.title }}</a></h2>
+    
+    <img class="center" title="{{ post.title }}" src="{{ site.baseurl }}/assets/images/{{ post.coverimage }}" alt="{{ post.title }}" width="1920" height="1280">
+    
+    <p>{{ post.content | strip_html | newline_to_br | truncatewords: 50, '...' }}</p>
+
+    <div class="blog-vitals">
+      <h6 class="readmore"><a href="{{ post.url | prepend: site.baseurl }}">Read more...</a></h6>
+    </div>
+    <div class="clear"></div>
+  </article>
+
+{% endfor %}
+
+<p class="rss-subscribe"><a href="{{ " /feed.xml " | prepend: site.baseurl }}">Remember RSS?</a></p>
