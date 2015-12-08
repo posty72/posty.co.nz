@@ -9,6 +9,11 @@ body, body * {
   margin: 0;
 }
 
+a {
+  text-decoration: none;
+  color: $green;
+}
+
 img {
   max-width: 100%;
   height: auto;
@@ -23,3 +28,6 @@ img {
   width: 1200px;
   margin: 0 auto;
 }
+
+@import "./layout/_navigation";
+@import "./layout/_footer";

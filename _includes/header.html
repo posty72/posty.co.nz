@@ -5,20 +5,5 @@
       <p itemprop="title">Web Development / <strong class="red">New Zealand</strong></p>
     </div>
     <div class="clear"></div>
-
-    <nav>
-      <ul id="navLinks">
-        {% for my_page in site.pages %}
-          {% if my_page.title %}
-          <li><a href="{{ my_page.url | prepend: site.baseurl }}">{{ my_page.title }}</a>
-          {% endif %}
-        {% endfor %}
-        <li class="clear"><a href="mailto: posty72@gmail.com">Contact Me</a></li>
-        <li class="clear"></li>
-      </ul>
-    </nav>
-
-
-    <div class="clear"></div>
   </div>
 </header>

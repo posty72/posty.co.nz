@@ -1,0 +1,10 @@
+<nav>
+  <ul id="navLinks">
+    {% for my_page in site.pages %}
+      {% if my_page.title %}
+    <li><a href="{{ my_page.url | prepend: site.baseurl }}">{{ my_page.title }}</a>
+      {% endif %}
+    {% endfor %}
+    <li><a href="mailto: posty72@gmail.com">Contact Me</a></li>
+  </ul>
+</nav>

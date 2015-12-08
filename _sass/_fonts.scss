@@ -4,11 +4,11 @@
 }
 
 
+$header-font: "Leberkaas", Helvetica, Arial, sans-serif;
+
 h1, h2, h3, h4, h5 {
-  font-family: "Leberkaas", "Times New Roman", serif;
+  font-family: $header-font;
 }
-
-
 
 
 
@@ -30,6 +30,6 @@ h1, h2, h3, h4, h5 {
 
 @media screen and (max-width: 767px) {
   body * {
-    font-size: 65%;
+    font-size: 80%;
   }
 }
