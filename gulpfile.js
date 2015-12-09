@@ -35,7 +35,8 @@ gulp.task('dev:scripts', function(){
   ])
     .pipe(uglify())
     .pipe(concat('all.js'))
-    .pipe(gulp.dest('./javascript/'));
+    .pipe(gulp.dest('./javascript/'))
+    .pipe(gulp.dest('./_site/javascript/'));
 
 });
 

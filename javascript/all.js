@@ -1,1 +1,1 @@
-!function(){for(var t=document.getElementsByTagName("img"),e=0,g=t.length;g>e;e++)t[e].src.length<=0&&(t[e].src=t[e].getAttribute("data-src"))}();
+!function(){for(var e=document.getElementsByTagName("img"),t=0,o=e.length;o>t;t++)e[t].src.length<=0&&(e[t].src=e[t].getAttribute("data-src"));var n=document.querySelector("#nav-toggle"),c=document.querySelector("nav");n.onclick=function(e){console.log(c.classList.contains("open")),document.body.parentNode.classList.toggle("nav-open"),this.classList.toggle("open"),c.classList.toggle("open")}}();

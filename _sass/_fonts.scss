@@ -4,12 +4,17 @@
 }
 
 
-$header-font: "Leberkaas", Helvetica, Arial, sans-serif;
+$header-font: "Leberkaas", "Time New Roman", serif;
+$body-font: "Open Sans", Helvetica, Arial, sans-serif;
 
 h1, h2, h3, h4, h5 {
   font-family: $header-font;
+  font-weight: lighter;
 }
 
+p, li {
+  font-family: $body-font;
+}
 
 
 
@@ -22,14 +27,8 @@ h1, h2, h3, h4, h5 {
   }
 }
 
-@media screen and (max-width: 960px) {
-  body * {
-    font-size: 90%;
-  }
-}
-
 @media screen and (max-width: 767px) {
   body * {
-    font-size: 80%;
+    font-size: 90%;
   }
 }

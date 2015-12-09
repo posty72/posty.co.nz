@@ -9,4 +9,15 @@
     }
   }
 
+  var navToggle = document.querySelector('#nav-toggle'),
+    nav = document.querySelector('nav')
+
+  navToggle.onclick = function(evt){
+    console.log(nav.classList.contains('open'));
+
+    document.body.parentNode.classList.toggle('nav-open');
+    this.classList.toggle('open');
+    nav.classList.toggle('open');
+  }
+
 })();

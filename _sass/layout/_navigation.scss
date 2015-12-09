@@ -1,31 +1,87 @@
 
-nav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  overflow-x: auto;
-  height: 66px;
+html.nav-open {
 
+  overflow-y: hidden;
+  & body {
+    overflow-y: hidden;
+  }
+
+}
+
+
+nav {
+  position: absolute;
+  top: 0;
+  max-height: 100%;
+  overflow-y: auto;
+  right: 0;
+  width: 0;
+  transition: all 250ms ease;
+  z-index: 100;
+
+  &.open {
+    width: 100%;
+  }
 
   #navLinks {
     box-shadow: 0px 0px 3px #333;
 
     li {
-      font-size: 2em;
-      display: inline-block;
+      font-size: 10em;
 
       a {
         font-family: $header-font;
         text-transform: uppercase;
         display: block;
         color: $green;
-        background-color: rgba(255, 255, 255, 0.6);
-        padding: 20px;
+        background-color: rgba(255, 255, 255, 0.9);
+        padding: 0 20% 50px;
+        line-height: 0.5;
       }
     }
   }
 }
-  ::-webkit-scrollbar {
-    display: none;
+
+#nav-toggle {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 40px;
+  height: 40px;
+  background-color: $green;
+  z-index: 110;
+  box-sizing: border-box;
+  opacity: 0.8;
+  cursor: pointer;
+
+  .hamburger-wrapper {
+    position: relative;
+
+    .hamburger {
+      position: absolute;
+      width: 60%;
+      height: 0;
+      left: 20%;
+      padding-bottom: 10%;
+      background-color: #fff;
+      border-radius: 99em;
+      transition: all 250ms ease;
+
+      &.line-1 {top: 8px;}
+      &.line-2 {top: 17px;}
+      &.line-3 {top: 26px;}
+    }
   }
+
+  &.open .hamburger {
+    &.line-1 {
+      transform: rotate(45deg);
+      top: 16px;
+    }
+    &.line-3 {
+      transform: rotate(135deg);
+      top: 16px;
+    }
+    &.line-2 {opacity: 0;}
+  }
+}
