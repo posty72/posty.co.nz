@@ -65,9 +65,7 @@ gulp.task('deploy', function() {
 
   var publisher = awspublish.create(awsparams);
 
-  var headers = {
-    'Cache-Control': 'max-age=315360000, no-transform, public'
-  };
+  var headers = {};
 
   return gulp.src('./_site/**')
     .pipe(awspublish.gzip())
