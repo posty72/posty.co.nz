@@ -37,6 +37,9 @@ img {
 
 .clear { clear:both; }
 
+
+$break-small: "max-width: 767px" ;
+
 @import "./layout/_navigation";
 @import "./layout/_header";
 @import "./layout/_footer";

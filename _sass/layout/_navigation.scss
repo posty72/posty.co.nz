@@ -27,7 +27,7 @@ nav {
     box-shadow: 0px 0px 3px #333;
 
     li {
-      font-size: 10em;
+      font-size: 8em;
 
       a {
         font-family: $header-font;
@@ -37,6 +37,10 @@ nav {
         background-color: rgba(255, 255, 255, 0.9);
         padding: 0 20% 50px;
         line-height: 0.5;
+      }
+
+      @media screen and ($break-small){
+        font-size: 5em;
       }
     }
   }
