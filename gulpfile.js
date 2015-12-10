@@ -62,9 +62,7 @@ gulp.task('default', ['dev:serve', 'dev:scripts', 'dev:build'], function() {
 gulp.task('deploy', function() {
 
   var awsparams = JSON.parse(fs.readFileSync('./aws.json'));
-
   var publisher = awspublish.create(awsparams);
-
   var headers = {};
 
   return gulp.src('./_site/**')

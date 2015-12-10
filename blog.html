@@ -4,9 +4,9 @@ title: Blog
 permalink: /blog/
 ---
 
-<div class="container">
+<div class="container blog-summaries">
   {% for post in site.posts limit 3 %}
-    <article class="blog-summary" style="background-image: url({{ site.baseurl }}/assets/images/{{ post.coverimage }})">
+    <article class="blog-summary" style="background-image: url({{ site.baseurl }}/assets/images/{{ post.coverimage }})" itemscope itemtype="http://schema.org/BlogPosting">
       <h2 class="post-title red-under"><a href="{{ post.url | prepend: site.baseurl }}" title="{{ post.title }}">{{ post.title }}</a></h2>
       
       <!-- <p class="post-description">{{ post.content | strip_html | newline_to_br | truncatewords: 50, '...' }}</p> -->

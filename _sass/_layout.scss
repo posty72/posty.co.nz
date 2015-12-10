@@ -2,7 +2,6 @@
 
 body, html {
   height: 100%;
-  font-size: 100%;
   font-family: $body-font;
 }
 
@@ -14,6 +13,11 @@ body, body * {
 a {
   text-decoration: none;
   color: $green;
+  transition: opacity 250ms ease; 
+
+  &:hover {
+    opacity: 0.9;
+  }
 }
 
 img {

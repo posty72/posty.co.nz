@@ -6,23 +6,17 @@ permalink: /websites/
 
 <section class="main" id="portfolio-page">
   <div class="container">
-    <div class="row white-bg">
-      <h1>Websites</h1> 
+    <header class="post-header">
+      <h1 class="post-title">Websites</h1> 
       <p>Every website or piece of internet goodness created by yours truly.</p>
-      {% for website in site.websites %}
-        <a class="website-scroll-to-link large-3 small-6 columns pointer animate" href="#{{ website.title | downcase | replace:' ', '' }}">
-          <p>{{ website.title }}</p>
-          <img data-src="/assets/images/{{ website.coverimage }}" alt="{{ website.title }}" />
-        </a>
-      {% endfor %}
-    </div>
+    </header>
     <div class="clear show-scroll-top"></div>
     <div class="row">
       {% for website in site.websites %}
-      <article id="{{ website.title | downcase | replace:' ', '' }}" class="website large-12 small-12 columns">
-        <h1 class="website-title"><a href="{{ website.link }}">{{ website.title }}</a></h1> 
+      <article id="{{ website.title | downcase | replace:' ', '' }}" class="post website large-12 small-12 columns">
+        <h1 class="post-title"><a href="{{ website.link }}">{{ website.title }}</a></h1> 
         <img data-src="/assets/images/{{ website.coverimage }}" alt="{{ website.title }}" />
-        <div class="website-info animate">
+        <div class="website-content animate">
           {{ website.content }}
           {% if website.githublink %}
             <p class="website-github"><a href="$GithubLink" target="_blank">View the source for this project on Github</a></p>
