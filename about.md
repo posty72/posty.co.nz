@@ -2,6 +2,7 @@
 layout: page
 title: About
 permalink: /about/
+sortOrder: '2'
 ---
 
 ##Welcome to my website! 
