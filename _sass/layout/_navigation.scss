@@ -12,12 +12,13 @@ html.nav-open {
 nav {
   position: absolute;
   top: 0;
-  max-height: 100%;
+  height: 100%;
   overflow-y: auto;
   right: 0;
   width: 0;
   transition: all 250ms ease;
   z-index: 100;
+  background-color: rgba(255,255,255,0.3);
 
   &.open {
     width: 100%;
@@ -27,15 +28,14 @@ nav {
     box-shadow: 0px 0px 3px #333;
 
     li {
-      font-size: 8em;
+      font-size: 4em;
 
       a {
         font-family: $header-font;
-        text-transform: uppercase;
         display: block;
         color: $green;
         background-color: rgba(255, 255, 255, 0.9);
-        padding: 0 20% 50px;
+        padding: 40px 20%;
         line-height: 0.5;
       }
 

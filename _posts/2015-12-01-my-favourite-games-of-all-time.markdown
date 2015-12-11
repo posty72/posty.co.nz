@@ -4,10 +4,15 @@ title:  "My favourite games ever"
 date:   2015-12-01 13:14:08 +1300
 categories: gaming
 coverimage: "IMG_20131125_092959.jpg"
+synopsis: "I decided to try an online tool to what m favourite game of all time was..."
 author: "Josh Post"
 ---
 
-As decided by this tool here: <http://slimedrippings.tumblr.com/gamefaqssort>
+I was shown [this tool] by a workmate, and I thought I'd give it a go.
+
+After about 20 minutes and over 300 (difficult) decisions, this is what I got. I'd say the first 20-ish are spot-on, but the list lacks some games I've put countless hours into such as GTA IV, Star Wars: KOTOR II Tomb Radier 2013 and more.
+
+###And the games are:
 
 1. Zelda: Ocarina of Time
 2. Pokemon Red/Blue
@@ -137,3 +142,7 @@ As decided by this tool here: <http://slimedrippings.tumblr.com/gamefaqssort>
 118. Starcraft
 127. Resident Evil
 127. Splatoon
+
+
+
+[this tool]: http://slimedrippings.tumblr.com/gamefaqssort

@@ -11,7 +11,7 @@
   <ul id="navLinks">
     {% for p in my_page %}
       {% if p.title %}
-    <li><a href="{{ my_page.url | prepend: site.baseurl }}">{{ p.title }}</a>
+    <li><a href="{{ p.url | prepend: site.baseurl }}">{{ p.title }}</a>
       {% endif %}
     {% endfor %}
     <li><a href="mailto: posty72@gmail.com">Contact Me</a></li>

@@ -17,16 +17,21 @@ github_username:  posty72
 linkedin_url: http://nz.linkedin.com/in/joshpost
 google_fonts:
   - "Open+Sans:400,300,700,600"
-  - "Merriweather"
+  - "Merriweather:400,400italic,700"
+  # - "Balthazar"
+  # - "Inika"
 coverimage: 'photo-1433840496881-cbd845929862.jpg'
 
 collections: 
   websites:
+    output: true
+  film:
     output: true
 
 # Build settings
 markdown: kramdown
 sass:
   style: compressed
+  sourcemap: true
 
 exclude: ['node_modules', 'gulpfile.js', 'package.json', 'aws.json', 'README.md', 'bower.json', '*.log', 'assets/components']
