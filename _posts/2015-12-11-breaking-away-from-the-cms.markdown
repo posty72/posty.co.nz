@@ -3,7 +3,7 @@ layout: post
 title:  "Breaking away from the CMS"
 date:   2015-12-11 12:17:08 +1300
 categories: development
-coverimage: "ResizedImage19201433-Unpaid-interns-slavery.jpg"
+coverimage: "cmsless.jpg"
 synopsis: "Do you really need Wordpress for your three page website?"
 author: "Josh Post"
 ---
