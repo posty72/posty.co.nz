@@ -55,7 +55,9 @@ time {
 
 .post-author {
   color: $maroon;
-  text-indent: 10%;
+  /* text-indent: 10%; */
+  padding: 50px 0;
+  text-align: center;
 }
 
 .blog-summaries {
@@ -66,13 +68,13 @@ time {
 
 .blog-summary {
   box-sizing: border-box;
-  width: 49%;
+  width: 33.3333333333%;
   float: left;
   overflow: hidden;
-  border-left: 5px solid transparent;
-  border-right: 5px solid transparent;
+  // border-left: 5px solid transparent;
+  // border-right: 5px solid transparent;
   margin: 0 auto 20px;
-  padding: 2%;
+  padding: 1.5%;
 
   .post-title {
     padding: 20px 3% 0;
@@ -94,11 +96,11 @@ time {
     padding: 15px;
   }
 
-  &:nth-child(2n+2){
+  &:nth-child(3n+2){
     clear: both;
   }
 
-  &:nth-child(2n+1) {
+  &:nth-child(3n+1) {
     float: right;
   }
 

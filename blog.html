@@ -9,7 +9,7 @@ sortOrder: '3'
   {% for post in site.posts limit 3 %}
     <article class="blog-summary" itemscope itemtype="http://schema.org/BlogPosting">
       <a href="{{ post.url | prepend: site.baseurl }}" title="{{ post.content | strip_html | truncatewords: 50, '...' }}">
-        <img src="{{ site.baseurl }}/assets/images/{{ post.coverimage }}" alt="{{ post.title }}" />
+        <img data-src="{{ site.baseurl }}/assets/images/{{ post.coverimage }}" alt="{{ post.title }}" />
       </a>
       <h2 class="post-title red-under">
         <a href="{{ post.url | prepend: site.baseurl }}" title="{{ post.title }}">{{ post.title }}</a>
