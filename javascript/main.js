@@ -1,7 +1,8 @@
 (function() {
 
 
-  loadImagesOnPage();
+  //loadImagesOnPage();
+  window.onload = loadImagesOnPage;
   window.onscroll = loadImagesOnPage;
   
 
@@ -34,7 +35,7 @@ function loadImagesOnPage(){
       if(imageList[i].src !== newSrc && distanceFromTop(imageList[i]) <= winPos) {
         imageList[i].src = newSrc || imageList[i].src;
       } else if(!imageList[i].src) {
-        imageList[i].src = '/assets/images/placeholder.gif';
+        imageList[i].src = '/assets/images/Optomised/placeholder.gif';
       }
     }
 
