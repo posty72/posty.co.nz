@@ -32,11 +32,11 @@ Editing the video to make it workable is very easy.
 
 It doesn't much easier than that.
 
-<img data-src="/assets/images/starchy-dutch-screenshot.jpg" alt="starchy dutch screenshot">
+<img data-src="/assets/images/Optomised/starchy-dutch-screenshot.jpg" alt="starchy dutch screenshot">
 
 ###Add "Artiness"
 
-<img data-src="/assets/images/ResizedImage701635-starchy-dutch-screenshot-3.gif" alt="starchy dutch screenshot 3" >
+<img data-src="/assets/images/Optomised/ResizedImage701635-starchy-dutch-screenshot-3.gif" alt="starchy dutch screenshot 3" >
 
 Now get that sequence that we've already made 50x better and open it in AE, and import your hipster song. Put the song over the video and play around to get them the about same length. Right-click the sequence, go to Effects -> Color Correction -> Black & White to add that old favourite of wannabe film-makers, black and white. Next, we'll add a new solid and follow [this tutorial]{:target="blank"} to give the video an arty light strobe effect. ART.
 
