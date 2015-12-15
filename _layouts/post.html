@@ -4,6 +4,7 @@ layout: default
 <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
+    <!-- <p><a href="/blog/">Blog</a></p> -->
     <h1 class="post-title" itemprop="name headline">{{ page.title }}</h1>
     <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%b %-d, %Y" }}</time>
     <div class="clear"></div>
@@ -18,9 +19,9 @@ layout: default
     {{ content }}
 
     {% if page.author %}
-      <h5 class="post-author" itemprop="author" itemscope itemtype="http://schema.org/Person">
-        <em itemprop="name">- {{ page.author }}</em>
-      </h5>
+      <h3 class="post-author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <em itemprop="name">{{ page.author }}</em>
+      </h3>
     {% endif %}
     
   </div>
