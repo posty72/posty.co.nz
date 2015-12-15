@@ -8,6 +8,7 @@ var shell = require('gulp-shell');
 var connect = require('gulp-connect');
 var uglify = require('gulp-uglify');
 var awspublish = require('gulp-awspublish');
+var imageop = require('gulp-image-optimization');
 
 var bower_dir = function(component) {
   return './assets/components/' + component;
@@ -37,6 +38,25 @@ gulp.task('dev:scripts', function(){
     .pipe(concat('all.js'))
     .pipe(gulp.dest('./javascript/'))
     .pipe(gulp.dest('./_site/javascript/'));
+
+});
+
+gulp.task('dev:images', function(next){
+
+    gulp.src([
+      'assets/images/originals/**/*.png',
+      'assets/images/originals/**/*.gif',
+      'assets/images/originals/**/*.jpg',
+      'assets/images/originals/**/*.jpeg'
+      ])
+      .pipe(imageop({
+          optimizationLevel: 10,
+          progressive: true,
+          interlaced: true
+      }))
+      .pipe(gulp.dest('assets/images/Optomised'))
+      .on('end', next)
+      .on('error', next);
 
 });
 
