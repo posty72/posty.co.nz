@@ -9,6 +9,7 @@ header {
 body > header {
   background-color: #F9F9F9;
   border-bottom: 3px solid $maroon;
+  flex: none;
 }
 
 .header-title {

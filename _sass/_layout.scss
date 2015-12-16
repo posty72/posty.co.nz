@@ -5,9 +5,20 @@ body, html {
   font-family: $body-font;
 }
 
-body, body * {
+body{
   padding: 0;
   margin: 0;
+  display: flex;
+  flex-direction: column;
+
+  * {
+    padding: 0;
+    margin: 0;
+  }
+}
+
+.main {
+  flex: 1 0 auto;
 }
 
 a {
@@ -23,6 +34,10 @@ a {
 img {
   max-width: 100%;
   height: auto;
+
+  &:not([src]) {
+    min-height: 400px;
+  }
 }
 
 iframe {

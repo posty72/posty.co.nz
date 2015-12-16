@@ -6,6 +6,22 @@ html.nav-open {
     overflow-y: hidden;
   }
 
+  nav {
+    width: 100%;
+  }
+
+  #nav-toggle .hamburger {
+    &.line-1 {
+      transform: rotate(45deg);
+      top: 16px;
+    }
+    &.line-3 {
+      transform: rotate(135deg);
+      top: 16px;
+    }
+    &.line-2 {opacity: 0;}
+  }
+
 }
 
 
@@ -19,10 +35,6 @@ nav {
   transition: all 250ms ease;
   z-index: 100;
   background-color: rgba(255,255,255,0.3);
-
-  &.open {
-    width: 100%;
-  }
 
   #navLinks {
     box-shadow: 0px 0px 3px #333;
@@ -75,17 +87,5 @@ nav {
       &.line-2 {top: 17px;}
       &.line-3 {top: 26px;}
     }
-  }
-
-  &.open .hamburger {
-    &.line-1 {
-      transform: rotate(45deg);
-      top: 16px;
-    }
-    &.line-3 {
-      transform: rotate(135deg);
-      top: 16px;
-    }
-    &.line-2 {opacity: 0;}
   }
 }
