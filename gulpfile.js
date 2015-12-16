@@ -41,7 +41,7 @@ gulp.task('dev:scripts', function(){
 
 });
 
-gulp.task('dev:images', function(next){
+gulp.task('dev:images', ['dev:build'], function(next){
 
     gulp.src([
       'assets/images/originals/**/*.png',
@@ -50,13 +50,18 @@ gulp.task('dev:images', function(next){
       'assets/images/originals/**/*.jpeg'
       ])
       .pipe(imageop({
-          optimizationLevel: 10,
-          progressive: true,
+          optimizationLevel: 7,
+          progressive: false,
           interlaced: true
       }))
       .pipe(gulp.dest('assets/images/Optomised'))
-      .on('end', next)
-      .on('error', next);
+      .on('end', function(){
+        gulp.run('dev:build');
+        next();
+      })
+      .on('error', function(){
+        next();
+      });
 
 });
 
@@ -74,6 +79,8 @@ gulp.task('default', ['dev:serve', 'dev:scripts', 'dev:build'], function() {
   ], [
     'dev:build'
   ]);
+
+  gulp.watch(['./assets/image/Originals/**'], ['dev:images']);
 
   gulp.watch(['./javascript/**'], ['dev:scripts']);
 
