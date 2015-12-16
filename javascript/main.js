@@ -1,53 +1,57 @@
-(function() {
+var imageLoad = (function() {
 
 
   //loadImagesOnPage();
   window.onload = loadImagesOnPage;
   window.onscroll = loadImagesOnPage;
-  
 
-  var navToggle = document.querySelector('#nav-toggle'),
-    nav = document.querySelector('nav')
+  var scrollControl = false,
+    winPos = 0,
+    imageList;
 
-  navToggle.onclick = function(evt){
-    // console.log(nav.classList.contains('open'));
+  function loadImagesOnPage(){
+    if(!scrollControl) {
+      scrollControl = true;
+      winPos = window.innerHeight + document.body.scrollTop;
 
-    document.body.parentNode.classList.toggle('nav-open');
-    this.classList.toggle('open');
-    nav.classList.toggle('open');
+      // Load images after the fact
+      imageList = document.getElementsByTagName('img');
+      for (var i = 0, k = imageList.length; i < k; i++) {
+        var newSrc = imageList[i].getAttribute('data-src');
+        if(imageList[i].src !== newSrc && distanceFromTop(imageList[i]) <= winPos) {
+          imageList[i].src = newSrc || imageList[i].src;
+        } else if(!imageList[i].src) {
+          imageList[i].src = '/assets/images/Optomised/placeholder.gif';
+        }
+      }
+
+      setTimeout(function(){ scrollControl = false; }, 400);
+    }
   }
+
+  function distanceFromTop(element) {
+      var distance = 0;
+      while(element) {
+          distance += (element.offsetTop);
+          element = element.offsetParent;
+      }
+      return distance;
+  }
+
+  return loadImagesOnPage;
 
 })();
 
-var scrollControl = false,
-  winPos = 0,
-  imageList;
 
-function loadImagesOnPage(){
-  if(!scrollControl) {
-    scrollControl = true;
-    winPos = window.innerHeight + document.body.scrollTop;
 
-    // Load images after the fact
-    imageList = document.getElementsByTagName('img');
-    for (var i = 0, k = imageList.length; i < k; i++) {
-      var newSrc = imageList[i].getAttribute('data-src');
-      if(imageList[i].src !== newSrc && distanceFromTop(imageList[i]) <= winPos) {
-        imageList[i].src = newSrc || imageList[i].src;
-      } else if(!imageList[i].src) {
-        imageList[i].src = '/assets/images/Optomised/placeholder.gif';
-      }
-    }
+var navToggle = (function(navToggle){
 
-    setTimeout(function(){ scrollControl = false; }, 400);
+  function toggleNav(){
+    document.body.parentNode.classList.toggle('nav-open');
   }
-}
 
-function distanceFromTop(element) {
-    var distance = 0;
-    while(element) {
-        distance += (element.offsetTop);
-        element = element.offsetParent;
-    }
-    return distance;
-}
+  navToggle.onclick = toggleNav;
+
+  return toggleNav;
+
+})(document.querySelector('#nav-toggle'))
