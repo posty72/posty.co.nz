@@ -2,14 +2,19 @@
 layout: default
 ---
 
-<article class="website">
-  <header class="website-header">
-    <h1 class="website-title" itemprop="name headline">{{ page.title }}</h1>
-    <p class="website-meta">
+<article class="post website">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">{{ page.title }}</h1>
+    <p class="post-meta">
       <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%b %-d, %Y" }}</time>
     </p>
   </header>
-  <div class="website-content" itemprop="articleBody">
+
+  <figure>
+    <img data-src="/assets/images/Optomised/{{ page.coverimage }}" alt="{{ page.title }}" />
+  </figure>
+  
+  <div class="post-content" itemprop="articleBody">
     {{ content }}
   </div>
 </article>
