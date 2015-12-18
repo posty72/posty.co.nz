@@ -1,12 +1,38 @@
 ---
 layout: post
 title:  "I decided to rebuild my website"
-date:   2014-02-28 10:01:08 +1300
-categories: life
+date:   2015-12-18 14:13:08 +1300
+categories: development
 coverimage: "new-site.png"
-synopsis: "So it finally happened. After telling people for years that the last place in New Zealand I wanted to move was Auckland, I have (rather predictably) moved to Auckland. It's too big, the houses are too expensive and it's too bloody hot. But it can't be all bad."
+synopsis: ""
 author: "Josh Post"
 ---
+
+#### Homepages
+
+|           | SilverStripe | Jekyll      | Difference %  |
+|-----------|:------------:|:-----------:|--------------:|
+| Load time | 6.12 seconds | 2.21 seconds| 63%           |
+| Requests  | 18           | 11          | 38%           |
+| Page Size | 1.5 mb       | 384 kb      | 74.4%         |
+
+
+#### Blog index page
+
+|           | SilverStripe | Jekyll      | Difference %  |
+|-----------|:------------:|:-----------:|--------------:|
+| Load time | 6.12 seconds | 2.21 seconds| 63%           |
+| Requests  | 18           | 11          | 38%           |
+| Page Size | 1.5 mb       | 384 kb      | 74.4%         |
+
+
+#### Standard blog page
+
+|           | SilverStripe | Jekyll      | Difference %  |
+|-----------|:------------:|:-----------:|--------------:|
+| Load time | 5.3 seconds  | 1.22 seconds| 18%           |
+| Requests  | 62           | 16          | 74.2%         |
+| Page Size | 1.4 mb       | 397 kb      | 71.6%         |
 
 
 
