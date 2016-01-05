@@ -37,17 +37,20 @@ nav {
 
   #navLinks {
     box-shadow: 0px 0px 3px #333;
+    background-color: rgba(255, 255, 255, 1);
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
 
     li {
       font-size: 4em;
+      flex: 1 0 auto;
 
       a {
         font-family: $header-font;
         display: block;
         color: $green;
-        background-color: rgba(255, 255, 255, 1);
         padding: 40px 20%;
-        line-height: 0.5;
       }
 
       @media screen and ($break-small){
@@ -86,4 +89,48 @@ nav {
       &.line-3 {top: 26px;}
     }
   }
+}
+
+
+#top {
+  position: fixed;
+  width: 50px;
+  height: 50px;
+  right: 10px;
+  bottom: 10px;
+  border-radius: 99em;
+  background-color: $green;
+  z-index: 100;
+  cursor: pointer;
+  opacity: 0;
+
+  .wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    /*transform: rotate(45deg);*/
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+    }
+
+
+    &::before {
+      height: 40%;
+      top: 25%;
+      left: 35%;
+      border-left: 3px solid $white;
+    }
+
+    &::after {
+      height: 0;
+      width: 40%;
+      bottom: 35%;
+      left: 35%;
+      border-top: 3px solid $white;
+    }
+  }
+
 }
