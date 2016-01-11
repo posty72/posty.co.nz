@@ -1,0 +1,153 @@
+.post {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0 2% 50px;
+
+  .post-header {
+    background-color: transparent;
+  }
+
+  .post-content {
+    max-width: 570px;
+    margin: 0 auto;
+    overflow-wrap: break-word;
+    ol li, ul li {
+      margin-left: 40px;
+    }
+    h1, h2, h3, p, ul, ol {
+      margin-bottom: 15px;
+    }
+    h1 {
+      font-size: 5em;
+    }
+    h2 {
+      font-size: 2.5em;
+    }
+    h3, h4, h5 {
+      font-size: 2em;
+    }
+    p {
+      font-size: 1.1em;
+    }
+  }
+  figure {
+    padding: 10px 0;
+    max-width: 800px;
+    margin: 10px auto;
+    figcaption {
+      border-bottom: 1px dashed $maroon;
+    }
+  }
+}
+
+.post-title {
+  font-size: 4em;
+  padding: 0 0 20px;
+}
+
+time {
+  color: $maroon;
+  text-align: right;
+  font-style: italic;
+  display: block;
+  font-family: $body-font;
+}
+
+.post-author {
+  color: $maroon;
+  /* text-indent: 10%; */
+  padding: 50px 0;
+  text-align: center;
+}
+
+.blog-summaries {
+  padding: 0 2%;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+
+.blog-summary {
+  box-sizing: border-box;
+  // width: 33.3333333333%;
+  // float: left;
+  // overflow: hidden;
+  // border-left: 5px solid transparent;
+  // border-right: 5px solid transparent;
+  margin: 0 auto 20px;
+  padding: 1.5%;
+  flex: 1 1 33%;
+
+  .post-title {
+    padding: 20px 3% 0;
+    font-size: 2em;
+    text-align: center;
+    a {
+      color: #444444;
+    }
+  }
+
+  img {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .post-description {
+    // display: none;
+    color: #636363;
+    padding: 15px;
+  }
+
+  &:first-child {
+    width: 100%;
+    flex: 1 1 100%;
+
+    .post-title {
+      font-size: 3em;
+    }
+
+    img {
+      width: 50%;
+      float: left;
+      padding: 0 20px 0 0;
+    }
+
+    .post-description {
+      display: block;
+    }
+  }
+}
+
+.rss-subscribe {
+  text-align: center;
+  padding: 10px;
+}
+
+
+@media screen and ($break-medium) and ($break-large) {
+
+  .blog-summary {
+    flex: 0 1 50%;
+  }
+
+}
+
+@media screen and ($break-small) {
+
+  .post .post-content, figure {
+    padding: 15px;
+    box-sizing: border-box;
+  }
+
+
+  .blog-summary {
+    flex: 1 1 100%;
+
+    &:first-child img {
+      width: 100%;
+      padding: 0;
+    }
+  }
+}

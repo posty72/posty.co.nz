@@ -7,24 +7,31 @@
 
 # Site settings
 title: Josh Post
-email: your-email@domain.com
+email: posty72@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
   I am a web developer from New Zealand. I build great products using great tools.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://posty.co.nz.s3-website-ap-southeast-2.amazonaws.com" # the base hostname & protocol for your site
+url: "http://posty.co.nz/" # the base hostname & protocol for your site
 twitter_username: posty72
 github_username:  posty72
 linkedin_url: http://nz.linkedin.com/in/joshpost
 google_fonts:
   - "Open+Sans:400,300,700,600"
-  - "Merriweather"
+  - "Merriweather:400,400italic,700"
+  # - "Balthazar"
+  # - "Inika"
 coverimage: 'photo-1433840496881-cbd845929862.jpg'
 
 collections: 
   websites:
     output: true
+  film:
+    output: true
 
 # Build settings
 markdown: kramdown
+sass:
+  style: compressed
+  sourcemap: true
 
-exclude: ['node_modules', 'gulpfile.js', 'package.json', 'aws.json', 'README.md', 'bower.json', '*.log', 'assets/components']
+exclude: ['node_modules', 'gulpfile.js', 'package.json', 'aws.json', 'README.md', 'bower.json', '*.log', 'assets/components', '_drafts']

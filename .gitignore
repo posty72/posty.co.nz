@@ -14,5 +14,4 @@ assets/components
 
 #AWS
 aws.json
-.awspublish-posty.co.nz
-.awspublish-dev.posty.co.nz
+.awspublish-*

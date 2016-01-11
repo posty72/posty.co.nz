@@ -8,6 +8,7 @@ var shell = require('gulp-shell');
 var connect = require('gulp-connect');
 var uglify = require('gulp-uglify');
 var awspublish = require('gulp-awspublish');
+var imageop = require('gulp-image-optimization');
 
 var bower_dir = function(component) {
   return './assets/components/' + component;
@@ -30,12 +31,37 @@ gulp.task('dev:build', shell.task([
 gulp.task('dev:scripts', function(){
 
   gulp.src([
-    bower_dir('/underscore/underscore.js'),
+    // bower_dir('/underscore/underscore.js'),
     './javascript/main.js'
   ])
-    .pipe(concat('all.js'))
     .pipe(uglify())
-    .pipe(gulp.dest('./javascript/'));
+    .pipe(concat('all.js'))
+    .pipe(gulp.dest('./javascript/'))
+    .pipe(gulp.dest('./_site/javascript/'));
+
+});
+
+gulp.task('dev:images', ['dev:build'], function(next){
+
+    gulp.src([
+      'assets/images/originals/**/*.png',
+      'assets/images/originals/**/*.gif',
+      'assets/images/originals/**/*.jpg',
+      'assets/images/originals/**/*.jpeg'
+      ])
+      .pipe(imageop({
+          optimizationLevel: 7,
+          progressive: false,
+          interlaced: true
+      }))
+      .pipe(gulp.dest('assets/images/Optomised'))
+      .on('end', function(){
+        gulp.run('dev:build');
+        next();
+      })
+      .on('error', function(){
+        next();
+      });
 
 });
 
@@ -54,6 +80,8 @@ gulp.task('default', ['dev:serve', 'dev:scripts', 'dev:build'], function() {
     'dev:build'
   ]);
 
+  gulp.watch(['./assets/image/Originals/**'], ['dev:images']);
+
   gulp.watch(['./javascript/**'], ['dev:scripts']);
 
 });
@@ -61,14 +89,10 @@ gulp.task('default', ['dev:serve', 'dev:scripts', 'dev:build'], function() {
 gulp.task('deploy', function() {
 
   var awsparams = JSON.parse(fs.readFileSync('./aws.json'));
-
   var publisher = awspublish.create(awsparams);
+  var headers = {};
 
-  var headers = {
-    'Cache-Control': 'max-age=315360000, no-transform, public'
-  };
-
-  return gulp.src('./_site/**')
+  gulp.src('./_site/**')
     .pipe(awspublish.gzip())
     .pipe(publisher.publish(headers))
     .pipe(publisher.cache())
