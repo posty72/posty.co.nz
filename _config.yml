@@ -7,11 +7,11 @@
 
 # Site settings
 title: Josh Post
-email: your-email@domain.com
+email: posty72@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
   I am a web developer from New Zealand. I build great products using great tools.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://posty.co.nz.s3-website-ap-southeast-2.amazonaws.com" # the base hostname & protocol for your site
+url: "http://posty.co.nz/" # the base hostname & protocol for your site
 twitter_username: posty72
 github_username:  posty72
 linkedin_url: http://nz.linkedin.com/in/joshpost

@@ -92,7 +92,7 @@ gulp.task('deploy', function() {
   var publisher = awspublish.create(awsparams);
   var headers = {};
 
-  return gulp.src('./_site/**')
+  gulp.src('./_site/**')
     .pipe(awspublish.gzip())
     .pipe(publisher.publish(headers))
     .pipe(publisher.cache())

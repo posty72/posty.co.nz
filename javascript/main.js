@@ -52,9 +52,9 @@ var imageLoad = (function() {
 // This provides a way for users to open 
 // and close the navigation menu. 
 
-var navToggle = (function(navToggle){
+var navToggle = (function(navBtn){
 
-  navToggle.addEventListener('onclick', toggleNav);
+  navBtn.addEventListener('click', toggleNav);
 
   function toggleNav(){
     return document.body.parentNode.classList.toggle('nav-open');
@@ -83,24 +83,32 @@ var returnToTop = (function(returnTopEl) {
     setReturnTopOpacity(returnTopEl);
   });
 
-  returnTopEl.onmouseup = scrollToTop;
+  returnTopEl.addEventListener('click', scrollToTop);
 
   function setReturnTopOpacity(el){
     return el.style.opacity = Math.min((window.scrollY / window.innerHeight), 1);
   }
 
   function setReturnTopRotation(el) {
-    return el.style.transform = 'rotate(' + (((window.scrollY / ((Math.max(document.body.scrollHeight, document.body.offsetHeight, document.documentElement.clientHeight, document.documentElement.scrollHeight, document.documentElement.offsetHeight)) - window.innerHeight)) * 100) * 0.9) + 'deg)';
+    return el.style.transform = 'rotate(' + ((window.scrollY / ((Math.max(document.body.scrollHeight, document.body.offsetHeight, document.documentElement.clientHeight, document.documentElement.scrollHeight, document.documentElement.offsetHeight)) - window.innerHeight)) * 90) + 'deg)';
   }
 
   function scrollToTop() {
-    var scrollInterval = setInterval(function() {
-      if (window.scrollY !== 0) {
-        window.scrollBy(0, (-window.scrollY / (125 / 15)));
-      } else {
-        clearInterval(scrollInterval);
-      }
-    }, 15);
+    var scrollControl = false;
+    scrollUp();
+
+    setTimeout(function(){
+      scrollControl = true;
+    }, 250);
+
+    function scrollUp() {
+      setTimeout(function(){
+        if (window.scrollY !== 0 && scrollControl === false) {
+          window.scrollBy(0, (-window.scrollY / (250 / 15)));
+          scrollUp();
+        }
+      }, 15);
+    }
   }
 
   return scrollToTop;
@@ -111,11 +119,11 @@ var returnToTop = (function(returnTopEl) {
 
 /* Global functions */
 
-function distanceFromTop(element) {
+function distanceFromTop(el) {
   var distance = 0;
-  while (element) {
-    distance += (element.offsetTop);
-    element = element.offsetParent;
+  while (el) {
+    distance += (el.offsetTop);
+    el = el.offsetParent;
   }
   return distance;
 }

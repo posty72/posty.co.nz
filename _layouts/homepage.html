@@ -13,7 +13,7 @@
   </body>
 
   <!-- Merged JS -->
-  <script src="{{ "/javascript/all.js" | prepend: site.baseurl }}"></script>
+  <script src="{{ "/javascript/all.js" | prepend: site.baseurl }}?v={{ site.time | date: '%s' }}"></script>
 
   <!-- Page script -->
   {% if page.script %}
