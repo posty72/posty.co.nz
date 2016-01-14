@@ -94,21 +94,17 @@ var returnToTop = (function(returnTopEl) {
   }
 
   function scrollToTop() {
-    var scrollControl = false;
-    scrollUp();
 
-    setTimeout(function(){
-      scrollControl = true;
-    }, 250);
+    var s = -window.scrollY,
+    time = 400,
+    a = setInterval(function(){
+      if (window.scrollY > 0) {
+        window.scrollBy(0, (s / 15));
+      } else {
+        clearInterval(a);
+      }
+    }, 15);
 
-    function scrollUp() {
-      setTimeout(function(){
-        if (window.scrollY !== 0 && scrollControl === false) {
-          window.scrollBy(0, (-window.scrollY / (250 / 15)));
-          scrollUp();
-        }
-      }, 15);
-    }
   }
 
   return scrollToTop;

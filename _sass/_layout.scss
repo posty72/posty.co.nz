@@ -5,16 +5,14 @@ body, html {
   font-family: $body-font;
 }
 
-body{
-  padding: 0;
-  margin: 0;
+body {
   display: flex;
   flex-direction: column;
+}
 
-  * {
-    padding: 0;
-    margin: 0;
-  }
+* {
+  padding: 0;
+  margin: 0;
 }
 
 .main {
