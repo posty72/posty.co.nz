@@ -2,11 +2,9 @@
   box-sizing: border-box;
   width: 100%;
   padding: 0 2% 50px;
-
   .post-header {
     background-color: transparent;
   }
-
   .post-content {
     max-width: 570px;
     margin: 0 auto;
@@ -79,7 +77,6 @@ time {
   margin: 0 auto 20px;
   padding: 1.5%;
   flex: 1 1 33%;
-
   .post-title {
     padding: 20px 3% 0;
     font-size: 2em;
@@ -88,35 +85,14 @@ time {
       color: #444444;
     }
   }
-
   img {
     width: 100%;
     box-sizing: border-box;
   }
-
   .post-description {
     // display: none;
     color: #636363;
     padding: 15px;
-  }
-
-  &:first-child {
-    width: 100%;
-    flex: 1 1 100%;
-
-    .post-title {
-      font-size: 3em;
-    }
-
-    img {
-      width: 50%;
-      float: left;
-      padding: 0 20px 0 0;
-    }
-
-    .post-description {
-      display: block;
-    }
   }
 }
 
@@ -125,29 +101,43 @@ time {
   padding: 10px;
 }
 
+@media screen and ($break-medium) {
+  .blog-summary {
+    &:first-child {
+      width: 100%;
+      flex: 1 1 100%;
+      .post-title {
+        font-size: 3em;
+      }
+      img {
+        width: 50%;
+        float: left;
+        padding: 0 20px 0 0;
+      }
+      .post-description {
+        display: block;
+      }
+    }
+  }
+}
 
 @media screen and ($break-medium) and ($break-large) {
-
   .blog-summary {
     flex: 0 1 50%;
   }
-
 }
 
 @media screen and ($break-small) {
-
   .post .post-content, figure {
     padding: 15px;
     box-sizing: border-box;
   }
-
-
   .blog-summary {
     flex: 1 1 100%;
-
     &:first-child img {
       width: 100%;
       padding: 0;
     }
   }
 }
+

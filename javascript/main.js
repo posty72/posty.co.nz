@@ -83,7 +83,8 @@ var returnToTop = (function(returnTopEl) {
     setReturnTopOpacity(returnTopEl);
   });
 
-  returnTopEl.addEventListener('click', scrollToTop);
+  returnTopEl.addEventListener('mousedown', scrollToTop);
+  returnTopEl.addEventListener('touchstart', scrollToTop);
 
   function setReturnTopOpacity(el){
     return el.style.opacity = Math.min((window.scrollY / window.innerHeight), 1);
