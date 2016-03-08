@@ -73,6 +73,7 @@ gulp.task('default', ['dev:serve', 'dev:scripts', 'dev:build'], function() {
     './_posts/**',
     './_layouts/**',
     './_websites/**',
+    './_photos/**',
     './_includes/**',
     './_sass/**',
     './assets/**'
