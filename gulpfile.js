@@ -75,6 +75,7 @@ gulp.task('default', ['dev:serve', 'dev:scripts', 'dev:build'], function() {
     './_websites/**',
     './_photos/**',
     './_includes/**',
+    './_52-Week-Challenge./**',
     './_sass/**',
     './assets/**'
   ], [

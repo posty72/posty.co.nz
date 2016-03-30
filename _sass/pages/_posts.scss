@@ -43,6 +43,12 @@
   padding: 0 0 20px;
 }
 
+.post-subtitle {
+  font-size: 2em;
+  padding: 0 0 20px;
+  color: #7b7b7b;
+}
+
 time {
   color: $maroon;
   text-align: right;
@@ -84,6 +90,12 @@ time {
     a {
       color: #444444;
     }
+  }
+
+  .post-subtitle {
+    padding: 20px 3% 0;
+    font-size: 1.5em;
+    text-align: center;
   }
   img {
     width: 100%;

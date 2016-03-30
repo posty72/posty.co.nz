@@ -29,6 +29,8 @@ collections:
     output: true
   photos:
     output: true
+  52-Week-Challenge:
+    output: true
 
 # Build settings
 markdown: kramdown

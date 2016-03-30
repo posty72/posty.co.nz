@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "A CMS vs a static site: performance review"
+title:  "I re-created my personal website to make it faster"
 date:   2015-12-18 14:13:08 +1300
 categories: development
 coverimage: "new-site.png"
@@ -19,62 +19,9 @@ But over the next couple of years, the romance faded. The site was hosted by GoD
 
 Last year I [wrote about dropping the CMS] and I decided to recreate my website, with a focus on easy deployment and speed. Using a combination of Jekyll, Gulp, Amazon S3 & Cloudfront I came up with a solution that was so much lighter and simple than a CMS that did the exact same thing. 
 
-
-Enough talk, here are the numbers:
-
-##### Homepage
-
-<small>_E.g. <http://www.posty.co.nz/web-development/>_</small>
-
-|                           | Old  | New  | % Difference  |
-| ------------------------- |:----:|:----:|--------------:|
-| Load time (seconds)       | 6.12 | 2.21 |  -63.89%      |
-| Size (kbs)                | 1500 | 384  | -74.40%       |
-| Number of requests        | 18   | 11   | -38.89%       |
-| Pagespeed Score - Mobile  | 61   | 82   | +34.43%        |
-| Pagespeed Score - Desktop | 75   | 86   | +14.67%        |
+The results speak for themselves. See my post detailing performance gains to see the gains by numbers.
 
 
-##### Blog Index 
-
-<small>_E.g. <http://www.posty.co.nz/blog/>_</small>
-
-|                           | Old  | New  | % Difference  |
-| ------------------------- |:----:|:----:|--------------:|
-| Load time (seconds)       | 2.87 | 0.78 |  -72.82%      |
-| Size (kbs)                | 1300 | 1100 | -15.38%       |
-| Number of requests        | 25   | 20   | -20.00%       |
-| Pagespeed Score - Mobile  | 40   | 71   | +77.50%        |
-| Pagespeed Score - Desktop | 47   | 65   | +38.30%        |
-
-##### Blog Post 
-
-<small>_E.g. <http://www.posty.co.nz/development/2015/12/11/breaking-away-from-the-cms.html/>_</small>
-
-|                           | Old  | New  | % Difference  |
-| ------------------------- |:----:|:----:|--------------:|
-| Load time (seconds)       | 5.3  | 1.22 |  -76.98%      |
-| Size (kbs)                | 1400 | 397  | -71.64%       |
-| Number of requests        | 62   | 16   | -74.19%       |
-| Pagespeed Score - Mobile  | 42   | 74   | +76.19%        |
-| Pagespeed Score - Desktop | 68   | 77   | +13.24%        |
- 
-
-##### Portfolio page
-
-<small>_E.g. <http://www.posty.co.nz/web-development/>_</small>
-
-|                           | Old  | New  | % Difference  |
-| ------------------------- |:----:|:----:|--------------:|
-| Load time (seconds)       | 4.98 | 0.67 |  -86.55%      |
-| Size (kbs)                | 3700 | 544  | -85.30%       |
-| Number of requests        | 31   | 18   | -41.94%       |
-| Pagespeed Score - Mobile  | 21   | 78   | +271.43%       |
-| Pagespeed Score - Desktop | 67   | 90   | +34.33%        |
-
-
-The results speak for themselves. Looking at the blog post, which had the most amount of 
-
-
+[post detailing performance gains]: http://www.posty.co.nz/development/2015/12/18/cms-vs-static-performance-review.html
 [wrote about dropping the CMS]: http://www.posty.co.nz/development/2015/12/11/breaking-away-from-the-cms.html
 [this site]: https://github.com/posty72/posty.co.nz
