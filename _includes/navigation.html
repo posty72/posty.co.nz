@@ -10,7 +10,7 @@
   {% assign my_page = site.pages | sort: "sortOrder" %}
   <ul id="navLinks">
     {% for p in my_page %}
-      {% if p.title %}
+      {% if p.title && p.sortOrder %}
         <li><a href="{{ p.url | prepend: site.baseurl }}">{{ p.title }}</a>
       {% endif %}
     {% endfor %}
