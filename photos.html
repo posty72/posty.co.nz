@@ -16,6 +16,7 @@ sortOrder: '5'
     <div class="clear show-scroll-top"></div>
     <div class="row">
       {% for photo in site.photos %}
+        <h2 class="post-title">{{photo.title}}</h2>
         <figure id="{{ photo.title | downcase | replace:' ', '' | replace:'.', '' }}" class="post photo large-12 small-12 columns">
           <img data-src="/assets/images/Optomised/{{ photo.coverimage }}" alt="{{ photo.title }}" />
           <figcaption class="photo-content animate">
