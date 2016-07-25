@@ -1,4 +1,4 @@
-.home-body {
+.homebody {
   display: block;
 }
 
@@ -12,23 +12,23 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
 
-  .home-callout {
-    max-width: 450px;
-    margin: 0 auto;
+.home-callout {
+  max-width: 450px;
+  margin: 0 auto;
+}
 
-    .home-image {
-      border-radius: 99em;
-      display: block;
-      margin: 0 auto;
-    }
+.home-image {
+  border-radius: 99em;
+  display: block;
+  margin: 0 auto;
+}
 
-    .home-title {
-      color: #fff;
-      text-align: center;
-      font-size: 6em;
-      padding: 20px;
-      text-shadow: 3px 3px 0px #000;
-    }
-  }
+.home-title {
+  color: #fff;
+  text-align: center;
+  font-size: 6em;
+  padding: 20px;
+  text-shadow: 3px 3px 0px #000;
 }
