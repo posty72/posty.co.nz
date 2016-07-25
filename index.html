@@ -4,9 +4,12 @@ title: Home
 sortOrder: '1'
 ---
 
-<section id="home-page" style="background-image: url('/assets/images/Optomised/{{ site.coverimage }}');">
+<section class="home" style="background-image: url('/assets/images/Optomised/{{ site.coverimage }}');">
   <div class="home-callout">
     <img class="home-image" title="" src="assets/images/Optomised/ResizedImage600611-linkedin-profile-1.jpg" alt="linkedin profile 1">
     <h1 class="home-title">Josh Post</h1>
   </div>
 </section>
+
+	
+{% include components/teaser-block.html posts=site.posts limit=3 %}

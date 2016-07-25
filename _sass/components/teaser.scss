@@ -1,0 +1,56 @@
+.teasers {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
+.teaser {
+  margin: 0 auto 20px;
+  padding: 1.5%;
+  flex: 1 1 33%;
+}
+
+.teaser-title {
+	padding: 20px 3% 0;
+	font-size: 2em;
+	text-align: center;
+}
+
+.teaser-subtitle {
+    padding: 20px 3% 0;
+    font-size: 1.5em;
+    text-align: center;
+}
+
+.teaser-description {
+    color: #636363;
+    padding: 15px;
+}
+
+.teaser-anchorImage {
+	
+}
+
+.teaser-image {
+
+}
+
+.teaser-time {
+  color: $maroon;
+  text-align: right;
+  font-style: italic;
+  display: block;
+  font-family: $body-font;
+}
+
+@media screen and ($break-medium) {
+
+  .teaser:first-child {
+      width: 100%;
+      flex: 1 1 100%;
+      .teaser-title {
+        font-size: 3em;
+      }
+    }
+
+}

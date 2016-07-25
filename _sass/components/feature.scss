@@ -1,0 +1,33 @@
+.features {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
+.feature {
+	flex: 1 0 100%;
+    margin-bottom: 30px;
+    padding: 15px 1.5%;
+    max-width: 800px;
+}
+
+.feature-title {
+    padding: 20px 3% 0;
+    font-size: 3em;
+    text-align: center;
+}
+
+.feature-subtitle {
+    padding: 20px 3% 0;
+    font-size: 1.5em;
+    text-align: center;
+    color: #7b7b7b;
+}
+
+.feature-content {
+	padding: 15px 0;
+}
+
+.feature-image-anchor {
+    justify-content: center;
+}

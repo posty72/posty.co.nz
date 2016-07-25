@@ -13,10 +13,7 @@ body {
 * {
   padding: 0;
   margin: 0;
-}
-
-.main {
-  flex: 1 0 auto;
+  box-sizing: border-box;
 }
 
 a {
@@ -49,9 +46,13 @@ iframe {
 
 .container {
   max-width: 100%;
-  box-sizing: border-box;
   width: 1200px;
   margin: 0 auto;
+  padding: 20px;
+}
+
+.main {
+  flex: 1 0 auto;
 }
 
 .clear { clear:both; }
@@ -60,7 +61,3 @@ iframe {
 $break-small: "max-width: 767px" ;
 $break-medium: "min-width: 768px" ;
 $break-large: "max-width: 1200px" ;
-
-@import "./layout/_navigation";
-@import "./layout/_header";
-@import "./layout/_footer";
