@@ -115,11 +115,6 @@ gulp.task('deploy', function() {
             },
 
             "^.+\\.html": {
-                // apply gzip with extra options 
-                gzip: {
-                    // Add .gz extension. 
-                    ext: ".gz"
-                },
                 // Cache HTML for one minute
                 cacheTime: 60
             },

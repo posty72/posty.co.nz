@@ -1,7 +1,7 @@
 .teasers {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
 }
 
 .teaser {
@@ -11,20 +11,27 @@
 }
 
 .teaser-title {
-	padding: 20px 3% 0;
-	font-size: 2em;
-	text-align: center;
+  font-family: $header-font;
+  padding: 20px 3% 0;
+  font-size: 2em;
+  text-align: center;
+}
+
+.teaser-title-link {
+  color: $black;
 }
 
 .teaser-subtitle {
-    padding: 20px 3% 0;
-    font-size: 1.5em;
-    text-align: center;
+  font-family: $header-font;
+  padding: 20px 3% 0;
+  font-size: 1.5em;
+  text-align: center;
 }
 
 .teaser-description {
-    color: #636363;
-    padding: 15px;
+  color: $black;
+  padding: 15px;
+  font-family: $body-font;
 }
 
 .teaser-anchorImage {
@@ -46,11 +53,11 @@
 @media screen and ($break-medium) {
 
   .teaser:first-child {
-      width: 100%;
-      flex: 1 1 100%;
-      .teaser-title {
-        font-size: 3em;
-      }
+    width: 100%;
+    flex: 1 1 100%;
+    .teaser-title {
+      font-size: 3em;
     }
+  }
 
 }

@@ -1,0 +1,37 @@
+
+
+<!-- Merged JS -->
+<script src="{{ "/javascript/all.js" | prepend: site.baseurl }}?v={{ site.time | date: '%s' }}"></script>
+
+<!-- Page script -->
+{% if page.script %}
+
+  <script type="text/javascript" id="page-script">
+
+    {{ page.script }}
+
+  </script>
+
+{% endif %}
+
+<script type="text/javascript">
+  var ss = [];
+  {% for font in site.google_fonts %}
+  ss.push('{{ font }}');
+  {% endfor %}
+  var cb = function() {
+    var font_url = 'https://fonts.googleapis.com/css?family='
+    for(var i=0;i<ss.length;i++){
+      font_url += ss[i]
+      if(typeof ss[i+1] !== 'undefined') { 
+        font_url += '|';
+      }
+    }
+    var l = document.createElement('link'); 
+    l.rel = 'stylesheet';
+    l.href = font_url;
+    var h = document.getElementsByTagName('head')[0]; h.parentNode.insertBefore(l, h);
+  };
+  
+  window.addEventListener('load', cb);
+</script>

@@ -17,7 +17,7 @@
       </a>
 
       <h2 class="teaser-title">
-        <a href="{{ post.url | prepend: site.baseurl }}" title="{{ post.title }}">{{ post.title }}</a>
+        <a class="teaser-title-link" href="{{ post.url | prepend: site.baseurl }}" title="{{ post.title }}">{{ post.title }}</a>
       </h2>
 
       <p class="teaser-description">{{ post.synopsis | strip_html | newline_to_br | truncatewords: 50, '...' }}</p>
