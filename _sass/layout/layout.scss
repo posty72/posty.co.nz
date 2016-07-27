@@ -13,10 +13,7 @@ body {
 * {
   padding: 0;
   margin: 0;
-}
-
-.main {
-  flex: 1 0 auto;
+  box-sizing: border-box;
 }
 
 a {
@@ -27,6 +24,26 @@ a {
   &:hover {
     opacity: 0.9;
   }
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: $header-font;
+  word-break: break-word;
+}
+
+p {
+  line-height: 1.6;
+}
+
+p, li {
+  font-family: $body-font;
+}
+
+blockquote {
+  border-left: 3px solid $maroon;
+  background-color: $lite-grey;
+  padding: 20px;
+  margin: 10px 0;
 }
 
 img {
@@ -49,18 +66,13 @@ iframe {
 
 .container {
   max-width: 100%;
-  box-sizing: border-box;
   width: 1200px;
   margin: 0 auto;
+  padding: 20px;
+}
+
+.main {
+  flex: 1 0 auto;
 }
 
 .clear { clear:both; }
-
-
-$break-small: "max-width: 767px" ;
-$break-medium: "min-width: 768px" ;
-$break-large: "max-width: 1200px" ;
-
-@import "./layout/_navigation";
-@import "./layout/_header";
-@import "./layout/_footer";

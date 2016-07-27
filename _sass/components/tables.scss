@@ -6,14 +6,13 @@ table {
   max-width: 100%;
   overflow-x: auto;
   display: block;
-  box-shadow: 0px 0px 3px 0px #ededed;
 
   thead {
-    background-color: #ededed;
+    background-color: $lite-grey;
   }
 
   th, td {
-    border: 1px solid rgba(200,200,200,0.4); 
+    border: 1px solid $lite-grey; 
     padding: 6px 13px;
   }
 

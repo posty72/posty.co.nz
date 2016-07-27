@@ -4,35 +4,14 @@ title: 52 Weeks
 permalink: /photos/52-weeks/
 ---
 
-<section class="main" id="portfolio-page">
-  <div class="container blog-summaries">
-    <header class="post-header">
-      <h1 class="post-title">{{ page.title }}</h1>
-    </header>
-    <div class="clear show-scroll-top"></div>
-    <div class="row">
-      {% assign posts = site.52-Week-Challenge | sort: "date" | reverse %}
-      {% for post in posts %}
-        <article class="blog-summary" itemscope itemtype="http://schema.org/BlogPosting">
-          <a href="{{ site.baseurl }}/assets/images/Optomised/{{ post.coverimage }}" title="{{ post.content | strip_html | truncatewords: 50, '...' }}">
-            <img data-src="{{ site.baseurl }}/assets/images/Optomised/{{ post.coverimage }}" alt="{{ post.title }}" />
-          </a>
-          <h2 class="post-title red-under">{{ post.title }}</h2>
-          {% if post.subtitle %}
-            <h4 class="post-subtitle">{{ post.subtitle }}</h4>
-          {% endif %}
-
-
-          <p class="post-description">{{ post.content }}</p>
-
-          <!-- <div class="blog-vitals">
-            <h6 class="readmore"><a href="{{ post.url | prepend: site.baseurl }}">Read more...</a></h6>
-           </div>-->
-           <!-- <a class="post-overlay" href="{{ post.url | prepend: site.baseurl }}" title="{{ post.content | strip_html | truncatewords: 50, '...' }}"></a> -->
-          <div class="clear"></div>
-        </article>
-      {% endfor %}
-    </div>
-    <div class="clear"></div>
+<div class="container">
+  <div class="page-header">
+    <h1 class="page-title">{{ page.title }}</h1>
   </div>
-</section>
+
+  {% assign posts = site.52-Week-Challenge | sort: "date" | reverse %}
+
+  {% include components/feature-block.html features=posts %}
+
+
+</div>

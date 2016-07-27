@@ -2,30 +2,20 @@
 //   font-family: "Leberkaas";
 //   src: url('../assets/fonts/LeberkaasGrotesk.otf');
 // }
+
 $header-font: "Merriweather", "Time New Roman", serif;
 $body-font: "Open Sans", Helvetica, Arial, sans-serif;
-h1, h2, h3, h4, h5 {
-  font-family: $header-font;
-  // font-weight: lighter;
-  word-break: break-word;
-}
-
-p, li {
-  font-family: $body-font;
-}
-
 
 /* RESPONSIVE FONTS */
 
-@media screen and (min-width: 1200px) {
+@media screen and ($break-large) {
   body {
     font-size: 100%;
   }
 }
 
-@media screen and (max-width: 767px) {
+@media screen and ($break-small) {
   body {
     font-size: 75%;
   }
 }
-

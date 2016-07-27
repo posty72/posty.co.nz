@@ -8,6 +8,7 @@ var shell = require('gulp-shell');
 var connect = require('gulp-connect');
 var uglify = require('gulp-uglify');
 var awspublish = require('gulp-awspublish');
+var awspublishRouter = require("gulp-awspublish-router");
 var imageop = require('gulp-image-optimization');
 
 var bower_dir = function(component) {
@@ -18,7 +19,7 @@ var bower_dir = function(component) {
 gulp.task('dev:serve', function() {
   connect.server({
     root: '_site',
-    port: '8081'
+    port: '8085'
   });
 });
 
@@ -77,6 +78,7 @@ gulp.task('default', ['dev:serve', 'dev:scripts', 'dev:build'], function() {
     './_includes/**',
     './_52-Week-Challenge/**',
     './_sass/**',
+    './**/*.scss',
     './assets/**'
   ], [
     'dev:build'
@@ -95,8 +97,33 @@ gulp.task('deploy', function() {
   var headers = {};
 
   gulp.src('./_site/**')
-    .pipe(awspublish.gzip())
-    .pipe(publisher.publish(headers))
+    // .pipe(awspublish.gzip())
+    .pipe(awspublishRouter({
+        cache: {
+            // cache for 5 minutes by default 
+            cacheTime: 300
+        },
+
+        routes: {
+            "^.+\\.(?:js|css|svg|ttf|jpg|gif|png)$": {
+                // don't modify original key. this is the default 
+                key: "$&",
+                // use gzip for assets that benefit from it 
+                gzip: true,
+                // cache static assets for 20 years 
+                cacheTime: 630720000
+            },
+
+            "^.+\\.html": {
+                // Cache HTML for one minute
+                cacheTime: 60
+            },
+
+            // pass-through for anything that wasn't matched by routes above, to be uploaded with default options 
+            "^.+$": "$&"
+        }
+    }))
+    .pipe(publisher.publish())
     .pipe(publisher.cache())
     .pipe(publisher.sync())
     .pipe(awspublish.reporter());

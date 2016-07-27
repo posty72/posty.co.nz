@@ -1,0 +1,29 @@
+
+  
+<div class="teasers">
+  
+  {% if include.limit %}
+    {% assign limitedto = include.limit %}
+  {% else %}
+    {% assign limitedto = all %}
+  {% endif %}
+
+  {% for post in include.posts limit:limitedto %}
+
+    <article class="teaser" itemscope itemtype="http://schema.org/BlogPosting">
+
+      <a class="teaser-anchorImage" href="{{ post.url | prepend: site.baseurl }}" title="{{ post.content | strip_html | truncatewords: 50, '...' }}">
+        <img class="teaser-image" data-src="{{ site.baseurl }}/assets/images/Optomised/{{ post.coverimage }}" alt="{{ post.title }}" />
+      </a>
+
+      <h2 class="teaser-title">
+        <a class="teaser-title-link" href="{{ post.url | prepend: site.baseurl }}" title="{{ post.title }}">{{ post.title }}</a>
+      </h2>
+
+      <p class="teaser-description">{{ post.synopsis | strip_html | newline_to_br | truncatewords: 50, '...' }}</p>
+
+    </article>
+
+  {% endfor %}
+
+</div>
