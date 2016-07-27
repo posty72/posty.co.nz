@@ -19,7 +19,7 @@ CMS-less websites have gathered steam in 2015 with the [argument]{:target="_blan
 3. **Security**. Since the site is updated on your local computer and hosted by AWS, you won't need to login or remember any passwords. That means there's a much lower risk of somebody taking control of your website.
 4. **Maintainability**. No more updating that CMS to the new version! 
 
-###The Con's
+### The Con's
 
 While these all sound like great sellers, a CMS-less site like this comes with some caveats:
 

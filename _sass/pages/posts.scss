@@ -1,11 +1,15 @@
 .post {
   box-sizing: border-box;
   width: 100%;
-  padding: 0 2% 50px;
+  padding: 0 2%;
 }
 
 .post-header {
   background-color: transparent;
+
+  @media screen and ($break-small) {
+    padding: 0 15px;
+  }
 }
 
 .post-content {
@@ -15,6 +19,8 @@
   ol li,
   ul li {
     margin-left: 40px;
+    font-size: 1.1em;
+    line-height: 1.6;
   }
   h1,
   h2,
@@ -33,7 +39,7 @@
   h3,
   h4,
   h5 {
-    font-size: 2em;
+    font-size: 1.4em;
   }
   p {
     font-size: 1.1em;
@@ -71,8 +77,9 @@ time {
 .post-author {
   color: $maroon;
   /* text-indent: 10%; */
-  padding: 50px 0;
+  padding: 25px 0;
   text-align: center;
+  font-size: 2em;
 }
 
 

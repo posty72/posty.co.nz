@@ -8,7 +8,9 @@
     {% assign limitedto = all %}
   {% endif %}
 
-  {% for post in include.posts limit:limitedto %}
+  {% assign posts = include.posts | sort: "date" | reverse %}
+
+  {% for post in posts limit:limitedto %}
 
     <article class="teaser" itemscope itemtype="http://schema.org/BlogPosting">
 
