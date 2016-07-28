@@ -15,3 +15,7 @@ assets/components
 #AWS
 aws.json
 .awspublish-*
+
+#Images
+assets/images
+!assets/images/originals
