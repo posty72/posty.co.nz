@@ -20,9 +20,9 @@
   ss.push('{{ font }}');
   {% endfor %}
   var cb = function() {
-    var font_url = 'https://fonts.googleapis.com/css?family='
+    var font_url = 'https://fonts.googleapis.com/css?family=';
     for(var i=0;i<ss.length;i++){
-      font_url += ss[i]
+      font_url += ss[i];
       if(typeof ss[i+1] !== 'undefined') { 
         font_url += '|';
       }

@@ -13,7 +13,8 @@ layout: default
   </header>
 
   <figure>
-    <img data-src="/assets/images/Optomised/{{ page.coverimage }}" alt="{{ page.title }}" />
+    <!-- <img data-src="/assets/images/Optomised/{{ page.coverimage }}" alt="{{ page.title }}" /> -->
+    {% include components/image.html image=page.coverimage text=post.title classes='post-image' %}
   </figure>
 
   <div class="post-content" itemprop="articleBody">

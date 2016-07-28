@@ -11,23 +11,8 @@ sortOrder: '1'
   </div>
 </section>
 
-<div class="container">
-	<h2 class="page-title">
-		<a href="/blog/">Blog</a>
-	</h2>
-	{% include components/teaser-block.html posts=site.posts limit=3 %}
-</div>
+{% include components/homepage-teaser.html title='Blog' link='/blog/' category=site.posts %}
 
-<div class="container">
-	<h2 class="page-title">
-		<a href="/web-development/">Code</a>
-	</h2>
-	{% include components/teaser-block.html posts=site.websites limit=3 %}
-</div>
+{% include components/homepage-teaser.html title='Code' link='/web-development/' category=site.websites %}
 
-<div class="container">
-	<h2 class="page-title">
-		<a href="/photos/">Photos</a>
-	</h2>
-	{% include components/teaser-block.html posts=site.photos limit=3 %}
-</div>
+{% include components/homepage-teaser.html title='Photography' link='/photos/' category=site.photos %}

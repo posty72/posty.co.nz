@@ -3,70 +3,135 @@
 var fs = require('fs');
 
 var gulp = require('gulp');
-var concat = require('gulp-concat')
+var concat = require('gulp-concat');
 var shell = require('gulp-shell');
 var connect = require('gulp-connect');
 var uglify = require('gulp-uglify');
 var awspublish = require('gulp-awspublish');
 var awspublishRouter = require("gulp-awspublish-router");
-var imageop = require('gulp-image-optimization');
+var responsve = require('gulp-responsive');
+var clean = require('gulp-clean');
+var sass = require('gulp-sass');
+var sass = require('gulp-ruby-sass');
 
-var bower_dir = function(component) {
-  return './assets/components/' + component;
-}
+gulp.task('res-images', ['clean-images'], function() {
 
+  return gulp.src('assets/images/originals/*')
+    .pipe(responsve({
+      '*': [{
+        width: 300,
+        rename: {
+          suffix: '-300',
+          extname: '.jpg'
+        },
+        format: 'jpeg'
+      }, {
+        width: 2 * 300,
+        rename: {
+          suffix: '-300x2',
+          extname: '.jpg'
+        },
+        format: 'jpeg'
+      }, {
+        width: 480,
+        rename: {
+          suffix: '-480',
+          extname: '.jpg'
+        },
+        format: 'jpeg'
+      }, {
+        width: 480 * 2,
+        rename: {
+          suffix: '-480x2',
+          extname: '.jpg'
+        },
+        format: 'jpeg'
+      }, {
+        width: 800,
+        rename: {
+          suffix: '-800',
+          extname: '.jpg'
+        },
+        format: 'jpeg',
+        withoutEnlargement: true
+      }, {
+        width: 800 * 2,
+        rename: {
+          suffix: '-800x2',
+          extname: '.jpg'
+        },
+        format: 'jpeg',
+        withoutEnlargement: true
+      }, {
+        width: 1920,
+        rename: {
+          suffix: '-1920',
+          extname: '.jpg'
+        },
+        format: 'jpeg',
+        withoutEnlargement: true
+      }, {
+        width: 1920 * 2,
+        rename: {
+          suffix: '-1920x2',
+          extname: '.jpg'
+        },
+        format: 'jpeg',
+        withoutEnlargement: true
+      }]
+    }, {
+      quality: 80,
+      progressive: true,
+      withMetadata: false,
+      errorOnEnlargement: false
+    }))
+    .pipe(gulp.dest('assets/images/responsive'));
+});
 
-gulp.task('dev:serve', function() {
+gulp.task('clean-images', function() {
+  return gulp.src('assets/images/responsive/*', { read: false })
+    .pipe(clean());
+});
+
+gulp.task('scripts', function() {
+
+  gulp.src([
+      // bower_dir('/underscore/underscore.js'),
+      './javascript/main.js'
+    ])
+    .pipe(uglify())
+    .pipe(concat('all.js'))
+    .pipe(gulp.dest('./javascript/'))
+    .pipe(gulp.dest('./_site/javascript/'));
+});
+
+gulp.task('sass', function() {
+  return sass('_sass/_index.scss', {
+      style: 'compressed',
+      sourcemap: true
+    })
+    .on('error', function(err) {
+      console.log('Error!', err.message);
+    })
+    .pipe(concat('layout.css'))
+    .pipe(gulp.dest('./_includes/css/'));
+});
+
+gulp.task('build', ['sass', 'scripts'], shell.task([
+  'jekyll build'
+  ], {
+  ignoreErrors: true
+}));
+
+gulp.task('serve', ['sass', 'scripts', 'build'], function() {
   connect.server({
     root: '_site',
     port: '8085'
   });
 });
 
-gulp.task('dev:build', shell.task([
-  'jekyll build'
-  ], {
-    ignoreErrors: true
-}));
-
-gulp.task('dev:scripts', function(){
-
-  gulp.src([
-    // bower_dir('/underscore/underscore.js'),
-    './javascript/main.js'
-  ])
-    .pipe(uglify())
-    .pipe(concat('all.js'))
-    .pipe(gulp.dest('./javascript/'))
-    .pipe(gulp.dest('./_site/javascript/'));
-
-});
-
-gulp.task('dev:images', ['dev:build'], function(next){
-
-    gulp.src([
-      'assets/images/originals/**/*.png',
-      'assets/images/originals/**/*.gif',
-      'assets/images/originals/**/*.jpg',
-      'assets/images/originals/**/*.jpeg'
-      ])
-      .pipe(imageop({
-          optimizationLevel: 7,
-          progressive: false,
-          interlaced: true
-      }))
-      .pipe(gulp.dest('assets/images/Optomised'))
-      .on('end', function(){
-        gulp.run('dev:build');
-        next();
-      })
-      .on('error', function(){
-        next();
-      });
-
-});
-
-gulp.task('default', ['dev:serve', 'dev:scripts', 'dev:build'], function() {
+gulp.task('default', ['sass', 'scripts', 'build', 'serve'], function() {
+  // On content / html change
   gulp.watch([
     './_config.yml',
     './*.md',
@@ -76,52 +141,57 @@ gulp.task('default', ['dev:serve', 'dev:scripts', 'dev:build'], function() {
     './_websites/**',
     './_photos/**',
     './_includes/**',
-    './_52-Week-Challenge/**',
-    './_sass/**',
-    './**/*.scss',
-    './assets/**'
+    './_52-Week-Challenge/**'
   ], [
-    'dev:build'
+    'build'
   ]);
 
-  gulp.watch(['./assets/image/Originals/**'], ['dev:images']);
+  // On styling changes
+  gulp.watch([
+    './_sass/**',
+    './**/*.scss'
+  ], [
+    'sass'
+  ]);
 
-  gulp.watch(['./javascript/**'], ['dev:scripts']);
+  // On image changes
+  gulp.watch(['./assets/image/originals/**'], ['res-images']);
 
+  // On JS changes
+  gulp.watch(['./javascript/**'], ['scripts']);
 });
 
 gulp.task('deploy', function() {
 
   var awsparams = JSON.parse(fs.readFileSync('./aws.json'));
   var publisher = awspublish.create(awsparams);
-  var headers = {};
 
   gulp.src('./_site/**')
     // .pipe(awspublish.gzip())
     .pipe(awspublishRouter({
-        cache: {
-            // cache for 5 minutes by default 
-            cacheTime: 300
+      cache: {
+        // cache for 5 minutes by default 
+        cacheTime: 300
+      },
+
+      routes: {
+        "^.+\\.(?:js|css|svg|ttf|jpg|gif|png)$": {
+          // don't modify original key. this is the default 
+          key: "$&",
+          // use gzip for assets that benefit from it 
+          gzip: true,
+          // cache static assets for 20 years 
+          cacheTime: 630720000
         },
 
-        routes: {
-            "^.+\\.(?:js|css|svg|ttf|jpg|gif|png)$": {
-                // don't modify original key. this is the default 
-                key: "$&",
-                // use gzip for assets that benefit from it 
-                gzip: true,
-                // cache static assets for 20 years 
-                cacheTime: 630720000
-            },
+        "^.+\\.html": {
+          // Cache HTML for one minute
+          cacheTime: 60
+        },
 
-            "^.+\\.html": {
-                // Cache HTML for one minute
-                cacheTime: 60
-            },
-
-            // pass-through for anything that wasn't matched by routes above, to be uploaded with default options 
-            "^.+$": "$&"
-        }
+        // pass-through for anything that wasn't matched by routes above, to be uploaded with default options 
+        "^.+$": "$&"
+      }
     }))
     .pipe(publisher.publish())
     .pipe(publisher.cache())
