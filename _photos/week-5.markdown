@@ -6,7 +6,7 @@ date:   2016-04-17 11:00:00 +1300
 categories: photos
 author: 'Josh Post'
 link: ''
-coverimage: 'week-5-landscape.jpg'
+coverimage: 'week-5-landscape'
 ---
 
 "Look for a scene with great contrast that will make a great black and white.". 

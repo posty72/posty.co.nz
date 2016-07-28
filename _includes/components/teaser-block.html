@@ -15,7 +15,7 @@
     <article class="teaser" itemscope itemtype="http://schema.org/BlogPosting">
 
       <a class="teaser-anchorImage" href="{{ post.url | prepend: site.baseurl }}" title="{{ post.content | strip_html | truncatewords: 50, '...' }}">
-        <img class="teaser-image" data-src="{{ site.baseurl }}/assets/images/Optomised/{{ post.coverimage }}" alt="{{ post.title }}" />
+        {% include components/image.html image=post.coverimage text=post.title classes='teaser-image' %}
       </a>
 
       <h2 class="teaser-title">

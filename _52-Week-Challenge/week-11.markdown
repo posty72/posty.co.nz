@@ -6,7 +6,7 @@ date:   2016-06-08 11:00:02 +1300
 categories: photos
 author: 'Josh Post'
 link: ''
-coverimage: 'week-11-landscape.jpg'
+coverimage: 'week-11-landscape'
 ---
 
 > "Find a way to show your landscape/natural beauty in reflection. The mirror world revealed.".

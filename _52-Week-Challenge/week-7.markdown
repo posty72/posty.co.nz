@@ -6,7 +6,7 @@ date:   2016-05-01 11:00:01 +1300
 categories: photos
 author: 'Josh Post'
 link: ''
-coverimage: 'week-7-portrait.jpg'
+coverimage: 'week-7-portrait'
 ---
 
 > "Tell someone's story without showing their face".

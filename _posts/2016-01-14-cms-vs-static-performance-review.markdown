@@ -3,7 +3,7 @@ layout: post
 title:  "CMS vs Static site: performance review"
 date:   2015-12-18 14:13:08 +1300
 categories: development
-coverimage: "new-site.png" 
+coverimage: "new-site" 
 synopsis: "Moving from a CMS would obviously have some performance benefits, but what's a fact without numbers?"
 author: "Josh Post"
 ---

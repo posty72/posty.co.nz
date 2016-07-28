@@ -3,7 +3,7 @@ layout: post
 title:  "My favourite games ever"
 date:   2015-12-01 13:14:08 +1300
 categories: gaming
-coverimage: "IMG_20131125_092959.jpg"
+coverimage: "IMG_20131125_092959"
 synopsis: "I decided to try an online tool to what my favourite game of all time was. After about 20 minutes and over 300 (difficult) decisions, this is what I got."
 author: "Josh Post"
 ---

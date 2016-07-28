@@ -6,7 +6,7 @@ date:   2016-05-16 11:00:00 +1300
 categories: photos
 author: 'Josh Post'
 link: ''
-coverimage: 'week-8-landscape.jpg'
+coverimage: 'week-8-landscape'
 ---
 
 > "This is a great opportunity to explore panorama stitching and create a wide sweeping landscape".

@@ -3,7 +3,7 @@ layout: post
 title:  "Moving to Auckland"
 date:   2014-02-28 10:01:08 +1300
 categories: life
-coverimage: "ResizedImage19201440-229-849.jpg"
+coverimage: "ResizedImage19201440-229-849"
 synopsis: "So it finally happened. After telling people for years that the last place in New Zealand I wanted to move was Auckland, I have (rather predictably) moved to Auckland. It's too big, the houses are too expensive and it's too bloody hot. But it can't be all bad."
 author: "Josh Post"
 ---

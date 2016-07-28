@@ -3,7 +3,7 @@ layout: post
 title:  "Breaking away from the CMS"
 date:   2015-12-11 12:17:08 +1300
 categories: development
-coverimage: "cmsless.jpg"
+coverimage: "cmsless"
 synopsis: "Do you really need Wordpress for your three page website? Static websites: a way of the past, potential way of the future."
 author: "Josh Post"
 ---

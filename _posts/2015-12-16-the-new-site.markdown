@@ -3,7 +3,7 @@ layout: post
 title:  "I re-created my personal website to make it faster"
 date:   2015-12-18 14:13:08 +1300
 categories: development
-coverimage: "new-site.png"
+coverimage: "new-site"
 synopsis: ""
 author: "Josh Post"
 ---

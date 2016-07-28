@@ -6,7 +6,7 @@ date:   2016-06-08 11:00:03 +1300
 categories: photos
 author: 'Josh Post'
 link: ''
-coverimage: 'week-12-artistic.jpg'
+coverimage: 'week-12-artistic'
 ---
 
 > "Our world is one defined by how we get around. Literal or interpretative, find inspiration in transportation".

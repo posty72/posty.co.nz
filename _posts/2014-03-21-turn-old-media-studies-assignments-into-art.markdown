@@ -3,7 +3,7 @@ layout: post
 title:  "How to turn your Year 12 Media Studies assignment into \"art\""
 date:   2015-03-21 10:01:08 +1300
 categories: film
-coverimage: "ResizedImage19201081-starchy-dutch-screenshot-2.jpg"
+coverimage: "ResizedImage19201081-starchy-dutch-screenshot-2"
 synopsis: "I recently rediscovered my old Year 12 Media Studies assignment on Youtube. It was recorded on tape, which somehow corrupted and the audio didn't match the video. It didn't have a storyline. It was trying to rip off a great 70's TV show. Its actors&nbsp;(including yours truly), director and cinematographer didn't take it seriously. Needless to say it's pretty much unwatchable."
 author: "Josh Post"
 ---

@@ -13,7 +13,8 @@
     <article class="feature">
 
       <a class="feature-image-anchor" href="{{ feature.link }}">
-        <img class="feature-image" data-src="/assets/images/Optomised/{{ feature.coverimage }}" alt="{{ feature.title }}" />
+        <!-- <img class="feature-image" data-src="/assets/images/Optomised/{{ feature.coverimage }}" alt="{{ feature.title }}" /> -->
+        {% include components/image.html image=feature.coverimage text=feature.title classes='feature-image' %}
       </a>
 
       <h1 class="feature-title">

@@ -6,7 +6,7 @@ date:   2016-06-08 11:00:00 +1300
 categories: photos
 author: 'Josh Post'
 link: ''
-coverimage: 'week-9-artistic.jpg'
+coverimage: 'week-9-artistic'
 ---
 
 > "The opposite of light is dark, the absence of light is shadow. Interpret this into a masterpiece".

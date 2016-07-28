@@ -6,7 +6,7 @@ date:   2016-06-20 11:00:00 +1300
 categories: photos
 author: 'Josh Post'
 link: ''
-coverimage: 'week-14-landscape.jpg'
+coverimage: 'week-14-landscape'
 ---
 
 > "Most landscapes are wide sweeping images. Try an alternative and zoom in instead".
