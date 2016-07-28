@@ -17,5 +17,4 @@ aws.json
 .awspublish-*
 
 #Images
-assets/images
-!assets/images/originals
+assets/images/responsive
