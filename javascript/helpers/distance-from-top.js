@@ -1,5 +1,3 @@
-/* Global functions */
-
 function distanceFromTop(el) {
   var distance = 0;
   while (el) {

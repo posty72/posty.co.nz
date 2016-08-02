@@ -99,8 +99,9 @@ gulp.task('clean-images', function() {
 // Combine and minify scripts
 gulp.task('scripts', function() {
 
+  // Make sure helpers go first, then others
   gulp.src([
-      // bower_dir('/underscore/underscore.js'),
+      './javascript/helpers/**/*.js',
       './javascript/src/**/*.js'
     ])
     .pipe(uglify())
