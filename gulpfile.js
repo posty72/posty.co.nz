@@ -1,7 +1,6 @@
 'use strict';
 
 var fs = require('fs');
-
 var gulp = require('gulp');
 var concat = require('gulp-concat');
 var shell = require('gulp-shell');
@@ -11,9 +10,12 @@ var awspublish = require('gulp-awspublish');
 var awspublishRouter = require("gulp-awspublish-router");
 var responsve = require('gulp-responsive');
 var clean = require('gulp-clean');
-var sass = require('gulp-sass');
+// var sass = require('gulp-sass');
 var sass = require('gulp-ruby-sass');
+var browserSync = require('browser-sync').create();
 
+
+// Take all images and convert them into responsive sizes
 gulp.task('res-images', ['clean-images'], function() {
 
   return gulp.src('assets/images/originals/*')
@@ -88,16 +90,18 @@ gulp.task('res-images', ['clean-images'], function() {
     .pipe(gulp.dest('assets/images/responsive'));
 });
 
+// Delete all images
 gulp.task('clean-images', function() {
   return gulp.src('assets/images/responsive/*', { read: false })
     .pipe(clean());
 });
 
+// Combine and minify scripts
 gulp.task('scripts', function() {
 
   gulp.src([
       // bower_dir('/underscore/underscore.js'),
-      './javascript/main.js'
+      './javascript/src/**/*.js'
     ])
     .pipe(uglify())
     .pipe(concat('all.js'))
@@ -105,6 +109,7 @@ gulp.task('scripts', function() {
     .pipe(gulp.dest('./_site/javascript/'));
 });
 
+// Turn SCSS files -> CSS
 gulp.task('sass', function() {
   return sass('_sass/_index.scss', {
       style: 'compressed',
@@ -114,19 +119,38 @@ gulp.task('sass', function() {
       console.log('Error!', err.message);
     })
     .pipe(concat('layout.css'))
-    .pipe(gulp.dest('./_includes/css/'));
+    .pipe(gulp.dest('./_includes/css/'))
+    .pipe(browserSync.stream());
 });
 
-gulp.task('build', ['sass', 'scripts'], shell.task([
+// Run the Jeykll builder
+gulp.task('build', shell.task([
+  'jekyll build'
+  ], {
+  ignoreErrors: true
+}));
+
+// Run the SCSS, Javascript and Jekyll tasks
+gulp.task('build-all', ['sass', 'scripts'], shell.task([
   'jekyll build'
   ], {
   ignoreErrors: true
 }));
 
 gulp.task('serve', ['sass', 'scripts', 'build'], function() {
-  connect.server({
-    root: '_site',
-    port: '8085'
+  // connect.server({
+  //   root: '_site',
+  //   port: '8085'
+  // });
+  browserSync.init({
+      port: 8088,
+      open: false,
+      ui: {
+        port: 8087
+      },
+      server: {
+        baseDir: "./_site"
+      }
   });
 });
 
@@ -135,16 +159,12 @@ gulp.task('default', ['sass', 'scripts', 'build', 'serve'], function() {
   gulp.watch([
     './_config.yml',
     './*.md',
-    './*.html',
-    './_posts/**',
-    './_layouts/**',
-    './_websites/**',
-    './_photos/**',
-    './_includes/**',
-    './_52-Week-Challenge/**'
+    './**/*.html',
+    './_*/**',
+    '!./_site/**'
   ], [
     'build'
-  ]);
+  ]).on('change', browserSync.reload);
 
   // On styling changes
   gulp.watch([
@@ -158,10 +178,12 @@ gulp.task('default', ['sass', 'scripts', 'build', 'serve'], function() {
   gulp.watch(['./assets/image/originals/**'], ['res-images']);
 
   // On JS changes
-  gulp.watch(['./javascript/**'], ['scripts']);
+  gulp.watch(['./javascript/src/**/*.js'], ['scripts']).on('change', browserSync.reload);
 });
 
-gulp.task('deploy', function() {
+
+// Build everything and push to AWS S3 bucket
+gulp.task('deploy', ['sass', 'scripts', 'build'], function() {
 
   var awsparams = JSON.parse(fs.readFileSync('./aws.json'));
   var publisher = awspublish.create(awsparams);
