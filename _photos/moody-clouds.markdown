@@ -1,5 +1,5 @@
 ---
-layout: website
+layout: post
 title:  "Moody Chains"
 date:   2016-02-26 10:01:08 +1300
 categories: photos

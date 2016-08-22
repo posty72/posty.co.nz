@@ -1,5 +1,5 @@
 ---
-layout: website
+layout: post
 title:  "Week 15"
 subtitle: "Metal"
 date:   2016-06-20 11:00:01 +1300

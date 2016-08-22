@@ -17,18 +17,6 @@ layout: compress
 
   </body>
 
-  <!-- Merged JS -->
-  <script src="{{ "/javascript/all.js" | prepend: site.baseurl }}?v={{ site.time | date: '%s' }}"></script>
-
-  <!-- Page script -->
-  {% if page.script %}
-
-    <script type="text/javascript" id="page-script">
-
-      {{ page.script }}
-
-    </script>
-
-  {% endif %}
+  {% include footer-js.html %}
 
 </html>

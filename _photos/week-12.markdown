@@ -1,5 +1,5 @@
 ---
-layout: website
+layout: post
 title:  "Week 12"
 subtitle: "Transportation"
 date:   2016-06-08 11:00:03 +1300

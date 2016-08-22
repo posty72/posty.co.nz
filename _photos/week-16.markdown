@@ -1,5 +1,5 @@
 ---
-layout: website
+layout: post
 title:  "Week 16"
 subtitle: "Movement"
 date:   2016-07-23 11:00:00 +1300

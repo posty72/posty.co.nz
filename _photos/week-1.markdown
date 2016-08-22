@@ -1,5 +1,5 @@
 ---
-layout: website
+layout: post
 title:  "Week 1"
 subtitle: "Self Portrait"
 date:   2016-03-20 10:01:08 +1300

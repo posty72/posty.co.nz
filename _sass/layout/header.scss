@@ -1,11 +1,17 @@
 
 .header {
-  padding: 15px;
-  margin-bottom: 15px;
+  padding: 10px;
+  margin-bottom: 10px;
   width: 100%;
   background-color: #F9F9F9;
   border-bottom: 3px solid $maroon;
   flex: none;
+  display: flex;
+  align-items: center;
+}
+
+.header-text {
+  display: inline-block;
 }
 
 .header-title {

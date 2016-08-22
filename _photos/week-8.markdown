@@ -1,5 +1,5 @@
 ---
-layout: website
+layout: post
 title:  "Week 8"
 subtitle: "Panorama / Wide Angle"
 date:   2016-05-16 11:00:00 +1300

@@ -1,6 +1,6 @@
 ---
-layout: website
-title:  "Magic.co.nz"
+layout: post
+title:  "Magic"
 date:   2015-11-13 10:01:08 +1300
 categories: websites
 author: 'Josh Post'

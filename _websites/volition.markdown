@@ -1,5 +1,5 @@
 ---
-layout: website
+layout: post
 title:  "Volition"
 date:   2013-02-13 10:01:08 +1300
 categories: websites

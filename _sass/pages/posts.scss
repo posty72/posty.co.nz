@@ -1,11 +1,16 @@
 .post {
   box-sizing: border-box;
   width: 100%;
-  padding: 0 2%;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 
 .post-header {
   background-color: transparent;
+  width: 100%;
+  max-width: 1000px;
 
   @media screen and ($break-small) {
     padding: 0 15px;
@@ -18,8 +23,9 @@
 
 .post-content {
   max-width: 570px;
-  margin: 0 auto;
+  padding:  2%;
   overflow-wrap: break-word;
+  color: $black;
   ol li,
   ul li {
     margin-left: 40px;
@@ -52,7 +58,8 @@
 
 figure {
   padding: 10px 0;
-  max-width: 800px;
+  width: 100%;
+  max-width:1200px;
   margin: 10px auto;
   figcaption {
     border-bottom: 1px dashed $maroon;
@@ -61,7 +68,7 @@ figure {
 
 .post-title {
   font-size: 4em;
-  padding: 0 0 20px;
+  padding: 0;
 }
 
 .post-subtitle {

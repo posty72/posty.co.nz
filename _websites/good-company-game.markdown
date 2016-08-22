@@ -1,5 +1,5 @@
 ---
-layout: website
+layout: post
 title:  "Good Company"
 date:   2014-09-13 10:01:08 +1300
 categories: games

@@ -1,22 +1,21 @@
 'use strict';
 
-var fs = require('fs');
-var gulp = require('gulp');
-var concat = require('gulp-concat');
-var shell = require('gulp-shell');
-var connect = require('gulp-connect');
-var uglify = require('gulp-uglify');
-var awspublish = require('gulp-awspublish');
-var awspublishRouter = require("gulp-awspublish-router");
-var responsve = require('gulp-responsive');
-var clean = require('gulp-clean');
-// var sass = require('gulp-sass');
-var sass = require('gulp-ruby-sass');
-var browserSync = require('browser-sync').create();
+const fs = require('fs');
+const gulp = require('gulp');
+const concat = require('gulp-concat');
+const shell = require('gulp-shell');
+const connect = require('gulp-connect');
+const uglify = require('gulp-uglify');
+const awspublish = require('gulp-awspublish');
+const awspublishRouter = require("gulp-awspublish-router");
+const responsve = require('gulp-responsive');
+const clean = require('gulp-clean');
+const sass = require('gulp-ruby-sass');
+const browserSync = require('browser-sync').create();
 
 
 // Take all images and convert them into responsive sizes
-gulp.task('res-images', ['clean-images'], function() {
+gulp.task('res-images', ['clean-images'], () => {
 
   return gulp.src('assets/images/originals/*')
     .pipe(responsve({
@@ -91,13 +90,13 @@ gulp.task('res-images', ['clean-images'], function() {
 });
 
 // Delete all images
-gulp.task('clean-images', function() {
+gulp.task('clean-images', () => {
   return gulp.src('assets/images/responsive/*', { read: false })
     .pipe(clean());
 });
 
 // Combine and minify scripts
-gulp.task('scripts', function() {
+gulp.task('scripts', () => {
 
   // Make sure helpers go first, then others
   gulp.src([
@@ -111,7 +110,7 @@ gulp.task('scripts', function() {
 });
 
 // Turn SCSS files -> CSS
-gulp.task('sass', function() {
+gulp.task('sass', () => {
   return sass('_sass/_index.scss', {
       style: 'compressed',
       sourcemap: true
@@ -138,7 +137,7 @@ gulp.task('build-all', ['sass', 'scripts'], shell.task([
   ignoreErrors: true
 }));
 
-gulp.task('serve', ['sass', 'scripts', 'build'], function() {
+gulp.task('serve', ['sass', 'scripts', 'build'], () => {
   // connect.server({
   //   root: '_site',
   //   port: '8085'
@@ -155,7 +154,7 @@ gulp.task('serve', ['sass', 'scripts', 'build'], function() {
   });
 });
 
-gulp.task('default', ['sass', 'scripts', 'build', 'serve'], function() {
+gulp.task('default', ['sass', 'scripts', 'build', 'serve'], () => {
   // On content / html change
   gulp.watch([
     './_config.yml',
@@ -182,9 +181,8 @@ gulp.task('default', ['sass', 'scripts', 'build', 'serve'], function() {
   gulp.watch(['./javascript/src/**/*.js'], ['scripts']).on('change', browserSync.reload);
 });
 
-
 // Build everything and push to AWS S3 bucket
-gulp.task('deploy', ['sass', 'scripts', 'build'], function() {
+gulp.task('deploy', ['sass', 'scripts', 'build'], () => {
 
   var awsparams = JSON.parse(fs.readFileSync('./aws.json'));
   var publisher = awspublish.create(awsparams);

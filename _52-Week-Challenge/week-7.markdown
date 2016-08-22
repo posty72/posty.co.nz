@@ -1,5 +1,5 @@
 ---
-layout: website
+layout: post
 title:  "Week 7"
 subtitle: "Faceless"
 date:   2016-05-01 11:00:01 +1300

@@ -1,5 +1,5 @@
 ---
-layout: website
+layout: post
 title:  "Week 5"
 subtitle: "Black and White"
 date:   2016-04-17 11:00:00 +1300

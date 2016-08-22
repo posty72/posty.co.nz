@@ -1,5 +1,5 @@
 ---
-layout: website
+layout: post
 title:  "Last Minute Table"
 date:   2015-11-13 10:01:08 +1300
 categories: websites

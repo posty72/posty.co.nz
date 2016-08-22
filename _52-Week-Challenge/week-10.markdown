@@ -1,5 +1,5 @@
 ---
-layout: website
+layout: post
 title:  "Week 10"
 subtitle: "Environmental"
 date:   2016-06-08 11:00:01 +1300

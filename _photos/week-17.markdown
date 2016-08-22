@@ -1,5 +1,5 @@
 ---
-layout: website
+layout: post
 title:  "Week 17"
 subtitle: "Urbanscape"
 date:   2016-07-28 11:00:00 +1300

@@ -1,5 +1,5 @@
 ---
-layout: website
+layout: post
 title:  "Fusion Networks"
 date:   2013-05-13 10:01:08 +1300
 categories: websites

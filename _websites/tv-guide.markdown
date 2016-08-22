@@ -1,5 +1,5 @@
 ---
-layout: website
+layout: post
 title:  "TV3 TV Guide"
 date:   2014-04-13 10:01:08 +1300
 categories: websites

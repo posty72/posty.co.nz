@@ -1,5 +1,5 @@
 ---
-layout: website
+layout: post
 title:  "Mediaworks Mobile Sites"
 date:   2014-11-13 10:01:08 +1300
 categories: websites

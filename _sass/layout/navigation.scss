@@ -1,43 +1,60 @@
-
 .nav-open {
-
-  overflow-y: hidden;
-  > body {
+  @media screen and ($break-small) {
     overflow-y: hidden;
-  }
 
-  .nav {
-    width: 100%;
-    display: block;
+    > body {
+      overflow-y: hidden;
+    }
+
+    .nav {
+      width: 100%;
+      display: block;
+    }
   }
 }
 
 .nav {
-  position: absolute;
-  top: 0;
-  height: 100%;
-  overflow-y: auto;
-  right: 0;
-  width: 0;
-  transition: all 250ms ease;
   z-index: 100;
-  // display: none;
+  width: calc(100% - 45px);
+
+  @media sceen and ($break-large) {
+    display: none;
+  }
+
+  @media screen and ($break-small) {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    overflow-y: auto;
+    right: 0;
+    width: 0;
+    transition: all 250ms ease;
+    display: block;
+  }
 }
 
 .nav-items {
-  box-shadow: 0px 0px 3px #333;
-  background-color: rgba(255, 255, 255, 1);
-  min-height: 100%;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  align-items: center;
+
+  @media screen and ($break-small){
+    box-shadow: 0px 0px 3px #333;
+    background-color: rgba(255, 255, 255, 1);
+    min-height: 100%;
+    flex-direction: column;
+    align-items: initial;
+  }
 }
 
 .nav-item {
-  font-size: 4em;
-  flex: 1 0 auto;
-
-  @media screen and ($break-small){
+  font-size: 1.6em;
+  flex: 1 1 10%;
+  list-style: none;
+  text-align: center;
+  @media screen and ($break-small) {
     font-size: 2.5em;
+    text-align: left;
   }
 }
 
@@ -45,9 +62,8 @@
   font-family: $header-font;
   display: block;
   color: $green;
-  padding: 40px 20%;
-
-  @media screen and ($break-small){
-    padding: 20px 10%;;
+  padding: 10px;
+  @media screen and ($break-small) {
+    padding: 20px 10%;
   }
 }

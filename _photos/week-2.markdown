@@ -1,5 +1,5 @@
 ---
-layout: website
+layout: post
 title:  "Week 2"
 subtitle: "Traditional Landscape"
 date:   2016-03-27 10:01:08 +1300
