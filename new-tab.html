@@ -76,12 +76,12 @@ body {
 <script>
 (function(win, doc) {
 
-    const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+    var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
         months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
         datetime = new Date(Date.now());
         // bgEl = doc.getElementById('newtab-bg');
 
-    let dateString = days[datetime.getDay()] + ', ' + months[datetime.getMonth()] + ' ' + datetime.getDate() + ' ' + datetime.getFullYear(),
+    var dateString = days[datetime.getDay()] + ', ' + months[datetime.getMonth()] + ' ' + datetime.getDate() + ' ' + datetime.getFullYear(),
         timeString = datetime.getHours() + ':' + datetime.getMinutes();
         // backgroundImage = 'https://unsplash.it/'+win.innerHeight+'/'+win.innerWidth+'/?random';
 
