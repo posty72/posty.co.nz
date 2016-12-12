@@ -1,0 +1,22 @@
+
+{% assign imagename = include.image %}
+{% assign alttext = include.text %}
+{% assign classes = include.classes %}
+
+<div>
+	<textarea class="picture">
+		<picture>
+
+		    <source srcset="/assets/images/responsive/{{ imagename }}-1920.jpg, /assets/images/responsive/{{ imagename }}-1920x2.jpg 2x" media="(min-width: 1600px)">
+		    <source srcset="/assets/images/responsive/{{ imagename }}-800.jpg, /assets/images/responsive/{{ imagename }}-800x2.jpg 2x" media="(min-width: 800px)">
+		    <source srcset="/assets/images/responsive/{{ imagename }}-480.jpg, /assets/images/responsive/{{ imagename }}-480x2.jpg 2x" media="(min-width: 480px)">
+		    <source srcset="/assets/images/responsive/{{ imagename }}-300.jpg, /assets/images/responsive/{{ imagename }}-300x2.jpg 2x" media="(min-width: 300px)">
+		    {% if classes %}
+		    	<img class="{{ classes }}" srcset="/assets/images/responsive/{{ imagename }}-800.jpg, /assets/images/responsive/{{ imagename }}-800x2.jpg 2x" alt="{{ alttext }}">
+		    {% else %}
+		    	<img srcset="/assets/images/responsive/{{ imagename }}-800.jpg, /assets/images/responsive/{{ imagename }}-800x2.jpg 2x" alt="{{ alttext }}">
+		    {% endif %}
+
+		</picture>
+	</textarea>
+</div>

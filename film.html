@@ -2,38 +2,19 @@
 layout: default
 title: Film
 permalink: /film/
-sortOrder: '4'
+sortOrder: '6'
 ---
 
-<section class="main" id="portfolio-page">
+<section class="main">
   <div class="container">
-    <header class="post-header">
-      <h1 class="post-title">{{ page.title }}</h1> 
+    <div class="page-header">
+      <h1 class="page-title">{{ page.title }}</h1> 
       <p>This is a showcase of videos I have made. </p>
-    </header>
-    <div class="clear show-scroll-top"></div>
-    <div class="row">
-      {% for film in site.film %}
-      <article id="{{ film.title | downcase | replace:' ', '' }}" class="post website large-12 small-12 columns">
-        <h1 class="post-title"><a href="{{ film.link }}" target="_blank">{{ film.title }}</a></h1> 
-        <a href="{{ film.link }}" target="_blank">
-          <img data-src="/assets/images/Optomised/{{ film.coverimage }}" alt="{{ film.title }}" />
-        </a>
-        <div class="website-content animate">
-          {{ film.content }}
-          {% if film.githublink %}
-            <p class="film-github"><a href="$GithubLink" target="_blank">View the source for this project on Github</a></p>
-          {% endif %}
-          <!--<% if Company %>
-            <p class="website-company">Made for $Company</p>
-          <% end_if %>
-          <% if Link %>
-            <h5 class="website-link"><a href="$Link">View $Title here</a></h5>
-          <% end_if %> -->
-        </div>
-      </article>
-      {% endfor %}
     </div>
-    <div class="clear"></div>
+
+  
+    {% include components/feature-block.html features=site.film %}
+
+
   </div>
 </section>

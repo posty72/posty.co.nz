@@ -3,7 +3,7 @@ layout: post
 title:  "Going into an unpaid internship"
 date:   2014-05-06 10:01:08 +1300
 categories: life
-coverimage: "ResizedImage19201433-Unpaid-interns-slavery.jpg"
+coverimage: "ResizedImage19201433-Unpaid-interns-slavery"
 synopsis: "An unpaid internship can be hard work. Often they require a lot of hours for very little reward except for 'experience'. While this is often the case, there are situations when an unpaid internship could help boost your career to the next level."
 author: "Josh Post"
 ---

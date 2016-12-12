@@ -1,0 +1,80 @@
+/* GLOBAL TAG PROPS */
+
+body, html {
+  height: 100%;
+  font-family: $body-font;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: $green;
+  transition: opacity 250ms ease; 
+
+  &:hover {
+    opacity: 0.9;
+  }
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: $header-font;
+  word-break: break-word;
+}
+
+p {
+  line-height: 1.6;
+}
+
+p, li {
+  font-family: $body-font;
+}
+
+blockquote {
+  border-left: 3px solid $maroon;
+  background-color: $lite-grey;
+  padding: 20px;
+  margin: 10px 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+
+  &:not([src]) {
+    // min-height: 400px;
+    margin: 0 auto;
+    display: block;
+  }
+}
+
+iframe {
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+/* GLOABL CLASSES */
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.main {
+  flex: 1 0 auto;
+}
+
+.clear { clear:both; }

@@ -5,28 +5,10 @@ permalink: /blog/
 sortOrder: '3'
 ---
 
-<div class="container blog-summaries">
-  {% for post in site.posts limit 3 %}
-    <article class="blog-summary" itemscope itemtype="http://schema.org/BlogPosting">
-      <a href="{{ post.url | prepend: site.baseurl }}" title="{{ post.content | strip_html | truncatewords: 50, '...' }}">
-        <img data-src="{{ site.baseurl }}/assets/images/Optomised/{{ post.coverimage }}" alt="{{ post.title }}" />
-      </a>
-      <h2 class="post-title red-under">
-        <a href="{{ post.url | prepend: site.baseurl }}" title="{{ post.title }}">{{ post.title }}</a>
-      </h2>
+<div class="container">
 
 
-      <p class="post-description">{{ post.synopsis | strip_html | newline_to_br | truncatewords: 50, '...' }}</p>
-
-      <!-- <div class="blog-vitals">
-        <h6 class="readmore"><a href="{{ post.url | prepend: site.baseurl }}">Read more...</a></h6>
-       </div>-->
-       <!-- <a class="post-overlay" href="{{ post.url | prepend: site.baseurl }}" title="{{ post.content | strip_html | truncatewords: 50, '...' }}"></a> -->
-      <div class="clear"></div>
-    </article>
-
-  {% endfor %}
-  <div class="clear"></div>
+  {% include components/teaser-block.html posts=site.posts %}
 
 
 </div>

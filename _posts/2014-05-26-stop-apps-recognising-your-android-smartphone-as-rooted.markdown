@@ -3,7 +3,7 @@ layout: post
 title:  "Stop apps recognising your Android smartphone as rooted"
 date:   2014-05-26 10:01:08 +1300
 categories: android hacks
-coverimage: "ResizedImage19201280-nexus-5.jpg"
+coverimage: "ResizedImage19201280-nexus-5"
 synopsis: "There is nothing more frustrating than downloading an app only to find it's functionality is limited because your phone has been rooted."
 author: "Josh Post"
 ---
