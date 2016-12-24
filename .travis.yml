@@ -4,6 +4,8 @@ rvm:
 - 1.9.3
 - jruby-19mode
 - rbx-2
+node_js:
+  - 6.9.1
 install:
   - bundle install
   - npm install
