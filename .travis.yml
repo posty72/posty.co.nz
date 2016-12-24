@@ -7,6 +7,9 @@ rvm:
 node_js:
   - 6.9.1
 install:
+  - . $HOME/.nvm/nvm.sh
+  - nvm install stable
+  - nvm use stable
   - bundle install
   - npm install
 build:
