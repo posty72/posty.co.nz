@@ -1,12 +1,17 @@
 language: ruby
+sudo: required
 rvm:
 - 2.0.0
 - 1.9.3
 - jruby-19mode
 - rbx-2
-node_js:
-  - 6.9.1
-before_install: if [[ `npm -v` != 3* ]]; then npm i -g npm@3; fi
+before_install:
+  - if [[ `npm -v` != 3* ]]; then npm i -g npm@3; fi
+    - echo "Installing libvips..."
+    - sudo add-apt-repository -y ppa:lovell/precise-backport-vips
+    - sudo apt-get update
+    - sudo apt-get install -y libvips-dev
+    - echo "Completed libvips installation."
 install:
   - . $HOME/.nvm/nvm.sh
   - nvm install stable
