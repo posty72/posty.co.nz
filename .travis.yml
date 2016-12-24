@@ -1,0 +1,20 @@
+language: ruby
+rvm:
+- 2.0.0
+- 1.9.3
+- jruby-19mode
+- rbx-2
+install:
+  - bundle install
+  - npm install
+build:
+  - gulp build
+deploy:
+  provider: s3
+  access_key_id: AKIAJO3F3TE325UIAQNQ
+  secret_access_key:
+    secure: VQvTN9xc0Ch2kuK4s2uQZmNNtoc3py/25sxcthvYC/1nkAGWJd9l/D/h6sL4lg9y8OzBRZdPCBoQ6x8zFsS0aXp3InSUg0YW5nENGrnn/XvB8DWju5w2Oufv44d9e9LvJSvuZ8hdipd90zwe8SyiIFrNPghdsyXL6J2ksjhtrqWXwPmg5VHhSJL2JzNIMHH2Ki9VxhwaiwBkXgxVIUYiKLAB2lTbkswiBQiPH8ePqNZRXStMd1B2P57A+T9MSW8Pxwuyl4JcCXn3pVjYjFoD7CknwPUuNu8TNgPVwFxz+S7tzpbUT+i1CPi5YniTzkNRfHNpfl7Sp37UOHk8mcICtxrvq0/LvBKCP+PIBTqtEx4yh86wgfC4oJd4laHRlM0mW01XQfJcvIqNOGSkY6DYMnShdhrbYpA+dScg3z/D2qQo5QZunpTutRP6gt5MtyEBe1XCrSEb2LXWy6QKn9O9EB1b8QCJrKazl9MLC7oyiVCEZvkbxmYNuNHoQJxuF3Hj7NxGs8lDDX30vRypmlmCbVVxEj39DVWAge68mbL3zRG07JKsjMk1lpDfQg5yKWxZX2cQtOV5Y0ADcenyUxtCkHw1FpGtlxHxCqUG0KQBTfrT8seaYahrNVnyRX7TKmADnvDehStj0zn4nKknrKSOqrz3X47nBAXccOo2wA6og44=
+  bucket: dev.posty.co.nz
+  acl: public_read
+  on:
+    repo: posty72/posty.co.nz
