@@ -6,6 +6,7 @@ rvm:
 - rbx-2
 node_js:
   - 6.9.1
+before_install: if [[ `npm -v` != 3* ]]; then npm i -g npm@3; fi
 install:
   - . $HOME/.nvm/nvm.sh
   - nvm install stable
