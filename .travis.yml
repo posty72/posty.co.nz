@@ -12,6 +12,7 @@ install:
   - nvm install stable
   - nvm use stable
   - bundle install
+  - npm -v && node -v
   - npm install
 build:
   - gulp build
