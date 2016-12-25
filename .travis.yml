@@ -24,7 +24,7 @@ install:
   - nvm use stable
   - bundle install
   - npm -v && node -v
-  - npm install
+  - npm install --unsafe-perm
 build:
   - gulp build
 deploy:
