@@ -24,6 +24,8 @@ install:
   - nvm use stable
   - bundle install
   - npm -v && node -v
+  - npm install node-pre-gyp -g
+  - node-pre-gyp --help
   - npm install --unsafe-perm
 build:
   - gulp build
