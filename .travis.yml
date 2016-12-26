@@ -23,10 +23,10 @@ install:
   - . $HOME/.nvm/nvm.sh
   - nvm install stable
   - nvm use stable
+  - npm -g install npm@latest
   - bundle install
   - npm -v && node -v && python --version
   - npm install -g node-gyp
-  - node-pre-gyp --help
   - npm install --unsafe-perm
 build:
   - gulp build
