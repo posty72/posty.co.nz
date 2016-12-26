@@ -24,5 +24,6 @@ deploy:
   bucket: dev.posty.co.nz
   acl: public_read
   local_dir: _site
+  skip_cleanup: true
   on:
     repo: posty72/posty.co.nz
