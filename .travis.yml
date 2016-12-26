@@ -6,6 +6,7 @@ addons:
     - ubuntu-toolchain-r-test
     packages:
     - g++-4.8
+    - python2.7
 rvm:
 - 2.0.0
 - 1.9.3
