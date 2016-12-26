@@ -23,7 +23,7 @@ install:
   - nvm install stable
   - nvm use stable
   - bundle install
-  - npm -v && node -v
+  - npm -v && node -v && python -v
   - npm install node-pre-gyp -g
   - node-pre-gyp --help
   - npm install --unsafe-perm
