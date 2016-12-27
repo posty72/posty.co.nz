@@ -1,14 +1,16 @@
 ---
 layout: post
-title:  "Week 17"
-subtitle: "Urbanscape"
-date:   2016-07-28 11:00:00 +1300
-categories: photos
-author: 'Josh Post'
-link: ''
-coverimage: 'week-17-landscape'
+title: Week 18
+subtitle: Texture
+date: 2016-01-27 22:00:00
+categories:
+  - photos
+author: Josh Post
+link:
+coverimage: week-18
 ---
 
-> "Landscapes are wide open spaces of natural beauty... this week find the beauty of the urbanscape/cityscape.".
 
-Hurray for long exposures! Without the car lights in this scene it would be really empty, and they help create some twisty leading lines. 
+> The artistic inspiration this week is texture. You should almost be able to feel the image.
+
+This is a rather simple image that I hoped would hoped would make the viewer remember that familiar feeling of a good book.&nbsp;
