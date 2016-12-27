@@ -26,3 +26,6 @@ deploy:
   skip_cleanup: true
   on:
     branch: master
+notifications:
+  email:
+    - $ADMIN_EMAIL
