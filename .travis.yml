@@ -15,7 +15,8 @@ install:
   - bundle install
   - npm install
 script:
-  - gulp build
+  - gulp res-images
+  - gulp build-all
 deploy:
   provider: s3
   access_key_id: $AWS_ACCESS_KEY_ID
