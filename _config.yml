@@ -20,9 +20,9 @@ google_fonts:
   - "Oxygen:400,300,700,600"      # Body
   # - "Balthazar"
   # - "Inika"
-coverimage: 'week-17-landscape'
+coverimage: 'week-18-artistic'
 
-collections: 
+collections:
   websites:
     output: true
   film:
