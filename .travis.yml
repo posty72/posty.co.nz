@@ -25,6 +25,7 @@ deploy:
   bucket: $AWS_S3_BUCKET_NAME
   local_dir: _site
   skip_cleanup: true
+  acl: public_read
   on:
     branch: master
 notifications:
