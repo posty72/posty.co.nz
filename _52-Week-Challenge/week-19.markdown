@@ -1,16 +1,16 @@
 ---
 layout: post
-title: Week 18
-subtitle: Texture
-date: 2016-09-01 22:00:00
+title: Week 19
+subtitle: Messy
+date: 2016-09-02 22:00:00
 categories:
   - photos
 author: Josh Post
 link:
-coverimage: week-18-artistic
+coverimage: week-19-portrait
 ---
 
 
-> The artistic inspiration this week is texture. You should almost be able to feel the image.
+> Take an amazing portrait of someone, make a mess while you are doing it.
 
-This is a rather simple image that I hoped would hoped would make the viewer remember that familiar feeling of a good book.
+A rather candid shot of some freshly showered hair.
