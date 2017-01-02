@@ -30,6 +30,7 @@ deploy:
     branch: master
 notifications:
   email:
-    - $ADMIN_EMAIL
-  on_success: always
-  on_failure: always
+    recipents:
+      - $ADMIN_EMAIL
+    on_success: always
+    on_failure: always
