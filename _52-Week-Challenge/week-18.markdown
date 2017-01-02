@@ -2,7 +2,7 @@
 layout: post
 title: Week 18
 subtitle: Texture
-date: 2016-01-27 22:00:00
+date: 2016-09-01 22:00:00
 categories:
   - photos
 author: Josh Post
