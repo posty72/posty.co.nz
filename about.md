@@ -6,6 +6,10 @@ sortOrder: '2'
 ---
 
 
+#### ![](/uploads/versions/lucy---x----6000-4000x---.jpg)
+
+#### &nbsp;
+
 #### What can I do?&nbsp;
 
 I can create photographs and digital products.&nbsp;
@@ -22,7 +26,7 @@ As an amateur photographer I take mostly landscape and lifestyle photos. I like 
 
 #### Where am I from?&nbsp;
 
-I am from Balclutha, NZ. I grew up playing rugby, spending time on the farm and spending time with friends and family. I've since lived in Dunedin, Wellington and Auckland.
+I am from Balclutha, NZ. I grew up playing rugby, spending time on the farm and spending time with friends and family. I’ve since lived in Dunedin, Wellington and Auckland.
 
 &nbsp;
 
