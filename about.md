@@ -4,6 +4,11 @@ title: About Me
 permalink: /about/
 sortOrder: '2'
 coverimage: 'week-1-portrait'
+subtitle: "Josh Post"
+date:   2017-03-26 10:01:08 +1300
+categories: meta
+author: 'Josh Post'
+link: ''
 ---
 
 #### &nbsp;
