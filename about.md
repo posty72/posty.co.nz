@@ -16,7 +16,7 @@ link:
 
 ### What can I do?&nbsp;
 
-I can create photographs and digital products.&nbsp;
+I create photographs and digital products.&nbsp;
 
 I've been working professionally as a developer since 2013. I started making basic websites that were little more than marketing pages, and have since moved on to fully dynamic web applications. I focus on finding the best solution for problems, with extra care taken for performance, security and accessibility.&nbsp;
 
