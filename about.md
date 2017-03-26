@@ -18,15 +18,15 @@ link:
 
 I can create photographs and digital products.&nbsp;
 
-Ive been working professionally as a developer since 2013. I started making basic websites that were little more than marketing pages, and have since moved on to fully dynamic web applications. I focus on finding the best solution for problems, with extra care taken for performance, security and accessibility.&nbsp;
+I've been working professionally as a developer since 2013. I started making basic websites that were little more than marketing pages, and have since moved on to fully dynamic web applications. I focus on finding the best solution for problems, with extra care taken for performance, security and accessibility.&nbsp;
 
-As an amateur photographer I take mostly landscape and lifestyle photos. I like when I can see the light sitting perfectly over a scene, and working out the best way of composing that into something worthwhile. I shoot with a Canon for my digital and a Pentax for film.&nbsp;
+As an amateur photographer I take mostly landscape and lifestyle photos. I like when I can see the light sitting perfectly over a scene, and working out the best way of composing that into something worthwhile. I shoot with a Canon for digital and a Pentax for film.&nbsp;
 
 #### &nbsp;
 
 ### Where am I from?&nbsp;
 
-I am from Balclutha, NZ. I grew up playing rugby, spending time on the farm and spending time with friends and family. I’ve since lived in Dunedin, Wellington and Auckland.
+I am from Balclutha, NZ. I grew up playing rugby, spending time on the farm and making memories with friends and family. I’ve since lived in Dunedin, Wellington and Auckland.
 
 &nbsp;
 
