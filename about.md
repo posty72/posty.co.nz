@@ -1,12 +1,10 @@
 ---
-layout: page
+layout: post
 title: About Me
 permalink: /about/
 sortOrder: '2'
+coverimage: 'week-1-portrait'
 ---
-
-
-#### ![](/uploads/versions/lucy---x----6000-4000x---.jpg)
 
 #### &nbsp;
 
