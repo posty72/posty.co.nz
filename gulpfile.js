@@ -50,7 +50,6 @@ gulp.task(IMAGES, function(next) {
       }))
       .pipe(gulp.dest('assets/images/optimised'))
       .on('end', function() {
-          gulp.run(BUILD);
           next();
       })
       .on('error', function() {
