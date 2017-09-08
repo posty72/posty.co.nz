@@ -2,9 +2,14 @@
     "name": "jekyll-test",
     "version": "1.0.0",
     "description": "Jekyll",
-    "author": "",
+    "author": "Josh <posty72@gmail.com>",
     "license": "ISC",
     "repository": "https://github.com/posty72/posty.co.nz",
+    "scripts": {
+        "postinstall": "bundle install",
+        "test": "echo 'No tests yet!'",
+        "build": "gulp build && gulp images && gulp scripts"
+    },
     "devDependencies": {
         "gulp": "^3.9.0",
         "gulp-concat": "^2.6.0",
@@ -12,9 +17,7 @@
         "gulp-s3": "^0.3.0",
         "gulp-shell": "^0.5.1",
         "gulp-uglify": "^1.5.1",
-        "gulp-imagemin": "^3.3.0"
-    },
-    "dependencies": {
+        "gulp-imagemin": "^3.3.0",
         "gulp-image-resize": "^0.13.0"
     }
 }

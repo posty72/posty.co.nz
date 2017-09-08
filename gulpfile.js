@@ -5,7 +5,7 @@ const shell = require('gulp-shell');
 const connect = require('gulp-connect');
 const uglify = require('gulp-uglify');
 const imagemin = require('gulp-imagemin');
-const imageResize = require('gulp-image-resize');
+// const imageResize = require('gulp-image-resize');
 
 const BUILD = 'build';
 const SERVE = 'serve';
