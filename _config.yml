@@ -22,10 +22,11 @@ google_fonts:
   # - "Inika"
 coverimage: 'photo-1433840496881-cbd845929862.jpg'
 
-collections: 
+collections:
   websites:
     output: true
   film:
+    output: true
     output: true
 
 # Build settings
@@ -34,4 +35,4 @@ sass:
   style: compressed
   sourcemap: true
 
-exclude: ['node_modules', 'gulpfile.js', 'package.json', 'aws.json', 'README.md', 'bower.json', '*.log', 'assets/components', '_drafts']
+exclude: ['node_modules', 'gulpfile.js', 'package.json', 'aws.json', 'README.md', 'bower.json', '*.log', '_drafts', 'images.js']
