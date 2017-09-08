@@ -8,7 +8,8 @@
     "scripts": {
         "postinstall": "bundle install",
         "test": "echo 'No tests yet!'",
-        "build": "gulp build && gulp images && gulp scripts"
+        "build": "gulp build && gulp images && gulp scripts",
+        "dev": "gulp watch"
     },
     "devDependencies": {
         "gulp": "^3.9.0",

@@ -11,6 +11,7 @@ const BUILD = 'build';
 const SERVE = 'serve';
 const SCRIPTS = 'scripts';
 const IMAGES = 'images';
+const WATCH = 'watch';
 
 gulp.task(SERVE, function() {
     connect.server({
@@ -57,4 +58,6 @@ gulp.task(IMAGES, function(next) {
       });
 });
 
-gulp.task('default', [SCRIPTS, BUILD]);
+gulp.task(WATCH, [SCRIPTS, BUILD], () => {
+  gulp.watch('javascript/*', [SCRIPTS]);
+});
