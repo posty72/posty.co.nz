@@ -6,7 +6,7 @@ date:   2016-05-01 11:00:00 +1300
 categories: photos
 author: 'Josh Post'
 link: ''
-coverimage: 'week-6-artistic'
+coverimage: 'week-6-artistic.jpg'
 ---
 
 > "Your artistic interpretation this week should be inspired by something sweet. A great chance to play with macro photography".

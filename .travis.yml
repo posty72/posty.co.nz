@@ -1,22 +1,15 @@
 language: node_js
 node_js:
-  - "6"
+  - "8"
 sudo: required
-env:
-- CXX=g++-4.8
 addons:
   apt:
-    sources:
-    - ubuntu-toolchain-r-test
     packages:
-    - g++-4.8
-    - python2.7
+    - imagemagick
 install:
-  - bundle install
   - npm install
 script:
-  - gulp res-images
-  - gulp build-all
+  - npm run build
 deploy:
   provider: s3
   access_key_id: $AWS_ACCESS_KEY_ID

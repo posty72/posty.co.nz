@@ -8,13 +8,8 @@ _site
 #NPM
 node_modules
 
-#Bower
-bower_components
-assets/components
-
 #AWS
 aws.json
 .awspublish-*
 
-#Images
-assets/images/responsive
+assets/images/optimised

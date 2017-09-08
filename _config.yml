@@ -38,4 +38,4 @@ sass:
   style: compressed
   sourcemap: true
 
-exclude: ['node_modules', 'gulpfile.js', 'package.json', 'aws.json', 'README.md', 'bower.json', '*.log', 'assets/components', '_drafts', 'Gemfile', Gemfile.lock]
+exclude: ['node_modules', 'gulpfile.js', 'package.json', 'aws.json', 'README.md', 'bower.json', '*.log', '_drafts', 'images.js', 'Gemfile', Gemfile.lock]

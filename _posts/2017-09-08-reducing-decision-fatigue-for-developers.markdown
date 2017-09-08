@@ -1,10 +1,10 @@
 ---
 layout: post
-title: Reducing decision fatigue for developers
-date: 2017-09-08 14:00:00
+title: "Reducing decision fatigue for developers"
+date: "2017-09-08 14:00:00"
 categories:
   - development
-coverimage: ant
+coverimage: 'ant.jpg'
 synopsis: >-
   The most effective way to increase the productivity of your development team
   is to understand that code is never written in isolation.

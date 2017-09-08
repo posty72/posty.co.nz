@@ -6,7 +6,7 @@ date:   2016-06-12 11:00:00 +1300
 categories: photos
 author: 'Josh Post'
 link: ''
-coverimage: 'week-13-portrait'
+coverimage: 'week-13-portrait.jpg'
 ---
 
 > "Expose to the right and create a light, airy high key portrait".

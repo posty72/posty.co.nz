@@ -6,7 +6,7 @@ date:   2016-06-20 11:00:00 +1300
 categories: photos
 author: 'Josh Post'
 link: ''
-coverimage: 'week-15-artistic'
+coverimage: 'week-15-artistic.jpg'
 ---
 
 > "Cold, hard steel. Shiny Aluminum. Or even rusted and broken down. Find your inspiration in metal this week".

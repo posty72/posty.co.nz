@@ -6,7 +6,7 @@ date:   2016-07-28 11:00:00 +1300
 categories: photos
 author: 'Josh Post'
 link: ''
-coverimage: 'week-17-landscape'
+coverimage: 'week-17-landscape.jpg'
 ---
 
 > "Landscapes are wide open spaces of natural beauty... this week find the beauty of the urbanscape/cityscape.".

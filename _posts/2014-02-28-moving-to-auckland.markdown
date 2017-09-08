@@ -3,7 +3,7 @@ layout: post
 title:  "Moving to Auckland"
 date:   2014-02-28 10:01:08 +1300
 categories: life
-coverimage: "ResizedImage19201440-229-849"
+coverimage: "ResizedImage19201440-229-849.jpg"
 synopsis: "So it finally happened. After telling people for years that the last place in New Zealand I wanted to move was Auckland, I have (rather predictably) moved to Auckland. It's too big, the houses are too expensive and it's too bloody hot. But it can't be all bad."
 author: "Josh Post"
 ---
@@ -22,6 +22,6 @@ This one is really simple: work. After 17 months of study (with only a few weeks
 ## *Auckland: a two week review*
 She's pretty big eh.
 
-Yes, it's big, warm, and diverse. I went for a three hour drive in the weekend and didn't go down the same road twice without even trying. To do that in Dunedin I'd need to crawl at about 30km an hour the whole time. But so far everybody I've met has been friendly and interesting, and I don't think that changes as much as people believe it does across the country. I somehow got roped into doing an in-house commercial with Jeremy Corbett on my second day of work, I went to Eden Park for the first time at the NRL Nines and I got to see the Auckland skyline in all it's glory. As much as I wanted to hate it, and a lot of me still does, it's been pretty good to me these first few weeks. 
+Yes, it's big, warm, and diverse. I went for a three hour drive in the weekend and didn't go down the same road twice without even trying. To do that in Dunedin I'd need to crawl at about 30km an hour the whole time. But so far everybody I've met has been friendly and interesting, and I don't think that changes as much as people believe it does across the country. I somehow got roped into doing an in-house commercial with Jeremy Corbett on my second day of work, I went to Eden Park for the first time at the NRL Nines and I got to see the Auckland skyline in all it's glory. As much as I wanted to hate it, and a lot of me still does, it's been pretty good to me these first few weeks.
 
 [Lightning Lab]: http://lightninglab.co.nz/

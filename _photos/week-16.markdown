@@ -6,7 +6,7 @@ date:   2016-07-23 11:00:00 +1300
 categories: photos
 author: 'Josh Post'
 link: ''
-coverimage: 'week-16-portrait'
+coverimage: 'week-16-portrait.jpg'
 ---
 
 > "Most portraits are stationary, so this week explore adding some movement. Dancing, twirling, or even hair flips.".

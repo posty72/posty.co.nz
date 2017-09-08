@@ -3,7 +3,7 @@ layout: post
 title:  "CMS vs Static site: performance review"
 date:   2015-12-18 14:13:08 +1300
 categories: development
-coverimage: "new-site" 
+coverimage: "new-site.png" 
 synopsis: "Moving from a CMS would obviously have some performance benefits, but what's a fact without numbers?"
 author: "Josh Post"
 ---
@@ -25,7 +25,7 @@ And the numbers reflect that clearly:
 | Pagespeed Score - Desktop | 75   | 86   | +14.67%        |
 
 
-##### Blog Index 
+##### Blog Index
 
 <small>_E.g. <http://www.posty.co.nz/blog/>_</small>
 
@@ -37,7 +37,7 @@ And the numbers reflect that clearly:
 | Pagespeed Score - Mobile  | 40   | 71   | +77.50%        |
 | Pagespeed Score - Desktop | 47   | 65   | +38.30%        |
 
-##### Blog Post 
+##### Blog Post
 
 <small>_E.g. <http://www.posty.co.nz/development/2015/12/11/breaking-away-from-the-cms.html/>_</small>
 
@@ -48,7 +48,7 @@ And the numbers reflect that clearly:
 | Number of requests        | 62   | 16   | -74.19%       |
 | Pagespeed Score - Mobile  | 42   | 74   | +76.19%        |
 | Pagespeed Score - Desktop | 68   | 77   | +13.24%        |
- 
+
 
 ##### Portfolio page
 
@@ -62,7 +62,7 @@ And the numbers reflect that clearly:
 | Pagespeed Score - Mobile  | 21   | 78   | +271.43%      |
 | Pagespeed Score - Desktop | 67   | 90   | +34.33%       |
 
-This last one, the portfolio page, shows the biggest differnce between the two. Techniques like lazy loading images and using Gulp to combine and minify assets have huge benefits. 
+This last one, the portfolio page, shows the biggest differnce between the two. Techniques like lazy loading images and using Gulp to combine and minify assets have huge benefits.
 
 These numbers reflect what I said when I [wrote about dropping the CMS]. There are huge, tangible performance increases to using a system like this.
 
