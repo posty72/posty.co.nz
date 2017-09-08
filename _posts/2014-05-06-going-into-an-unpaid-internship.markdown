@@ -16,7 +16,7 @@ The skills I learned there weren't just technical. Working to deadlines, having 
 
 For me, it was the perfect time to do an unpaid internship, and I would recommend it to anybody who is close to finishing their studies. It teaches you real-world skills without the pressure of money weighing you down, and it's a way to meet a whole new group of people with similar interests as you.
 
-There's no reason a larger company should be hiring people on an unpaid basis, but small startups need people to get things going for them. This means you have work that people can see, not some minor change to an obscure part of a website. The people you work for are far more grateful, and usually have connections in the industry which could lead to paid work. 
+There's no reason a larger company should be hiring people on an unpaid basis, but small startups need people to get things going for them. This means you have work that people can see, not some minor change to an obscure part of a website. The people you work for are far more grateful, and usually have connections in the industry which could lead to paid work.
 
 It also gives you great insight on how to start your own business. You learn how to network, push boundaries, make people believe in an idea. Being able to take an idea and turn it into something viable is important for any business, and learning this skill is something that takes a lot of effort.
 

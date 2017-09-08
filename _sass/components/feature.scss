@@ -1,0 +1,40 @@
+.features {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
+.feature {
+	flex: 1 0 100%;
+    margin-bottom: 30px;
+    padding: 15px 1.5%;
+    max-width: 800px;
+}
+
+.feature-title {
+    font-family: $header-font;
+    padding: 20px 3% 0;
+    font-size: 3em;
+    text-align: center;
+}
+
+.feature-subtitle {
+    padding: 20px 3% 0;
+    font-size: 1.5em;
+    font-family: $header-font;
+    text-align: center;
+    color: $mid-grey;
+}
+
+.feature-content {
+	padding: 15px 0;
+    font-family: $body-font;
+}
+
+.feature-image-anchor {
+    justify-content: center;
+}
+
+.feature-image {
+    width: 100%;
+}

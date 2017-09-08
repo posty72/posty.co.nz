@@ -1,23 +1,29 @@
-<div id="nav-toggle">
+<div id="nav-toggle" class="hamburger">
   <div class="hamburger-wrapper">
-    <div class="hamburger line-1"></div>
-    <div class="hamburger line-2"></div>
-    <div class="hamburger line-3"></div>
+    <div class="hamburger-item line-1"></div>
+    <div class="hamburger-item line-2"></div>
+    <div class="hamburger-item line-3"></div>
   </div>
 </div>
 
-<nav>
+<nav class="nav">
   {% assign my_page = site.pages | sort: "sortOrder" %}
-  <ul id="navLinks">
+  <ul id="navLinks" class="nav-items" role="menu">
     {% for p in my_page %}
       {% if p.title %}
-    <li><a href="{{ p.url | prepend: site.baseurl }}">{{ p.title }}</a>
+        {% if p.sortOrder %}
+        <li class="nav-item">
+          <a class="nav-item-link" href="{{ p.url | prepend: site.baseurl }}">{{ p.title }}</a>
+        </li>
+        {% endif %}
       {% endif %}
     {% endfor %}
-    <li><a href="mailto: posty72@gmail.com">Contact Me</a></li>
+    <li class="nav-item">
+      <a class="nav-item-link" href="mailto: posty72@gmail.com" target="_blank">Contact Me</a>
+    </li>
   </ul>
 </nav>
 
-<div id="top">
-    <div class="wrapper" style="transform: rotate(45deg);"></div>
+<div id="top" class="top">
+    <div class="top-wrapper" style="transform: rotate(45deg);"></div>
 </div>

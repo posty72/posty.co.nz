@@ -1,22 +1,7 @@
 ---
-# A thing
+# All the CSS comes from the scss files under "../_sass"
 ---
 
 @charset "utf-8";
 
-
-
-// @import "../assets/components/foundation-sites/scss/foundation.scss";
-
-
-@import "../_sass/_icons";
-@import "../_sass/_colours";
-@import "../_sass/_fonts";
-
-
-@import "../_sass/_layout";
-
-// Pages
-@import "../_sass/pages/_home";
-@import "../_sass/pages/_posts";
-@import "../_sass/pages/_websites"
+@import "../_sass/_index.scss";

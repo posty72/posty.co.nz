@@ -42,6 +42,7 @@ gulp.task(IMAGES, function(next) {
         'assets/images/originals/**/*.jpg',
         'assets/images/originals/**/*.jpeg'
     ])
+        // .pipe(imageResize())
       .pipe(imagemin({
           optimizationLevel: 7,
           progressive: false,

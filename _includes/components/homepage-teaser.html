@@ -1,0 +1,8 @@
+<div class="container">
+	<h2 class="page-title">
+		<a href="{{ include.link }}">{{ include.title }}</a>
+	</h2>
+
+	{% include components/teaser-block.html posts=include.category limit=3 %}
+	
+</div>

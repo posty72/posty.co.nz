@@ -8,13 +8,21 @@ layout: default
   <header class="post-header">
     <!-- <p><a href="/blog/">Blog</a></p> -->
     <h1 class="post-title" itemprop="name headline">{{ page.title }}</h1>
-    <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%b %-d, %Y" }}</time>
-    <div class="clear"></div>
+
+    {% if page.subtitle %}
+      <h3 class="post-subtitle" itemprop="subtitle" itemscope itemtype="http://schema.org/Person">
+        <em itemprop="name">{{ page.subtitle }}</em>
+      </h3>
+    {% endif %}
+
   </header>
 
   <figure>
-    <img data-src="/assets/images/Optomised/{{ page.coverimage }}" alt="{{ page.title }}" />
+    <!-- <img data-src="/assets/images/Optomised/{{ page.coverimage }}" alt="{{ page.title }}" /> -->
+    {% include components/image.html image=page.coverimage text=post.title classes='post-image' %}
   </figure>
+    
+  <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%b %-d, %Y" }}</time>
 
   <div class="post-content" itemprop="articleBody">
 

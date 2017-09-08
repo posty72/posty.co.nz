@@ -20,7 +20,7 @@ There is nothing more frustrating than downloading an app only to find it's func
 * Tap the '+' in the upper-left corner
 * Find the app you want to hide
 
-After you have added the app to the 'blocked' list, you may need to force close the app before opening it again. Now the app should behave as normal. 
+After you have added the app to the 'blocked' list, you may need to force close the app before opening it again. Now the app should behave as normal.
 
 [root-cloaker]: http://repo.xposed.info/module/com.devadvance.rootcloak
 [xposed-framwork]: http://repo.xposed.info/module/de.robv.android.xposed.installer
