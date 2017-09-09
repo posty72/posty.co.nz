@@ -36,27 +36,70 @@ gulp.task(SCRIPTS, function() {
     .pipe(gulp.dest('./_site/javascript/'));
 });
 
-gulp.task(IMAGES, function(next) {
-    gulp.src([
-        'assets/images/originals/**/*.png',
-        'assets/images/originals/**/*.gif',
-        'assets/images/originals/**/*.jpg',
-        'assets/images/originals/**/*.jpeg'
-    ])
-      .pipe(imageResize({
-        width: 1920
-      }))
-      .pipe(imagemin({
-          optimizationLevel: 7,
-          progressive: true
-      }))
-      .pipe(gulp.dest('assets/images/optimised'))
-      .on('end', function() {
-          next();
-      })
-      .on('error', function() {
-          next();
+gulp.task(IMAGES, (next) => {
+  const imageSizes = [320, 480, 800, 1920];
+
+  let finished = 0;
+
+  imageSizes.forEach((size, index) => {
+      gulp.src([
+          'assets/images/originals/**/*.png',
+          'assets/images/originals/**/*.gif',
+          'assets/images/originals/**/*.jpg',
+          'assets/images/originals/**/*.jpeg'
+      ])
+        .pipe(imageResize({
+          width: size
+        }))
+        .pipe(imagemin({
+            optimizationLevel: 7,
+            progressive: true
+        }))
+        .pipe(gulp.dest('assets/images/optimised/'+ size))
+        .on('end', function() {
+          finished++;
+          if (finished === 2) {
+            next();
+          }
+        })
+        .on('error', function() {
+          finished++;
+          if (finished === 2) {
+            next();
+          }
+        });
       });
+
+    imageSizes.forEach((size, index) => {
+        gulp.src([
+            'assets/images/originals/**/*.png',
+            'assets/images/originals/**/*.gif',
+            'assets/images/originals/**/*.jpg',
+            'assets/images/originals/**/*.jpeg'
+        ])
+          .pipe(imageResize({
+            width: size,
+            height: size,
+            crop: true
+          }))
+          .pipe(imagemin({
+              optimizationLevel: 7,
+              progressive: true
+          }))
+          .pipe(gulp.dest('assets/images/optimised/thumbnails/'+ size))
+          .on('end', function() {
+            finished++;
+            if (finished === 2) {
+              next();
+            }
+          })
+          .on('error', function() {
+            finished++;
+            if (finished === 2) {
+              next();
+            }
+          });
+        });
 });
 
 gulp.task(WATCH, [SCRIPTS, BUILD], () => {
