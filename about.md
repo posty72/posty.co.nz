@@ -3,7 +3,7 @@ layout: post
 title: About Me
 permalink: /about/
 sortOrder: '2'
-coverimage: week-1-portrait
+coverimage: week-1-portrait.jpg
 subtitle: Josh Post
 date: '2017-03-26 10:01:08 +1300'
 categories: meta
