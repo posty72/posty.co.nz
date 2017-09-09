@@ -5,7 +5,7 @@ const shell = require('gulp-shell');
 const connect = require('gulp-connect');
 const uglify = require('gulp-uglify');
 const imagemin = require('gulp-imagemin');
-// const imageResize = require('gulp-image-resize');
+const imageResize = require('gulp-image-resize');
 
 const BUILD = 'build';
 const SERVE = 'serve';
@@ -43,11 +43,12 @@ gulp.task(IMAGES, function(next) {
         'assets/images/originals/**/*.jpg',
         'assets/images/originals/**/*.jpeg'
     ])
-        // .pipe(imageResize())
+      .pipe(imageResize({
+        width: 1920
+      }))
       .pipe(imagemin({
           optimizationLevel: 7,
-          progressive: false,
-          interlaced: true
+          progressive: true
       }))
       .pipe(gulp.dest('assets/images/optimised'))
       .on('end', function() {

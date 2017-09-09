@@ -5,7 +5,7 @@ date:   2013-02-13 10:01:08 +1300
 categories: websites
 author: 'Josh Post'
 link: 'https://github.com/posty72/volition'
-coverimage: 'volition'
+coverimage: 'volition.gif'
 ---
 
 This was the main server-side assignment at Natcoll, and it's where I cut my teeth on PHP.

@@ -31,7 +31,7 @@ We’ll take something as simple as writing CSS for a single class. We can enfor
 
 The more we can have at the linter level, the less time developers will need to spend on thinking “how should this be done”. When new developers are added to the project, it’s vital that they are brought up to speed with standards as soon as possible to prevent back-and-forth discussions that could last days as other developers become busy again.&nbsp;
 
-“”Consistency across projects and teams is key. “”
+> Consistency across projects and teams is key.
 
 I also find it good practice to keep developers outside the project up to date through regular walkthroughs. This reduces on boarding time, and provides an opportunity for fresh ideas to come in.&nbsp;
 

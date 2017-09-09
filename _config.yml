@@ -20,7 +20,7 @@ google_fonts:
   - "Oxygen:400,300,700,600"      # Body
   # - "Balthazar"
   # - "Inika"
-coverimage: 'week-18-artistic'
+coverimage: 'week-18-artistic.jpg'
 
 collections:
   websites:
