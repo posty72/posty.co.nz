@@ -6,6 +6,7 @@ addons:
   apt:
     packages:
     - imagemagick
+    - graphicsmagick
 install:
   - npm install
 script:
