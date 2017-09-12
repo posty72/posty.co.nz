@@ -14,7 +14,9 @@
 						1920"
 				src="/assets/images/optimised/1920{{ imagename }}"
 				alt="{{ alttext }}" />
-	<!-- <textarea class="picture">
+
+	{% comment %}
+	<textarea class="picture">
 		<picture>
 
 		    <source srcset="/assets/images/responsive/{{ imagename }}-1920.jpg, /assets/images/responsive/{{ imagename }}-1920x2.jpg 2x" media="(min-width: 1600px)">
@@ -28,5 +30,6 @@
 		    {% endif %}
 
 		</picture>
-	</textarea> -->
+	</textarea>
+	{% endcomment %}
 </div>
