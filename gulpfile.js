@@ -46,7 +46,7 @@ gulp.task(SCRIPTS, function() {
 });
 
 gulp.task(IMAGES, (next) => {
-    const imageSizes = [320, 480, 800, 1920]; // eslint-disable-line no-magic-numbers
+    const imageSizes = [50, 320, 480, 800, 1920]; // eslint-disable-line no-magic-numbers
 
     imageSizes.forEach((size, index) => {
         gulp.src([

@@ -17,7 +17,12 @@
         transition: opacity 1s ease;
     }
 
-    &.is-loaded .thumbnail-image {
-        opacity: 1;
+    &.is-loaded {
+        .thumbnail-small {
+            display: none;
+        }
+        .thumbnail-image {
+            opacity: 1;
+        }
     }
 }
