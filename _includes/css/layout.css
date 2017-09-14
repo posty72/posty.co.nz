@@ -815,28 +815,37 @@ table th, table td {
 }
 .thumbnail {
     position: relative;
-    overflow: hidden;
+    width: 100%
+}
+.thumbnail::after {
+  padding-top: 75%;
+  display: block;
+  content: '';
 }
 .thumbnail-small {
+        position: absolute;
         width: 100%;
+        height: 100%;
         filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feGaussianBlur stdDeviation="50" /></filter></svg>#filter');
         -webkit-filter: blur(50px);
                 filter: blur(50px);
         transform: scale(1);
-    }
+        transition: opacity 1s ease;
+}
 .thumbnail-image {
         position: absolute;
         top: 0;
         left: 0;
-        opacity: 0;
         width: 100%;
+        height: 100%;
+        opacity: 0;
         transition: opacity 1s ease;
-    }
+        object-fit: cover;
+}
 .thumbnail.is-loaded .thumbnail-small {
-            display: none;
+            opacity: 0;
 }
 .thumbnail.is-loaded .thumbnail-image {
-            position: static;
             opacity: 1;
 }
 .top {
