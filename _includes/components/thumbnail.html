@@ -3,15 +3,17 @@
 {% assign alttext = include.text %}
 {% assign classes = include.classes %}
 
-<div>
-	<img srcset="/assets/images/optimised/thumbnails/320/{{ imagename }} 320w,
-             /assets/images/optimised/thumbnails/480/{{ imagename }} 480w,
-             /assets/images/optimised/thumbnails/800/{{ imagename }} 800w"
-			 sizes="(max-width: 320px) 280px,
+<div class="thumbnail">
+	<img class="thumbnail-small" src="/assets/images/optimised/320/{{ imagename }}" />
+	<img class="thumbnail-image"
+		data-srcset="/assets/images/optimised/320/{{ imagename }} 320w,
+             /assets/images/optimised/480/{{ imagename }} 480w,
+             /assets/images/optimised/800/{{ imagename }} 800w"
+		data-sizes="(max-width: 320px) 280px,
             (max-width: 480px) 440px,
-						800"
-				src="/assets/images/optimised/thumbnails/800/{{ imagename }}"
-				alt="{{ alttext }}" />
+			800"
+		data-src="/assets/images/optimised/800/{{ imagename }}"
+		alt="{{ alttext }}" />
 
 	{% comment %}
 	<!-- <textarea class="picture">

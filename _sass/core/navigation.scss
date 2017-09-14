@@ -1,5 +1,5 @@
 .nav-open {
-  @media screen and ($break-small) {
+  @media (--to-small-screen-w) {
     overflow-y: hidden;
 
     > body {
@@ -17,11 +17,8 @@
   z-index: 100;
   width: calc(100% - 45px);
 
-  @media sceen and ($break-large) {
+  @media (--to-small-screen-w) {
     display: none;
-  }
-
-  @media screen and ($break-small) {
     position: absolute;
     top: 0;
     height: 100%;
@@ -38,7 +35,7 @@
   flex-direction: row;
   align-items: center;
 
-  @media screen and ($break-small){
+  @media (--to-small-screen-w){
     box-shadow: 0px 0px 3px #333;
     background-color: rgba(255, 255, 255, 1);
     min-height: 100%;
@@ -52,7 +49,8 @@
   flex: 1 1 10%;
   list-style: none;
   text-align: center;
-  @media screen and ($break-small) {
+
+  @media (--to-small-screen-w) {
     font-size: 2.5em;
     text-align: left;
   }
@@ -63,7 +61,8 @@
   display: block;
   color: $color-primary;
   padding: 10px;
-  @media screen and ($break-small) {
+
+  @media (--to-small-screen-w) {
     padding: 20px 10%;
   }
 }

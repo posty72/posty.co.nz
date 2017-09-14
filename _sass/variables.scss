@@ -24,12 +24,22 @@ $header-font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica 
 $body-font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 
 
+
 /*
     Breakpoints
  */
-$break-small: "max-width: 767px";
-$break-medium: "min-width: 768px";
-$break-large: "max-width: 1200px";
+@custom-media --to-tiny-screen-w (max-width: 400px);
+@custom-media --to-small-screen-w (max-width: 600px);
+@custom-media --to-medium-screen-w (max-width: 800px);
+@custom-media --to-normal-screen-w (max-width: 1000px);
+@custom-media --to-large-screen-w (max-width: 1200px);
+
+@custom-media --from-tiny-screen-w (min-width: 401px);
+@custom-media --from-small-screen-w (min-width: 601px);
+@custom-media --from-medium-screen-w (min-width: 801px);
+@custom-media --from-normal-screen-w (min-width: 1001px);
+@custom-media --from-large-screen-w (min-width: 1201px);
+
 
 
 /*

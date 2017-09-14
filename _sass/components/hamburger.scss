@@ -11,7 +11,7 @@
   box-sizing: border-box;
   cursor: pointer;
 
-  @media screen and ($break-small){
+  @media (--to-small-screen-w){
     display: block;
   }
 }

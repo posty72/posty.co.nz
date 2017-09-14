@@ -1,0 +1,23 @@
+.thumbnail {
+    position: relative;
+    overflow: hidden;
+
+    &-small {
+        width: 100%;
+        filter: blur(50px);
+        transform: scale(1);
+    }
+
+    &-image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        width: 100%;
+        transition: opacity 1s ease;
+    }
+
+    &.is-loaded .thumbnail-image {
+        opacity: 1;
+    }
+}

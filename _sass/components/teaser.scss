@@ -9,9 +9,7 @@
   padding: 1.5%;
   flex: 1 1 33%;
 
-
-
-  @media screen and ($break-small){
+  @media (--to-small-screen-w){
     flex: 1 1 100%;
   }
 }
@@ -22,7 +20,7 @@
   font-size: 2em;
   text-align: center;
 
-  @media screen and ($break-small){
+  @media (--to-small-screen-w){
     padding: 15px 0 0;
     text-align: left;
   }
@@ -44,13 +42,13 @@
   padding: 15px;
   font-family: $body-font;
 
-  @media screen and ($break-small){
+  @media (--to-small-screen-w){
     padding: 15px 0;
   }
 }
 
 .teaser-anchorImage {
-	
+
 }
 
 .teaser-image {
@@ -65,11 +63,12 @@
   font-family: $body-font;
 }
 
-@media screen and ($break-medium) {
+@media (--to-medium-screen-w) {
 
   .teaser:first-child {
     width: 100%;
     flex: 1 1 100%;
+
     .teaser-title {
       font-size: 3em;
     }

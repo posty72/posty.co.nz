@@ -8,13 +8,10 @@
 }
 
 .post-header {
-  background-color: transparent;
-  width: 100%;
-  max-width: 1000px;
-
-  @media screen and ($break-small) {
+    background-color: transparent;
+    width: 100%;
+    max-width: 1000px;
     padding: 0 15px;
-  }
 }
 
 .post-image {
@@ -99,12 +96,11 @@ time {
   padding: 10px;
 }
 
- 
-@media screen and ($break-small) {
+
+@media (--from-small-screen-w) {
   .post .post-content,
   figure {
     padding: 15px;
     box-sizing: border-box;
   }
-  
 }
