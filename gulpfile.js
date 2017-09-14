@@ -30,7 +30,7 @@ gulp.task(BUILD, shell.task([
 }));
 
 gulp.task(STYLES, function() {
-    gulp.src('./_sass/index.scss')
+    gulp.src('./sass/index.scss')
     .pipe(postcss())
     .pipe(concat('layout.css'))
     .pipe(gulp.dest('./_includes/css'));
@@ -79,5 +79,5 @@ gulp.task(IMAGES, (next) => {
 
 gulp.task(WATCH, [STYLES, SCRIPTS, BUILD], () => {
     gulp.watch('javascript/*', [SCRIPTS, BUILD]);
-    gulp.watch('_sass/*', [SCRIPTS, BUILD]);
+    gulp.watch('sass/*', [SCRIPTS, BUILD]);
 });
