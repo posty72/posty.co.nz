@@ -16,10 +16,23 @@
             threshold: 0
         };
 
-        var observer = new IntersectionObserver(handleIntersect, options);
-        boxElements.forEach(function(boxElement){
-            observer.observe(boxElement);
-        });
+        if (window.IntersectionObserver) {
+            var observer = new IntersectionObserver(handleIntersect, options);
+            boxElements.forEach(function(boxElement){
+                observer.observe(boxElement);
+            });
+        } else {
+            boxElements.forEach(function(element){
+                var thumbnail = element;
+                var image = thumbnail.querySelector('.thumbnail-image');
+
+                thumbnail.classList.add('is-loaded');
+
+                image.srcset = image.dataset.srcset;
+                image.sizes = image.dataset.sizes;
+                image.src = image.dataset.src;
+            });
+        }
     }
 
     function handleIntersect(entries) {
