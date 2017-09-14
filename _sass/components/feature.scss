@@ -5,16 +5,16 @@
 }
 
 .feature {
-	flex: 1 0 100%;
-    margin-bottom: 30px;
-    padding: 15px 1.5%;
-    max-width: 800px;
+	flex: 1 0 75%;
+    margin-bottom: rem(30);
+    padding: rem(15) 1.5%;
+    max-width: rem(800);
 }
 
 .feature-title {
     font-family: $header-font;
     padding: 20px 3% 0;
-    font-size: 3em;
+    font-size: rem(22);
     text-align: center;
 }
 
@@ -23,11 +23,11 @@
     font-size: 1.5em;
     font-family: $header-font;
     text-align: center;
-    color: $mid-grey;
+    color: $color-light-2;
 }
 
 .feature-content {
-	padding: 15px 0;
+	padding: rem(15) 0;
     font-family: $body-font;
 }
 

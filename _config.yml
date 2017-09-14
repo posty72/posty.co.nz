@@ -11,15 +11,10 @@ email: posty72@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
   I am a web developer from New Zealand. I build great products using great tools.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://posty.co.nz/" # the base hostname & protocol for your site
+url: "https://www.posty.co.nz/" # the base hostname & protocol for your site
 twitter_username: posty72
 github_username:  posty72
 linkedin_url: http://nz.linkedin.com/in/joshpost
-google_fonts:
-  - "BenchNine:400,400italic,700" # Header
-  - "Oxygen:400,300,700,600"      # Body
-  # - "Balthazar"
-  # - "Inika"
 coverimage: 'week-18-artistic.jpg'
 
 collections:
@@ -34,8 +29,5 @@ collections:
 
 # Build settings
 markdown: kramdown
-sass:
-  style: compressed
-  sourcemap: true
 
 exclude: ['node_modules', 'gulpfile.js', 'package.json', 'aws.json', 'README.md', 'bower.json', '*.log', '_drafts', 'images.js', 'Gemfile', Gemfile.lock]

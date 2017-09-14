@@ -25,7 +25,7 @@
   max-width: 570px;
   padding:  2%;
   overflow-wrap: break-word;
-  color: $black;
+  color: $color-dark;
   ol li,
   ul li {
     margin-left: 40px;
@@ -62,7 +62,7 @@ figure {
   max-width:1200px;
   margin: 10px auto;
   figcaption {
-    border-bottom: 1px dashed $maroon;
+    border-bottom: 1px dashed $color-secondary;
   }
 }
 
@@ -74,11 +74,11 @@ figure {
 .post-subtitle {
   font-size: 2em;
   padding: 0 0 20px;
-  color: $mid-grey;
+  color: $color-light-2;
 }
 
 time {
-  color: $maroon;
+  color: $color-secondary;
   text-align: right;
   font-style: italic;
   display: block;
@@ -86,7 +86,7 @@ time {
 }
 
 .post-author {
-  color: $maroon;
+  color: $color-secondary;
   /* text-indent: 10%; */
   padding: 25px 0;
   text-align: center;

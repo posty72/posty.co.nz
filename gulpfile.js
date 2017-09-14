@@ -1,4 +1,6 @@
 
+/* eslint-disable */
+
 const gulp = require('gulp');
 const concat = require('gulp-concat');
 const shell = require('gulp-shell');
@@ -6,12 +8,14 @@ const connect = require('gulp-connect');
 const uglify = require('gulp-uglify');
 const imagemin = require('gulp-imagemin');
 const imageResize = require('gulp-image-resize');
+const postcss = require('gulp-postcss');
 
 const BUILD = 'build';
 const SERVE = 'serve';
 const SCRIPTS = 'scripts';
 const IMAGES = 'images';
 const WATCH = 'watch';
+const STYLES = 'styles';
 
 gulp.task(SERVE, function() {
     connect.server({
@@ -25,6 +29,23 @@ gulp.task(BUILD, shell.task([
 ], {
     ignoreErrors: true
 }));
+
+gulp.task(STYLES, function () {
+    gulp.src('./_sass/index.scss')
+    .pipe(postcss())
+    .pipe(concat('layout.css'))
+    .pipe(gulp.dest('./_includes/css'));
+});
+
+gulp.task(SCRIPTS, function() {
+    gulp.src([
+        './javascript/main.js'
+    ])
+    .pipe(uglify())
+    .pipe(concat('all.js'))
+    .pipe(gulp.dest('./javascript/'))
+    .pipe(gulp.dest('./_site/javascript/'));
+});
 
 gulp.task(SCRIPTS, function() {
     gulp.src([

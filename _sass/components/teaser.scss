@@ -29,7 +29,7 @@
 }
 
 .teaser-title-link {
-  color: $black;
+  color: $color-dark;
 }
 
 .teaser-subtitle {
@@ -40,7 +40,7 @@
 }
 
 .teaser-description {
-  color: $black;
+  color: $color-dark;
   padding: 15px;
   font-family: $body-font;
 
@@ -58,7 +58,7 @@
 }
 
 .teaser-time {
-  color: $maroon;
+  color: $color-secondary;
   text-align: right;
   font-style: italic;
   display: block;

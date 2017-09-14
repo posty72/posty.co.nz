@@ -18,8 +18,8 @@ body {
 
 a {
   text-decoration: none;
-  color: $green;
-  transition: opacity 250ms ease; 
+  color: $color-primary;
+  transition: opacity 250ms ease;
 
   &:hover {
     opacity: 0.9;
@@ -40,8 +40,8 @@ p, li {
 }
 
 blockquote {
-  border-left: 3px solid $maroon;
-  background-color: $lite-grey;
+  border-left: 3px solid $color-secondary;
+  background-color: $color-light-1;
   padding: 20px;
   margin: 10px 0;
 }
@@ -70,7 +70,7 @@ iframe {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 20px;
+  padding: rem(20);
 }
 
 .main {

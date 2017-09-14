@@ -8,7 +8,7 @@
     "scripts": {
         "postinstall": "bundle install",
         "test": "echo 'No tests yet!'",
-        "build": "gulp images && gulp scripts && gulp build",
+        "build": "gulp images && gulp styles && gulp scripts && gulp build",
         "dev": "gulp watch"
     },
     "devDependencies": {
@@ -19,6 +19,18 @@
         "gulp-shell": "^0.5.1",
         "gulp-uglify": "^1.5.1",
         "gulp-imagemin": "^3.3.0",
-        "gulp-image-resize": "^0.13.0"
+        "gulp-image-resize": "^0.13.0",
+        "gulp-postcss": "^7.0.0",
+        "postcss": "^6.0.11",
+        "postcss-cssnext": "^3.0.2",
+        "postcss-import": "^10.0.0",
+        "postcss-remify": "^1.0.1",
+        "postcss-scss": "^1.0.2",
+        "postcss-simple-vars": "^4.1.0",
+        "postcss-strip-inline-comments": "^0.1.5",
+        "precss": "^2.0.0"
+    },
+    "dependencies": {
+        "normalize.css": "^7.0.0"
     }
 }
