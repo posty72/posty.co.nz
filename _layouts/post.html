@@ -18,10 +18,9 @@ layout: default
   </header>
 
   <figure>
-    <!-- <img data-src="/assets/images/Optomised/{{ page.coverimage }}" alt="{{ page.title }}" /> -->
     {% include components/image.html image=page.coverimage text=post.title classes='post-image' %}
   </figure>
-    
+
   <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%b %-d, %Y" }}</time>
 
   <div class="post-content" itemprop="articleBody">
@@ -33,7 +32,7 @@ layout: default
         <em itemprop="name">{{ page.author }}</em>
       </h3>
     {% endif %}
-    
+
   </div>
 
 </article>
