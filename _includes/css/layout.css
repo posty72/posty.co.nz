@@ -832,8 +832,12 @@ table th, table td {
         width: 100%;
         transition: opacity 1s ease;
     }
+.thumbnail.is-loaded .thumbnail-small {
+            display: none;
+}
 .thumbnail.is-loaded .thumbnail-image {
-  opacity: 1;
+            position: static;
+            opacity: 1;
 }
 .top {
   position: fixed;
