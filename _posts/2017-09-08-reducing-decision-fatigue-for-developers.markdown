@@ -23,7 +23,8 @@ TL;DR:
 * Consistency is key 🔑
 * Good products start with good code which starts with good developers which starts with good understanding
 
-The most effective way to increase the productivity of your development team is to understand that code is never written in isolation. A team of developers are the most competent when they can jump in to any part of the project at any time and know exactly how they need to solve the problem. This reduces “decision fatigue”, where a developer has to break their flow in order to think about how they’re going to implement something.
+
+Increasing the productivity of your development team comes down to understanding that code is never written in isolation. A team of developers are the most competent when they can jump in to any part of the project at any time and know exactly how they need to solve the problem. This reduces “decision fatigue”, where a developer has to break their flow in order to think about how they’re going to implement something.
 
 At the beginning of a project, the team needs to work out a good set of guidelines that they all agree on. This goes further than settling on a framework, as keeping maintainable code is the same as keeping consistent code. The more this can be reinforced through things like linters, unit tests, peer reviews and templates the easier this will become.&nbsp;
 
