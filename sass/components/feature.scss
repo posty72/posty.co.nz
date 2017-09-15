@@ -14,13 +14,11 @@
 .feature-title {
     font-family: $header-font;
     padding: 20px 3% 0;
-    font-size: rem(22);
     text-align: center;
 }
 
 .feature-subtitle {
     padding: 20px 3% 0;
-    font-size: 1.5em;
     font-family: $header-font;
     text-align: center;
     color: $color-light-2;
@@ -28,7 +26,7 @@
 
 .feature-content {
 	padding: rem(15) 0;
-    font-family: $body-font;
+    font-family: $font-body;
 }
 
 .feature-image-anchor {

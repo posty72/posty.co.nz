@@ -5,13 +5,15 @@
 .home {
     width: 100%;
     height: 100%;
-    background-size: cover;
-    padding: 10%;
-    box-sizing: border-box;
+    padding: rem(15);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+
+
+    background-color: $color-white-shade-1;
+    border-bottom: 3px solid $color-secondary;
 
 
     // Children
@@ -27,10 +29,7 @@
     }
 
     &-title {
-      color: #fff;
       text-align: center;
-      font-size: 6em;
-      padding: 20px;
-      text-shadow: 3px 3px 0px #000;
+      padding: rem(20);
     }
 }

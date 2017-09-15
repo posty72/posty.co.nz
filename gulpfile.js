@@ -8,6 +8,7 @@ const uglify = require('gulp-uglify');
 const imagemin = require('gulp-imagemin');
 const imageResize = require('gulp-image-resize');
 const postcss = require('gulp-postcss');
+const minify = require('gulp-clean-css');
 
 const BUILD = 'build';
 const SERVE = 'serve';
@@ -24,7 +25,7 @@ gulp.task(SERVE, function() {
 });
 
 gulp.task(BUILD, shell.task([
-    'jekyll build'
+    'jekyll build --incremental'
 ], {
     ignoreErrors: true
 }));
@@ -32,6 +33,7 @@ gulp.task(BUILD, shell.task([
 gulp.task(STYLES, function() {
     gulp.src('./sass/index.scss')
     .pipe(postcss())
+    .pipe(minify())
     .pipe(concat('layout.css'))
     .pipe(gulp.dest('./_includes/css'));
 });
@@ -56,7 +58,8 @@ gulp.task(IMAGES, (next) => {
             'assets/images/originals/**/*.jpeg'
         ])
         .pipe(imageResize({
-            width: size
+            width: size,
+            format : 'jpg'
         }))
         .pipe(imagemin({
             optimizationLevel: 7,

@@ -1,5 +1,5 @@
 .nav-open {
-  @media (--to-small-screen-w) {
+  @media (--to-medium-screen-w) {
     overflow-y: hidden;
 
     > body {
@@ -17,7 +17,7 @@
   z-index: 100;
   width: calc(100% - 45px);
 
-  @media (--to-small-screen-w) {
+  @media (--to-medium-screen-w) {
     display: none;
     position: absolute;
     top: 0;
@@ -35,7 +35,7 @@
   flex-direction: row;
   align-items: center;
 
-  @media (--to-small-screen-w){
+  @media (--to-medium-screen-w){
     box-shadow: 0px 0px 3px #333;
     background-color: rgba(255, 255, 255, 1);
     min-height: 100%;
@@ -50,7 +50,7 @@
   list-style: none;
   text-align: center;
 
-  @media (--to-small-screen-w) {
+  @media (--to-medium-screen-w) {
     font-size: 2.5em;
     text-align: left;
   }
@@ -62,7 +62,7 @@
   color: $color-primary;
   padding: 10px;
 
-  @media (--to-small-screen-w) {
+  @media (--to-medium-screen-w) {
     padding: 20px 10%;
   }
 }

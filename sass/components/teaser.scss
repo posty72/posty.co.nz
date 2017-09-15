@@ -9,7 +9,7 @@
   padding: 1.5%;
   flex: 1 1 33%;
 
-  @media (--to-small-screen-w){
+  @media (--to-medium-screen-w){
     flex: 1 1 100%;
   }
 }
@@ -17,10 +17,9 @@
 .teaser-title {
   font-family: $header-font;
   padding: 20px 3% 0;
-  font-size: 2em;
   text-align: center;
 
-  @media (--to-small-screen-w){
+  @media (--to-medium-screen-w){
     padding: 15px 0 0;
     text-align: left;
   }
@@ -33,16 +32,15 @@
 .teaser-subtitle {
   font-family: $header-font;
   padding: 20px 3% 0;
-  font-size: 1.5em;
   text-align: center;
 }
 
 .teaser-description {
   color: $color-dark;
   padding: 15px;
-  font-family: $body-font;
+  font-family: $font-body;
 
-  @media (--to-small-screen-w){
+  @media (--to-medium-screen-w){
     padding: 15px 0;
   }
 }
@@ -60,7 +58,7 @@
   text-align: right;
   font-style: italic;
   display: block;
-  font-family: $body-font;
+  font-family: $font-body;
 }
 
 @media (--to-medium-screen-w) {
@@ -68,10 +66,5 @@
   .teaser:first-child {
     width: 100%;
     flex: 1 1 100%;
-
-    .teaser-title {
-      font-size: 3em;
-    }
   }
-
 }

@@ -1,5 +1,5 @@
 
-  
+
 {% if include.limit %}
   {% assign limitedto = include.limit %}
 {% else %}
@@ -14,19 +14,19 @@
 
       <a class="feature-image-anchor" href="{{ feature.url }}">
         <!-- <img class="feature-image" data-src="/assets/images/Optomised/{{ feature.coverimage }}" alt="{{ feature.title }}" /> -->
-        {% include components/image.html image=feature.coverimage text=feature.title classes='feature-image' %}
+        {% include components/thumbnail.html image=feature.coverimage text=feature.title classes='feature-image' %}
       </a>
 
       <h1 class="feature-title">
         <a href="{{ feature.url }}">{{ feature.title }}</a>
-      </h1> 
+      </h1>
 
       {% if feature.subtitle %}
         <h4 class="feature-subtitle">{{ feature.subtitle }}</h4>
       {% endif %}
 
       <div class="feature-content">
-      
+
         {{ feature.content }}
 
         {% if feature.company %}

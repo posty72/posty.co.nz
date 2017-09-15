@@ -1,5 +1,7 @@
 .thumbnail {
     position: relative;
+    background-color: $color-white-shade-1;
+    overflow: hidden;
     width: 100%;
 
     &::after {

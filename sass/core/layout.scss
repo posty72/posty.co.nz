@@ -2,7 +2,7 @@
 
 body, html {
   height: 100%;
-  font-family: $body-font;
+  font-family: $font-body;
 }
 
 body {
@@ -29,6 +29,7 @@ a {
 h1, h2, h3, h4, h5 {
   font-family: $header-font;
   word-break: break-word;
+  margin: 0 0 rem(15);
 }
 
 p {
@@ -36,14 +37,14 @@ p {
 }
 
 p, li {
-  font-family: $body-font;
+  font-family: $font-body;
 }
 
 blockquote {
   border-left: 3px solid $color-secondary;
   background-color: $color-light-1;
   padding: 20px;
-  margin: 10px 0;
+  margin: 0 0 rem(10);
 }
 
 img {
