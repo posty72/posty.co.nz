@@ -6,13 +6,15 @@
 <div>
 	<img {% if classes %} class="{{ classes }}" {% endif %}
 		srcset="/assets/images/optimised/320/{{ imagename }} 320w,
-             /assets/images/optimised/480/{{ imagename }} 480w,
-             /assets/images/optimised/800/{{ imagename }} 800w"
-			 sizes="(max-width: 320px) 280px,
-            		(max-width: 480px) 440px,
-        	  		(max-width: 800px) 750px
+            /assets/images/optimised/480/{{ imagename }} 480w,
+            /assets/images/optimised/800/{{ imagename }} 800w,
+            /assets/images/optimised/1920/{{ imagename }} 1920w"
+			 sizes="(min-width: 1200px) 1920px,
+            		(min-width: 800px) 800px,
+        	  		(min-width: 480px) 480px,
+        	  		(min-width: 320px) 320px,
 					1920"
-				src="/assets/images/optimised/1920{{ imagename }}"
+				src="/assets/images/optimised/1920/{{ imagename }}"
 				alt="{{ alttext }}" />
 
 	{% comment %}
