@@ -1,6 +1,5 @@
 import Feature from '../components/feature';
 import Link from 'gatsby-link';
-import Preview from '../components/preview';
 import PropTypes from 'prop-types';
 import React from 'react';
 

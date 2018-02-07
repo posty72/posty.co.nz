@@ -1,4 +1,5 @@
 import Link from 'gatsby-link';
+import PropTypes from 'prop-types';
 import React from 'react';
 
 const Preview = ({ data }) => (
@@ -17,5 +18,9 @@ const Preview = ({ data }) => (
         </Link>
     </article>
 );
+
+Preview.propTypes = {
+    data: PropTypes.object.isRequired
+};
 
 export default Preview;

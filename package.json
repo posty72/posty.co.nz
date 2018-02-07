@@ -12,7 +12,9 @@
     "build": "gatsby build",
     "develop": "gatsby develop",
     "format": "prettier --trailing-comma es5 --no-semi --single-quote --write \"src/**/*.js\"",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint": "npm run lint:js && npm run lint:css",
+    "lint:js": "eslint ./src/**/*.{js,jsx} --fix",
+    "lint:css": "stylelint ./src/**/*.scss --syntax scss"
   },
   "devDependencies": {
     "cssnano": "^3.10.0",

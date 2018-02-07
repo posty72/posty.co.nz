@@ -3,6 +3,8 @@ node_js:
   - "8"
 install:
   - npm install
+test:
+  - npm run lint
 script:
   - npm run build
 deploy:

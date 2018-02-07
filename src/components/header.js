@@ -1,5 +1,6 @@
 import Link from 'gatsby-link';
 import Navigation from './navigation';
+import PropTypes from 'prop-types';
 import React from 'react';
 
 const Header = ({ data, toggleNav }) => {
@@ -15,6 +16,11 @@ const Header = ({ data, toggleNav }) => {
 
         </header>
     );
+};
+
+Header.propTypes = {
+    data: PropTypes.object.isRequired,
+    toggleNav: PropTypes.func.isRequired
 };
 
 export default Header;

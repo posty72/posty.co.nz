@@ -7,8 +7,8 @@ http://prismjs.com/download.html?themes=prism&languages=markup+css+clike+javascr
  */
 /* stylelint-disable */
 
-code[class*="language-"],
-pre[class*="language-"] {
+code[class*='language-'],
+pre[class*='language-'] {
     color: BLACK;
     font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
     -ms-hyphens: none;
@@ -29,45 +29,45 @@ pre[class*="language-"] {
     tab-size: 4;
 }
 
-pre[class*="language-"]::-moz-selection,
-pre[class*="language-"] ::-moz-selection,
-code[class*="language-"]::-moz-selection,
-code[class*="language-"] ::-moz-selection {
+pre[class*='language-']::-moz-selection,
+pre[class*='language-'] ::-moz-selection,
+code[class*='language-']::-moz-selection,
+code[class*='language-'] ::-moz-selection {
     text-shadow: none;
 
     background: #B3D4FC;
 }
 
-pre[class*="language-"]::selection,
-pre[class*="language-"] ::selection,
-code[class*="language-"]::selection,
-code[class*="language-"] ::selection {
+pre[class*='language-']::selection,
+pre[class*='language-'] ::selection,
+code[class*='language-']::selection,
+code[class*='language-'] ::selection {
     text-shadow: none;
 
     background: #B3D4FC;
 }
 
 @media print {
-    code[class*="language-"],
-    pre[class*="language-"] {
+    code[class*='language-'],
+    pre[class*='language-'] {
         text-shadow: none;
     }
 }
 
 /* Code blocks */
-pre[class*="language-"] {
+pre[class*='language-'] {
     padding: 1em;
     margin: 0.5em 0;
     overflow: auto;
 }
 
-:not(pre) > code[class*="language-"],
-pre[class*="language-"] {
+:not(pre) > code[class*='language-'],
+pre[class*='language-'] {
     background: #F5F2F0;
 }
 
 /* Inline code */
-:not(pre) > code[class*="language-"] {
+:not(pre) > code[class*='language-'] {
     padding: 0.1em;
 
     white-space: normal;
