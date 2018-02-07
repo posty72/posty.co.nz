@@ -1,23 +1,14 @@
 # posty.co.nz
+Built with Gatsby
 
-This is the generator for my 2015 version of posty.co.nz. This is a Jekyll based site that uses Gulp for development and deploying to an AWS S3 bucket where the site gets served from.
+For an overview of the project structure please refer to the [Gatsby documentation - Building with Components](https://www.gatsbyjs.org/docs/building-with-components/)
 
-## Setup
+<<<<<<< Updated upstream
+Install this starter (assuming Gatsby is installed) by running from your CLI:
+```
+gatsby new gatsby-example-site
+```
 
-Prerequisites:
-- [NodeJS]
-- [NPM] \(Should come with NodeJS\)
-- [Gulp]
-- [Ruby] & Bundler
+## Deploy
 
-1. After downloading the repo, cd into it.
-2. Run `npm install`
-3. Run `bundle install`
-4. Run `gulp`
-5. Go to your browser and go to <http://localhost:8081>
-
-
-[NodeJS]: https://nodejs.org/en/download/
-[NPM]: https://www.npmjs.com/package/npm
-[Gulp]: http://gulpjs.com/
-[Ruby]: http://rubyinstaller.org/
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/gatsbyjs/gatsby-starter-default)

@@ -1,15 +1,9 @@
-*.log
 
-# Jekyll
-_site
-.sass-cache
-.jekyll-metadata
-
-#NPM
+# Project dependencies
+# https://www.npmjs.org/doc/misc/npm-faq.html#should-i-check-my-node_modules-folder-into-git
 node_modules
-
-#AWS
-aws.json
-.awspublish-*
-
-assets/images/optimised
+.cache/
+# Build directory
+public/
+.DS_Store
+yarn-error.log
