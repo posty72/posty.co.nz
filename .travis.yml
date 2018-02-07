@@ -3,9 +3,6 @@ node_js:
   - "8"
 sudo: required
 addons:
-  apt:
-    packages:
-    - imagemagick
 install:
   - npm install
 script:
