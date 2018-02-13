@@ -6,6 +6,7 @@ class ContactForm extends Component {
 
         this.state = {
             messageSent: false,
+            isSending: false,
             height: null
         };
     }
@@ -22,6 +23,10 @@ class ContactForm extends Component {
         event.preventDefault();
         const { name, email, message } = this;
 
+        this.setState({
+            isSending: true
+        });
+
         fetch('https://82rhrugey3.execute-api.us-west-2.amazonaws.com/dev/contact', {
             method: 'POST',
             body: JSON.stringify({ name: name.value, email: email.value, message: message.value }),
@@ -30,12 +35,12 @@ class ContactForm extends Component {
             }),
             mode: 'no-cors',
         })
-            .then((response) => {
-                return response.text();
-            })
-            .then((response) => {
-                console.log(response);
-                this.setState({ messageSent: true });
+            .then((response) => response.text())
+            .then(() => {
+                this.setState({
+                    messageSent: true,
+                    isSending: false
+                });
             })
             .catch((error) => console.error(error));
     }
@@ -43,7 +48,14 @@ class ContactForm extends Component {
 
     // Render
     renderTitle() {
-        const text = (this.state.messageSent) ? 'Thanks for getting in touch' : 'Get in touch';
+        const { messageSent, isSending } = this.state;
+        const text = (messageSent) ? 'Thanks for getting in touch' : 'Get in touch';
+
+        if (isSending) {
+            return (
+                <p>Sending...</p>
+            );
+        }
 
         return (
             <h4 className="contact-title">{text}</h4>

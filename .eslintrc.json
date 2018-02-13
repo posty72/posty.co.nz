@@ -157,6 +157,10 @@
       "unix"
     ],
     "newline-before-return": "error",
+    "newline-after-var": [
+      "error",
+      "always"
+    ],
     "no-array-constructor": "error",
     "no-lonely-if": "error",
     "no-mixed-spaces-and-tabs": "error",
