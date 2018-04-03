@@ -1,15 +1,6 @@
-*.log
-
-# Jekyll
-_site
-.sass-cache
-.jekyll-metadata
-
-#NPM
 node_modules
-
-#AWS
-aws.json
-.awspublish-*
-
-assets/images/optimised
+.cache/
+# Build directory
+public/
+.DS_Store
+yarn-error.log

@@ -1,0 +1,63 @@
+.post {
+    width: 100%;
+    max-width: 1000px;
+
+    &-image {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+
+    &-content {
+        max-width: rem(800);
+        margin: 0 auto;
+
+        color: $color-dark;
+        font-size: rem(18);
+        overflow-wrap: break-word;
+
+        h1,
+        h2,
+        h3,
+        h4 {
+            padding-top: 20px;
+            margin-bottom: 15px;
+        }
+
+        blockquote p {
+            margin-bottom: 0;
+        }
+
+        ol li,
+        ul li {
+            margin-left: 40px;
+
+            line-height: 1.6;
+        }
+
+        p,
+        ul,
+        ol {
+            margin-bottom: 15px;
+        }
+
+        img {
+            display: block;
+            margin: 0 auto;
+
+            & + em {
+                display: block;
+
+                color: $color-light-2;
+                font-size: rem(14);
+                text-align: center;
+            }
+        }
+    }
+
+    &-author {
+        padding: 25px 0;
+
+        color: $color-secondary;
+        text-align: center;
+    }
+}

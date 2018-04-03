@@ -1,0 +1,59 @@
+.feature {
+    @media (--to-medium-screen-w) {
+        flex-direction: column;
+    }
+    display: flex;
+    margin-bottom: rem(40);
+
+
+    // States
+    &:hover {
+        .feature-image-anchor::after {
+            // transform: translate(-22.5px, 15px);
+            width: 100%;
+        }
+    }
+
+
+    // Elements
+    &-title > a {
+        color: $color-dark;
+    }
+
+    &-content {
+        color: $color-light-2;
+    }
+
+    &-image {
+        width: 100%;
+    }
+
+    &-image-anchor {
+        @media (--to-medium-screen-w) {
+            width: 100%;
+            margin-bottom: rem(15);
+        }
+
+        @media (--from-medium-screen-w) {
+            margin-right: rem(20);
+        }
+        position: relative;
+
+        flex-shrink: 0;
+
+        &::after {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            z-index: 1;
+
+            width: 0;
+            height: 3px;
+
+            background-color: $color-primary;
+            content: '';
+
+            transition: all ease 0.8s;
+        }
+    }
+}
