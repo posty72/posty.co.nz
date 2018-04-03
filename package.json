@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "name": "jekyll-test",
   "version": "1.0.0",
   "description": "Jekyll",
@@ -34,5 +35,50 @@
   },
   "dependencies": {
     "normalize.css": "^7.0.0"
+=======
+  "name": "josh-post-portfolio",
+  "description": "Josh Post - front end developer",
+  "version": "1.0.0",
+  "author": "Josh Post <posty72@gmail.com>",
+  "keywords": [
+    "gatsby"
+  ],
+  "license": "MIT",
+  "main": "n/a",
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "format": "prettier --trailing-comma es5 --no-semi --single-quote --write \"src/**/*.js\"",
+    "lint": "npm run lint:js && npm run lint:css",
+    "lint:js": "eslint ./src/**/*.{js,jsx} --fix",
+    "lint:css": "stylelint ./src/**/*.scss --syntax scss"
+  },
+  "devDependencies": {
+    "cssnano": "^3.10.0",
+    "eslint": "^4.17.0",
+    "eslint-plugin-babel": "^4.1.2",
+    "eslint-plugin-filenames": "^1.2.0",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-react": "^7.6.1",
+    "gatsby": "^1.9.158",
+    "gatsby-link": "^1.6.34",
+    "gatsby-plugin-postcss-sass": "^1.0.16",
+    "gatsby-plugin-react-helmet": "^2.0.3",
+    "gatsby-plugin-sass": "^1.0.16",
+    "gatsby-plugin-sharp": "^1.6.27",
+    "gatsby-remark-images": "^1.5.41",
+    "gatsby-remark-prismjs": "^1.2.12",
+    "gatsby-source-filesystem": "^1.5.16",
+    "gatsby-transformer-remark": "^1.7.30",
+    "gatsby-transformer-sharp": "^1.6.17",
+    "postcss-cssnext": "^3.1.0",
+    "postcss-remify": "^1.0.1",
+    "postcss-simple-vars": "^4.1.0",
+    "precss": "^3.1.0",
+    "prettier": "^1.10.2",
+    "react-helmet": "^5.2.0",
+    "stylelint": "^8.4.0",
+    "stylelint-order": "^0.8.0"
+>>>>>>> development
   }
 }

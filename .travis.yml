@@ -1,14 +1,10 @@
 language: node_js
 node_js:
   - "8"
-sudo: required
-addons:
-  apt:
-    packages:
-    - imagemagick
-    - graphicsmagick
 install:
   - npm install
+test:
+  - npm run lint
 script:
   - npm run build
 deploy:

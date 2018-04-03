@@ -1,18 +1,7 @@
-*.log
-.DS_Store
-
-# Jekyll
-_site
-.sass-cache
-.jekyll-metadata
-
-#NPM
 node_modules
-
-#AWS
-aws.json
-.awspublish-*
-
-# Build artefacts
-assets/images/optimised
-javascript/all.js
+.cache/
+# Build directory
+public/
+.DS_Store
+yarn-error.log
+.vscode

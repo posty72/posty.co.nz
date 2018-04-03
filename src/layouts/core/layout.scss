@@ -1,0 +1,95 @@
+/* GLOBAL TAG PROPS */
+
+body,
+html {
+    height: 100%;
+
+    font-family: $font-body;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    color: $color-primary;
+    text-decoration: none;
+
+    transition: opacity 250ms ease;
+
+    &:hover {
+        opacity: 0.9;
+    }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    margin: 0 0 rem(15);
+
+    font-family: $header-font;
+    font-weight: 400;
+    word-break: break-word;
+}
+
+p,
+li {
+    font-family: $font-body;
+    line-height: 1.6;
+}
+
+ul,
+ol {
+    padding-left: rem(20);
+}
+
+blockquote {
+    padding: 20px;
+    margin: 0 0 rem(10);
+
+    background-color: $color-light-1;
+    border-left: 3px solid $color-secondary;
+}
+
+img {
+    height: auto;
+    max-width: 100%;
+
+    &:not([src]) {
+        display: block;
+        // min-height: 400px;
+        margin: 0 auto;
+    }
+}
+
+iframe {
+    max-width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+hr {
+    margin: rem(15) 0;
+
+    border-color: $color-primary;
+}
+
+
+/* GLOABL CLASSES */
+
+.container {
+    width: 100%;
+    max-width: 800px;
+    padding: rem(20);
+    margin: 0 auto;
+}
+
