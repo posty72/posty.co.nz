@@ -10,11 +10,12 @@
   "main": "n/a",
   "scripts": {
     "build": "gatsby build",
-    "develop": "gatsby develop",
+    "start": "gatsby develop",
     "format": "prettier --trailing-comma es5 --no-semi --single-quote --write \"src/**/*.js\"",
     "lint": "npm run lint:js && npm run lint:css",
     "lint:js": "eslint ./src/**/*.{js,jsx} --fix",
-    "lint:css": "stylelint ./src/**/*.scss --syntax scss"
+    "lint:css": "stylelint ./src/**/*.scss --syntax scss",
+    "precommit": "npm run lint"
   },
   "devDependencies": {
     "cssnano": "^3.10.0",
@@ -34,6 +35,7 @@
     "gatsby-source-filesystem": "^1.5.16",
     "gatsby-transformer-remark": "^1.7.30",
     "gatsby-transformer-sharp": "^1.6.17",
+    "husky": "^0.14.3",
     "postcss-cssnext": "^3.1.0",
     "postcss-remify": "^1.0.1",
     "postcss-simple-vars": "^4.1.0",
