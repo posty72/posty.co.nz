@@ -1,15 +1,9 @@
 ---
 title:  "I re-created my personal website to make it faster"
 date:   2015-12-18 14:13:08 +1300
-<<<<<<< HEAD:_posts/2015-12-16-the-new-site.markdown
-categories: development
-coverimage: "new-site.jpg"
-synopsis: ""
-=======
 categories: 
     - development
 image: images/new-site.png
->>>>>>> development:src/pages/the-new-site.md
 author: "Josh Post"
 ---
 
