@@ -12,9 +12,6 @@ Here at Pixel Fusion, the products we have created up to this point are mostly b
 Although mobile apps have become part of the woodwork in the digital landscape, it's not something we've ever done before. As part of our always learning mantra, we decided we would expand on that by utilising our existing React skills in our first React Native application.
 
 ## The Project
-![Home screen; excuse the bottom padding](images/s_CAEC095B690082BDAC692A25E828BFC44D179D6EBFB1D3B39ECCD04B2C45BA26_1517535252199_IMG_0005.PNG)
-*Home screen; excuse the bottom padding*
-
 
 The project we decided to apply this to was our office's visitor sign-in app. Currently, we have a webpage open in an iPad on the studio manager's desk where people come and sign in. Since we're a leading digital solutions company, we thought we could do a little better than this. 
 
@@ -40,7 +37,7 @@ Managing our routes was also a key difference, as on an iPad there are no URLs o
 Styling is a bit murky in React Native. Applying the styles using the `Stylesheet` helper function quickly slowed our development time, as CSS properties don’t line up 1-to-1 with browsers and our awesome linters were useless. 
 
 
-![Our Atomic Design structure didn’t suit using styled-components](images/s_CAEC095B690082BDAC692A25E828BFC44D179D6EBFB1D3B39ECCD04B2C45BA26_1517534049575_Screen+Shot+2018-02-02+at+2.13.44+PM)
+![Our Atomic Design structure didn’t suit using styled-components](images/s_CAEC095B690082BDAC692A25E828BFC44D179D6EBFB1D3B39ECCD04B2C45BA26_1517534049575_Screen+Shot+2018-02-02+at+2.13.44+PM.png)
 *Our Atomic Design structure didn’t suit using styled-components*
 
 
@@ -95,7 +92,7 @@ exports.autologoutVisitors = (event, context, callback) => autologoutTask(callba
 
 ##Conclusion and next steps
 
-![The final product](images/s_CAEC095B690082BDAC692A25E828BFC44D179D6EBFB1D3B39ECCD04B2C45BA26_1516138664087_giphy+2.gif)
+![The final product](images/s_CAEC095B690082BDAC692A25E828BFC44D179D6EBFB1D3B39ECCD04B2C45BA26_1517535252199_IMG_0005.PNG)
 *The final product*
 
 

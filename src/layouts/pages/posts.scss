@@ -60,4 +60,15 @@
         color: $color-secondary;
         text-align: center;
     }
+
+    .gatsby-resp-image-link {
+        padding-bottom: rem(10);
+
+        & + em {
+            display: block;
+
+            font-size: rem(14);
+            text-align: center;
+        }
+    }
 }
