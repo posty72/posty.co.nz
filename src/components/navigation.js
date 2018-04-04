@@ -4,7 +4,7 @@ import React from 'react';
 
 const Navigation = ({ toggleNav }) => (
     <div className="navigation">
-        <div className="hamburger" onClick={() => toggleNav()}>
+        <div className="hamburger" onClick={toggleNav}>
             <div className="hamburger-wrapper">
                 <div className="hamburger-item line-1"></div>
                 <div className="hamburger-item line-2"></div>
@@ -27,7 +27,8 @@ const Navigation = ({ toggleNav }) => (
                     <Link className="nav-item-link" to="/writing">/writing</Link>
                 </li>
                 <li className="nav-item">
-                    <a className="nav-item-link" href="mailto: posty72@gmail.com" target="_blank" rel="noopener noreferrer">/contact</a>
+                    <Link className="nav-item-link" to="/contact">/contact</Link>
+                    {/* <a className="nav-item-link" href="mailto: posty72@gmail.com" target="_blank" rel="noopener noreferrer">/contact</a> */}
                 </li>
             </ul>
         </nav>

@@ -91,5 +91,9 @@ hr {
     max-width: 800px;
     padding: rem(20);
     margin: 0 auto;
+
+    .container {
+        padding: rem(20) 0;
+    }
 }
 

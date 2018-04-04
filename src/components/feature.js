@@ -3,8 +3,6 @@ import PropTypes from 'prop-types';
 import React from 'react';
 
 const Feature = ({ data }) => {
-    console.log(data);
-
     return (
         <article className="feature">
             <Link className="feature-image-anchor" to={data.fields.slug}>

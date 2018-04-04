@@ -13,7 +13,7 @@
     "start": "gatsby develop",
     "format": "prettier --trailing-comma es5 --no-semi --single-quote --write \"src/**/*.js\"",
     "lint": "npm run lint:js && npm run lint:css",
-    "lint:js": "eslint ./src/**/*.{js,jsx} --fix",
+    "lint:js": "eslint ./src/**/*.{js,jsx} --fix --quiet",
     "lint:css": "stylelint ./src/**/*.scss --syntax scss",
     "precommit": "npm run lint"
   },
@@ -43,6 +43,6 @@
     "prettier": "^1.10.2",
     "react-helmet": "^5.2.0",
     "stylelint": "^8.4.0",
-    "stylelint-order": "^0.8.0"
+    "stylelint-order": "^0.8.1"
   }
 }

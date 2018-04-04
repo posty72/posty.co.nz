@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 
 class ContactForm extends Component {
@@ -21,7 +22,7 @@ class ContactForm extends Component {
 
     sendEnquiry(event) {
         event.preventDefault();
-        const { name, email, message } = this;
+        const { nameInput, emailInput, messageInput } = this;
 
         this.setState({
             isSending: true
@@ -29,7 +30,11 @@ class ContactForm extends Component {
 
         fetch('https://82rhrugey3.execute-api.us-west-2.amazonaws.com/dev/contact', {
             method: 'POST',
-            body: JSON.stringify({ name: name.value, email: email.value, message: message.value }),
+            body: JSON.stringify({
+                name: nameInput.value,
+                email: emailInput.value,
+                message: messageInput.value
+            }),
             headers: new Headers({
                 'Content-Type': 'application/json'
             }),
@@ -66,12 +71,12 @@ class ContactForm extends Component {
         return (
             <div className="contact" ref={(div) => { this.container = div; }} style={{ height: (this.state.height || null) }}>
                 <div className="container">
-                    {this.renderTitle()}
+                    {this.props.showTitle && this.renderTitle()}
                     {this.state.messageSent === false &&
                         <form className="contact-form" onSubmit={(event) => this.sendEnquiry(event)}>
-                            <input className="contact-input" type="text" name="name" ref={(input) => { this.name = input; }} placeholder="Name" required />
-                            <input className="contact-input" type="email" name="email" ref={(input) => { this.email = input; }} placeholder="Email" required />
-                            <textarea className="contact-text" type="text" name="message" ref={(input) => { this.message = input; }} placeholder="Message"></textarea>
+                            <input className="contact-input" type="text" name="name" ref={(input) => { this.nameInput = input; }} placeholder="Name" required />
+                            <input className="contact-input" type="email" name="email" ref={(input) => { this.emailInput = input; }} placeholder="Email" required />
+                            <textarea className="contact-text" type="text" name="message" ref={(input) => { this.messageInput = input; }} placeholder="Message"></textarea>
                             <button className="contact-button">Send</button>
                         </form>
                     }
@@ -80,5 +85,13 @@ class ContactForm extends Component {
         );
     }
 }
+
+ContactForm.propTypes = {
+    showTitle: PropTypes.bool
+};
+
+ContactForm.defaultProps = {
+    showTitle: true
+};
 
 export default ContactForm;

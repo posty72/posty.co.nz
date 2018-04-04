@@ -3,11 +3,22 @@
     "stylelint-order"
   ],
   "rules": {
-    "color-hex-case": "upper",
     "color-hex-length": "long",
     "color-named": "never",
     "color-no-hex": true,
     "color-no-invalid-hex": true,
+    "at-rule-empty-line-before": [
+      "always",
+      {
+        "except": [
+          "blockless-after-same-name-blockless",
+          "first-nested"
+        ],
+        "ignore": [
+          "after-comment"
+        ]
+      }
+    ],
     "font-family-name-quotes": "always-where-required",
     "font-weight-notation": "numeric",
     "function-calc-no-unspaced-operator": true,
@@ -29,6 +40,13 @@
     "declaration-bang-space-after": "never",
     "declaration-block-no-duplicate-properties": true,
     "declaration-block-no-shorthand-property-overrides": true,
+    "order/order": [
+      "dollar-variables",
+      "custom-properties",
+      "declarations",
+      "at-rules",
+      "rules"
+    ],
     "order/properties-order": [
       {
         "emptyLineBefore": "always",
