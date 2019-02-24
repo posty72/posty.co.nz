@@ -3,20 +3,19 @@
     align-items: center;
     flex: none;
     width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
+    margin-bottom: rem(30);
 
-    background-color: $color-light-1;
-    border-bottom: 3px solid $color-secondary;
+    border-bottom: 5px solid $color-secondary;
 
     &-text {
         display: inline-block;
     }
 
     &-title {
-        width: 40px;
-        height: 40px;
+        width: rem(40);
+        height: rem(40);
         margin: 0;
+        margin-right: rem(20);
         overflow: hidden;
 
         text-indent: -99em;
@@ -29,5 +28,12 @@
         display: block;
         width: 100%;
         height: 100%;
+    }
+
+    .container {
+        display: flex;
+        align-items: center;
+        flex: none;
+        padding: rem(10) rem(20);
     }
 }

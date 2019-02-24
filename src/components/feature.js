@@ -17,9 +17,8 @@ const Feature = ({ data }) => {
                 <h2 className="feature-title">
                     <Link to={data.fields.slug}>{data.frontmatter.title}</Link>
                 </h2>
-                <div className="feature-content">
-                    {data.excerpt}
-                </div>
+                <p className="feature-content">{data.excerpt}</p>
+                <Link className="feature-link" to={data.fields.slug}>Read more</Link>
             </div>
         </article>
     );

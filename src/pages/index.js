@@ -46,12 +46,12 @@ export const query = graphql`
                     fields {
                         slug
                     }
-                    excerpt(pruneLength: 400)
+                    excerpt(pruneLength: 150)
                     frontmatter {
                         title
                         image {
                             thumbnail: childImageSharp {
-                                resolutions(width: 300, height: 200) {
+                                resolutions(width: 300, height: 300) {
                                     src
                                     srcSet
                                 }

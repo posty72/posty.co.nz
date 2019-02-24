@@ -4,14 +4,18 @@
  */
 $color-green: rgb(47, 188, 66);
 $color-maroon: rgb(161, 18, 34);
-$color-black: rgb(45, 45, 45);
+$color-black: rgb(0, 0, 0);
 $color-white: rgb(255, 255, 255);
 $color-white-shade-1: rgb(237, 237, 237);
 $color-white-shade-2: rgb(123, 123, 123);
 $color-primary: $color-green;
 $color-secondary: $color-maroon;
 $color-dark: $color-black;
+$color-dark-tint-1: color($color-black tint(10%));
+$color-dark-tint-2: color($color-black tint(20%));
+$color-dark-opaque-1: color($color-black a(10%));
 $color-light: $color-white;
+$color-light-shade-1: color($color-white shade(2.5%));
 $color-light-1: $color-white-shade-1;
 $color-light-2: $color-white-shade-2;
 

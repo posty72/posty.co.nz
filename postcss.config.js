@@ -30,6 +30,7 @@ module.exports = (context) => ({
         'postcss-import': {},
         'postcss-simple-vars': {},
         'postcss-strip-inline-comments': {},
+        'postcss-color-function': {},
         'postcss-remify': {},
         'precss': { browsers: BROWSER_SUPPORT },
         'postcss-cssnext': { browsers: BROWSER_SUPPORT },

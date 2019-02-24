@@ -40,20 +40,27 @@
             flex-direction: column;
             height: 100vh;
 
-            background-color: $color-white;
+            background-color: $color-light;
         }
     }
 
     &-item {
-        flex: 0 0 auto;
+        flex: 1 0 rem(40);
 
         font-size: rem(18);
         list-style: none;
 
+        transition: background ease 400ms;
+
         @media (--to-medium-screen-w) {
+            flex: 0 0 auto;
             width: 100%;
 
             font-size: rem(24);
+        }
+
+        &:hover {
+            background-color: $color-light-1;
         }
     }
 
@@ -61,7 +68,7 @@
         display: block;
         padding: rem(10);
 
-        color: $color-light-2;
+        color: $color-dark-tint-2;
         font-family: $header-font;
     }
 }
