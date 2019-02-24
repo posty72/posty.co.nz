@@ -7,15 +7,6 @@
     }
 
 
-    // States
-    &:hover {
-        .feature-image-anchor::after {
-            // transform: translate(-22.5px, 15px);
-            width: 100%;
-        }
-    }
-
-
     // Elements
     &-title > a {
         color: $color-dark;
