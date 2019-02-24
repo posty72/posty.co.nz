@@ -14,8 +14,8 @@ class TemplateWrapper extends Component {
         };
     }
 
-    componentWillUpdate(nextProps) {
-        if (nextProps.location.pathname !== this.props.location.pathname) {
+    componentDidUpdate(prevProps) {
+        if (prevProps.location.pathname !== this.props.location.pathname) {
             this.setState({
                 navOpen: false
             });
@@ -39,6 +39,7 @@ class TemplateWrapper extends Component {
                     meta={[
                         { name: 'description', content: 'Sample' },
                         { name: 'keywords', content: 'sample, something' },
+                        { name: 'google-site-verification', content: '7RxMn2JUwrO_NOuUXeoWSl90NElOenZ4Ky5WnFxd_q4' },
                     ]} />
                 <Header data={data} toggleNav={this.toggleNav.bind(this)} />
                 <main className="container">

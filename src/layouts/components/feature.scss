@@ -1,9 +1,10 @@
 .feature {
+    display: flex;
+    margin-bottom: rem(40);
+
     @media (--to-medium-screen-w) {
         flex-direction: column;
     }
-    display: flex;
-    margin-bottom: rem(40);
 
 
     // Elements
@@ -20,6 +21,10 @@
     }
 
     &-image-anchor {
+        position: relative;
+
+        flex-shrink: 0;
+
         @media (--to-medium-screen-w) {
             width: 100%;
             margin-bottom: rem(15);
@@ -28,9 +33,6 @@
         @media (--from-medium-screen-w) {
             margin-right: rem(20);
         }
-        position: relative;
-
-        flex-shrink: 0;
 
         &::after {
             position: absolute;
