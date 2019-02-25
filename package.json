@@ -46,6 +46,7 @@
     "stylelint-order": "^0.8.1"
   },
   "dependencies": {
-    "postcss-color-function": "^4.0.1"
+    "postcss-color-function": "^4.0.1",
+    "react-headroom": "^2.2.4"
   }
 }
