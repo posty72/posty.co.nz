@@ -1,9 +1,7 @@
-import ContactForm from './contact-form';
 import React from 'react';
 
 const Footer = () => (
     <footer className="footer">
-        <ContactForm />
         <ul className="footer-links">
             <li className="twitter footer-link">
                 <a href="http://twitter.com/posty72" target="_blank" rel="noopener noreferrer">Twitter</a>

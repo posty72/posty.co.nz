@@ -2,8 +2,8 @@
     display: flex;
     margin-bottom: rem(40);
 
-    background-color: $color-light-1;
-    border: 1px solid $color-dark-opaque-1;
+    border-radius: 5px;
+    box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.2);
 
     @media (--to-medium-screen-w) {
         flex-direction: column;
@@ -15,7 +15,7 @@
         -webkit-box-orient: vertical;
         display: -webkit-box;
         overflow: hidden;
-        -webkit-line-clamp: 2;
+        -webkit-line-clamp: 1;
 
         > a {
             color: $color-dark-tint-1;
@@ -37,6 +37,7 @@
         position: relative;
 
         flex-shrink: 0;
+        max-height: rem(200);
 
         &::after {
             position: absolute;

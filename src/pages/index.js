@@ -51,7 +51,7 @@ export const query = graphql`
                         title
                         image {
                             thumbnail: childImageSharp {
-                                resolutions(width: 300, height: 300) {
+                                resolutions(width: 300, height: 200) {
                                     src
                                     srcSet
                                 }
