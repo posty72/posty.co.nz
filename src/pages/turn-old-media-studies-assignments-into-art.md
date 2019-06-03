@@ -35,8 +35,6 @@ It doesn't much easier than that.
 
 ### Add "Artiness"
 
-![](images/ResizedImage701635-starchy-dutch-screenshot-3.gif)
-
 Now get that sequence that we've already made 50x better and open it in AE, and import your hipster song. Put the song over the video and play around to get them the about same length. Right-click the sequence, go to Effects -> Color Correction -> Black & White to add that old favourite of wannabe film-makers, black and white. Next, we'll add a new solid and follow [this tutorial] to give the video an arty light strobe effect. ART.
 
 <!--<h2>Optional Extra</h2>
