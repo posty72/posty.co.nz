@@ -36,9 +36,18 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
                             fields {
                                 slug
                             }
+                            excerpt(pruneLength: 150)
                             frontmatter {
                                 title
                                 categories
+                                image {
+                                    thumbnail: childImageSharp {
+                                        resolutions(width: 300, height: 200) {
+                                            src
+                                            srcSet
+                                        }
+                                    }
+                                }
                             }
                         }
                     }
@@ -67,25 +76,25 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
 
 const createCategoryPages = (createPage, edges) => {
     // Tell it to use our tags template.
-    const categoryTemplate = path.resolve('src/templates/categories.js');
+    const categoryTemplate = path.resolve('src/templates/tags.js');
     // Create an empty object to store the posts.
     const posts = {};
 
     // Loop through all nodes (our markdown posts) and add the tags to our post object.
     edges.forEach(({ node }) => {
         if (node.frontmatter.categories) {
-            node.frontmatter.categories.forEach((category) => {
-                if (!posts[category]) {
-                    posts[category] = [];
+            node.frontmatter.categories.forEach((tag) => {
+                if (!posts[tag]) {
+                    posts[tag] = [];
                 }
-                posts[category].push(node);
+                posts[tag].push(node);
             });
         }
     });
 
     // Create the tags page with the list of tags from our posts object.
     createPage({
-        path: '/categories',
+        path: '/tags',
         component: categoryTemplate,
         context: {
             posts,
@@ -93,16 +102,16 @@ const createCategoryPages = (createPage, edges) => {
     });
 
     // For each of the tags in the post object, create a tag page.
-    Object.keys(posts).forEach((categoryName) => {
-        const post = posts[categoryName];
+    Object.keys(posts).forEach((tagName) => {
+        const post = posts[tagName];
 
         createPage({
-            path: `categories/${categoryName}`,
+            path: `tag/${tagName}`,
             component: categoryTemplate,
             context: {
                 posts,
                 post,
-                tag: categoryName,
+                tag: tagName,
             },
         });
     });

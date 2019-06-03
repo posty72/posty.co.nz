@@ -8,6 +8,21 @@ const BROWSER_SUPPORT = [
     'Opera >= 40'
 ];
 
+const cssNanoOptions = (process.env.NODE_ENV === 'development') ? false : {
+    autoprefixer: false,
+    calc: true,
+    colormin: true,
+    convertValues: true,
+    core: true,
+    discardComments: { removeAll: true },
+    discardDuplicates: true,
+    discardEmpty: true,
+    filterOptimiser: true,
+    filterPlugins: false,
+    functionOptimiser: true,
+    mergeLonghand: true
+};
+
 module.exports = {
     siteMetadata: {
         title: 'Josh Post',
@@ -22,20 +37,20 @@ module.exports = {
         },
         'gatsby-transformer-sharp',
         'gatsby-plugin-sharp',
-        'gatsby-transformer-remark',
         'gatsby-plugin-react-helmet',
         {
-            resolve: 'gatsby-plugin-postcss-sass',
+            resolve: 'gatsby-plugin-sass',
             options: {
                 postCssPlugins: [
-                    require('cssnano')({ preset: 'default' }),
-                    require('postcss-remify'),
+                    require('postcss-import'),
                     require('postcss-simple-vars'),
-                    require('precss')({ browsers: BROWSER_SUPPORT }),
-                    require('postcss-cssnext')({ warnForDuplicates: false, browsers: BROWSER_SUPPORT })
-                ],
-                precision: 8, // SASS default: 5
-            },
+                    require('postcss-strip-inline-comments'),
+                    require('postcss-color-function'),
+                    require('postcss-remify'),
+                    require('postcss-preset-env')({ browsers: BROWSER_SUPPORT }),
+                    require('cssnano')(cssNanoOptions)
+                ]
+            }
         },
         {
             resolve: 'gatsby-transformer-remark',

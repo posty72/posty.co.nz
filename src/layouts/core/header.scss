@@ -3,10 +3,6 @@
     align-items: center;
     flex: none;
     width: 100%;
-    margin-bottom: rem(30);
-
-    background-color: $color-light;
-    border-bottom: 5px solid $color-secondary;
 
     &-text {
         display: inline-block;
@@ -28,5 +24,14 @@
         align-items: center;
         flex: none;
         padding: rem(10) rem(20);
+    }
+}
+
+.headroom {
+    transition: box-shadow 400ms ease, background 400ms ease;
+
+    &--pinned {
+        background-color: rgba(245, 245, 245, 1);
+        box-shadow: 0 0 4px 2px rgba(0, 0, 0, 0.2);
     }
 }

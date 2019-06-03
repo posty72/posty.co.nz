@@ -1,5 +1,4 @@
 import Headroom from 'react-headroom';
-import Link from 'gatsby-link';
 import Navigation from './navigation';
 import PropTypes from 'prop-types';
 import React from 'react';
@@ -11,7 +10,7 @@ const Header = ({ data, toggleNav }) => {
                 <div className="container">
                     <div className="header-text">
                         <h2 className="header-title" itemProp="title">
-                            <Link className="header-link" to="/">{data.site.siteMetadata.title}</Link>
+                            <a className="header-link" href="/">{data.site.siteMetadata.title}</a>
                         </h2>
                     </div>
 
