@@ -3,23 +3,36 @@ Description: Creates an S3 bucket configured for hosting a static website
 Parameters:
   FullDomainName:
     Type: String
-    Description: The full domain name e.g. homeshare.nz
+    Description: The full domain name e.g. posty.co.nz
     AllowedPattern: (?!-)[a-zA-Z0-9-.]{1,63}(?<!-)
     ConstraintDescription: must be a valid DNS zone name.
   AcmCertificateArn:
     Type: String
     Description: the Amazon Resource Name (ARN) of an AWS Certificate Manager (ACM) certificate.
     AllowedPattern: "arn:aws:acm:.*"
+  ApiDomain:
+    Type: String
+    Description: the API domain to allow through the CSP e.g. api.posty.co.nz
+    AllowedPattern: (?!-)[a-zA-Z0-9-.]{1,63}(?<!-)
 Resources:
   WebsiteBucket:
     Type: AWS::S3::Bucket
     Properties:
-      BucketName: !Ref "FullDomainName"
-      AccessControl: PublicRead
+      BucketName: !Join ["", ["website-", !Ref "FullDomainName"]]
+      BucketEncryption:
+          ServerSideEncryptionConfiguration:
+            -
+              ServerSideEncryptionByDefault:
+                SSEAlgorithm: AES256
       WebsiteConfiguration:
         IndexDocument: index.html
         ErrorDocument: index.html
-    DeletionPolicy: Retain
+      AccessControl: PublicRead
+      Tags:
+        - Key: Domain
+          Value: !Ref FullDomainName
+    DeletionPolicy: Delete
+
   WebsiteBucketPolicy:
     Type: AWS::S3::BucketPolicy
     Properties:
@@ -31,6 +44,7 @@ Resources:
             Principal: "*"
             Action: s3:GetObject
             Resource: !Join ["", ["arn:aws:s3:::", !Ref "WebsiteBucket", /*]]
+
   WebsiteCloudfront:
     Type: AWS::CloudFront::Distribution
     DependsOn:
@@ -62,10 +76,97 @@ Resources:
             Cookies:
               Forward: none
           ViewerProtocolPolicy: redirect-to-https
+          LambdaFunctionAssociations:
+            - EventType: origin-response
+              LambdaFunctionARN: !Ref OriginRequestLambdaFunctionVersion
+        CustomErrorResponses:
+          - ErrorCachingMinTTL: 300
+            ErrorCode: 403
+            ResponseCode: 404
+            ResponsePagePath: /404.html
         PriceClass: PriceClass_All
         ViewerCertificate:
           AcmCertificateArn: !Ref AcmCertificateArn
           SslSupportMethod: sni-only
+
+  OriginRequestLambdaFunction:
+    Type: AWS::Lambda::Function
+    Properties:
+      Description: >
+        Lambda function performing request URI rewriting.
+
+      Code:
+        ZipFile: !Sub |
+          'use strict';
+          exports.handler = (event, context, callback) => {
+              const response = event.Records[0].cf.response;
+              const headers = response.headers;
+              const headerNameSrc = 'X-Amz-Meta-Last-Modified';
+              const headerNameDst = 'Last-Modified';
+              const headerHSTS = 'Strict-Transport-Security';
+              const headerCSP = 'Content-Security-Policy';
+              const headerXFO = 'X-Frame-Options';
+              const headerCTO = 'X-Content-Type-Options';
+              const headerRP = 'Referrer-Policy';
+              const headerXSS = 'X-XSS-Protection';
+
+              headers[headerHSTS.toLowerCase()] = [{
+                key: headerHSTS,
+                value: 'max-age=31536000',
+              }];
+              headers[headerCSP.toLowerCase()] = [{
+                key: headerCSP,
+                value: 'default-src \'none\'; script-src \'unsafe-inline\' \'self\'; connect-src ${ApiDomain} \'self\'; img-src \'self\'; style-src \'unsafe-inline\' \'self\';',
+              }];
+              headers[headerXFO.toLowerCase()] = [{
+                key: headerXFO,
+                value: 'DENY',
+              }];
+              headers[headerCTO.toLowerCase()] = [{
+                key: headerCTO,
+                value: 'nosniff',
+              }];
+              headers[headerRP.toLowerCase()] = [{
+                key: headerRP,
+                value: 'no-referrer',
+              }];
+              headers[headerXSS.toLowerCase()] = [{
+                key: headerXSS,
+                value: '1; mode=block'
+              }];
+
+              callback(null, response);
+          };
+      Handler: index.handler
+      MemorySize: 128
+      Role: !Sub ${OriginRequestLambdaFunctionExecutionRole.Arn}
+      Runtime: nodejs8.10
+      Tags:
+        - Key: Domain
+          Value: !Ref FullDomainName
+
+  OriginRequestLambdaFunctionVersion:
+    Type: AWS::Lambda::Version
+    Properties:
+      FunctionName: !Ref OriginRequestLambdaFunction
+      Description: !Sub "URL rewriting for ${FullDomainName}"
+
+  OriginRequestLambdaFunctionExecutionRole:
+    Type: AWS::IAM::Role
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: 2012-10-17
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service:
+                - edgelambda.amazonaws.com
+                - lambda.amazonaws.com
+            Action:
+              - sts:AssumeRole
+      ManagedPolicyArns:
+        - arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole
+    DeletionPolicy: Delete
 Outputs:
   BucketName:
     Value: !GetAtt [WebsiteBucket, WebsiteURL]
