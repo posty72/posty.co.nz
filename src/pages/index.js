@@ -46,6 +46,7 @@ const IndexPage = ({ location }) => (
                                 excerpt(pruneLength: 300)
                                 frontmatter {
                                     title
+                                    date
                                     image {
                                         thumbnail: childImageSharp {
                                             resolutions(width: 300, height: 200) {

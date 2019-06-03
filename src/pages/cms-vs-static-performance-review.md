@@ -66,5 +66,5 @@ This last one, the portfolio page, shows the biggest differnce between the two. 
 These numbers reflect what I said when I [wrote about dropping the CMS]. There are huge, tangible performance increases to using a system like this.
 
 
-[wrote about dropping the CMS]: https://posty.co.nz/breaking-away-from-the-cms/
+[wrote about dropping the CMS]: /breaking-away-from-the-cms/
 [my new one]: https://github.com/posty72/posty.co.nz

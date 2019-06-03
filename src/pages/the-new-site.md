@@ -18,9 +18,9 @@ But over the next couple of years, the romance faded. The site was hosted by GoD
 
 Last year I [wrote about dropping the CMS] and I decided to recreate my website, with a focus on easy deployment and speed. Using a combination of Jekyll, Gulp, Amazon S3 & Cloudfront I came up with a solution that was so much lighter and simple than a CMS that did the exact same thing.
 
-The results speak for themselves. See my post detailing performance gains to see the gains by numbers.
+The results speak for themselves. See my [post detailing performance gains] to see the gains by numbers. If you're interested in the code itself, [check it out on Github].
 
 
-[post detailing performance gains]: http://www.posty.co.nz/development/2015/12/18/cms-vs-static-performance-review.html
-[wrote about dropping the CMS]: http://www.posty.co.nz/development/2015/12/11/breaking-away-from-the-cms.html
-[this site]: https://github.com/posty72/posty.co.nz
+[post detailing performance gains]: /cms-vs-static-performance-review
+[wrote about dropping the CMS]: /breaking-away-from-the-cms
+[check it out on Github]: https://github.com/posty72/posty.co.nz

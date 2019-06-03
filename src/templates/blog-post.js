@@ -1,3 +1,4 @@
+import * as moment from 'moment';
 import { graphql } from 'gatsby';
 import Layout from '../components/layout';
 import PropTypes from 'prop-types';
@@ -15,7 +16,7 @@ const BlogPost = ({ data: { markdownRemark: post }, location }) => (
                 src={post.frontmatter.image.childImageSharp.fluid.src}
                 sizes={post.frontmatter.image.childImageSharp.fluid.sizes} />
             <div className="post-content" dangerouslySetInnerHTML={{ __html: post.html }} />
-            <div className="post-author">{post.frontmatter.author}</div>
+            <div className="post-author">{post.frontmatter.author} • {moment(post.frontmatter.date).format('MMMM DD YYYY')}</div>
             {post.frontmatter.categories.length > 0 && <TagList tags={post.frontmatter.categories} />}
         </div>
     </Layout>
@@ -34,6 +35,7 @@ export const query = graphql`
                 title
                 author
                 categories
+                date
                 image {
                     childImageSharp {
                         fluid(maxWidth: 800) {
