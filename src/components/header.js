@@ -11,7 +11,7 @@ const Header = ({ data, toggleNav }) => {
                 <div className="container">
                     <div className="header-text">
                         <h2 className="header-title" itemProp="title">
-                            <Link className="header-link" to="/">{data.site.siteMetadata.title}</Link>
+                            <a className="header-link" href="/">{data.site.siteMetadata.title}</a>
                         </h2>
                     </div>
 

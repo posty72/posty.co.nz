@@ -1,26 +1,29 @@
+import { graphql } from 'gatsby';
+import Layout from '../components/layout';
 import PropTypes from 'prop-types';
 import React from 'react';
+import TagList from '../components/tag-list';
 
-const BlogPost = ({ data }) => {
-    const post = data.markdownRemark;
-
-    return (
+const BlogPost = ({ data: { markdownRemark: post }, location }) => (
+    <Layout location={location}>
         <div className="post">
             <h1 className="page-title">{post.frontmatter.title}</h1>
             <hr />
             <img
                 className="post-image"
-                srcSet={post.frontmatter.image.childImageSharp.responsiveSizes.srcSet}
-                src={post.frontmatter.image.childImageSharp.responsiveSizes.src}
-                sizes={post.frontmatter.image.childImageSharp.responsiveSizes.sizes} />
+                srcSet={post.frontmatter.image.childImageSharp.fluid.srcSet}
+                src={post.frontmatter.image.childImageSharp.fluid.src}
+                sizes={post.frontmatter.image.childImageSharp.fluid.sizes} />
             <div className="post-content" dangerouslySetInnerHTML={{ __html: post.html }} />
             <div className="post-author">{post.frontmatter.author}</div>
+            {post.frontmatter.categories.length > 0 && <TagList tags={post.frontmatter.categories} />}
         </div>
-    );
-};
+    </Layout>
+);
 
 BlogPost.propTypes = {
     data: PropTypes.object,
+    location: PropTypes.object,
 };
 
 export const query = graphql`
@@ -30,9 +33,10 @@ export const query = graphql`
             frontmatter {
                 title
                 author
+                categories
                 image {
                     childImageSharp {
-                        responsiveSizes(maxWidth: 800) {
+                        fluid(maxWidth: 800) {
                             src
                             srcSet
                             sizes
