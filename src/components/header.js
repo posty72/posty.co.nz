@@ -1,5 +1,4 @@
 import Headroom from 'react-headroom';
-import Link from 'gatsby-link';
 import Navigation from './navigation';
 import PropTypes from 'prop-types';
 import React from 'react';
