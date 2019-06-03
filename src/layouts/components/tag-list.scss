@@ -1,0 +1,32 @@
+.tags {
+    display: flex;
+    align-items: center;
+    max-width: rem(800);
+    margin: 0 auto rem(40);
+
+    &-title {
+        margin-bottom: 0;
+    }
+
+    &-list {
+        display: flex;
+
+        list-style: none;
+    }
+
+    &-item {
+        margin-right: rem(10);
+
+        font-size: rem(14);
+        text-transform: uppercase;
+    }
+
+    &-link {
+        padding: rem(7) rem(12);
+
+        color: $color-light;
+
+        background-color: $color-secondary;
+        border-radius: rem(5);
+    }
+}

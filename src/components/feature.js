@@ -10,7 +10,6 @@ const Feature = ({ data }) => {
                     className="feature-image"
                     srcSet={data.frontmatter.image.thumbnail.resolutions.srcSet}
                     src={data.frontmatter.image.thumbnail.resolutions.src}
-                // sizes={data.frontmatter.image.thumbnail.responsiveSizes.sizes}
                 />
             </Link>
             <div className="feature-info">
