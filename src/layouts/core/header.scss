@@ -11,6 +11,10 @@
     &-title {
         margin: 0;
         margin-right: rem(20);
+
+        @media (--to-medium-screen-w) {
+            padding-top: 5px;
+        }
     }
 
     &-link {
