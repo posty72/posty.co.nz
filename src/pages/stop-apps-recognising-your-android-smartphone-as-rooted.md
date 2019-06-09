@@ -1,6 +1,6 @@
 ---
 title:  "Stop apps recognising your Android smartphone as rooted"
-date:   2014-05-26 10:01:08 +1300
+date:   "2014-05-26 10:01:08"
 categories: 
     - hacks
 image: images/ResizedImage19201280-nexus-5.jpg

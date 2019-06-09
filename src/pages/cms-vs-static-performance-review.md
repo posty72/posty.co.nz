@@ -1,6 +1,6 @@
 ---
 title:  "CMS vs Static site: performance review"
-date:   2015-12-18 14:13:08 +1300
+date:   "2015-12-18 14:13:08"
 categories: 
     - development
 image: images/new-site.png

@@ -1,6 +1,6 @@
 ---
 title:  "How to turn your Year 12 Media Studies assignment into \"art\""
-date:   2015-03-21 10:01:08 +1300
+date:   "2015-03-21 10:01:08"
 categories: 
     - film
 image: images/ResizedImage19201081-starchy-dutch-screenshot-2.jpg

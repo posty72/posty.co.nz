@@ -1,6 +1,6 @@
 ---
 title:  "Moving to Auckland"
-date:   2014-02-28 10:01:08 +1300
+date:   "2014-02-28 10:01:08"
 categories: 
     - life
 image: images/ResizedImage19201440-229-849.jpg
