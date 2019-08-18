@@ -1,12 +1,11 @@
-import Headroom from 'react-headroom';
-import Navigation from './navigation';
-import PropTypes from 'prop-types';
-import React from 'react';
+import * as React from 'react'
+import Headroom from 'react-headroom'
+import Navigation from './navigation'
 
 const Header = ({ data, toggleNav }) => {
     return (
         <Headroom>
-            <header className="header" itemScope>
+            <header className="header" itemScope={true}>
                 <div className="container">
                     <div className="header-text">
                         <h2 className="header-title" itemProp="title">
@@ -18,12 +17,7 @@ const Header = ({ data, toggleNav }) => {
                 </div>
             </header>
         </Headroom>
-    );
-};
+    )
+}
 
-Header.propTypes = {
-    data: PropTypes.object.isRequired,
-    toggleNav: PropTypes.func.isRequired
-};
-
-export default Header;
+export default Header

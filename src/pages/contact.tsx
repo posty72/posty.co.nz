@@ -1,9 +1,13 @@
-import ContactForm from '../components/contact-form';
-import Layout from '../components/layout';
-import PropTypes from 'prop-types';
-import React from 'react';
+import { Location } from '@reach/router'
+import * as React from 'react'
+import ContactForm from '../components/contact-form'
+import Layout from '../components/layout'
 
-const ContactPage = ({ location }) => (
+interface ContactPageProps {
+    location: Location
+}
+
+const ContactPage = ({ location }: ContactPageProps) => (
     <Layout location={location}>
         <section>
             <h1>Contact</h1>
@@ -12,10 +16,6 @@ const ContactPage = ({ location }) => (
             <ContactForm showTitle={false} />
         </section>
     </Layout>
-);
+)
 
-ContactPage.propTypes = {
-    location: PropTypes.object
-};
-
-export default ContactPage;
+export default ContactPage
