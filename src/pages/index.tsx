@@ -67,7 +67,7 @@ const IndexPage = ({ location }: IndexPageProps) => (
             `
         }
         render={(data) =>
-            <Layout location={location}>
+            <Layout location={location as any}>
                 <div>
                     <section>
                         {

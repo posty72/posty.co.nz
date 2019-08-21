@@ -14,12 +14,8 @@ interface LayoutState {
 }
 
 class Layout extends React.Component<LayoutProps, LayoutState> {
-    constructor(props: LayoutProps) {
-        super(props)
-
-        this.state = {
-            navOpen: false
-        }
+    state = {
+        navOpen: false
     }
 
     componentDidUpdate(prevProps: LayoutProps) {
@@ -61,6 +57,7 @@ class Layout extends React.Component<LayoutProps, LayoutState> {
                                 { name: 'keywords', content: 'sample, something' },
                                 { name: 'google-site-verification', content: '7RxMn2JUwrO_NOuUXeoWSl90NElOenZ4Ky5WnFxd_q4' },
                             ]} />
+                        <html lang="en" />
                         <Header data={data} toggleNav={this.toggleNav.bind(this)} />
                         <main className="main || container">
                             {children}
