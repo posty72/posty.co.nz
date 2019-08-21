@@ -1,6 +1,6 @@
 ---
 title:  "Breaking away from the CMS"
-date:   2015-12-11 12:17:08 +1300
+date:   "2015-12-11 12:17:08"
 categories: 
   - development
 image: images/cmsless.jpg
@@ -9,7 +9,7 @@ author: "Josh Post"
 
 Whenever I see a small company like a restaurant or small company's website using a CMS such as Wordpress, I often wonder what brought them to the conclusion that that was the way to go. CMS's in general are bloated, slow and can be relatively expensive, so why use one at all?
 
-CMS-less websites have gathered steam in 2015 with the [argument]{:target="_blank"} that they're faster, easier to maintain and a lot cheaper. Let's take a quick look at the pro's and con's of swiching to a static website over something like Wordprss.
+CMS-less websites have gathered steam in 2015 with the argument that they're faster, easier to maintain and a lot cheaper. Let's take a quick look at the pro's and con's of swiching to a static website over something like Wordprss.
 
 ### The Pro's
 
@@ -28,5 +28,3 @@ While these all sound like great sellers, a CMS-less site like this comes with s
 
 
 So there you have it. Static websites: a way of the past, potential way of the future.
-
-[argument]: http://theapartment.co/dev/2015/09/10/drop-that-old-cms/

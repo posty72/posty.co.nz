@@ -1,6 +1,6 @@
 ---
 title:  "React: Native versus Web"
-date:   2018-02-03 11:07:08 +1300
+date:   "2018-02-03 11:07:08"
 categories: 
     - development
 image: images/caleb-moreno-414932.jpg
