@@ -9,30 +9,33 @@ jobs:
     - stage: "Build"
       script: npm run build
       name: "Build artefact"
-deploy:
-  - provider: s3
-    access_key_id: $AWS_ACCESS_KEY_ID
-    secret_access_key: $AWS_SECRET_ACCESS_KEY
-    region: $AWS_DEFAULT_REGION
-    bucket: $AWS_S3_BUCKET_NAME_MASTER
-    local_dir: public
-    skip_cleanup: true
-    acl: public_read
-    on:
-      branch: master
-  - provider: s3
-    access_key_id: $AWS_ACCESS_KEY_ID
-    secret_access_key: $AWS_SECRET_ACCESS_KEY
-    region: $AWS_DEFAULT_REGION
-    bucket: $AWS_S3_BUCKET_NAME_DEVELOP
-    local_dir: public
-    skip_cleanup: true
-    acl: public_read
-    on:
-      branch: develop
+    - stage: "Deploy"
+      if: branch = master
+      deploy:
+        - provider: s3
+          access_key_id: $AWS_ACCESS_KEY_ID
+          secret_access_key: $AWS_SECRET_ACCESS_KEY
+          region: $AWS_DEFAULT_REGION
+          bucket: $AWS_S3_BUCKET_NAME_MASTER
+          local_dir: public
+          skip_cleanup: true
+          acl: public_read
+          on:
+            branch: master
+        - provider: s3
+          access_key_id: $AWS_ACCESS_KEY_ID
+          secret_access_key: $AWS_SECRET_ACCESS_KEY
+          region: $AWS_DEFAULT_REGION
+          bucket: $AWS_S3_BUCKET_NAME_DEVELOP
+          local_dir: public
+          skip_cleanup: true
+          acl: public_read
+          on:
+            branch: develop
+
 notifications:
   email:
-    recipents:
+    recipients:
       - $ADMIN_EMAIL
     on_success: always
     on_failure: always
