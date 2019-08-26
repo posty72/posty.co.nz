@@ -16,6 +16,10 @@
         overflow: hidden;
         -webkit-line-clamp: 1;
 
+        @media (--to-medium-screen-w) {
+            padding-top: rem(10);
+        }
+
         > a {
             color: $color-dark-tint-1;
         }
@@ -61,7 +65,10 @@
     &-info {
         display: flex;
         flex-direction: column;
-        padding-left: rem(20);
+
+        @media (--from-medium-screen-w) {
+            padding-left: rem(20);
+        }
     }
 
     &-link {

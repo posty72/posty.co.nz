@@ -1,6 +1,6 @@
 ---
 title:  "Going into an unpaid internship"
-date:   2014-05-06 10:01:08 +1300
+date:   "2014-05-06 10:01:08"
 categories: 
     - personal development
 image: images/ResizedImage19201433-Unpaid-interns-slavery.jpg

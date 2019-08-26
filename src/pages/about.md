@@ -1,7 +1,7 @@
 ---
 title: About Me
 image: images/week-1-portrait.jpg
-date: '2017-03-26 10:01:08 +1300'
+date: "2017-03-26 10:01:08"
 categories: 
     - meta
 author: Josh Post

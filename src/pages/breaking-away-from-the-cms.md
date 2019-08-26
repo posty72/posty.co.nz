@@ -1,6 +1,6 @@
 ---
 title:  "Breaking away from the CMS"
-date:   2015-12-11 12:17:08 +1300
+date:   "2015-12-11 12:17:08"
 categories: 
   - development
 image: images/cmsless.jpg

@@ -1,8 +1,3 @@
-const BROWSER_SUPPORT = [
-    'Chrome >= 53', 'ChromeAndroid >= 53', 'Safari >= 9', 'iOS >= 9',
-    'Firefox >= 48', 'Explorer >= 11', 'Opera >= 40'
-];
-
 const cssNanoOptions = (process.env.NODE_ENV === 'development') ? false : {
     autoprefixer: false,
     calc: true,
@@ -38,8 +33,12 @@ module.exports = {
                 postCssPlugins: [
                     require('postcss-import'), require('postcss-simple-vars'),
                     require('postcss-strip-inline-comments'),
-                    require('postcss-color-function'), require('postcss-remify'),
-                    require('postcss-preset-env')({ browsers: BROWSER_SUPPORT }),
+                    require('postcss-color-function'),
+                    require('postcss-remify'),
+                    require('postcss-preset-env')({
+                        stage: 1,
+                        browsers: 'last 2 versions',
+                    }),
                     require('cssnano')(cssNanoOptions)
                 ]
             }
