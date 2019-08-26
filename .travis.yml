@@ -1,12 +1,14 @@
 language: node_js
 node_js:
-  - "8"
-install:
-  - npm ci
-test:
-  - npm run lint
-script:
-  - npm run build
+  - "10"
+jobs:
+  include:
+    - stage: "Install"
+      name: "Install dependancies"
+      script: npm ci
+    - stage: "Build"
+      script: npm run build
+      name: "Build artefact"
 deploy:
   - provider: s3
     access_key_id: $AWS_ACCESS_KEY_ID
@@ -17,8 +19,7 @@ deploy:
     skip_cleanup: true
     acl: public_read
     on:
-      branch:
-        master
+      branch: master
   - provider: s3
     access_key_id: $AWS_ACCESS_KEY_ID
     secret_access_key: $AWS_SECRET_ACCESS_KEY
@@ -28,8 +29,7 @@ deploy:
     skip_cleanup: true
     acl: public_read
     on:
-      branch:
-        develop
+      branch: develop
 notifications:
   email:
     recipents:

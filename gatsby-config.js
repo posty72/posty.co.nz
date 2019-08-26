@@ -25,15 +25,13 @@ module.exports = {
                 path: `${__dirname}/src/`,
             },
         },
-        'gatsby-transformer-sharp',
-        'gatsby-plugin-sharp',
-        'gatsby-plugin-react-helmet',
-        {
+        'gatsby-transformer-sharp', 'gatsby-plugin-sharp',
+        'gatsby-plugin-react-helmet', 'gatsby-plugin-typescript',
+        'gatsby-plugin-tslint', {
             resolve: 'gatsby-plugin-sass',
             options: {
                 postCssPlugins: [
-                    require('postcss-import'),
-                    require('postcss-simple-vars'),
+                    require('postcss-import'), require('postcss-simple-vars'),
                     require('postcss-strip-inline-comments'),
                     require('postcss-color-function'),
                     require('postcss-remify'),

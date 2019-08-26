@@ -1,9 +1,8 @@
-import Feature from '../components/feature';
-import Layout from '../components/layout';
-import Link from 'gatsby-link';
-import PropTypes from 'prop-types';
-import React from 'react';
-import { graphql, StaticQuery } from 'gatsby';
+import { graphql, StaticQuery } from 'gatsby'
+import Link from 'gatsby-link'
+import * as React from 'react'
+import Feature from '../components/feature'
+import Layout from '../components/layout'
 
 const IndexPage = ({ location }) => (
     <StaticQuery
@@ -49,11 +48,6 @@ const IndexPage = ({ location }) => (
                 </section>
             </Layout>
         } />
-);
+)
 
-IndexPage.propTypes = {
-    data: PropTypes.object,
-    location: PropTypes.object,
-};
-
-export default IndexPage;
+export default IndexPage

@@ -1,12 +1,12 @@
-import Link from 'gatsby-link';
-import PropTypes from 'prop-types';
-import React from 'react';
+import Link from 'gatsby-link'
+import * as React from 'react'
 
 const Feature = ({ data }) => (
     <article className="feature">
-        <Link className="feature-image-anchor" to={data.fields.slug}>
+        <Link className="feature-image-anchor" aria-label={data.frontmatter.title} to={data.fields.slug}>
             <img
                 className="feature-image"
+                alt={data.frontmatter.title}
                 srcSet={data.frontmatter.image.thumbnail.resolutions.srcSet}
                 src={data.frontmatter.image.thumbnail.resolutions.src}
             />
@@ -18,10 +18,6 @@ const Feature = ({ data }) => (
             <p className="feature-content">{data.excerpt}</p>
         </div>
     </article>
-);
+)
 
-Feature.propTypes = {
-    data: PropTypes.object
-};
-
-export default Feature;
+export default Feature

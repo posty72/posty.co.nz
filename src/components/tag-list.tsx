@@ -1,10 +1,9 @@
-import { Link } from 'gatsby';
-import PropTypes from 'prop-types';
-import React from 'react';
+import { Link } from 'gatsby'
+import * as React from 'react'
 
 const TagList = ({ tags }) => {
     if (tags.length <= 0) {
-        return null;
+        return null
     }
 
     return (
@@ -12,7 +11,7 @@ const TagList = ({ tags }) => {
             <h3 className="tags-title">Tags</h3>
             <ul className="tags-list">
                 {
-                    tags.map((tagName) => (
+                    tags.map((tagName: string) => (
                         <li key={tagName} className="tags-item">
                             <Link to={`/tag/${tagName}`} className="tags-link">{tagName}</Link>
                         </li>
@@ -20,11 +19,7 @@ const TagList = ({ tags }) => {
                 }
             </ul>
         </div>
-    );
-};
+    )
+}
 
-TagList.propTypes = {
-    tags: PropTypes.array
-};
-
-export default TagList;
+export default TagList
