@@ -1,4 +1,3 @@
-import { Location } from '@reach/router'
 import * as React from 'react'
 import ContactForm from '../components/contact-form'
 import Layout from '../components/layout'
