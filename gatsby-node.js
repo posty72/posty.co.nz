@@ -4,28 +4,28 @@
  * See: https://www.gatsbyjs.org/docs/node-apis/
  */
 const path = require('path');
-const {createFilePath} = require('gatsby-source-filesystem');
+const { createFilePath } = require('gatsby-source-filesystem');
 
-exports.onCreateNode = ({node, getNode, boundActionCreators}) => {
-  const {createNodeField} = boundActionCreators;
+exports.onCreateNode = ({ node, getNode, actions }) => {
+    const { createNodeField } = actions;
 
-  if (node.internal.type === 'MarkdownRemark') {
-    const slug = createFilePath({node, getNode, basePath: 'pages'});
+    if (node.internal.type === 'MarkdownRemark') {
+        const slug = createFilePath({ node, getNode, basePath: 'pages' });
 
-    createNodeField({
-      node,
-      name: 'slug',
-      value: slug,
-    });
-  }
+        createNodeField({
+            node,
+            name: 'slug',
+            value: slug,
+        });
+    }
 };
 
 exports.createPages =
-    ({graphql, boundActionCreators}) => {
-      const {createPage} = boundActionCreators;
+    ({ graphql, actions }) => {
+        const { createPage } = actions;
 
-      return new Promise((resolve) => {
-        graphql(`
+        return new Promise((resolve) => {
+            graphql(`
           {
             allMarkdownRemark {
               edges {
@@ -51,66 +51,66 @@ exports.createPages =
             }
           }
         `).then((result) => {
-          const posts = result.data.allMarkdownRemark.edges;
+                const posts = result.data.allMarkdownRemark.edges;
 
-          createCategoryPages(createPage, posts);
+                createCategoryPages(createPage, posts);
 
-          result.data.allMarkdownRemark.edges.forEach(({node}) => {
-            createPage({
-              path: node.fields.slug,
-              component: path.resolve('./src/templates/blog-post.tsx'),
-              context: {
-                // Data passed to context is available in page queries as
-                // GraphQL variables.
-                slug: node.fields.slug,
-              },
+                result.data.allMarkdownRemark.edges.forEach(({ node }) => {
+                    createPage({
+                        path: node.fields.slug,
+                        component: path.resolve('./src/templates/blog-post.tsx'),
+                        context: {
+                            // Data passed to context is available in page queries as
+                            // GraphQL variables.
+                            slug: node.fields.slug,
+                        },
+                    });
+                });
+                resolve();
             });
-          });
-          resolve();
         });
-      });
     };
 
 const createCategoryPages = (createPage, edges) => {
-  // Tell it to use our tags template.
-  const categoryTemplate = path.resolve('src/templates/tags.tsx');
-  // Create an empty object to store the posts.
-  const posts = {};
+    // Tell it to use our tags template.
+    const categoryTemplate = path.resolve('src/templates/tags.tsx');
+    // Create an empty object to store the posts.
+    const posts = {};
 
-  // Loop through all nodes (our markdown posts) and add the tags to our post
-  // object.
-  edges.forEach(({node}) => {
-    if (node.frontmatter.categories) {
-      node.frontmatter.categories.forEach((tag) => {
-        if (!posts[tag]) {
-          posts[tag] = [];
+    // Loop through all nodes (our markdown posts) and add the tags to our post
+    // object.
+    edges.forEach(({ node }) => {
+        if (node.frontmatter.categories) {
+            node.frontmatter.categories.forEach((tag) => {
+                if (!posts[tag]) {
+                    posts[tag] = [];
+                }
+                posts[tag].push(node);
+            });
         }
-        posts[tag].push(node);
-      });
-    }
-  });
-
-  // Create the tags page with the list of tags from our posts object.
-  createPage({
-    path: '/tags',
-    component: categoryTemplate,
-    context: {
-      posts,
-    },
-  });
-
-  // For each of the tags in the post object, create a tag page.
-  Object.keys(posts).forEach((tagName) => {
-    const post = posts[tagName];
-
-    createPage({
-      path: `tag/${tagName}`,
-      component: categoryTemplate,
-      context: {
-        posts,
-        post,
-        tag: tagName,
-      },
     });
-  });
+
+    // Create the tags page with the list of tags from our posts object.
+    createPage({
+        path: '/tags',
+        component: categoryTemplate,
+        context: {
+            posts,
+        },
+    });
+
+    // For each of the tags in the post object, create a tag page.
+    Object.keys(posts).forEach((tagName) => {
+        const post = posts[tagName];
+
+        createPage({
+            path: `tag/${tagName}`,
+            component: categoryTemplate,
+            context: {
+                posts,
+                post,
+                tag: tagName,
+            },
+        });
+    });
 };
