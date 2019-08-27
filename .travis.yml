@@ -8,7 +8,7 @@ cache:
     - node_modules
 
 install:
-  - npm install
+  - npm ci
   - npm run lint
   - npm run build #use your build script
 
