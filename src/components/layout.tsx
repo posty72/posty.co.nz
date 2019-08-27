@@ -53,8 +53,9 @@ class Layout extends React.Component<LayoutProps, LayoutState> {
                         <Helmet
                             title={data.site.siteMetadata.title}
                             meta={[
-                                { name: 'description', content: 'Sample' },
-                                { name: 'keywords', content: 'sample, something' },
+                                { name: 'theme-color', content: '#2fbc42' },
+                                { name: 'description', content: 'Josh Post - Software developer' },
+                                { name: 'keywords', content: 'I create awesome digital products. I\'ve been working professionally as a developer since 2013.' },
                                 { name: 'google-site-verification', content: '7RxMn2JUwrO_NOuUXeoWSl90NElOenZ4Ky5WnFxd_q4' },
                             ]} />
                         <html lang="en" />

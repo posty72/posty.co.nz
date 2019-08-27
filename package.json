@@ -65,9 +65,10 @@
   "dependencies": {
     "@types/react-headroom": "^2.2.1",
     "@types/react-helmet": "^5.0.9",
+    "gatsby-plugin-manifest": "^2.2.9",
+    "gatsby-plugin-offline": "^2.2.9",
     "gatsby-plugin-tslint": "0.0.2",
     "gatsby-plugin-typescript": "^2.1.2",
-    "lighthouse": "^5.2.0",
     "postcss-import": "^12.0.1",
     "postcss-strip-inline-comments": "^0.1.5"
   }

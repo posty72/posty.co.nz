@@ -44,7 +44,10 @@
         position: relative;
 
         flex-shrink: 0;
-        max-height: rem(200);
+
+        @media (--from-medium-screen-w) {
+            max-height: rem(200);
+        }
 
         &::after {
             position: absolute;
