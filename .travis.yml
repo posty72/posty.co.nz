@@ -17,7 +17,7 @@ deploy:
     access_key_id: $AWS_ACCESS_KEY_ID
     secret_access_key: $AWS_SECRET_ACCESS_KEY
     region: $AWS_DEFAULT_REGION
-    bucket: $AWS_S3_BUCKET_NAME_MASTER
+    bucket: $AWS_S3_BUCKET_NAME
     local_dir: public
     skip_cleanup: true
     acl: public_read
@@ -27,7 +27,7 @@ deploy:
     access_key_id: $AWS_ACCESS_KEY_ID
     secret_access_key: $AWS_SECRET_ACCESS_KEY
     region: $AWS_DEFAULT_REGION
-    bucket: $AWS_S3_BUCKET_NAME_DEVELOP
+    bucket: $AWS_S3_BUCKET_NAME
     local_dir: public
     skip_cleanup: true
     acl: public_read
