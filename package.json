@@ -12,9 +12,9 @@
     "build": "gatsby build",
     "start": "NODE_ENV=development gatsby develop",
     "serve": "gatsby serve",
-    "format": "prettier --trailing-comma es5 --no-semi --single-quote --write \"src/**/*.js\"",
+    "test": "tsc --noEmit --skipLibCheck",
     "lint": "npm run lint:ts && npm run lint:css",
-    "lint:ts": "tsc --noEmit --skipLibCheck && tslint -p ./tsconfig.json --fix",
+    "lint:ts": "tslint -p ./tsconfig.json --fix",
     "lint:css": "stylelint ./src/**/*.scss --syntax scss",
     "precommit": "npm run lint"
   },
