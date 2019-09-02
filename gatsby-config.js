@@ -25,15 +25,13 @@ module.exports = {
                 path: `${__dirname}/src/`,
             },
         },
-        'gatsby-transformer-sharp',
-        'gatsby-plugin-sharp',
-        'gatsby-plugin-react-helmet',
-        {
+        'gatsby-transformer-sharp', 'gatsby-plugin-sharp',
+        'gatsby-plugin-react-helmet', 'gatsby-plugin-typescript',
+        'gatsby-plugin-tslint', {
             resolve: 'gatsby-plugin-sass',
             options: {
                 postCssPlugins: [
-                    require('postcss-import'),
-                    require('postcss-simple-vars'),
+                    require('postcss-import'), require('postcss-simple-vars'),
                     require('postcss-strip-inline-comments'),
                     require('postcss-color-function'),
                     require('postcss-remify'),
@@ -45,6 +43,25 @@ module.exports = {
                 ]
             }
         },
+        {
+            resolve: `gatsby-plugin-manifest`,
+            options: {
+                name: "Josh Post",
+                short_name: "Josh Pist",
+                start_url: "/",
+                background_color: "#2fbc42",
+                theme_color: "#2fbc42",
+                // Enables "Add to Homescreen" prompt and disables browser UI (including back button)
+                // see https://developers.google.com/web/fundamentals/web-app-manifest/#display
+                display: "standalone",
+                icon: "src/images/icon.png", // This path is relative to the root of the site.
+                // An optional attribute which provides support for CORS check.
+                // If you do not provide a crossOrigin option, it will skip CORS for manifest.
+                // Any invalid keyword or empty string defaults to `anonymous`
+                crossOrigin: `use-credentials`,
+            },
+        },
+        'gatsby-plugin-offline',
         {
             resolve: 'gatsby-transformer-remark',
             options: {

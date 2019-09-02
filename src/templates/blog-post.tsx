@@ -1,9 +1,8 @@
-import * as moment from 'moment';
-import { graphql } from 'gatsby';
-import Layout from '../components/layout';
-import PropTypes from 'prop-types';
-import React from 'react';
-import TagList from '../components/tag-list';
+import { graphql } from 'gatsby'
+import * as moment from 'moment'
+import * as React from 'react'
+import Layout from '../components/layout'
+import TagList from '../components/tag-list'
 
 const BlogPost = ({ data: { markdownRemark: post }, location }) => (
     <Layout location={location}>
@@ -20,12 +19,7 @@ const BlogPost = ({ data: { markdownRemark: post }, location }) => (
             {post.frontmatter.categories.length > 0 && <TagList tags={post.frontmatter.categories} />}
         </div>
     </Layout>
-);
-
-BlogPost.propTypes = {
-    data: PropTypes.object,
-    location: PropTypes.object,
-};
+)
 
 export const query = graphql`
     query BlogPostQuery($slug: String!) {
@@ -48,6 +42,6 @@ export const query = graphql`
             }
         }
     }
-`;
+`
 
-export default BlogPost;
+export default BlogPost

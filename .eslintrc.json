@@ -12,7 +12,6 @@
   },
   "extends": [
     "eslint:recommended",
-    "plugin:react/recommended"
   ],
   "parserOptions": {
     "ecmaVersion": 2017,
@@ -23,19 +22,9 @@
     "sourceType": "module"
   },
   "plugins": [
-    "babel",
-    "react",
-    "filenames",
-    "import"
+    "babel"
   ],
   "rules": {
-    "react/no-danger": 0,
-    "react/no-find-dom-node": "error",
-    "filenames/match-regex": [
-      "error",
-      "^[a-z-.]+$"
-    ],
-    "import/named": "error",
     "strict": [
       "error",
       "global"
