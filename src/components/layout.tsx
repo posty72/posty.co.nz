@@ -51,7 +51,7 @@ class Layout extends React.Component<LayoutProps, LayoutState> {
                 render={(data) =>
                     <div className={`base ${navClass}`}>
                         <Helmet
-                            title={data.site.siteMetadata.title}
+                            titleTemplate={`%s - ${data.site.siteMetadata.title}`}
                             meta={[
                                 { name: 'theme-color', content: '#2fbc42' },
                                 { name: 'description', content: 'Josh Post - Software developer' },
