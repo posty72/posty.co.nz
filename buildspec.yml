@@ -14,8 +14,9 @@ phases:
       - npm t
 
 artifacts:
+  base-directory: public
   files:
-    - public/**/*
+    - "**/*"
 
 cache:
   paths:
