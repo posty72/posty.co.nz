@@ -20,6 +20,7 @@ deploy:
     bucket: $AWS_S3_BUCKET_NAME
     local_dir: public
     skip_cleanup: true
+    acl: public_read
     on:
       branch: master
   - provider: s3
@@ -29,6 +30,7 @@ deploy:
     bucket: $AWS_S3_BUCKET_NAME
     local_dir: public
     skip_cleanup: true
+    acl: public_read
     on:
       branch: develop
 
