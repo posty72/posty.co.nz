@@ -55,7 +55,7 @@
     "react-headroom": "^2.2.4",
     "react-helmet": "^5.2.0",
     "serve": "^11.1.0",
-    "stylelint": "^11.0.0",
+    "stylelint": "^13.2.0",
     "stylelint-order": "^4.0.0",
     "tslint": "^5.19.0",
     "tslint-loader": "^3.5.4",
