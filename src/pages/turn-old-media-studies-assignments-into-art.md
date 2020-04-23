@@ -10,7 +10,7 @@ author: "Josh Post"
 
 I recently rediscovered my old Year 12 Media Studies assignment on Youtube. It was recorded on tape, which somehow corrupted and the audio didn't match the video. It didn't have a storyline. It was trying to rip off a great 70's TV show. Its actors&nbsp;(including yours truly), director and cinematographer didn't take it seriously. Needless to say it's pretty much unwatchable.
 
-<iframe style="display: block; margin-left: auto; margin-right: auto;" src="http://www.youtube.com/embed/BQlxVcmTrx8" width="420" height="315" frameborder="0"></iframe>
+<iframe style="display: block; margin-left: auto; margin-right: auto;" src="https://www.youtube.com/embed/BQlxVcmTrx8" width="420" height="315" frameborder="0"></iframe>
 
 Why not turn some horrible piece of almost film into [Oscar Wilde's definition of art]{:target="_blank"}. If you want to turn your awful old high-school assignment into something a little bit more workable, follow these steps:
 
@@ -46,7 +46,7 @@ The video is now art but it isn't compelling watching. Since this video already 
 
 Congratulations, if you have followed all my steps you will have a hipster video to show your old classmates.&nbsp;
 
-<iframe src="http://player.vimeo.com/video/89825365" width="500" height="375" frameborder="0"></iframe>
+<iframe src="https://player.vimeo.com/video/89825365" width="500" height="375" frameborder="0"></iframe>
 
 [Oscar Wilde's definition of art]: http://quotes.lifehack.org/quote/oscar-wilde/all-art-is-quite-useless/
 [this tutorial]: https://www.youtube.com/watch?v=tBewECMyLG0
