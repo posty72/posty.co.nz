@@ -64,7 +64,7 @@
   },
   "dependencies": {
     "@types/react-headroom": "^2.2.1",
-    "@types/react-helmet": "^5.0.9",
+    "@types/react-helmet": "^6.0.0",
     "gatsby-plugin-manifest": "^2.2.9",
     "gatsby-plugin-offline": "^3.0.11",
     "gatsby-plugin-tslint": "0.0.2",
