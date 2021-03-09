@@ -1,5 +1,5 @@
-import Link from 'gatsby-link'
-import * as React from 'react'
+import Link from "gatsby-link";
+import * as React from "react";
 
 const Navigation = ({ toggleNav }) => (
     <div className="navigation">
@@ -14,20 +14,22 @@ const Navigation = ({ toggleNav }) => (
         <nav className="nav">
             <ul className="nav-items" role="menu">
                 <li className="nav-item">
-                    <Link className="nav-item-link" role="menuitem" to="/">/</Link>
+                    <Link className="nav-item-link" role="menuitem" to="/work">
+                        /work
+                    </Link>
                 </li>
                 <li className="nav-item">
-                    <Link className="nav-item-link" role="menuitem" to="/about">/about</Link>
-                </li>
-                <li className="nav-item">
-                    <Link className="nav-item-link" role="menuitem" to="/writing">/writing</Link>
-                </li>
-                <li className="nav-item">
-                    <Link className="nav-item-link" role="menuitem" to="/contact">/contact</Link>
+                    <Link
+                        className="nav-item-link"
+                        role="menuitem"
+                        to="/contact"
+                    >
+                        /contact
+                    </Link>
                 </li>
             </ul>
         </nav>
     </div>
-)
+);
 
-export default Navigation
+export default Navigation;

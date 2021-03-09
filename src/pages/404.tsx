@@ -1,16 +1,11 @@
-import * as React from 'react'
-import Layout from '../components/layout'
+import * as React from "react";
+import { Layout } from "../components/layout";
 
-interface NotFoundPageProps {
-    location: Location
-}
-
-const NotFoundPage = ({ location }: NotFoundPageProps) => (
-    <Layout location={location}>
-
+const NotFoundPage = () => (
+    <Layout>
         <h1>Not found</h1>
         <p>You just hit a route that doesn't exist... the sadness.</p>
     </Layout>
-)
+);
 
-export default NotFoundPage
+export default NotFoundPage;

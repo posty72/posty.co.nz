@@ -1,25 +1,17 @@
-import Link from 'gatsby-link'
-import * as React from 'react'
+import * as React from "react";
 
-const Preview = ({ data }) => (
+interface PreviewProps {
+    title: string;
+    description: string;
+}
+
+export const Preview = ({ title, description }: PreviewProps) => (
     <article
         className="teaser"
         itemScope={true}
-        itemType="http://schema.org/BlogPosting">
-        <Link
-            className="teaser-anchorImage"
-            to={data.fields.slug}
-            title={data.frontmatter.title}>
-            <img
-                className="feature-image"
-                srcSet={data.frontmatter.image.thumbnail.resolutions.srcSet}
-                src={data.frontmatter.image.thumbnail.resolutions.src} />
-
-            <h1 className="teaser-title">
-                <Link className="teaser-title-link" to={data.fields.slug} title={data.frontmatter.title}>{data.frontmatter.title}</Link>
-            </h1>
-        </Link>
+        itemType="http://schema.org/BlogPosting"
+    >
+        <h2 className="teaser-title">{title}</h2>
+        <p className="teaser-description">{description}</p>
     </article>
-)
-
-export default Preview
+);
