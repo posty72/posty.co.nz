@@ -1,120 +1,101 @@
-import * as React from 'react'
+import * as React from "react";
 
 interface ContactFormProps {
-    showTitle: boolean
+    showTitle: boolean;
 }
 
-interface ContactFormState {
-    messageSent: boolean
-    isSending: boolean
-    height: number
-}
+export const ContactForm = ({ showTitle }: ContactFormProps) => {
+    const container = React.useRef<HTMLDivElement>();
+    const nameInput = React.useRef<HTMLInputElement>();
+    const emailInput = React.useRef<HTMLInputElement>();
+    const messageInput = React.useRef<HTMLTextAreaElement>();
+    const [messageSent, setMessageSent] = React.useState(false);
+    const [isSending, setIsSending] = React.useState(false);
+    const [height, setHeight] = React.useState(null);
 
-class ContactForm extends React.Component<ContactFormProps, ContactFormState> {
-    container: React.RefObject<HTMLDivElement> = React.createRef()
-    nameInput: React.RefObject<HTMLInputElement> = React.createRef()
-    emailInput: React.RefObject<HTMLInputElement> = React.createRef()
-    messageInput: React.RefObject<HTMLTextAreaElement> = React.createRef()
+    React.useEffect(() => {
+        const { height } = container.current.getBoundingClientRect();
+        setHeight(height);
+    }, [container.current]);
 
-    state = {
-        messageSent: false,
-        isSending: false,
-        height: null
-    }
+    const sendEnquiry = async (event: React.FormEvent<HTMLFormElement>) => {
+        event.preventDefault();
+        setIsSending(true);
 
-    constructor(props: ContactFormProps) {
-        super(props)
-
-        this.sendEnquiry = this.sendEnquiry.bind(this)
-    }
-
-    componentDidMount() {
-        if (this.container.current) {
-            const { height } = this.container.current.getBoundingClientRect()
-            this.setState({ height })
+        try {
+            const response = await fetch(
+                "https://82rhrugey3.execute-api.us-west-2.amazonaws.com/dev/contact",
+                {
+                    method: "POST",
+                    body: JSON.stringify({
+                        name: nameInput.current.value,
+                        email: emailInput.current.value,
+                        message: messageInput.current.value,
+                    }),
+                    headers: new Headers({
+                        "Content-Type": "application/json",
+                    }),
+                    mode: "no-cors",
+                }
+            );
+            await response.text();
+            setMessageSent(true);
+        } catch (error: unknown) {
+            console.error(error);
+        } finally {
+            setIsSending(false);
         }
-    }
-
-    sendEnquiry(event: React.FormEvent<HTMLFormElement>) {
-        event.preventDefault()
-        const { nameInput, emailInput, messageInput } = this
-
-        this.setState({
-            isSending: true
-        })
-
-        fetch('https://82rhrugey3.execute-api.us-west-2.amazonaws.com/dev/contact', {
-            method: 'POST',
-            body: JSON.stringify({
-                name: nameInput.current.value,
-                email: emailInput.current.value,
-                message: messageInput.current.value
-            }),
-            headers: new Headers({
-                'Content-Type': 'application/json'
-            }),
-            mode: 'no-cors',
-        })
-            .then((response) => response.text())
-            .then(() => {
-                this.setState({
-                    messageSent: true,
-                    isSending: false
-                })
-            })
-            .catch((error) => console.error(error))
-    }
+    };
 
     // Render
-    renderTitle() {
-        const { messageSent, isSending } = this.state
-        const text = (messageSent) ? 'Thanks for getting in touch' : 'Get in touch'
+    const Title = () => {
+        const text = messageSent
+            ? "Thanks for getting in touch"
+            : "Get in touch";
 
-        if (isSending) {
-            return (
-                <p>Sending...</p>
-            )
-        }
+        return <h4 className="contact-title">{text}</h4>;
+    };
 
-        return (
-            <h4 className="contact-title">{text}</h4>
-        )
+    if (isSending) {
+        return <p>Sending...</p>;
     }
 
-    render() {
-        return (
-            <div
-                className="contact"
-                ref={this.container}
-                style={{ height: (this.state.height || null) }}>
-                <div className="container">
-                    {this.props.showTitle && this.renderTitle()}
-                    {this.state.messageSent === false &&
-                        <form className="contact-form" onSubmit={this.sendEnquiry}>
-                            <input
-                                className="contact-input"
-                                type="text" name="name"
-                                ref={this.nameInput}
-                                placeholder="Name"
-                                required={true} />
-                            <input
-                                className="contact-input"
-                                type="email" name="email"
-                                ref={this.emailInput}
-                                placeholder="Email"
-                                required={true} />
-                            <textarea
-                                className="contact-text"
-                                name="message"
-                                ref={this.messageInput}
-                                placeholder="Message" />
-                            <button className="contact-button">Send</button>
-                        </form>
-                    }
-                </div>
+    return (
+        <div
+            className="contact"
+            ref={container}
+            style={{ height: height || null }}
+        >
+            <div className="container">
+                {showTitle && <Title />}
+                {messageSent === false && (
+                    <form className="contact-form" onSubmit={sendEnquiry}>
+                        <input
+                            className="contact-input"
+                            type="text"
+                            name="name"
+                            ref={nameInput}
+                            placeholder="Name"
+                            required={true}
+                        />
+                        <input
+                            className="contact-input"
+                            type="email"
+                            name="email"
+                            ref={emailInput}
+                            placeholder="Email"
+                            required={true}
+                        />
+                        <textarea
+                            className="contact-text"
+                            name="message"
+                            ref={messageInput}
+                            placeholder="Message"
+                        />
+                        <button className="contact-button">Send</button>
+                    </form>
+                )}
             </div>
-        )
-    }
-}
-
-export default ContactForm
+        </div>
+    );
+};
