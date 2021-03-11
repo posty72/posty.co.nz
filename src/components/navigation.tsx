@@ -1,7 +1,11 @@
 import Link from "gatsby-link";
 import * as React from "react";
 
-const Navigation = ({ toggleNav }) => (
+interface NavigationProps {
+    toggleNav: () => void;
+}
+
+const Navigation = ({ toggleNav }: NavigationProps) => (
     <div className="navigation">
         <div className="hamburger" onClick={toggleNav}>
             <div className="hamburger-wrapper">

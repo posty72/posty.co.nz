@@ -5,7 +5,11 @@ import Footer from "../components/footer";
 import Header from "../components/header";
 import "../layouts/index.scss";
 
-export const Layout = ({ children }) => {
+interface LayoutProps {
+    children: React.ReactNode;
+}
+
+export const Layout = ({ children }: LayoutProps) => {
     const [navOpen, setNavOpen] = React.useState(false);
     const navClass = navOpen ? "nav-open" : "";
 
@@ -24,7 +28,7 @@ export const Layout = ({ children }) => {
                     }
                 }
             `}
-            render={data => (
+            render={(data) => (
                 <div className={`base ${navClass}`}>
                     <Helmet
                         titleTemplate={`%s - ${data.site.siteMetadata.title}`}
@@ -32,23 +36,23 @@ export const Layout = ({ children }) => {
                             { name: "theme-color", content: "#2fbc42" },
                             {
                                 name: "description",
-                                content: "Josh Post - Software developer"
+                                content: "Josh Post - Software developer",
                             },
                             {
                                 name: "keywords",
                                 content:
-                                    "I create awesome digital products. I've been working professionally as a developer since 2013."
+                                    "I create awesome digital products. I've been working professionally as a developer since 2013.",
                             },
                             {
                                 name: "google-site-verification",
                                 content:
-                                    "7RxMn2JUwrO_NOuUXeoWSl90NElOenZ4Ky5WnFxd_q4"
-                            }
+                                    "7RxMn2JUwrO_NOuUXeoWSl90NElOenZ4Ky5WnFxd_q4",
+                            },
                         ]}
                     />
                     <html lang="en" />
                     <Header
-                        data={data}
+                        title={data.site.siteMetadata.title}
                         toggleNav={() => setNavOpen(!navOpen)}
                     />
                     <main className="main || container">{children}</main>

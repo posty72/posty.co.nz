@@ -8,20 +8,20 @@ export const ContactForm = ({ showTitle }: ContactFormProps) => {
     const container = React.useRef<HTMLDivElement>();
     const form = React.useRef<HTMLFormElement>();
     const [messageSent, setMessageSent] = React.useState(false);
+    const [error, setError] = React.useState(false);
     const [isSending, setIsSending] = React.useState(false);
-    const [height, setHeight] = React.useState(null);
+    const [height, setHeight] = React.useState<number>(null);
 
     React.useEffect(() => {
-        if(container.current){
-        const { height } = container.current.getBoundingClientRect();
-
-            setHeight(height);
+        if (container.current) {
+            setHeight(container.current.getBoundingClientRect().height);
         }
     }, [container.current]);
 
     const sendEnquiry = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
         setIsSending(true);
+        setError(false);
 
         try {
             const formData = new FormData(form.current);
@@ -34,14 +34,15 @@ export const ContactForm = ({ showTitle }: ContactFormProps) => {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
-                    Accept: "application/json"
+                    Accept: "application/json",
                 },
-                body: json
+                body: json,
             });
             await response.json();
             setMessageSent(true);
-        } catch (error) {
-            console.error(error);
+        } catch (e: unknown) {
+            console.error(e);
+            setError(true);
         } finally {
             setIsSending(false);
         }
@@ -68,7 +69,13 @@ export const ContactForm = ({ showTitle }: ContactFormProps) => {
         >
             <div className="container">
                 {showTitle && <Title />}
-                {messageSent === false && (
+                {error && (
+                    <p>
+                        There was an error trying to send your message. Please
+                        try again.
+                    </p>
+                )}
+                {!messageSent && (
                     <form
                         className="contact-form"
                         ref={form}

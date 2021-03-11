@@ -3,12 +3,7 @@
     "outDir": "dist",
     "module": "esnext",
     "target": "es5",
-    "lib": [
-      "es6",
-      "es2016",
-      "es2017",
-      "dom"
-    ],
+    "lib": ["es6", "es2016", "es2017", "dom"],
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "sourceMap": true,
@@ -18,9 +13,7 @@
     "suppressImplicitAnyIndexErrors": true,
     "baseUrl": "src"
   },
-  "include": [
-    "src"
-  ],
+  "include": ["src"],
   "exclude": [
     "node_modules",
     "gatsby-browser.js",
