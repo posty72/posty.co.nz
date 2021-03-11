@@ -13,9 +13,9 @@ export const Layout = ({ children }: LayoutProps) => {
     const [navOpen, setNavOpen] = React.useState(false);
     const navClass = navOpen ? "nav-open" : "";
 
-    React.useEffect(() => {
+    React.useLayoutEffect(() => {
         setNavOpen(false);
-    }, [location.pathname]);
+    }, [globalThis.location?.pathname]);
 
     return (
         <StaticQuery<{ site: { siteMetadata: { title: string } } }>
