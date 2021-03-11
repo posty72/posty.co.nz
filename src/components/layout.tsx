@@ -18,7 +18,7 @@ export const Layout = ({ children }: LayoutProps) => {
     }, [location.pathname]);
 
     return (
-        <StaticQuery
+        <StaticQuery<{ site: { siteMetadata: { title: string } } }>
             query={graphql`
                 query HeaderQuery {
                     site {
