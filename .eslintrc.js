@@ -13,32 +13,30 @@ Happy linting! 💖
 */
 module.exports = {
     env: {
-        browser: true,
+        browser: true
     },
     parser: "@typescript-eslint/parser",
     parserOptions: {
         project: "tsconfig.json",
-        sourceType: "module",
+        sourceType: "module"
     },
     plugins: [
-        "eslint-plugin-unicorn",
-        "eslint-plugin-jsdoc",
         "eslint-plugin-react",
         "eslint-plugin-import",
         "@typescript-eslint",
-        "@typescript-eslint/tslint",
+        "@typescript-eslint/tslint"
     ],
     extends: [
         "plugin:@typescript-eslint/recommended",
         "plugin:react/recommended",
         "plugin:import/recommended",
-        "prettier",
+        "prettier"
     ],
     settings: {
         react: {
             pragma: "React",
-            version: "detect",
-        },
+            version: "detect"
+        }
     },
     rules: {
         /**
@@ -52,8 +50,8 @@ module.exports = {
             {
                 selector: "variable",
                 types: ["function"],
-                format: ["PascalCase", "camelCase"],
-            },
+                format: ["PascalCase", "camelCase"]
+            }
         ],
         "@typescript-eslint/no-empty-function": "error",
         "@typescript-eslint/await-thenable": "error",
@@ -72,14 +70,14 @@ module.exports = {
             "warn",
             {
                 ignore: [0, 1, -1, 2],
-                ignoreEnums: true,
-            },
+                ignoreEnums: true
+            }
         ],
         "@typescript-eslint/ban-ts-comment": "warn",
         "@typescript-eslint/default-param-last": "warn",
         "@typescript-eslint/consistent-indexed-object-style": [
             "warn",
-            "index-signature",
+            "index-signature"
         ],
         "@typescript-eslint/no-invalid-this": ["error"],
         "@typescript-eslint/no-loop-func": ["error"],
@@ -87,13 +85,13 @@ module.exports = {
             "warn",
             {
                 assertionStyle: "as",
-                objectLiteralTypeAssertions: "allow-as-parameter",
-            },
+                objectLiteralTypeAssertions: "allow-as-parameter"
+            }
         ],
         "@typescript-eslint/consistent-type-definitions": ["warn", "interface"],
         "@typescript-eslint/consistent-type-imports": [
             "warn",
-            { prefer: "type-imports" },
+            { prefer: "type-imports" }
         ],
         "@typescript-eslint/array-type": ["warn", { default: "array" }],
         "@typescript-eslint/no-explicit-any": "warn",
@@ -112,8 +110,8 @@ module.exports = {
                 allowConditionalTypes: "always",
                 allowLiterals: "always",
                 allowMappedTypes: "always",
-                allowTupleTypes: "always",
-            },
+                allowTupleTypes: "always"
+            }
         ],
         "@typescript-eslint/no-this-alias": "warn",
         "@typescript-eslint/no-implicit-any-catch": "warn",
@@ -123,8 +121,8 @@ module.exports = {
                 allowArgumentsExplicitlyTypedAsAny: true,
                 allowDirectConstAssertionInArrowFunctions: true,
                 allowHigherOrderFunctions: true,
-                allowTypedFunctionExpressions: true,
-            },
+                allowTypedFunctionExpressions: true
+            }
         ],
         "@typescript-eslint/no-unused-expressions": "error",
 
@@ -153,7 +151,7 @@ module.exports = {
         "react/no-this-in-sfc": "error",
         "react/boolean-prop-naming": [
             "error",
-            { rule: "^(is|has)[A-Z]([A-Za-z0-9]?)+" },
+            { rule: "^(is|has)[A-Z]([A-Za-z0-9]?)+" }
         ],
         "react/jsx-fragments": ["error", "syntax"],
         "react/jsx-max-depth": ["error", { max: 4 }],
@@ -183,7 +181,7 @@ module.exports = {
             "Boolean",
             "boolean",
             "Undefined",
-            "undefined",
+            "undefined"
         ],
         "id-match": "error",
         "jsdoc/check-alignment": "error",
@@ -192,8 +190,8 @@ module.exports = {
         "max-len": [
             "error",
             {
-                code: 400,
-            },
+                code: 400
+            }
         ],
         "no-bitwise": "error",
         "no-caller": "error",
@@ -223,9 +221,9 @@ module.exports = {
                     "profile",
                     "profileEnd",
                     "timeStamp",
-                    "context",
-                ],
-            },
+                    "context"
+                ]
+            }
         ],
         "no-debugger": "error",
         "no-empty": "error",
@@ -244,8 +242,8 @@ module.exports = {
             {
                 blankLine: "always",
                 prev: "*",
-                next: "return",
-            },
+                next: "return"
+            }
         ],
         "prefer-const": "error",
         "prefer-template": "error",
@@ -254,10 +252,10 @@ module.exports = {
             "error",
             "always",
             {
-                markers: ["/"],
-            },
+                markers: ["/"]
+            }
         ],
         "max-lines": ["warn", 200],
-        "unicorn/filename-case": "error",
-    },
+        "unicorn/filename-case": "error"
+    }
 };

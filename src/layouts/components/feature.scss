@@ -8,7 +8,6 @@
         flex-direction: column;
     }
 
-
     // Elements
     &-title {
         -webkit-box-orient: vertical;
@@ -59,7 +58,7 @@
             height: 3px;
 
             background-color: $color-primary;
-            content: '';
+            content: "";
 
             transition: all ease 0.8s;
         }
