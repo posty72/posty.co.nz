@@ -67,7 +67,7 @@ export const ContactForm = ({ showTitle }: ContactFormProps) => {
             ref={container}
             style={{ height: height || null }}
         >
-            <div className="container">
+            <div className="constrain-width">
                 {showTitle && <Title />}
                 {error && (
                     <p>

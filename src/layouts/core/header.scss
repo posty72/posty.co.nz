@@ -1,8 +1,10 @@
 .header {
-    display: flex;
-    align-items: center;
-    flex: none;
-    width: 100%;
+    &-inner {
+        display: flex;
+        flex: none;
+        align-items: center;
+        width: 100%;
+    }
 
     &-text {
         display: inline-block;
@@ -25,8 +27,8 @@
 
     .container {
         display: flex;
-        align-items: center;
         flex: none;
+        align-items: center;
         padding: rem(10) rem(20);
     }
 }

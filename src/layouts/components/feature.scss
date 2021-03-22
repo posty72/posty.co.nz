@@ -10,8 +10,8 @@
 
     // Elements
     &-title {
-        -webkit-box-orient: vertical;
-        display: -webkit-box;
+        box-orient: vertical;
+        display: box;
         overflow: hidden;
         -webkit-line-clamp: 1;
 
@@ -29,8 +29,8 @@
     }
 
     &-content {
-        -webkit-box-orient: vertical;
-        display: -webkit-box;
+        box-orient: vertical;
+        display: box;
         overflow: hidden;
         -webkit-line-clamp: 2;
     }

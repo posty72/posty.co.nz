@@ -55,7 +55,12 @@ export const Layout = ({ children }: LayoutProps) => {
                         title={data.site.siteMetadata.title}
                         toggleNav={() => setNavOpen(!navOpen)}
                     />
-                    <main className="main || container">{children}</main>
+                    <div className="page-header">
+                        <div className="constrain-width x-large">
+                            <h1>Page Title</h1>
+                        </div>
+                    </div>
+                    <main className="main || constrain-width">{children}</main>
                     <Footer />
                 </div>
             )}

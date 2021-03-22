@@ -6,6 +6,7 @@
 @import "variables.scss";
 
 // Core
+@import "core/constrain.scss";
 @import "core/layout.scss";
 @import "core/navigation.scss";
 @import "core/header.scss";
@@ -16,6 +17,7 @@
 @import "components/feature.scss";
 @import "components/contact-form.scss";
 @import "components/hamburger.scss";
+@import "components/page-header.scss";
 @import "components/tables.scss";
 @import "components/tag-list.scss";
 @import "components/teaser.scss";
