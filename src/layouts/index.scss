@@ -6,18 +6,24 @@
 @import "variables.scss";
 
 // Core
-@import "core/constrain.scss";
-@import "core/layout.scss";
-@import "core/navigation.scss";
-@import "core/header.scss";
-@import "core/footer.scss";
-@import "core/type.scss";
+@import 'core/fonts.scss';
+@import 'core/layout.scss';
+@import 'core/type.scss';
+
 
 // Component
-@import "components/feature.scss";
-@import "components/contact-form.scss";
-@import "components/hamburger.scss";
-@import "components/page-header.scss";
-@import "components/tables.scss";
-@import "components/tag-list.scss";
-@import "components/teaser.scss";
+@import 'components/feature.scss';
+@import 'components/contact-form.scss';
+@import 'components/hamburger.scss';
+@import 'components/swatch.scss';
+@import 'components/tables.scss';
+@import 'components/tag-list.scss';
+@import 'components/teaser.scss';
+
+// Organisms
+@import 'organism/footer.scss';
+@import 'organism/header.scss';
+@import 'organism/navigation.scss';
+
+// Views
+@import 'views/style-guide.scss';
