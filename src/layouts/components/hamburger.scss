@@ -1,7 +1,4 @@
 .hamburger {
-    @media (--to-medium-screen-w) {
-        display: block;
-    }
     position: absolute;
     top: 10px;
     right: 10px;
@@ -14,6 +11,10 @@
 
     cursor: pointer;
     background-color: $color-primary;
+
+    @media (--to-medium-screen-w) {
+        display: block;
+    }
 }
 
 .hamburger-wrapper {

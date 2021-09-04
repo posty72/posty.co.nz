@@ -1,6 +1,8 @@
 {
-  "plugins": ["stylelint-order"],
+  "plugins": ["stylelint-order", "stylelint-prettier"],
+  "extends": ["stylelint-prettier/recommended"],
   "rules": {
+    "prettier/prettier": true,
     "color-hex-length": "long",
     "color-named": "never",
     "color-no-hex": true,

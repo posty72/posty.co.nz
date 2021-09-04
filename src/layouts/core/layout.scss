@@ -50,18 +50,3 @@ hr {
     border-top: 5px solid $color-primary;
     box-shadow: none;
 }
-
-
-/* GLOABL CLASSES */
-
-.container {
-    width: 100%;
-    max-width: 1000px;
-    padding: rem(20);
-    margin: 0 auto;
-
-    .container {
-        padding: rem(20) 0;
-    }
-}
-

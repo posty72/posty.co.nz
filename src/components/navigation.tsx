@@ -9,7 +9,11 @@ const NavItem = ({ to, label }: { to: string; label: string }) => (
     </li>
 );
 
-const Navigation = ({ toggleNav }) => (
+interface NavigationProps {
+    toggleNav: () => void;
+}
+
+const Navigation = ({ toggleNav }: NavigationProps) => (
     <div className="navigation">
         <div className="hamburger" onClick={toggleNav}>
             <div className="hamburger-wrapper">

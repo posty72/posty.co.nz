@@ -31,13 +31,13 @@
 
     &-items {
         display: flex;
-        align-items: center;
         flex-direction: row;
+        align-items: center;
         padding: 0;
 
         @media (--to-medium-screen-w) {
-            align-items: flex-start;
             flex-direction: column;
+            align-items: flex-start;
             height: 100vh;
 
             background-color: $color-light;

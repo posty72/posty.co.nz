@@ -5,16 +5,20 @@ import { Footer } from "../components/footer";
 import { Header } from "../components/header";
 import "../layouts/index.scss";
 
-export const Layout = ({ children }) => {
+interface LayoutProps {
+    children: React.ReactNode;
+}
+
+export const Layout = ({ children }: LayoutProps) => {
     const [navOpen, setNavOpen] = React.useState(false);
     const navClass = navOpen ? "nav-open" : "";
 
-    React.useEffect(() => {
+    React.useLayoutEffect(() => {
         setNavOpen(false);
-    }, [location.pathname]);
+    }, [globalThis.location?.pathname]);
 
     return (
-        <StaticQuery
+        <StaticQuery<{ site: { siteMetadata: { title: string } } }>
             query={graphql`
                 query HeaderQuery {
                     site {
@@ -48,10 +52,15 @@ export const Layout = ({ children }) => {
                     />
                     <html lang="en" />
                     <Header
-                        data={data}
+                        title={data.site.siteMetadata.title}
                         toggleNav={() => setNavOpen(!navOpen)}
                     />
-                    <main className="main || container">{children}</main>
+                    <div className="page-header">
+                        <div className="constrain-width x-large">
+                            <h1>Page Title</h1>
+                        </div>
+                    </div>
+                    <main className="main || constrain-width">{children}</main>
                     <Footer />
                 </div>
             )}

@@ -21,12 +21,9 @@ module.exports = {
         sourceType: "module",
     },
     plugins: [
-        "eslint-plugin-unicorn",
-        "eslint-plugin-jsdoc",
         "eslint-plugin-react",
         "eslint-plugin-import",
         "@typescript-eslint",
-        "@typescript-eslint/tslint",
     ],
     extends: [
         "plugin:@typescript-eslint/recommended",
@@ -156,7 +153,7 @@ module.exports = {
             { rule: "^(is|has)[A-Z]([A-Za-z0-9]?)+" },
         ],
         "react/jsx-fragments": ["error", "syntax"],
-        "react/jsx-max-depth": ["error", { max: 4 }],
+        "react/jsx-max-depth": ["error", { max: 6 }],
         "react/jsx-key": "error",
         "react/jsx-no-duplicate-props": "error",
         "react/prefer-stateless-function": "warn",
@@ -186,9 +183,6 @@ module.exports = {
             "undefined",
         ],
         "id-match": "error",
-        "jsdoc/check-alignment": "error",
-        "jsdoc/check-indentation": "error",
-        "jsdoc/newline-after-description": "error",
         "max-len": [
             "error",
             {
@@ -258,6 +252,5 @@ module.exports = {
             },
         ],
         "max-lines": ["warn", 200],
-        "unicorn/filename-case": "error",
     },
 };
