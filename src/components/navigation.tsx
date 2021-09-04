@@ -1,6 +1,14 @@
 import Link from "gatsby-link";
 import * as React from "react";
 
+const NavItem = ({ to, label }: { to: string; label: string }) => (
+    <li className="nav-item">
+        <Link className="nav-item-link" role="menuitem" to={to}>
+            {label}
+        </Link>
+    </li>
+);
+
 const Navigation = ({ toggleNav }) => (
     <div className="navigation">
         <div className="hamburger" onClick={toggleNav}>
@@ -13,20 +21,9 @@ const Navigation = ({ toggleNav }) => (
 
         <nav className="nav">
             <ul className="nav-items" role="menu">
-                <li className="nav-item">
-                    <Link className="nav-item-link" role="menuitem" to="/work">
-                        /work
-                    </Link>
-                </li>
-                <li className="nav-item">
-                    <Link
-                        className="nav-item-link"
-                        role="menuitem"
-                        to="/contact"
-                    >
-                        /contact
-                    </Link>
-                </li>
+                <NavItem to="/work" label="Work" />
+                <NavItem to="/contact" label="Contact" />
+                <NavItem to="/style-guide" label="Style Guide" />
             </ul>
         </nav>
     </div>

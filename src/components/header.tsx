@@ -1,15 +1,17 @@
-import * as React from 'react'
-import Headroom from 'react-headroom'
-import Navigation from './navigation'
+import * as React from "react";
+import Headroom from "react-headroom";
+import Navigation from "./navigation";
 
-const Header = ({ data, toggleNav }) => {
+export const Header = ({ data, toggleNav }) => {
     return (
         <Headroom>
             <header className="header" itemScope={true}>
                 <div className="container">
                     <div className="header-text">
                         <h2 className="header-title" itemProp="title">
-                            <a className="header-link" href="/">{data.site.siteMetadata.title}</a>
+                            <a className="header-link" href="/">
+                                {data.site.siteMetadata.title}
+                            </a>
                         </h2>
                     </div>
 
@@ -17,7 +19,5 @@ const Header = ({ data, toggleNav }) => {
                 </div>
             </header>
         </Headroom>
-    )
-}
-
-export default Header
+    );
+};

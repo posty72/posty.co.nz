@@ -2,29 +2,43 @@
 /*
     Colours
  */
-$color-green: rgb(47, 188, 66);
-$color-maroon: rgb(161, 18, 34);
+$color-green: rgba(63,174,121,1.0);
+$color-blue: rgba(19,84,122,1.0);
+$color-kahurangi: rgba(42,152,216,1.0);
+$color-gold: rgba(255,162,0,1.0);
 $color-black: rgb(0, 0, 0);
 $color-white: rgb(255, 255, 255);
-$color-white-shade-1: rgb(237, 237, 237);
-$color-white-shade-2: rgb(123, 123, 123);
 $color-primary: $color-green;
-$color-secondary: $color-maroon;
+$color-primary-tint-1: color($color-primary tint(10%));
+$color-primary-shade-1: color($color-primary shade(10%));
+$color-secondary: $color-blue;
+$color-secondary-tint-1: $color-kahurangi;
+$color-secondary-shade-1: color($color-secondary shade(10%));
+$color-tertiary: $color-gold;
+$color-tertiary-tint-1: color($color-tertiary tint(10%));
+$color-tertiary-shade-1: color($color-tertiary shade(10%));
 $color-dark: $color-black;
 $color-dark-tint-1: color($color-black tint(10%));
 $color-dark-tint-2: color($color-black tint(20%));
-$color-dark-opaque-1: color($color-black a(10%));
+$color-dark-alpha-1: color($color-black a(10%));
 $color-light: $color-white;
 $color-light-shade-1: color($color-white shade(2.5%));
-$color-light-1: $color-white-shade-1;
-$color-light-2: $color-white-shade-2;
+$color-light-shade-2: color($color-white shade(25%));
 
 
 /*
-    Fonts
- */
-$header-font: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-$font-body: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+     Typography
+     - Fonts
+     - Weights
+  */
+  $font-comfortaa: "Comfortaa", "Helvetica", "Arial", sans-serif;
+  $font-open-sans: "Open Sans", "Helvetica", "Arial", sans-serif;
+  $font-primary: $font-comfortaa;
+  $font-secondary: $font-open-sans;
+  $weight-light: 200;
+  $weight-regular: 400;
+  $weight-semi-bold: 600;
+  $weight-bold: 700;
 
 
 

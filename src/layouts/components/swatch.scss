@@ -1,0 +1,152 @@
+$--grid-spacing: 20;
+
+.swatch {
+    @media (--to-medium-screen-w) {
+        margin-bottom: rem($--grid-spacing);
+    }
+
+    // Types
+    &.outline .swatch-inner {
+        color: $color-dark;
+
+        // Elements
+        .swatch-title::after {
+            color: $color-dark;
+        }
+    }
+
+    // Colours
+    &.colour-primary .swatch-inner {
+        background-color: $color-primary;
+
+        // Elements
+        .tint-1 {
+            background-color: $color-primary-tint-1;
+        }
+
+        .shade-1 {
+            background-color: $color-primary-shade-1;
+        }
+    }
+
+    &.colour-secondary .swatch-inner {
+        background-color: $color-secondary;
+
+        // Elements
+        .tint-1 {
+            background-color: $color-secondary-tint-1;
+        }
+
+        .shade-1 {
+            background-color: $color-secondary-shade-1;
+        }
+    }
+
+    &.colour-tertiary .swatch-inner {
+        background-color: $color-tertiary;
+
+        // Elements
+        .tint-1 {
+            background-color: $color-tertiary-tint-1;
+        }
+
+        .shade-1 {
+            background-color: $color-tertiary-shade-1;
+        }
+    }
+
+    &.colour-dark .swatch-inner {
+        background-color: $color-dark;
+
+        // Elements
+        .tint-1 {
+            background-color: $color-dark-tint-1;
+        }
+
+        .tint-2 {
+            background-color: $color-dark-tint-2;
+        }
+    }
+
+    &.colour-light .swatch-inner {
+        background-color: $color-light;
+
+        // Elements        
+        .shade-1 {
+            background-color: $color-light-shade-1;
+        }
+
+        .shade-2 {
+            background-color: $color-light-shade-2;
+        }
+    }
+
+    // Elements
+    &-inner {
+        height: rem(200);
+        display: flex;;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+
+        padding-bottom: rem(40);
+        overflow: hidden;
+
+        color: $color-light;
+
+        border-radius: rem(15);
+        box-shadow: 0 4px 6px 0 $color-dark-alpha-1;
+
+        @media (--from-small-screen-w) {
+            padding-bottom: rem(60);
+        }
+    }
+
+    &-child,
+    &-title {
+        margin-bottom: 0;
+    }
+
+    &-child,
+    &-title::after {
+        font-size: rem(12);
+    }
+
+    &-child {
+        padding: rem(10) rem(20);
+    }
+
+    &-title {
+        flex-basis: 100%;
+        text-align: center;
+    }
+
+    &-title,
+    &-variation {
+        &::after {
+            display: block;
+
+            text-transform: uppercase;
+
+            opacity: 0.8;
+        }
+    }
+
+    &-variations {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+
+        display: flex;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+
+        list-style: none;
+    }
+
+    &-variation {
+        flex-basis: 50%;
+        height: rem(20);
+    }
+}
