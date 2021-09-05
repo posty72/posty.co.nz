@@ -1,8 +1,16 @@
 module.exports = {
     siteMetadata: {
         title: "Josh Post",
+        siteUrl: "https://posty.co.nz",
     },
     plugins: [
+        { resolve: "gatsby-plugin-sitemap" },
+        {
+            resolve: "gatsby-plugin-robots-txt",
+            options: {
+                policy: [{ userAgent: "*", allow: "/" }],
+            },
+        },
         {
             resolve: "gatsby-plugin-sass",
             options: {

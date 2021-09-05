@@ -34,6 +34,7 @@ export const Layout = ({ title, subtitle, children }: LayoutProps) => {
                 <div className={`base ${navClass}`}>
                     <Helmet
                         titleTemplate={`%s - ${data.site.siteMetadata.title}`}
+                        title={title}
                         meta={[
                             { name: "theme-color", content: "#2fbc42" },
                             {
