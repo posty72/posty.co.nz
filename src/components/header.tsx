@@ -1,4 +1,5 @@
 /* eslint-disable react/jsx-max-depth */
+import { Link } from "gatsby";
 import * as React from "react";
 import Navigation from "./navigation";
 
@@ -7,15 +8,15 @@ interface HeaderProps {
     toggleNav: () => void;
 }
 
-const Header = ({ title, toggleNav }: HeaderProps) => {
+export const Header = ({ title, toggleNav }: HeaderProps) => {
     return (
         <header className="header" itemScope={true}>
             <div className="header-inner || constrain-width">
                 <div className="header-text">
                     <h2 className="header-title" itemProp="title">
-                        <a className="header-link" href="/">
+                        <Link className="header-link" to="/">
                             {title}
-                        </a>
+                        </Link>
                     </h2>
                 </div>
 
@@ -24,5 +25,3 @@ const Header = ({ title, toggleNav }: HeaderProps) => {
         </header>
     );
 };
-
-export default Header;

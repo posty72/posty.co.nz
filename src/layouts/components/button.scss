@@ -1,0 +1,15 @@
+.button {
+    padding-top: rem(10);
+    padding-right: rem(15);
+    padding-bottom: rem(10);
+    padding-left: rem(15);
+
+    border-radius: rem(15);
+    box-shadow: 0 0 rem(15) 2px $color-dark-alpha-1;
+
+    &.tertiary {
+        color: $color-light;
+
+        background-color: $color-tertiary;
+    }
+}

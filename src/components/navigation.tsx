@@ -19,16 +19,17 @@ const Navigation = ({ toggleNav }: NavigationProps) => (
             <div className="hamburger-wrapper">
                 <div className="hamburger-item line-1" />
                 <div className="hamburger-item line-2" />
-                <div className="hamburger-item line-3" />
             </div>
         </div>
 
         <nav className="nav">
             <ul className="nav-items" role="menu">
                 <NavItem to="/work" label="Work" />
-                <NavItem to="/contact" label="Contact" />
                 <NavItem to="/style-guide" label="Style Guide" />
             </ul>
+            <Link to="/contact" className="button tertiary">
+                Contact Me
+            </Link>
         </nav>
     </div>
 );

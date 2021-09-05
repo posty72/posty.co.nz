@@ -2,7 +2,7 @@
     Brothers
 */
 @font-face {
-    font-family: 'Comfortaa';
+    font-family: Comfortaa;
     font-style: normal;
     font-weight: $weight-regular;
     src: url("../fonts/comfortaa/comfortaa-regular.ttf") format("truetype");
@@ -10,7 +10,7 @@
 }
 
 @font-face {
-    font-family: 'Comfortaa';
+    font-family: Comfortaa;
     font-style: normal;
     font-weight: $weight-light;
     src: url("../fonts/comfortaa/comfortaa-light.ttf") format("truetype");
@@ -18,7 +18,7 @@
 }
 
 @font-face {
-    font-family: 'Comfortaa';
+    font-family: Comfortaa;
     font-style: normal;
     font-weight: $weight-semi-bold;
     src: url("../fonts/comfortaa/comfortaa-semibold.ttf") format("truetype");
@@ -26,7 +26,7 @@
 }
 
 @font-face {
-    font-family: 'Comfortaa';
+    font-family: Comfortaa;
     font-style: normal;
     font-weight: $weight-bold;
     src: url("../fonts/comfortaa/comfortaa-bold.ttf") format("truetype");
@@ -37,7 +37,7 @@
     Open Sans
 */
 @font-face {
-    font-family: 'Open Sans';
+    font-family: Open Sans;
     font-style: normal;
     font-weight: $weight-bold;
     src: url("../fonts/open-sans/opensans-bold.ttf") format("truetype");
@@ -45,7 +45,7 @@
 }
 
 @font-face {
-    font-family: 'Open Sans';
+    font-family: Open Sans;
     font-style: italic;
     font-weight: $weight-bold;
     src: url("../fonts/open-sans/opensans-bolditalic.ttf") format("truetype");
@@ -53,7 +53,7 @@
 }
 
 @font-face {
-    font-family: 'Open Sans';
+    font-family: Open Sans;
     font-style: italic;
     font-weight: $weight-regular;
     src: url("../fonts/open-sans/opensans-italic.ttf") format("truetype");
@@ -61,7 +61,7 @@
 }
 
 @font-face {
-    font-family: 'Open Sans';
+    font-family: Open Sans;
     font-style: normal;
     font-weight: $weight-light;
     src: url("../fonts/open-sans/opensans-light.ttf") format("truetype");
@@ -69,7 +69,7 @@
 }
 
 @font-face {
-    font-family: 'Open Sans';
+    font-family: Open Sans;
     font-style: italic;
     font-weight: $weight-light;
     src: url("../fonts/open-sans/opensans-lightitalic.ttf") format("truetype");
@@ -77,7 +77,7 @@
 }
 
 @font-face {
-    font-family: 'Open Sans';
+    font-family: Open Sans;
     font-style: normal;
     font-weight: $weight-regular;
     src: url("../fonts/open-sans/opensans-regular.ttf") format("truetype");
@@ -85,7 +85,7 @@
 }
 
 @font-face {
-    font-family: 'Open Sans';
+    font-family: Open Sans;
     font-style: normal;
     font-weight: $weight-semi-bold;
     src: url("../fonts/open-sans/opensans-semibold.ttf") format("truetype");
@@ -93,9 +93,10 @@
 }
 
 @font-face {
-    font-family: 'Open Sans';
+    font-family: Open Sans;
     font-style: italic;
     font-weight: $weight-semi-bold;
-    src: url("../fonts/open-sans/opensans-semibolditalic.ttf") format("truetype");
+    src: url("../fonts/open-sans/opensans-semibolditalic.ttf")
+        format("truetype");
     font-display: swap;
 }

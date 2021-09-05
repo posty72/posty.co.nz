@@ -71,7 +71,7 @@ $--grid-spacing: 20;
     &.colour-light .swatch-inner {
         background-color: $color-light;
 
-        // Elements        
+        // Elements
         .shade-1 {
             background-color: $color-light-shade-1;
         }
@@ -83,11 +83,12 @@ $--grid-spacing: 20;
 
     // Elements
     &-inner {
-        height: rem(200);
-        display: flex;;
-        justify-content: center;
-        align-items: center;
         position: relative;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: rem(200);
 
         padding-bottom: rem(40);
         overflow: hidden;
@@ -118,6 +119,7 @@ $--grid-spacing: 20;
 
     &-title {
         flex-basis: 100%;
+
         text-align: center;
     }
 
