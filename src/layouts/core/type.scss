@@ -11,9 +11,10 @@ a {
 
 p,
 li {
+    margin-bottom: rem(10);
+
     font-family: $font-secondary;
     line-height: 1.8;
-    margin-bottom: rem(10);
 }
 
 ul,

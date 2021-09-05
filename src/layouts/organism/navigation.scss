@@ -12,13 +12,11 @@
 }
 
 .nav {
-    
-    
     @media (--from-medium-screen-w) {
-        
+        z-index: 100;
+
         display: flex;
         align-items: center;
-        z-index: 100;
     }
 
     @media (--to-medium-screen-w) {
@@ -33,9 +31,10 @@
         min-height: 100vh;
         overflow-y: auto;
 
+        background-color: $color-secondary-shade-1;
+
         transform: translateX(100%);
         transition: all 250ms ease;
-        background-color: $color-secondary-shade-1;
     }
 
     &-items {
@@ -54,13 +53,13 @@
     &-item {
         flex: 1 0 auto;
 
+        margin-right: rem(10);
+        margin-bottom: 0;
+
         font-size: rem(18);
         list-style: none;
 
         transition: background ease 400ms;
-
-        margin-right: rem(10);
-        margin-bottom: 0;
 
         @media (--to-medium-screen-w) {
             flex: 0 0 auto;
@@ -72,13 +71,12 @@
         &-link {
             display: block;
             padding: rem(10);
-            font-family: $font-primary;
-            font-weight: $weight-light;
-    
-            font-family: monospace;
-            font-size: rem(18);
 
             color: $color-light;
+            font-family: $font-primary;
+
+            font-size: rem(18);
+            font-weight: $weight-light;
         }
     }
 

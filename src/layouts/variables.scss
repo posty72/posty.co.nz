@@ -1,10 +1,10 @@
 /*
     Colours
  */
-$color-green: rgba(63,174,121,1.0);
-$color-blue: rgba(19,84,122,1.0);
-$color-kahurangi: rgba(42,152,216,1.0);
-$color-gold: rgba(255,162,0,1.0);
+$color-green: rgba(63, 174, 121, 1);
+$color-blue: rgba(19, 84, 122, 1);
+$color-kahurangi: rgba(42, 152, 216, 1);
+$color-gold: rgba(255, 162, 0, 1);
 $color-black: rgb(0, 0, 0);
 $color-white: rgb(255, 255, 255);
 $color-primary: $color-green;
@@ -29,16 +29,14 @@ $color-light-shade-2: color($color-white shade(25%));
      - Fonts
      - Weights
   */
-  $font-comfortaa: "Comfortaa", "Helvetica", "Arial", sans-serif;
-  $font-open-sans: "Open Sans", "Helvetica", "Arial", sans-serif;
-  $font-primary: $font-comfortaa;
-  $font-secondary: $font-open-sans;
-  $weight-light: 200;
-  $weight-regular: 400;
-  $weight-semi-bold: 600;
-  $weight-bold: 700;
-
-
+$font-comfortaa: "Comfortaa", "Helvetica", "Arial", sans-serif;
+$font-open-sans: "Open Sans", "Helvetica", "Arial", sans-serif;
+$font-primary: $font-comfortaa;
+$font-secondary: $font-open-sans;
+$weight-light: 200;
+$weight-regular: 400;
+$weight-semi-bold: 600;
+$weight-bold: 700;
 
 /*
     Breakpoints
