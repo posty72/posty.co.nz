@@ -7,10 +7,11 @@ import "../layouts/index.scss";
 
 interface LayoutProps {
     title: string;
+    subtitle?: string;
     children: React.ReactNode;
 }
 
-export const Layout = ({ title, children }: LayoutProps) => {
+export const Layout = ({ title, subtitle, children }: LayoutProps) => {
     const [navOpen, setNavOpen] = React.useState(false);
     const navClass = navOpen ? "nav-open" : "";
 
@@ -56,8 +57,12 @@ export const Layout = ({ title, children }: LayoutProps) => {
                             title={data.site.siteMetadata.title}
                             toggleNav={() => setNavOpen(!navOpen)}
                         />
-                        <div className="hero-inner">
+
+                        <div className="hero-inner || constrain-width large">
                             <h1 className="hero-title">{title}</h1>
+                            {subtitle && (
+                                <h2 className="hero-subtitle">{subtitle}</h2>
+                            )}
                         </div>
                     </div>
                     <main className="main">{children}</main>

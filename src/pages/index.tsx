@@ -3,7 +3,7 @@ import { Layout } from "../components/layout";
 
 const IndexPage = () => {
     return (
-        <Layout title="Josh Post - Software Engineer">
+        <Layout title="Josh Post" subtitle="Software Engineer">
             <div className="constrain-width">
                 <h1>{"Kia ora, I'm Josh"}</h1>
                 <p>
