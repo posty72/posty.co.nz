@@ -1,7 +1,13 @@
 import * as React from "react";
+import type { ClassNamesType } from "../utlity/class-names";
 import { classNames } from "../utlity/class-names";
 
-const FooterLink = ({ link, label, className }) => (
+interface FooterLinkProps {
+    link: string;
+    label: string;
+    className: ClassNamesType;
+}
+const FooterLink = ({ link, label, className }: FooterLinkProps) => (
     <li className={classNames("footer-item", className)}>
         <a
             className="footer-link"

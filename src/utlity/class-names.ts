@@ -1,9 +1,9 @@
 interface ClassName {
     [key: string]: boolean | ClassName;
 }
-type ClassNamesTypes = string | number | ClassName | ClassNamesTypes[];
+export type ClassNamesType = string | number | ClassName | ClassNamesType[];
 
-export function classNames(...args: ClassNamesTypes[]): string {
+export function classNames(...args: ClassNamesType[]): string {
     const classes: string[] = [];
 
     for (const arg of args) {
