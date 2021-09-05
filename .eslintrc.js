@@ -20,15 +20,12 @@ module.exports = {
         project: "tsconfig.json",
         sourceType: "module",
     },
-    plugins: [
-        "eslint-plugin-react",
-        "eslint-plugin-import",
-        "@typescript-eslint",
-    ],
+    plugins: ["react", "import", "jsx-a11y", "@typescript-eslint"],
     extends: [
         "plugin:@typescript-eslint/recommended",
         "plugin:react/recommended",
         "plugin:import/recommended",
+        "plugin:jsx-a11y/strict",
         "prettier",
     ],
     settings: {

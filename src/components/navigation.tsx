@@ -15,15 +15,15 @@ interface NavigationProps {
 
 const Navigation = ({ toggleNav }: NavigationProps) => (
     <div className="navigation">
-        <div className="hamburger" onClick={toggleNav}>
+        <button className="hamburger" onClick={toggleNav}>
             <div className="hamburger-wrapper">
                 <div className="hamburger-item line-1" />
                 <div className="hamburger-item line-2" />
             </div>
-        </div>
+        </button>
 
         <nav className="nav">
-            <ul className="nav-items" role="menu">
+            <ul className="nav-items">
                 <NavItem to="/work" label="Work" />
                 <NavItem to="/style-guide" label="Style Guide" />
             </ul>
