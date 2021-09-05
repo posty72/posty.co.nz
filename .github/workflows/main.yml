@@ -33,6 +33,10 @@ jobs:
         if: github.ref == 'refs/heads/develop'
         run: |
           aws s3 sync public/ s3://${{ secrets.DEV_S3_BUCKET }} --delete --acl public-read --follow-symlinks
+      - name: Reset CDN
+        if: github.ref == 'refs/heads/develop'
+        run: |
+          aws cloudfront create-invalidation --distribution-id ${{secrets.DEV_CLOUDFRONT_ID}} --paths "/*"
 
       # Prod
       - name: Set prod AWS credentials
