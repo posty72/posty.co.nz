@@ -6,10 +6,11 @@ import { Header } from "../components/header";
 import "../layouts/index.scss";
 
 interface LayoutProps {
+    title: string;
     children: React.ReactNode;
 }
 
-export const Layout = ({ children }: LayoutProps) => {
+export const Layout = ({ title, children }: LayoutProps) => {
     const [navOpen, setNavOpen] = React.useState(false);
     const navClass = navOpen ? "nav-open" : "";
 
@@ -56,7 +57,7 @@ export const Layout = ({ children }: LayoutProps) => {
                             toggleNav={() => setNavOpen(!navOpen)}
                         />
                         <div className="hero-inner">
-                            <h1 className="hero-title">Page Title</h1>
+                            <h1 className="hero-title">{title}</h1>
                         </div>
                     </div>
                     <main className="main">{children}</main>

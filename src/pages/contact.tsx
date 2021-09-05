@@ -3,17 +3,10 @@ import { ContactForm } from "../components/contact-form";
 import { Layout } from "../components/layout";
 
 const ContactPage = () => (
-    <Layout>
-        <section className="constrain-width">
-            <h1>Contact</h1>
-            <p>
-                Get in touch if you want to talk anything digital! My favourite
-                topics are fast, responsive web apps, conversational UIs, rugby
-                and photography.
-            </p>
-
+    <Layout title="Contact Me">
+        <div className="constrain-width">
             <ContactForm showTitle={false} />
-        </section>
+        </div>
     </Layout>
 );
 

@@ -5,7 +5,7 @@ import { Swatch } from "../components/style-guide/swatch";
 
 const StyleGuide = () => {
     return (
-        <Layout>
+        <Layout title="Style Guide">
             <div className="style-guide">
                 <StyleGuideSection title="Colours" contain>
                     <div className="style-guide-swatches" role="group">

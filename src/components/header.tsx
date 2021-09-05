@@ -1,4 +1,5 @@
 /* eslint-disable react/jsx-max-depth */
+import { Link } from "gatsby";
 import * as React from "react";
 import Navigation from "./navigation";
 
@@ -13,9 +14,9 @@ export const Header = ({ title, toggleNav }: HeaderProps) => {
             <div className="header-inner || constrain-width">
                 <div className="header-text">
                     <h2 className="header-title" itemProp="title">
-                        <a className="header-link" href="/">
+                        <Link className="header-link" to="/">
                             {title}
-                        </a>
+                        </Link>
                     </h2>
                 </div>
 

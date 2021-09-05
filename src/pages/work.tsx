@@ -4,7 +4,7 @@ import { Preview } from "../components/preview";
 
 const Work = () => {
     return (
-        <Layout>
+        <Layout title="Work">
             <div className="constrain-width">
                 <h1>Work</h1>
                 <Preview
