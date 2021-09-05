@@ -6,15 +6,19 @@
 @import "variables.scss";
 
 // Core
+@import 'core/constrain.scss';
 @import 'core/fonts.scss';
 @import 'core/layout.scss';
+@import 'core/heading.scss';
 @import 'core/type.scss';
 
 
 // Component
+@import 'components/button.scss';
 @import 'components/feature.scss';
 @import 'components/contact-form.scss';
 @import 'components/hamburger.scss';
+@import 'components/hero.scss';
 @import 'components/swatch.scss';
 @import 'components/tables.scss';
 @import 'components/tag-list.scss';

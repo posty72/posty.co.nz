@@ -5,9 +5,9 @@ import { Layout } from "../components/layout";
 const IndexPage = () => {
     return (
         <Layout>
-            <section>
+            <div className="constrain-width">
                 <Feature title="Hello" slug="/" excerpt="Hi there" />
-            </section>
+            </div>
         </Layout>
     );
 };

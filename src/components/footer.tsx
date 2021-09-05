@@ -27,11 +27,6 @@ export const Footer = () => (
                 link="https://github.com/posty72"
                 label="Github"
             />
-            <FooterLink
-                className="email"
-                link="mailto:hi@posty.co.nz"
-                label="Contact"
-            />
         </ul>
     </footer>
 );

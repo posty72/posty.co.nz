@@ -1,9 +1,4 @@
 .hamburger {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    z-index: 110;
-
     box-sizing: border-box;
     display: none;
     width: 40px;
@@ -15,52 +10,44 @@
     @media (--to-medium-screen-w) {
         display: block;
     }
-}
-
-.hamburger-wrapper {
-    position: relative;
-}
-
-.hamburger-item {
-    position: absolute;
-    left: 20%;
-
-    width: 60%;
-    height: 0;
-    padding-bottom: 10%;
-
-    background-color: $color-light;
-    border-radius: 99em;
-
-    transition: all 250ms ease;
-
-    &.line-1 {
-        top: 8px;
+    
+    &-wrapper {
+        position: relative;
     }
 
-    &.line-2 {
-        top: 17px;
-    }
+    &-item {
+        position: absolute;
+        left: 20%;
 
-    &.line-3 {
-        top: 26px;
+        width: 60%;
+        height: 0;
+        padding-bottom: 5%;
+
+        background-color: $color-light;
+        border-radius: 99em;
+
+        transition: all 250ms ease;
+
+        &.line-1 {
+            top: 12px;
+        }
+
+        &.line-2 {
+            top: 24px;
+        }
     }
 }
 
 .nav-open .hamburger-item {
     &.line-1 {
-        top: 16px;
+        top: 18px;
 
         transform: rotate(45deg);
     }
 
-    &.line-3 {
-        top: 16px;
-
-        transform: rotate(135deg);
-    }
-
     &.line-2 {
-        opacity: 0;
+        top: 18px;
+
+        transform: rotate(-45deg);
     }
 }

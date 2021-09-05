@@ -4,7 +4,7 @@ import { Layout } from "../components/layout";
 
 const ContactPage = () => (
     <Layout>
-        <section>
+        <section className="constrain-width">
             <h1>Contact</h1>
             <p>
                 Get in touch if you want to talk anything digital! My favourite

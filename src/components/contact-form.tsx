@@ -67,59 +67,57 @@ export const ContactForm = ({ showTitle }: ContactFormProps) => {
             ref={container}
             style={{ height: height || null }}
         >
-            <div className="constrain-width">
-                {showTitle && <Title />}
-                {error && (
-                    <p>
-                        There was an error trying to send your message. Please
-                        try again.
-                    </p>
-                )}
-                {!messageSent && (
-                    <form
-                        className="contact-form"
-                        ref={form}
-                        onSubmit={sendEnquiry}
-                    >
-                        <input
-                            type="hidden"
-                            name="apikey"
-                            value={process.env.WEB3FORMS_API_KEY}
-                        />
-                        <input
-                            type="hidden"
-                            name="subject"
-                            value="New Submission from Web3Forms"
-                        />
-                        <input
-                            type="checkbox"
-                            name="botcheck"
-                            id=""
-                            style={{ display: "none" }}
-                        />
-                        <input
-                            className="contact-input"
-                            type="text"
-                            name="name"
-                            placeholder="Name"
-                            required={true}
-                        />
-                        <input
-                            className="contact-input"
-                            type="email"
-                            name="email"
-                            placeholder="Email"
-                            required={true}
-                        />
-                        <textarea
-                            className="contact-text"
-                            name="message"
-                            placeholder="Message"
-                        />
-                        <button className="contact-button">Send</button>
-                    </form>
-                )}
-            </div>
+            {showTitle && <Title />}
+            {error && (
+                <p>
+                    There was an error trying to send your message. Please try
+                    again.
+                </p>
+            )}
+            {!messageSent && (
+                <form
+                    className="contact-form"
+                    ref={form}
+                    onSubmit={sendEnquiry}
+                >
+                    <input
+                        type="hidden"
+                        name="apikey"
+                        value={process.env.WEB3FORMS_API_KEY}
+                    />
+                    <input
+                        type="hidden"
+                        name="subject"
+                        value="New Submission from Web3Forms"
+                    />
+                    <input
+                        type="checkbox"
+                        name="botcheck"
+                        id=""
+                        style={{ display: "none" }}
+                    />
+                    <input
+                        className="contact-input"
+                        type="text"
+                        name="name"
+                        placeholder="Name"
+                        required={true}
+                    />
+                    <input
+                        className="contact-input"
+                        type="email"
+                        name="email"
+                        placeholder="Email"
+                        required={true}
+                    />
+                    <textarea
+                        className="contact-text"
+                        name="message"
+                        placeholder="Message"
+                    />
+                    <button className="contact-button">Send</button>
+                </form>
+            )}
         </div>
     );
 };

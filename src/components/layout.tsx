@@ -50,17 +50,16 @@ export const Layout = ({ children }: LayoutProps) => {
                             },
                         ]}
                     />
-                    <html lang="en" />
-                    <Header
-                        title={data.site.siteMetadata.title}
-                        toggleNav={() => setNavOpen(!navOpen)}
-                    />
-                    <div className="page-header">
-                        <div className="constrain-width x-large">
-                            <h1>Page Title</h1>
+                    <div className="hero">
+                        <Header
+                            title={data.site.siteMetadata.title}
+                            toggleNav={() => setNavOpen(!navOpen)}
+                        />
+                        <div className="hero-inner">
+                            <h1 className="hero-title">Page Title</h1>
                         </div>
                     </div>
-                    <main className="main || constrain-width">{children}</main>
+                    <main className="main">{children}</main>
                     <Footer />
                 </div>
             )}

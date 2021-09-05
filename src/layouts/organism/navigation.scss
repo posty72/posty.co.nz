@@ -12,14 +12,22 @@
 }
 
 .nav {
-    z-index: 100;
-
-    width: calc(100% - 45px);
+    
+    
+    @media (--from-medium-screen-w) {
+        
+        display: flex;
+        align-items: center;
+        z-index: 100;
+    }
 
     @media (--to-medium-screen-w) {
         position: fixed;
         top: 0;
         right: 0;
+
+        display: flex;
+        flex-direction: column;
 
         width: 0;
         min-height: 100vh;
@@ -27,6 +35,7 @@
 
         transform: translateX(100%);
         transition: all 250ms ease;
+        background-color: $color-secondary-shade-1;
     }
 
     &-items {
@@ -38,19 +47,20 @@
         @media (--to-medium-screen-w) {
             flex-direction: column;
             align-items: flex-start;
-            height: 100vh;
-
-            background-color: $color-light;
+            margin-bottom: rem(10);
         }
     }
 
     &-item {
-        flex: 1 0 rem(40);
+        flex: 1 0 auto;
 
         font-size: rem(18);
         list-style: none;
 
         transition: background ease 400ms;
+
+        margin-right: rem(10);
+        margin-bottom: 0;
 
         @media (--to-medium-screen-w) {
             flex: 0 0 auto;
@@ -59,17 +69,20 @@
             font-size: rem(24);
         }
 
-        &:hover {
-            background-color: $color-light-shade-1;
+        &-link {
+            display: block;
+            padding: rem(10);
+            font-family: $font-primary;
+            font-weight: $weight-light;
+    
+            font-family: monospace;
+            font-size: rem(18);
+
+            color: $color-light;
         }
     }
 
-    &-item-link {
-        display: block;
-        padding: rem(10);
-
-        color: $color-dark-tint-2;
-        font-family: monospace;
-        font-size: rem(20);
+    .button {
+        margin: 0 auto;
     }
 }

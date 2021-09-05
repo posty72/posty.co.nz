@@ -9,49 +9,11 @@ a {
     }
 }
 
-h1,
-h2,
-h3,
-h4,
-h5, 
-h6 {
-    margin: 0 0 rem(15);
-
-    font-family: $font-primary;
-    font-weight: $weight-semi-bold;
-    word-break: break-word;
-}
-
-h1 {
-    font-size: rem(36);
-}
-
-h2 {
-    font-size: rem(24);
-}
-
-h3 {
-    font-size: rem(20);
-}
-
-h4 {
-    font-size: rem(18);
-}
-
-h5 {
-    font-size: rem(18);
-    font-weight: $weight-regular;
-}
-
-h6 {
-    font-size: rem(16);
-    font-weight: $weight-light;
-}
-
 p,
 li {
     font-family: $font-secondary;
     line-height: 1.8;
+    margin-bottom: rem(10);
 }
 
 ul,
@@ -60,7 +22,7 @@ ol {
 }
 
 blockquote {
-    padding: 20px;
+    padding: rem(20);
     margin: 0 0 rem(10);
 
     background-color: $color-light-shade-1;

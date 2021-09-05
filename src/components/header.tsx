@@ -7,7 +7,7 @@ interface HeaderProps {
     toggleNav: () => void;
 }
 
-const Header = ({ title, toggleNav }: HeaderProps) => {
+export const Header = ({ title, toggleNav }: HeaderProps) => {
     return (
         <header className="header" itemScope={true}>
             <div className="header-inner || constrain-width">
@@ -24,5 +24,3 @@ const Header = ({ title, toggleNav }: HeaderProps) => {
         </header>
     );
 };
-
-export default Header;
