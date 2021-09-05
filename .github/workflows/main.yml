@@ -1,8 +1,9 @@
-name: Deploy Blog
+name: Deploy
 
 on:
   push:
     branches:
+      - master
       - develop
 jobs:
   build:
@@ -13,17 +14,6 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: 12
-      - name: Caching Gatsby
-        id: gatsby-cache-build
-        uses: actions/cache@v2
-        with:
-          path: |
-            public
-            .cache
-            node_modules
-          key: ${{ runner.os }}-gatsby-alexhyett-site-build-${{ github.run_id }}
-          restore-keys: |
-            ${{ runner.os }}-gatsby-alexhyett-site-build-
       - name: Install dependencies
         run: npm ci
       - name: Run Lint
