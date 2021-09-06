@@ -8,11 +8,6 @@ const IndexPage = () => {
     return (
         <Layout title="Kia ora, I'm Josh">
             <div className="constrain-width small">
-                <p>
-                    I am a digital product creator based in New Zealand that
-                    works to build the best solutions for people.
-                </p>
-
                 <Profile url={me} alt="Me" />
 
                 <h3>Quick things about me:</h3>

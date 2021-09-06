@@ -4,6 +4,7 @@
     margin-bottom: rem(25);
 
     &-image {
-        border-radius: rem(25);
+        border-radius: rem(15);
+        box-shadow: 0 0 rem(15) 2px $color-dark-alpha-1;
     }
 }

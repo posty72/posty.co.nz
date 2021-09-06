@@ -68,7 +68,7 @@ export const Layout = ({ title, subtitle, children }: LayoutProps) => {
                         </div>
                     </div>
                     <main className="main">{children}</main>
-                    <Footer />
+                    {/* <Footer /> */}
                 </div>
             )}
         />

@@ -10,6 +10,10 @@
         @media (--from-medium-screen-w) {
             padding-top: rem(35);
         }
+
+        @media (--to-medium-screen-w) {
+            height: rem(50);
+        }
     }
 
     &-text {
