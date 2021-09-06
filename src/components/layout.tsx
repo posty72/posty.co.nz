@@ -35,6 +35,7 @@ export const Layout = ({ title, subtitle, children }: LayoutProps) => {
                     <Helmet
                         titleTemplate={`%s - ${data.site.siteMetadata.title}`}
                         title={title}
+                        htmlAttributes={{ lang: "en-NZ" }}
                         meta={[
                             { name: "theme-color", content: "#2fbc42" },
                             {

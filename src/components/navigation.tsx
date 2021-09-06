@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/no-noninteractive-element-to-interactive-role */
 import Link from "gatsby-link";
 import * as React from "react";
 
@@ -16,13 +17,14 @@ interface NavigationProps {
 const Navigation = ({ toggleNav }: NavigationProps) => (
     <div className="navigation">
         <button className="hamburger" onClick={toggleNav}>
+            Show menu
             <div className="hamburger-wrapper">
                 <div className="hamburger-item line-1" />
                 <div className="hamburger-item line-2" />
             </div>
         </button>
 
-        <nav className="nav">
+        <nav className="nav" role="menu">
             <ul className="nav-items">
                 <NavItem to="/work" label="Work" />
                 <NavItem to="/style-guide" label="Style Guide" />
