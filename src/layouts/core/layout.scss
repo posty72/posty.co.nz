@@ -44,9 +44,10 @@ iframe {
 
 hr {
     margin: 0;
-    margin-bottom: rem(40);
+    margin-top: rem(25);
+    margin-bottom: rem(25);
 
     border: none;
-    border-top: 5px solid $color-primary;
+    border-top: 1px solid $color-light-shade-2;
     box-shadow: none;
 }

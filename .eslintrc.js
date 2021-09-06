@@ -157,6 +157,11 @@ module.exports = {
         "react/display-name": "off",
 
         /**
+         * a11y
+         */
+        "jsx-a11y/accessible-emoji": "off",
+
+        /**
          * Basic
          */
         "prefer-arrow-callback": "warn",

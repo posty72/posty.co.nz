@@ -4,12 +4,36 @@
     padding-bottom: rem(10);
     padding-left: rem(15);
 
-    border-radius: rem(15);
+    cursor: pointer;
+
+    border-radius: rem(5);
     box-shadow: 0 0 rem(15) 2px $color-dark-alpha-1;
+
+    transition: background ease 300ms;
+
+    &.primary {
+        color: $color-light;
+
+        background-color: $color-primary;
+
+        &:hover {
+            background-color: $color-primary-shade-1;
+        }
+    }
+
+    &.secondary {
+        color: $color-light;
+
+        background-color: $color-secondary;
+    }
 
     &.tertiary {
         color: $color-light;
 
-        background-color: $color-tertiary;
+        background-color: $color-tertiary-shade-1;
+
+        &:hover {
+            background-color: $color-tertiary;
+        }
     }
 }
