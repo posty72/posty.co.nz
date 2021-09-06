@@ -3,6 +3,9 @@
     display: none;
     width: rem(40);
     height: rem(40);
+    overflow: hidden;
+
+    text-indent: -999em;
 
     cursor: pointer;
     background-color: $color-primary;

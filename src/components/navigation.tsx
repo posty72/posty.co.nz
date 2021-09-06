@@ -17,11 +17,11 @@ interface NavigationProps {
 const Navigation = ({ toggleNav }: NavigationProps) => (
     <div className="navigation">
         <button className="hamburger" onClick={toggleNav}>
-            Show menu
             <div className="hamburger-wrapper">
                 <div className="hamburger-item line-1" />
                 <div className="hamburger-item line-2" />
             </div>
+            Show menu
         </button>
 
         <nav className="nav" role="menu">
