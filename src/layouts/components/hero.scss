@@ -35,6 +35,10 @@
                 }
             }
         }
+
+        .hero-subtitle {
+            text-align: left;
+        }
     }
 
     // Elements
@@ -58,6 +62,7 @@
     &-subtitle {
         color: $color-light-shade-1;
         font-weight: $weight-light;
+        text-align: center;
     }
 
     .header {
