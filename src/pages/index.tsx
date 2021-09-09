@@ -1,15 +1,12 @@
 import { Link } from "gatsby";
 import * as React from "react";
 import { Layout } from "../components/layout";
-import { Profile } from "../components/profile";
 import me from "../images/me.jpeg";
 
 const IndexPage = () => {
     return (
-        <Layout title="Kia ora, I'm Josh">
+        <Layout title="Kia ora, I'm Josh" image={me}>
             <div className="constrain-width small">
-                <Profile url={me} alt="Me" />
-
                 <h3>Quick things about me:</h3>
                 <ol>
                     <li>

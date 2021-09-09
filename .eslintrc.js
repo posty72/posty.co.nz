@@ -20,6 +20,14 @@ module.exports = {
         project: "tsconfig.json",
         sourceType: "module",
     },
+    overrides: [
+        {
+            files: ["*.ts", "*.tsx"], // Your TypeScript files extension
+            parserOptions: {
+                project: ["./tsconfig.json"], // Specify it only for TypeScript files
+            },
+        },
+    ],
     plugins: ["react", "import", "jsx-a11y", "@typescript-eslint"],
     extends: [
         "plugin:@typescript-eslint/recommended",

@@ -9,6 +9,35 @@
 
     background: $gradient-standard;
 
+    // States
+    &.has-image {
+        padding-top: rem(110);
+
+        .hero-inner {
+            position: static;
+
+            display: flex;
+            justify-content: center;
+
+            @media (--from-medium-screen-w) {
+                flex-direction: row;
+            }
+
+            .hero-image {
+                flex-basis: 50%;
+            }
+            .hero-text {
+                flex-basis: 50%;
+
+                .hero-title {
+                    padding-top: 0;
+                    padding-right: rem(50);
+                }
+            }
+        }
+    }
+
+    // Elements
     &-inner {
         position: absolute;
         top: 0;
