@@ -55,29 +55,16 @@ $--grid-spacing: 20;
         }
     }
 
-    &.colour-dark .swatch-inner {
-        background-color: $color-dark;
+    &.colour-quartenary .swatch-inner {
+        background-color: $color-quartenary;
 
         // Elements
         .tint-1 {
-            background-color: $color-dark-tint-1;
+            background-color: $color-quartenary-tint-1;
         }
 
-        .tint-2 {
-            background-color: $color-dark-tint-2;
-        }
-    }
-
-    &.colour-light .swatch-inner {
-        background-color: $color-light;
-
-        // Elements
         .shade-1 {
-            background-color: $color-light-shade-1;
-        }
-
-        .shade-2 {
-            background-color: $color-light-shade-2;
+            background-color: $color-quartenary-shade-1;
         }
     }
 

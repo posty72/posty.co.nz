@@ -1,0 +1,13 @@
+.pill {
+    display: inline-block;
+    padding-top: rem(7);
+    padding-right: rem(12);
+    padding-bottom: rem(7);
+    padding-left: rem(12);
+
+    font-size: rem(12);
+    text-transform: uppercase;
+
+    background-color: $color-quartenary;
+    border-radius: rem(25);
+}
