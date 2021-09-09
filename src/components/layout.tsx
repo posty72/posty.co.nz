@@ -1,17 +1,18 @@
 import { graphql, StaticQuery } from "gatsby";
 import * as React from "react";
 import { Helmet } from "react-helmet";
-import { Footer } from "../components/footer";
+import { Hero } from "../components/hero";
 import { Header } from "../components/header";
 import "../layouts/index.scss";
 
 interface LayoutProps {
     title: string;
     subtitle?: string;
+    image?: string;
     children: React.ReactNode;
 }
 
-export const Layout = ({ title, subtitle, children }: LayoutProps) => {
+export const Layout = ({ title, subtitle, children, image }: LayoutProps) => {
     const [navOpen, setNavOpen] = React.useState(false);
     const navClass = navOpen ? "nav-open" : "";
 
@@ -54,19 +55,11 @@ export const Layout = ({ title, subtitle, children }: LayoutProps) => {
                             },
                         ]}
                     />
-                    <div className="hero">
-                        <Header
-                            title={data.site.siteMetadata.title}
-                            toggleNav={() => setNavOpen(!navOpen)}
-                        />
-
-                        <div className="hero-inner || constrain-width large">
-                            <h1 className="hero-title">{title}</h1>
-                            {subtitle && (
-                                <h2 className="hero-subtitle">{subtitle}</h2>
-                            )}
-                        </div>
-                    </div>
+                    <Header
+                        title={data.site.siteMetadata.title}
+                        toggleNav={() => setNavOpen(!navOpen)}
+                    />
+                    <Hero title={title} subtitle={subtitle} imageUrl={image} />
                     <main className="main">{children}</main>
                     {/* <Footer /> */}
                 </div>
