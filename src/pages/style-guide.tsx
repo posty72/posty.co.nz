@@ -1,5 +1,6 @@
 import * as React from "react";
 import { Layout } from "../components/layout";
+import { Tiles } from "../components/tiles";
 import { StyleGuideSection } from "../components/style-guide/section";
 import { Swatch } from "../components/style-guide/swatch";
 
@@ -15,6 +16,7 @@ const StyleGuide = () => {
                         <Swatch title="Primary" value="primary" />
                         <Swatch title="Secondary" value="secondary" />
                         <Swatch title="Tertiary" value="tertiary" outline />
+                        <Swatch title="Quartenary" value="quartenary" />
                     </div>
                 </StyleGuideSection>
 
@@ -81,6 +83,33 @@ const StyleGuide = () => {
                             know the key to success. Eliptical talk.
                         </li>
                     </ol>
+                </StyleGuideSection>
+                <StyleGuideSection title="Tiles">
+                    <Tiles
+                        items={[
+                            {
+                                title: "Item 1",
+                                iconColour: "#93F2F4",
+                                description:
+                                    "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+                                tags: ["Mobile app", "Web app"],
+                            },
+                            {
+                                title: "Item 2",
+                                iconColour: "#BB6BD9",
+                                description:
+                                    "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+                                tags: ["Dashboard"],
+                            },
+                            {
+                                title: "Item 3",
+                                iconColour: "#F2C94C",
+                                description:
+                                    "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+                                tags: ["Mobile app", "February 2018"],
+                            },
+                        ]}
+                    />
                 </StyleGuideSection>
             </div>
         </Layout>

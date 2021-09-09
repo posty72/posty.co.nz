@@ -16,10 +16,6 @@ module.exports = {
         browser: true,
     },
     parser: "@typescript-eslint/parser",
-    parserOptions: {
-        project: "tsconfig.json",
-        sourceType: "module",
-    },
     overrides: [
         {
             files: ["*.ts", "*.tsx"], // Your TypeScript files extension
