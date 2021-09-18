@@ -38,7 +38,7 @@ $--grid-spacing: 10;
         margin-bottom: rem($--grid-spacing);
         margin-left: rem(-$--grid-spacing);
 
-        @media (--from-tiny-screen-w) {
+        @media (--from-small-screen-w) {
             display: grid;
             grid-gap: rem(20);
             grid-template-columns: auto auto auto;
