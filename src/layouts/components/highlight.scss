@@ -1,24 +1,26 @@
 .highlight {
-    background-color: $color-quartenary-tint-1;
-    background-image: $gradient-tertiary;
     padding: rem(20);
     margin-bottom: rem(50);
+
     color: $color-light;
-    filter: drop-shadow(4px 8px 8px rgba(255, 162, 0, 0.3));
-    border-radius: rem(10);
     font-size: 18px;
 
+    background-color: $color-quartenary-tint-1;
+    background-image: $gradient-tertiary;
+    border-radius: rem(10);
+    filter: drop-shadow(4px 8px 8px rgba(255, 162, 0, 0.3));
+
     &-title {
-        text-align: center;
         font-size: 28px;
+        text-align: center;
 
         &::after {
             display: block;
 
             width: rem(250);
+            margin-top: 5px;
             margin-right: auto;
             margin-left: auto;
-            margin-top: 5px;
 
             border: none;
             border-bottom-color: $color-light-shade-1;
