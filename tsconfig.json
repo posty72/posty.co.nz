@@ -3,25 +3,24 @@
     "outDir": "dist",
     "module": "esnext",
     "target": "es5",
-    "lib": [
-      "es6",
-      "es2016",
-      "es2017",
-      "dom"
-    ],
+    "strict": true,
+    "lib": ["es6", "es2016", "es2017", "dom"],
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "sourceMap": true,
     "allowJs": true,
     "jsx": "react",
     "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
     "suppressImplicitAnyIndexErrors": true,
     "baseUrl": "src"
   },
-  "include": [
-    "src"
-  ],
+  "include": ["src"],
   "exclude": [
     "node_modules",
+    "gatsby-browser.js",
+    "gatsby-config.js",
+    "gatsby-node.js",
+    "gatsby-ssr.js"
   ]
 }

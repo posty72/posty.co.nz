@@ -1,34 +1,39 @@
-
 // Vendor
-@import 'vendor/normalize.scss';
-@import 'vendor/prism.scss';
-
+@import "vendor/normalize.scss";
+@import "vendor/prism.scss";
 
 // Variables
-@import 'variables.scss';
-
+@import "variables.scss";
 
 // Core
-@import 'core/layout.scss';
-@import 'core/navigation.scss';
-@import 'core/header.scss';
-@import 'core/footer.scss';
-@import 'core/type.scss';
-
-
-// Pages
-// @import 'pages/home.scss';
-@import 'pages/posts.scss';
-// @import 'pages/websites';
-@import 'pages/page.scss';
-
+@import "core/constrain.scss";
+@import "core/button.scss";
+@import "core/fonts.scss";
+@import "core/layout.scss";
+@import "core/heading.scss";
+@import "core/type.scss";
 
 // Component
-@import 'components/feature.scss';
-@import 'components/contact-form.scss';
-@import 'components/hamburger.scss';
-@import 'components/tables.scss';
-@import 'components/tag-list.scss';
-@import 'components/teaser.scss';
-// @import 'components/thumbnail.scss';
-// @import 'components/top.scss';
+@import "components/button.scss";
+@import "components/call-to-action.scss";
+@import "components/feature.scss";
+@import "components/contact-form.scss";
+@import "components/hamburger.scss";
+@import "components/hero.scss";
+@import "components/highlight.scss";
+@import "components/pill.scss";
+@import "components/profile.scss";
+@import "components/splash.scss";
+@import "components/swatch.scss";
+@import "components/tables.scss";
+@import "components/tag-list.scss";
+@import "components/teaser.scss";
+@import "components/tiles.scss";
+
+// Organisms
+@import "organism/footer.scss";
+@import "organism/header.scss";
+@import "organism/navigation.scss";
+
+// Views
+@import "views/style-guide.scss";

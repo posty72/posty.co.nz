@@ -1,0 +1,10 @@
+.profile {
+    padding: 0;
+    margin: 0;
+    margin-bottom: rem(25);
+
+    &-image {
+        border-radius: 99rem;
+        box-shadow: 0 0 rem(15) 2px $color-dark-alpha-1;
+    }
+}

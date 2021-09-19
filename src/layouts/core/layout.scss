@@ -4,19 +4,7 @@ body,
 html {
     height: 100%;
 
-    font-family: $font-body;
-}
-
-.base {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-
-    background-color: $color-light;
-
-    .main {
-        flex-grow: 1;
-    }
+    font-family: $font-secondary;
 }
 
 * {
@@ -44,24 +32,10 @@ iframe {
 
 hr {
     margin: 0;
-    margin-bottom: rem(40);
+    margin-top: rem(25);
+    margin-bottom: rem(25);
 
     border: none;
-    border-top: 5px solid $color-primary;
+    border-top: 1px solid $color-light-shade-2;
     box-shadow: none;
 }
-
-
-/* GLOABL CLASSES */
-
-.container {
-    width: 100%;
-    max-width: 1000px;
-    padding: rem(20);
-    margin: 0 auto;
-
-    .container {
-        padding: rem(20) 0;
-    }
-}
-

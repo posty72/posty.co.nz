@@ -9,54 +9,32 @@ a {
     }
 }
 
-h1,
-h2,
-h3,
-h4,
-h5 {
-    margin: 0 0 rem(15);
+p {
+    margin-bottom: rem(15);
 
-    font-family: $header-font;
-    font-weight: 600;
-    word-break: break-word;
-}
-
-h1 {
-    font-size: rem(36);
-}
-
-h2 {
-    font-size: rem(24);
-}
-
-h3 {
-    font-size: rem(20);
-}
-
-h4 {
-    font-size: rem(18);
-}
-
-h5 {
-    font-size: rem(18);
-    font-weight: 400;
-}
-
-p,
-li {
-    font-family: $font-body;
+    font-family: $font-secondary;
     line-height: 1.8;
+}
+
+li {
+    font-family: $font-secondary;
+    line-height: 1.8;
+
+    &::marker {
+        color: $color-primary-tint-1;
+    }
 }
 
 ul,
 ol {
     padding-left: rem(20);
+    margin-bottom: rem(15);
 }
 
 blockquote {
-    padding: 20px;
+    padding: rem(20);
     margin: 0 0 rem(10);
 
-    background-color: $color-light-1;
+    background-color: $color-light-shade-1;
     border-left: 3px solid $color-secondary;
 }

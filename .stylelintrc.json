@@ -1,9 +1,8 @@
 {
-  "plugins": [
-    "stylelint-order"
-  ],
+  "plugins": ["stylelint-order", "stylelint-prettier"],
+  "extends": ["stylelint-prettier/recommended"],
   "rules": {
-    "color-hex-case": "lower",
+    "prettier/prettier": true,
     "color-hex-length": "long",
     "color-named": "never",
     "color-no-hex": true,
@@ -11,31 +10,19 @@
     "at-rule-empty-line-before": [
       "always",
       {
-        "except": [
-          "blockless-after-same-name-blockless",
-          "first-nested"
-        ],
-        "ignore": [
-          "after-comment"
-        ]
+        "except": ["blockless-after-same-name-blockless", "first-nested"],
+        "ignore": ["after-comment"]
       }
     ],
     "font-family-name-quotes": "always-where-required",
     "font-weight-notation": "numeric",
     "function-calc-no-unspaced-operator": true,
-    "function-comma-newline-after": "never-multi-line",
-    "function-comma-newline-before": "never-multi-line",
-    "function-comma-space-after": "always",
-    "function-comma-space-before": "never",
     "function-linear-gradient-no-nonstandard-direction": true,
-    "function-parentheses-space-inside": "never",
-    "function-url-quotes": "always",
     "number-leading-zero": "always",
     "number-max-precision": 2,
     "number-no-trailing-zeros": true,
     "length-zero-no-unit": true,
     "string-no-newline": true,
-    "string-quotes": "single",
     "value-no-vendor-prefix": true,
     "property-no-vendor-prefix": true,
     "declaration-bang-space-after": "never",
@@ -51,14 +38,7 @@
     "order/properties-order": [
       {
         "emptyLineBefore": "always",
-        "properties": [
-          "position",
-          "top",
-          "right",
-          "bottom",
-          "left",
-          "z-index"
-        ]
+        "properties": ["position", "top", "right", "bottom", "left", "z-index"]
       },
       {
         "emptyLineBefore": "always",
@@ -80,6 +60,27 @@
           "flex-grow",
           "flex-shrink",
           "flex-wrap",
+          "grid",
+          "grid-area",
+          "grid-auto-columns",
+          "grid-auto-flow",
+          "grid-auto-rows",
+          "grid-column",
+          "grid-column-end",
+          "grid-column-gap",
+          "grid-column-start",
+          "grid-gap",
+          "grid-row",
+          "grid-row-end",
+          "grid-row-gap",
+          "grid-row-start",
+          "grid-template",
+          "grid-template-areas",
+          "grid-template-columns",
+          "grid-template-rows",
+          "align-content",
+          "align-items",
+          "align-self",
           "justify-content",
           "order",
           "float",

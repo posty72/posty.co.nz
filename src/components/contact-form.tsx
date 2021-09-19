@@ -1,120 +1,123 @@
-import * as React from 'react'
+import * as React from "react";
 
 interface ContactFormProps {
-    showTitle: boolean
+    showTitle: boolean;
 }
 
-interface ContactFormState {
-    messageSent: boolean
-    isSending: boolean
-    height: number
-}
+export const ContactForm = ({ showTitle }: ContactFormProps) => {
+    const container = React.useRef<HTMLDivElement>(null);
+    const form = React.useRef<HTMLFormElement>(null);
+    const [messageSent, setMessageSent] = React.useState(false);
+    const [error, setError] = React.useState(false);
+    const [isSending, setIsSending] = React.useState(false);
+    const [height, setHeight] = React.useState<number>(0);
 
-class ContactForm extends React.Component<ContactFormProps, ContactFormState> {
-    container: React.RefObject<HTMLDivElement> = React.createRef()
-    nameInput: React.RefObject<HTMLInputElement> = React.createRef()
-    emailInput: React.RefObject<HTMLInputElement> = React.createRef()
-    messageInput: React.RefObject<HTMLTextAreaElement> = React.createRef()
-
-    state = {
-        messageSent: false,
-        isSending: false,
-        height: null
-    }
-
-    constructor(props: ContactFormProps) {
-        super(props)
-
-        this.sendEnquiry = this.sendEnquiry.bind(this)
-    }
-
-    componentDidMount() {
-        if (this.container.current) {
-            const { height } = this.container.current.getBoundingClientRect()
-            this.setState({ height })
+    React.useEffect(() => {
+        if (container.current) {
+            setHeight(container.current.getBoundingClientRect().height);
         }
-    }
+    }, [container.current]);
 
-    sendEnquiry(event: React.FormEvent<HTMLFormElement>) {
-        event.preventDefault()
-        const { nameInput, emailInput, messageInput } = this
+    const sendEnquiry = async (event: React.FormEvent<HTMLFormElement>) => {
+        event.preventDefault();
+        setIsSending(true);
+        setError(false);
 
-        this.setState({
-            isSending: true
-        })
-
-        fetch('https://82rhrugey3.execute-api.us-west-2.amazonaws.com/dev/contact', {
-            method: 'POST',
-            body: JSON.stringify({
-                name: nameInput.current.value,
-                email: emailInput.current.value,
-                message: messageInput.current.value
-            }),
-            headers: new Headers({
-                'Content-Type': 'application/json'
-            }),
-            mode: 'no-cors',
-        })
-            .then((response) => response.text())
-            .then(() => {
-                this.setState({
-                    messageSent: true,
-                    isSending: false
-                })
-            })
-            .catch((error) => console.error(error))
-    }
+        try {
+            const formData = new FormData(form.current ?? undefined);
+            const object = {};
+            formData.forEach((value, key) => {
+                object[key] = value;
+            });
+            const json = JSON.stringify(object);
+            const response = await fetch("https://api.web3forms.com/submit", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    Accept: "application/json",
+                },
+                body: json,
+            });
+            await response.json();
+            setMessageSent(true);
+        } catch (e: unknown) {
+            console.error(e);
+            setError(true);
+        } finally {
+            setIsSending(false);
+        }
+    };
 
     // Render
-    renderTitle() {
-        const { messageSent, isSending } = this.state
-        const text = (messageSent) ? 'Thanks for getting in touch' : 'Get in touch'
+    const Title = () => {
+        const text = messageSent
+            ? "Thanks for getting in touch"
+            : "Get in touch";
 
-        if (isSending) {
-            return (
-                <p>Sending...</p>
-            )
-        }
+        return <h4 className="contact-title">{text}</h4>;
+    };
 
-        return (
-            <h4 className="contact-title">{text}</h4>
-        )
+    if (isSending) {
+        return <p>Sending...</p>;
     }
 
-    render() {
-        return (
-            <div
-                className="contact"
-                ref={this.container}
-                style={{ height: (this.state.height || null) }}>
-                <div className="container">
-                    {this.props.showTitle && this.renderTitle()}
-                    {this.state.messageSent === false &&
-                        <form className="contact-form" onSubmit={this.sendEnquiry}>
-                            <input
-                                className="contact-input"
-                                type="text" name="name"
-                                ref={this.nameInput}
-                                placeholder="Name"
-                                required={true} />
-                            <input
-                                className="contact-input"
-                                type="email" name="email"
-                                ref={this.emailInput}
-                                placeholder="Email"
-                                required={true} />
-                            <textarea
-                                className="contact-text"
-                                name="message"
-                                ref={this.messageInput}
-                                placeholder="Message" />
-                            <button className="contact-button">Send</button>
-                        </form>
-                    }
-                </div>
-            </div>
-        )
-    }
-}
-
-export default ContactForm
+    return (
+        <div
+            className="contact"
+            ref={container}
+            style={{ height: height || undefined }}
+        >
+            {showTitle && <Title />}
+            {error && (
+                <p>
+                    There was an error trying to send your message. Please try
+                    again.
+                </p>
+            )}
+            {!messageSent && (
+                <form
+                    className="contact-form"
+                    ref={form}
+                    onSubmit={sendEnquiry}
+                >
+                    <input
+                        type="hidden"
+                        name="apikey"
+                        value={process.env.WEB3FORMS_API_KEY}
+                    />
+                    <input
+                        type="hidden"
+                        name="subject"
+                        value="New Submission from Web3Forms"
+                    />
+                    <input
+                        type="checkbox"
+                        name="botcheck"
+                        id=""
+                        style={{ display: "none" }}
+                    />
+                    <input
+                        className="contact-input"
+                        type="text"
+                        name="name"
+                        placeholder="Name"
+                        required={true}
+                    />
+                    <input
+                        className="contact-input"
+                        type="email"
+                        name="email"
+                        placeholder="Email"
+                        required={true}
+                    />
+                    <textarea
+                        className="contact-text"
+                        name="message"
+                        placeholder="Message"
+                    />
+                    <button className="contact-button">Send</button>
+                </form>
+            )}
+        </div>
+    );
+};

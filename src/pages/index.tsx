@@ -1,93 +1,109 @@
-import { Location } from '@reach/router'
-import { graphql, StaticQuery } from 'gatsby'
-import Link from 'gatsby-link'
-import * as React from 'react'
-import Feature from '../components/feature'
-import Layout from '../components/layout'
+import * as React from "react";
+import { Layout } from "../components/layout";
+import { Highlight } from "../components/highlight";
+import { CallToAction } from "../components/call-to-action";
+import me from "../images/me.jpeg";
 
-interface IndexPageProps {
-    location: Location
-}
+const IndexPage = () => {
+    return (
+        <Layout
+            title="Kia ora, I'm Josh"
+            subtitle="I'm a Software Engineer"
+            image={me}
+        >
+            <div className="constrain-width small">
+                <h4>
+                    {"I'm"} a software engineer who has been working since 2013.{" "}
+                </h4>
+                <p>
+                    I have moved all over the product stack, having started as a
+                    graphic designer before moving in to creating frontend
+                    software. Since then {"I've"} made games, APIs, databases,
+                    websites, native apps, web apps and infrastructure.
+                </p>
+                <br />
+            </div>
+            <Highlight title="Quick facts about me:">
+                <ol>
+                    <li>
+                        I have been creating apps and websites professionally
+                        since <strong>2013</strong>
+                    </li>
+                    <li>
+                        My favourite football player is{" "}
+                        <strong>Virgil Van Dijk</strong>
+                    </li>
+                    <li>
+                        {"I've"} produced a{" "}
+                        <a
+                            href="https://youtu.be/4mtn5P5DGg4"
+                            target="_blank"
+                            rel="noreferrer"
+                        >
+                            music video
+                        </a>
+                    </li>
+                    <li>
+                        I have grown at least <strong>7 avocado trees</strong>{" "}
+                        from seed (some of these even survived a South Island
+                        winter!)
+                    </li>
+                    <li>
+                        According to the Myers Briggs personality test, I am an{" "}
+                        <strong>Advocate</strong> (INFJ)
+                    </li>
+                    <li>
+                        I once worked in a <strong>chocolate factory</strong>
+                    </li>
+                </ol>
+            </Highlight>
+            <div className="constrain-width small">
+                <h3>Past</h3>
+                <p>
+                    My career began with an internship at a start-up incubator,
+                    and since then I have worked with companies ranging from
+                    start-ups to corporations. I have worked with companies
+                    across many industries such as media, analytics, utilities,
+                    government, not-for-profits, hospitality and education.
+                </p>
+                <p>
+                    Although I am primarily a front-end engineer, I adapt to
+                    whatever solution is needed. This means I have experience
+                    with managing AWS resources, infrastructure-as-code with
+                    tools like Terraform and building APIs using Python or Go.
+                </p>
 
-const IndexPage = ({ location }: IndexPageProps) => (
-    <StaticQuery
-        query={graphql`
-                query IndexQuery {
-                    site {
-                        siteMetadata {
-                            title
-                        }
-                    }
-                    about: allMarkdownRemark(filter: {frontmatter:{title: {eq: "About Me"}}}) {
-                        edges {
-                            node {
-                                id
-                                fields {
-                                    slug
-                                }
-                                excerpt(pruneLength: 150)
-                                frontmatter {
-                                    title
-                                    image {
-                                        thumbnail: childImageSharp {
-                                            resolutions(width: 300, height: 200) {
-                                                src
-                                                srcSet
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                    posts: allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }, limit: 5) {
-                        edges {
-                            node {
-                                id
-                                fields {
-                                    slug
-                                }
-                                excerpt(pruneLength: 300)
-                                frontmatter {
-                                    title
-                                    date
-                                    image {
-                                        thumbnail: childImageSharp {
-                                            resolutions(width: 300, height: 200) {
-                                                src
-                                                srcSet
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            `
-        }
-        render={(data) =>
-            <Layout location={location as any}>
-                <div>
-                    <section>
-                        {
-                            data.about.edges.map(({ node }) => <Feature key={node.id} data={node} />)
-                        }
-                    </section>
-                    <section>
-                        <h1>
-                            <Link to="/writing">Writing</Link>
-                        </h1>
-                        <hr />
-                        {
-                            data.posts.edges
-                                .filter(({ node: { frontmatter: { title } } }) => title.toLowerCase() !== 'about me')
-                                .map(({ node }) => <Feature key={node.id} data={node} />)
-                        }
-                    </section>
-                </div>
-            </Layout>
-        } />
-)
+                <hr />
+                <h3>Present</h3>
+                <p>
+                    {"I'm"} currently a software engineer for Plink Software in
+                    Nelson, NZ. Prior to this I worked at Pixel Fusion and
+                    Mediaworks in Auckland.
+                </p>
+                <p>
+                    I adopt an always-learning mindset. There is always more to
+                    learn, whether that be tooling, algorithims, processes or
+                    just about myself as a human person.
+                </p>
+                <p>
+                    I take a holistic approach to development so that I can
+                    understand the product, my team and {"stakeholder's"}{" "}
+                    problems. This means I need to be aware of a broad spectrum
+                    of the digital product lifecycle, from ideation, research,
+                    and validation, right through to using Scrum methodology and
+                    delivering to end users.
+                </p>
 
-export default IndexPage
+                <hr />
+                <h3>Future</h3>
+                <p>
+                    The future is unknown. But if you want to talk more about
+                    any opportunites, please get in touch.
+                </p>
+                <CallToAction label="Get in touch" link="/contact" />
+            </div>
+        </Layout>
+    );
+};
+
+export default IndexPage;
