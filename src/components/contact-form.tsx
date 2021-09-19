@@ -5,12 +5,12 @@ interface ContactFormProps {
 }
 
 export const ContactForm = ({ showTitle }: ContactFormProps) => {
-    const container = React.useRef<HTMLDivElement>();
-    const form = React.useRef<HTMLFormElement>();
+    const container = React.useRef<HTMLDivElement>(null);
+    const form = React.useRef<HTMLFormElement>(null);
     const [messageSent, setMessageSent] = React.useState(false);
     const [error, setError] = React.useState(false);
     const [isSending, setIsSending] = React.useState(false);
-    const [height, setHeight] = React.useState<number>(null);
+    const [height, setHeight] = React.useState<number>(0);
 
     React.useEffect(() => {
         if (container.current) {
@@ -24,7 +24,7 @@ export const ContactForm = ({ showTitle }: ContactFormProps) => {
         setError(false);
 
         try {
-            const formData = new FormData(form.current);
+            const formData = new FormData(form.current ?? undefined);
             const object = {};
             formData.forEach((value, key) => {
                 object[key] = value;
@@ -65,7 +65,7 @@ export const ContactForm = ({ showTitle }: ContactFormProps) => {
         <div
             className="contact"
             ref={container}
-            style={{ height: height || null }}
+            style={{ height: height || undefined }}
         >
             {showTitle && <Title />}
             {error && (

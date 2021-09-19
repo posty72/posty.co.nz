@@ -16,17 +16,42 @@ interface Point {
 }
 
 export const Hero = ({ title, subtitle, imageUrl }: HeroProps) => {
-    const canvasRef = React.useRef<HTMLCanvasElement>();
+    const canvasRef = React.useRef<HTMLCanvasElement>(null);
     const [points, setPoints] = React.useState<Point[]>([]);
-    const spacing = 25;
+    const spacing = 100;
     const minAlpha = 0.3;
     const maxAlpha = 0.8;
     const minSize = 2;
-    const maxSize = 5;
+    const maxSize = 10;
+    const cursorRadius = 1500;
+    const resolutionFactor = window.devicePixelRatio;
     const dotColor = (opacity = minAlpha) => `rgba(255, 255, 255, ${opacity})`;
+
+    React.useEffect(() => {
+        const callback = () => {
+            const canvas = canvasRef.current;
+
+            if (!canvas) {
+                return;
+            }
+
+            // Resize the canvas
+            canvas.width = canvas.clientWidth * resolutionFactor;
+            canvas.height = canvas.clientHeight * resolutionFactor;
+
+            setPoints(getFixedPoints());
+        };
+        window.addEventListener("resize", callback);
+
+        callback();
+
+        return () => window.removeEventListener("resize", callback);
+    }, [canvasRef?.current]);
 
     const getFixedPoints = React.useCallback(() => {
         const canvas = canvasRef.current;
+        if (!canvas) return [];
+
         const width = canvas.width;
         const height = canvas.height;
 
@@ -50,40 +75,33 @@ export const Hero = ({ title, subtitle, imageUrl }: HeroProps) => {
     }, [canvasRef.current?.width, canvasRef.current?.height]);
 
     const drawPoint = React.useCallback((position: Point) => {
-        const context = canvasRef.current.getContext("2d");
+        const context = canvasRef.current?.getContext("2d");
+        if (!context) return;
         const size = position.size ?? minSize;
 
         context.beginPath();
-        context.fillStyle = position.color;
-        context.fillRect(
-            position.x - size / 2,
-            position.y - size / 2,
-            size,
-            size
-        );
+        context.arc(position.x, position.y, size / 2, 0, 2 * Math.PI);
+        context.lineWidth = size;
+        context.strokeStyle = position.color;
+        context.stroke();
         context.closePath();
     }, []);
 
     React.useEffect(() => {
         const canvas = canvasRef.current;
+        if (!canvas) return;
 
-        if (!canvas) {
-            return;
-        }
-
-        // Resize the canvas
-        canvas.width = canvas.clientWidth;
-        canvas.height = canvas.clientHeight;
-
-        setPoints(getFixedPoints());
-    }, [canvasRef?.current]);
-
-    React.useEffect(() => {
-        const canvas = canvasRef.current;
         const context = canvas.getContext("2d");
+        if (!context) return;
+
         const width = canvas.clientWidth;
         const height = canvas.clientHeight;
-        context.clearRect(0, 0, width, height);
+        context.clearRect(
+            0,
+            0,
+            width * resolutionFactor,
+            height * resolutionFactor
+        );
         points.forEach((point) => drawPoint(point));
     }, [points]);
 
@@ -92,20 +110,9 @@ export const Hero = ({ title, subtitle, imageUrl }: HeroProps) => {
             | React.MouseEvent<HTMLDivElement>
             | React.TouchEvent<HTMLDivElement>
     ) => {
-        let x: number;
-        let y: number;
-
-        if ("clientX" in event && "clientY" in event) {
-            x = event.clientX;
-            y = event.clientY;
-        }
-
-        if ("touches" in event) {
-            x = event.touches[0].clientX;
-            y = event.touches[0].clientY;
-        }
-
-        const radius = 250;
+        const eventWithCoords = "touches" in event ? event.touches[0] : event;
+        const x = eventWithCoords.clientX * resolutionFactor;
+        const y = eventWithCoords.clientY * resolutionFactor + window.scrollY;
         const pointsToUpdate = points.slice();
         const fixedPoints = getFixedPoints();
 
@@ -113,21 +120,19 @@ export const Hero = ({ title, subtitle, imageUrl }: HeroProps) => {
             const { x: pointX, y: pointY } = pointsToUpdate[i];
             const distanceFromMouse = (x - pointX) ** 2 + (y - pointY) ** 2;
 
-            if (distanceFromMouse < radius * radius) {
-                const distance =
-                    Math.trunc(Math.sqrt(distanceFromMouse)) / radius;
+            if (distanceFromMouse < cursorRadius * cursorRadius) {
+                const distance = Math.trunc(Math.sqrt(distanceFromMouse));
+                const factor = distance / cursorRadius;
 
                 const opacity = Math.max(
                     minAlpha,
-                    Math.min((1 - minAlpha) * Math.abs(distance - 1), maxAlpha)
+                    Math.min((1 - minAlpha) * Math.abs(factor - 1), maxAlpha)
                 );
-                const size = Math.max(
-                    minSize,
-                    maxSize * Math.abs(distance - 1)
-                );
+                const size = Math.max(minSize, maxSize * Math.abs(factor - 1));
 
                 pointsToUpdate[i].color = dotColor(opacity);
                 pointsToUpdate[i].size = size;
+                pointsToUpdate[i].x = fixedPoints[i].x;
             } else {
                 pointsToUpdate[i] = { ...fixedPoints[i] }; // set back to position is the static array
             }
@@ -136,9 +141,7 @@ export const Hero = ({ title, subtitle, imageUrl }: HeroProps) => {
         setPoints(pointsToUpdate);
     };
 
-    const handleLeave = () => {
-        setPoints(getFixedPoints());
-    };
+    const handleLeave = () => setPoints(getFixedPoints());
 
     return (
         <div

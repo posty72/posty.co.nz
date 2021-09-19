@@ -1,0 +1,17 @@
+.call-to-action {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: rem(50);
+    padding-bottom: rem(50);
+
+    border-radius: 10px;
+    background-color: $color-quartenary-shade-1;
+
+    &-label {
+        color: $color-light;
+        font-family: $font-primary;
+        font-weight: $weight-bold;
+        font-size: 24px;
+    }
+}

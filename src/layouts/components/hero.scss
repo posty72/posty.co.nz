@@ -2,12 +2,16 @@
     position: relative;
 
     display: flex;
-    min-height: calc(50vh - 100px);
-    margin-bottom: rem(100);
+    min-height: 650px;
+    margin-bottom: rem(40);
 
     color: $color-light;
 
     background: $gradient-standard;
+
+    @media (--from-medium-screen-w) {
+        min-height: calc(50vh - 100px);
+    }
 
     // States
     &.has-image {
@@ -37,7 +41,8 @@
             }
         }
 
-        .hero-title {
+        .hero-title,
+        .hero-subtitle {
             padding-top: 0;
 
             @media (--from-medium-screen-w) {

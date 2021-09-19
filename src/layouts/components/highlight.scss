@@ -1,0 +1,41 @@
+.highlight {
+    background-color: $color-quartenary-tint-1;
+    background-image: $gradient-tertiary;
+    padding: rem(20);
+    margin-bottom: rem(50);
+    color: $color-light;
+    filter: drop-shadow(4px 8px 8px rgba(255, 162, 0, 0.3));
+    border-radius: rem(10);
+    font-size: 18px;
+
+    &-title {
+        text-align: center;
+        font-size: 28px;
+
+        &::after {
+            display: block;
+
+            width: rem(250);
+            margin-right: auto;
+            margin-left: auto;
+            margin-top: 5px;
+
+            border: none;
+            border-bottom-color: $color-light-shade-1;
+            border-bottom-style: solid;
+            border-bottom-width: rem(3);
+            content: "";
+        }
+    }
+
+    li::marker {
+        color: $color-light-alpha-1;
+        font-size: 75%;
+    }
+
+    a {
+        color: $color-light;
+        font-weight: $weight-semi-bold;
+        text-decoration: underline;
+    }
+}

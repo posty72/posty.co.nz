@@ -7,8 +7,8 @@ interface TilesProps {
 interface Tile {
     title: string;
     iconColour: string;
-    description: string;
-    tags: string[];
+    description: string | React.ReactNode;
+    tags?: string[];
 }
 
 export const Tiles = ({ items }: TilesProps) => {
@@ -24,7 +24,7 @@ export const Tiles = ({ items }: TilesProps) => {
                 </div>
                 <div className="tiles-item-content">{description}</div>
                 <div className="tiles-item-meta">
-                    {tags.map((tag, index) => (
+                    {tags?.map((tag, index) => (
                         <span className="pill" key={index}>
                             {tag}
                         </span>
