@@ -1,15 +1,18 @@
 .hero {
     position: relative;
+
     display: flex;
     min-height: calc(50vh - 100px);
     margin-bottom: rem(100);
+
     color: $color-light;
+
     background: $gradient-standard;
 
     // States
     &.has-image {
-        padding-top: rem(110);
         min-height: calc(100vh - 100px);
+        padding-top: rem(110);
 
         .hero-inner {
             position: static;
