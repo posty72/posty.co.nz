@@ -1,4 +1,5 @@
 import * as React from "react";
+import { classNames } from "../../utlity/class-names";
 
 interface SwatchProps {
     title: string;
@@ -6,7 +7,11 @@ interface SwatchProps {
     outline?: boolean;
 }
 export const Swatch = ({ title, value, outline = false }: SwatchProps) => (
-    <div className={`swatch small ${outline ? "outline" : ""} colour-${value}`}>
+    <div
+        className={classNames("swatch", `colour-${value}`, {
+            outline,
+        })}
+    >
         <div className="swatch-inner">
             <p className="swatch-title">{title}</p>
             <div role="group" className="swatch-variations">
