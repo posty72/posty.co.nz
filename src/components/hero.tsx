@@ -87,9 +87,24 @@ export const Hero = ({ title, subtitle, imageUrl }: HeroProps) => {
         points.forEach((point) => drawPoint(point));
     }, [points]);
 
-    const handleHover = (event: React.MouseEvent<HTMLDivElement>) => {
-        const x = event.clientX;
-        const y = event.clientY;
+    const handleHover = (
+        event:
+            | React.MouseEvent<HTMLDivElement>
+            | React.TouchEvent<HTMLDivElement>
+    ) => {
+        let x: number;
+        let y: number;
+
+        if ("clientX" in event && "clientY" in event) {
+            x = event.clientX;
+            y = event.clientY;
+        }
+
+        if ("touches" in event) {
+            x = event.touches[0].clientX;
+            y = event.touches[0].clientY;
+        }
+
         const radius = 250;
         const pointsToUpdate = points.slice();
         const fixedPoints = getFixedPoints();
@@ -121,10 +136,18 @@ export const Hero = ({ title, subtitle, imageUrl }: HeroProps) => {
         setPoints(pointsToUpdate);
     };
 
+    const handleLeave = () => {
+        setPoints(getFixedPoints());
+    };
+
     return (
         <div
             className={classNames("hero", { "has-image": !!imageUrl })}
             onMouseMove={handleHover}
+            onMouseOut={handleLeave}
+            onBlur={handleLeave}
+            onTouchMove={handleHover}
+            onTouchEnd={handleLeave}
             role="presentation"
         >
             <div className="hero-inner || constrain-width">
