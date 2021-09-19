@@ -1,4 +1,6 @@
 import * as React from "react";
+import { CallToAction } from "../components/call-to-action";
+import { Highlight } from "../components/highlight";
 import { Layout } from "../components/layout";
 import { Tiles } from "../components/tiles";
 import { StyleGuideSection } from "../components/style-guide/section";
@@ -17,6 +19,20 @@ const StyleGuide = () => {
                         <Swatch title="Secondary" value="secondary" />
                         <Swatch title="Tertiary" value="tertiary" outline />
                         <Swatch title="Quartenary" value="quartenary" />
+                    </div>
+                    <div className="style-guide-swatches" role="group">
+                        <Swatch
+                            title="Primary Gradient"
+                            value="gradient-standard"
+                        />
+                        <Swatch
+                            title="Secondary Gradient"
+                            value="gradient-secondary"
+                        />
+                        <Swatch
+                            title="Tertiary Gradient"
+                            value="gradient-tertiary"
+                        />
                     </div>
                 </StyleGuideSection>
 
@@ -110,6 +126,27 @@ const StyleGuide = () => {
                             },
                         ]}
                     />
+                </StyleGuideSection>
+                <StyleGuideSection title="Highlight Box">
+                    <Highlight title="Hello">
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing
+                            elit. Voluptates explicabo odit, quibusdam incidunt
+                            nemo, fuga eos reiciendis enim et deleniti pariatur.
+                            Praesentium at velit aperiam dicta pariatur
+                            architecto molestiae soluta.
+                        </p>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing
+                            elit. Voluptates explicabo odit, quibusdam incidunt
+                            nemo, fuga eos reiciendis enim et deleniti pariatur.
+                            Praesentium at velit aperiam dicta pariatur
+                            architecto molestiae soluta.
+                        </p>
+                    </Highlight>
+                </StyleGuideSection>
+                <StyleGuideSection title="Call To Action">
+                    <CallToAction label="Take action now" link="/style-guide" />
                 </StyleGuideSection>
             </div>
         </Layout>

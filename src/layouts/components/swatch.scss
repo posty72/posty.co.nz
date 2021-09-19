@@ -68,6 +68,16 @@ $--grid-spacing: 20;
         }
     }
 
+    &.colour-gradient-standard .swatch-inner {
+        background-image: $gradient-standard;
+    }
+    &.colour-gradient-secondary .swatch-inner {
+        background-image: $gradient-secondary;
+    }
+    &.colour-gradient-tertiary .swatch-inner {
+        background-image: $gradient-tertiary;
+    }
+
     // Elements
     &-inner {
         position: relative;
@@ -75,8 +85,8 @@ $--grid-spacing: 20;
         display: flex;
         align-items: center;
         justify-content: center;
-        height: rem(200);
 
+        padding-top: rem(40);
         padding-bottom: rem(40);
         overflow: hidden;
 

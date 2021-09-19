@@ -4,6 +4,7 @@ import { Helmet } from "react-helmet";
 import { Hero } from "../components/hero";
 import { Header } from "../components/header";
 import "../layouts/index.scss";
+import { Footer } from "./footer";
 
 interface LayoutProps {
     title: string;
@@ -61,7 +62,7 @@ export const Layout = ({ title, subtitle, children, image }: LayoutProps) => {
                     />
                     <Hero title={title} subtitle={subtitle} imageUrl={image} />
                     <main className="main">{children}</main>
-                    {/* <Footer /> */}
+                    <Footer />
                 </div>
             )}
         />

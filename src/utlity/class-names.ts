@@ -1,7 +1,13 @@
 interface ClassName {
     [key: string]: boolean | ClassName;
 }
-export type ClassNamesType = string | number | ClassName | ClassNamesType[];
+export type ClassNamesType =
+    | string
+    | number
+    | ClassName
+    | ClassNamesType[]
+    | undefined
+    | null;
 
 export function classNames(...args: ClassNamesType[]): string {
     const classes: string[] = [];

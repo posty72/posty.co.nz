@@ -1,13 +1,29 @@
-import { Link } from "gatsby";
 import * as React from "react";
 import { Layout } from "../components/layout";
+import { Highlight } from "../components/highlight";
+import { CallToAction } from "../components/call-to-action";
 import me from "../images/me.jpeg";
 
 const IndexPage = () => {
     return (
-        <Layout title="Kia ora, I'm Josh" image={me}>
+        <Layout
+            title="Kia ora, I'm Josh"
+            subtitle="I'm a Software Engineer"
+            image={me}
+        >
             <div className="constrain-width small">
-                <h3>Quick things about me:</h3>
+                <h4>
+                    {"I'm"} a software engineer who has been working since 2013.{" "}
+                </h4>
+                <p>
+                    I have moved all over the product stack, having started as a
+                    graphic designer before moving in to creating frontend
+                    software. Since then {"I've"} made games, APIs, databases,
+                    websites, native apps, web apps and infrastructure.
+                </p>
+                <br />
+            </div>
+            <Highlight title="Quick facts about me:">
                 <ol>
                     <li>
                         I have been creating apps and websites professionally
@@ -18,20 +34,30 @@ const IndexPage = () => {
                         <strong>Virgil Van Dijk</strong>
                     </li>
                     <li>
+                        {"I've"} produced a{" "}
+                        <a
+                            href="https://youtu.be/4mtn5P5DGg4"
+                            target="_blank"
+                            rel="noreferrer"
+                        >
+                            music video
+                        </a>
+                    </li>
+                    <li>
                         I have grown at least <strong>7 avocado trees</strong>{" "}
                         from seed (some of these even survived a South Island
                         winter!)
                     </li>
                     <li>
                         According to the Myers Briggs personality test, I am an{" "}
-                        <strong>Advocate</strong>
+                        <strong>Advocate</strong> (INFJ)
                     </li>
                     <li>
                         I once worked in a <strong>chocolate factory</strong>
                     </li>
                 </ol>
-
-                <hr />
+            </Highlight>
+            <div className="constrain-width small">
                 <h3>Past</h3>
                 <p>
                     My career began with an internship at a start-up incubator,
@@ -74,11 +100,7 @@ const IndexPage = () => {
                     The future is unknown. But if you want to talk more about
                     any opportunites, please get in touch.
                 </p>
-                <div className="splash">
-                    <Link to="/contact" className="button primary">
-                        Contact Me
-                    </Link>
-                </div>
+                <CallToAction label="Get in touch" link="/contact" />
             </div>
         </Layout>
     );

@@ -6,7 +6,7 @@ $color-blue: rgba(19, 84, 122, 1);
 $color-kahurangi: rgba(42, 152, 216, 1);
 $color-gold: rgba(255, 162, 0, 1);
 $color-black: rgb(0, 0, 0);
-$color-white: rgb(255, 255, 255);
+$color-white: rgb(255, 255, 255, 1);
 $color-abel: rgba(4, 160, 152, 1);
 $color-primary: $color-green;
 $color-primary-tint-1: color($color-primary tint(10%));
@@ -27,6 +27,7 @@ $color-dark-alpha-1: color($color-black a(10%));
 $color-light: $color-white;
 $color-light-shade-1: color($color-white shade(10%));
 $color-light-shade-2: color($color-white shade(25%));
+$color-light-alpha-1: color($color-white a(80%));
 
 /*
      Typography
@@ -81,8 +82,8 @@ $gradient-secondary: linear-gradient(
 );
 $gradient-tertiary: linear-gradient(
     104.51deg,
-    $color-tertiary 0%,
-    $color-primary 100%
+    $color-primary-shade-1 0%,
+    $color-tertiary-shade-1 100%
 );
 
 /*
