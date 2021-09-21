@@ -1,5 +1,5 @@
 import * as React from "react";
-import { classNames } from "../utlity/class-names";
+import { classNames } from "../utility/class-names";
 import { Profile } from "./profile";
 
 interface HeroProps {
@@ -24,7 +24,8 @@ export const Hero = ({ title, subtitle, imageUrl }: HeroProps) => {
     const minSize = 2;
     const maxSize = 10;
     const cursorRadius = 1500;
-    const resolutionFactor = typeof window !== "undefined" ? window.devicePixelRatio : 0;
+    const resolutionFactor =
+        typeof window !== "undefined" ? window.devicePixelRatio : 0;
     const dotColor = (opacity = minAlpha) => `rgba(255, 255, 255, ${opacity})`;
 
     React.useEffect(() => {

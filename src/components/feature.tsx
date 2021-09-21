@@ -1,5 +1,5 @@
 import * as React from "react";
-import { classNames } from "../utlity/class-names";
+import { classNames } from "../utility/class-names";
 
 interface FeatureProps {
     title: string;
