@@ -12,7 +12,7 @@ const IndexPage = () => {
             subtitle="I'm a Software Engineer"
             image={me}
         >
-            <Content className="constrain-width small">
+            <Content>
                 <h4>
                     {"I'm"} a software engineer who has been working since 2013.{" "}
                 </h4>
@@ -22,7 +22,6 @@ const IndexPage = () => {
                     software. Since then {"I've"} made games, APIs, databases,
                     websites, native apps, web apps and infrastructure.
                 </p>
-                <br />
             </Content>
             <Highlight title="Quick facts about me:">
                 <ol>
@@ -58,7 +57,7 @@ const IndexPage = () => {
                     </li>
                 </ol>
             </Highlight>
-            <div className="constrain-width small">
+            <Content>
                 <h3>Past</h3>
                 <p>
                     My career began with an internship at a start-up incubator,
@@ -73,7 +72,12 @@ const IndexPage = () => {
                     with managing AWS resources, infrastructure-as-code with
                     tools like Terraform and building APIs using Python or Go.
                 </p>
-
+            </Content>
+            <CallToAction
+                title="See my work"
+                links={[{ label: "View work", link: "/work" }]}
+            />
+            <Content>
                 <br />
                 <h3>Present</h3>
                 <p>
@@ -83,7 +87,7 @@ const IndexPage = () => {
                 </p>
                 <p>
                     I adopt an always-learning mindset. There is always more to
-                    learn, whether that be tooling, algorithims, processes or
+                    learn, whether that be tooling, algorithms, processes or
                     just about myself as a human person.
                 </p>
                 <p>
@@ -91,7 +95,7 @@ const IndexPage = () => {
                     understand the product, my team and {"stakeholder's"}{" "}
                     problems. This means I need to be aware of a broad spectrum
                     of the digital product lifecycle, from ideation, research,
-                    and validation, right tbrough to using Scrum methodology and
+                    and validation, right through to using Scrum methodology and
                     delivering to end users.
                 </p>
 
@@ -99,11 +103,19 @@ const IndexPage = () => {
                 <h3>Future</h3>
                 <p>
                     The future is unknown. But if you want to talk more about
-                    any opportunites, please get in touch.
+                    any opportunities, please get in touch.
                 </p>
-                <br />
-            </div>
-            <CallToAction label="Get in touch" link="/contact" />
+            </Content>
+            <CallToAction
+                title="Get in touch with me"
+                links={[
+                    { label: "Direct Message", link: "/contact" },
+                    {
+                        label: "LinkedIn",
+                        link: "https://www.linkedin.com/in/joshpost/",
+                    },
+                ]}
+            />
         </Layout>
     );
 };
