@@ -54,7 +54,7 @@ export const ContactForm = ({ showTitle }: ContactFormProps) => {
             ? "Thanks for getting in touch"
             : "Get in touch";
 
-        return <h4 className="contact-title">{text}</h4>;
+        return <h4 className="form-title">{text}</h4>;
     };
 
     if (isSending) {
@@ -63,7 +63,7 @@ export const ContactForm = ({ showTitle }: ContactFormProps) => {
 
     return (
         <div
-            className="contact"
+            className="form"
             ref={container}
             style={{ height: height || undefined }}
         >
@@ -75,11 +75,7 @@ export const ContactForm = ({ showTitle }: ContactFormProps) => {
                 </p>
             )}
             {!messageSent && (
-                <form
-                    className="contact-form"
-                    ref={form}
-                    onSubmit={sendEnquiry}
-                >
+                <form className="form-form" ref={form} onSubmit={sendEnquiry}>
                     <input
                         type="hidden"
                         name="apikey"
@@ -97,25 +93,25 @@ export const ContactForm = ({ showTitle }: ContactFormProps) => {
                         style={{ display: "none" }}
                     />
                     <input
-                        className="contact-input"
+                        className="form-input"
                         type="text"
                         name="name"
                         placeholder="Name"
                         required={true}
                     />
                     <input
-                        className="contact-input"
+                        className="form-input"
                         type="email"
                         name="email"
                         placeholder="Email"
                         required={true}
                     />
                     <textarea
-                        className="contact-text"
+                        className="form-text"
                         name="message"
                         placeholder="Message"
                     />
-                    <button className="contact-button">Send</button>
+                    <button className="form-button">Send</button>
                 </form>
             )}
         </div>

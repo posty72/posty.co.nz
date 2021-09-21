@@ -1,4 +1,6 @@
 .tiles {
+    margin-bottom: $gap-standard;
+
     &-inner {
         display: grid;
         gap: rem(20);
@@ -19,8 +21,9 @@
 
         color: $color-light;
 
-        background-image: $gradient-secondary;
+        background-color: $color-quartenary-shade-1;
         border-radius: rem(10);
+        filter: drop-shadow(8px 16px 16px rgba(0, 0, 0, 0.3));
 
         &-head {
             display: flex;

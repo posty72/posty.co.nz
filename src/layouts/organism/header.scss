@@ -5,6 +5,8 @@
     left: 0;
     z-index: 11;
 
+    background: $gradient-fade;
+
     &-inner {
         display: flex;
         flex: none;
