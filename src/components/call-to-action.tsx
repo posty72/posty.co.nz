@@ -1,6 +1,6 @@
 import { Link } from "gatsby";
 import * as React from "react";
-import { classNames } from "../utlity/class-names";
+import { classNames } from "../utility/class-names";
 
 interface CallToActionProps {
     title: string;

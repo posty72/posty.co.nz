@@ -3,18 +3,31 @@
   "$schema": "https://raw.githubusercontent.com/streetsidesoftware/cspell/master/cspell.schema.json",
   "language": "en",
   "words": [
+    "apikey",
+    "bolditalic",
+    "botcheck",
     "Dijk",
     "embeddable",
     "favourite",
+    "focusring",
     "INFJ",
+    "kahurangi",
+    "lightitalic",
     "Māori",
     "Mediaworks",
     "mnyou",
+    "necolas",
     "Ngāti",
+    "noninteractive",
+    "opensans",
     "posty",
     "Preact",
     "Rangi",
-    "Tipu"
+    "semibold",
+    "semibolditalic",
+    "stylelint",
+    "Tipu",
+    "truetype"
   ],
   "flagWords": [],
   "ignorePaths": [
@@ -22,6 +35,7 @@
     "package-lock.json",
     "yarn.lock",
     "tsconfig.json",
-    "node_modules/**"
+    "node_modules/**",
+    "public/**"
   ]
 }

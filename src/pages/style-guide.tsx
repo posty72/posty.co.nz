@@ -46,6 +46,7 @@ const StyleGuide = () => {
                         <h5>Header 5</h5>
                         <h6>Header 6</h6>
 
+                        {/* <!--cSpell:disable --> */}
                         <p>
                             Lorem <em>ipsum</em> dolor sit amet consectetur
                             adipisicing elit. Magni dicta provident aliquam aut,
@@ -54,11 +55,12 @@ const StyleGuide = () => {
                             <strong> reprehenderit tempora</strong> accusantium
                             commodi eveniet?
                         </p>
+                        {/* <!--cSpell:enable --> */}
 
                         <h5>Unordered List</h5>
                         <ul>
                             <li>
-                                Lorem Khaled Ipsum is a major key to success.
+                                Lorem Khalid Ipsum is a major key to success.
                                 They never said winning was easy. Some people
                                 can’t handle success.
                             </li>
@@ -75,14 +77,14 @@ const StyleGuide = () => {
                                 The weather is amazing, walk with me through the
                                 pathway of more success. Take this journey with
                                 me, Lion! Learning is cool, but knowing is
-                                better, and I know the key to success. Eliptical
-                                talk.
+                                better, and I know the key to success.
+                                Elliptical talk.
                             </li>
                         </ul>
                         <h5>Ordered List</h5>
                         <ol>
                             <li>
-                                Lorem Khaled Ipsum is a major key to success.
+                                Lorem Khalid Ipsum is a major key to success.
                                 They never said winning was easy. Some people
                                 can’t handle success.
                             </li>
@@ -99,8 +101,8 @@ const StyleGuide = () => {
                                 The weather is amazing, walk with me through the
                                 pathway of more success. Take this journey with
                                 me, Lion! Learning is cool, but knowing is
-                                better, and I know the key to success. Eliptical
-                                talk.
+                                better, and I know the key to success.
+                                Elliptical talk.
                             </li>
                         </ol>
                     </Content>
@@ -134,6 +136,8 @@ const StyleGuide = () => {
                 </StyleGuideSection>
                 <StyleGuideSection title="Highlight Box">
                     <Highlight title="Hello">
+                        {/* <!--cSpell:disable --> */}
+
                         <p>
                             Lorem ipsum dolor sit amet consectetur adipisicing
                             elit. Voluptates explicabo odit, quibusdam incidunt
@@ -148,6 +152,7 @@ const StyleGuide = () => {
                             Praesentium at velit aperiam dicta pariatur
                             architecto molestiae soluta.
                         </p>
+                        {/* <!--cSpell:enable -->*/}
                     </Highlight>
                 </StyleGuideSection>
                 <StyleGuideSection title="Call To Action">
