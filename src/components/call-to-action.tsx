@@ -14,40 +14,37 @@ interface LinkItem {
 
 export const CallToAction = ({ title, links = [] }: CallToActionProps) => {
     return (
-        <div className="constrain-width small">
-            <div className="call-to-action">
+        <div className="call-to-action">
+            <div className="call-to-action-inner">
                 <h2 className="call-to-action-title">{title}</h2>
-                {links.map(({ label, link }, index) => {
-                    if (link.startsWith("http")) {
-                        return (
-                            <a
-                                key={link}
-                                className={classNames(
-                                    "call-to-action-button button",
-                                    index === 0 ? "primary" : ""
-                                )}
-                                href={link}
-                                target="_blank"
-                                rel="noreferrer"
-                            >
-                                {label}
-                            </a>
+                <div className="call-to-action-actions">
+                    {links.map(({ label, link }, index) => {
+                        const buttonClass = classNames(
+                            "call-to-action-button button",
+                            index === 0 ? "tertiary" : ""
                         );
-                    }
 
-                    return (
-                        <Link
-                            key={link}
-                            className={classNames(
-                                "call-to-action-button button",
-                                index === 0 ? "primary" : ""
-                            )}
-                            to={link}
-                        >
-                            {label}
-                        </Link>
-                    );
-                })}
+                        if (link.startsWith("http")) {
+                            return (
+                                <a
+                                    key={link}
+                                    className={buttonClass}
+                                    href={link}
+                                    target="_blank"
+                                    rel="noreferrer"
+                                >
+                                    {label}
+                                </a>
+                            );
+                        }
+
+                        return (
+                            <Link key={link} className={buttonClass} to={link}>
+                                {label}
+                            </Link>
+                        );
+                    })}
+                </div>
             </div>
         </div>
     );
