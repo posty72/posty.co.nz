@@ -15,8 +15,6 @@
         }
 
         .feature-info {
-            padding-right: 0;
-
             @media (--from-medium-screen-w) {
                 flex-direction: column;
                 padding-left: rem(50);
@@ -64,9 +62,10 @@
         justify-content: center;
 
         @media (--from-medium-screen-w) {
-            text-align: right;
             padding-right: rem(50);
             padding-left: rem(20);
+
+            text-align: right;
         }
     }
 }
