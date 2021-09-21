@@ -13,13 +13,15 @@
     "build": "gatsby build",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "lint": "npm run lint:eslint && npm run lint:stylelint && npm run format",
+    "lint": "npm run lint:eslint && npm run lint:stylelint && npm run format && npm run lint:spelling",
     "lint:eslint": "eslint \"./**/*.{js,ts,tsx}\" --fix --quiet && prettier --write --loglevel error \"./**/*.{js,jsx,json,css,scss,html,ts,tsx}\"",
     "lint:stylelint": "stylelint --fix \"./src/**/*.{css,scss}\"",
+    "lint:spelling": "cspell \"{README.md,.github/*.md,src/**/*.ts}\"",
     "format": "prettier --write --loglevel error \"./**/*.{js,jsx,json,css,scss,html,ts,tsx}\"",
     "prepare": "husky install"
   },
   "dependencies": {
+    "cspell": "^5.10.1",
     "cssnano": "^5.0.8",
     "gatsby": "^3.13.0",
     "gatsby-plugin-image": "^1.13.0",

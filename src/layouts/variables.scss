@@ -5,8 +5,8 @@ $color-green: rgba(63, 174, 121, 1);
 $color-blue: rgba(19, 84, 122, 1);
 $color-kahurangi: rgba(42, 152, 216, 1);
 $color-gold: rgba(255, 162, 0, 1);
-$color-black: rgb(0, 0, 0);
-$color-white: rgb(255, 255, 255, 1);
+$color-black: rgba(0, 0, 0, 1);
+$color-white: rgba(255, 255, 255, 1);
 $color-abel: rgba(4, 160, 152, 1);
 $color-primary: $color-green;
 $color-primary-tint-1: color($color-primary tint(10%));
@@ -17,9 +17,9 @@ $color-secondary-shade-1: color($color-secondary shade(10%));
 $color-tertiary: $color-gold;
 $color-tertiary-tint-1: color($color-tertiary tint(10%));
 $color-tertiary-shade-1: color($color-tertiary shade(10%));
-$color-quartenary: $color-abel;
-$color-quartenary-tint-1: color($color-quartenary tint(10%));
-$color-quartenary-shade-1: color($color-quartenary shade(10%));
+$color-quaternary: $color-abel;
+$color-quaternary-tint-1: color($color-quaternary tint(10%));
+$color-quaternary-shade-1: color($color-quaternary shade(10%));
 $color-dark: $color-black;
 $color-dark-tint-1: color($color-black tint(10%));
 $color-dark-tint-2: color($color-black tint(20%));
@@ -77,8 +77,8 @@ $gradient-standard: linear-gradient(
 $gradient-secondary: linear-gradient(
     105deg,
     $color-secondary-shade-1 0%,
-    $color-quartenary 90%,
-    $color-quartenary-shade-1 100%
+    $color-quaternary 90%,
+    $color-quaternary-shade-1 100%
 );
 $gradient-tertiary: linear-gradient(
     104.51deg,
@@ -90,4 +90,4 @@ $gradient-fade: linear-gradient(180deg, rgba(0, 0, 0, 0.4), transparent);
 /*
     Gaps
  */
-$gap-standard: 100px;
+$gap-standard: 50px;

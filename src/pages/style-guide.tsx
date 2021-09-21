@@ -19,7 +19,7 @@ const StyleGuide = () => {
                         <Swatch title="Primary" value="primary" />
                         <Swatch title="Secondary" value="secondary" />
                         <Swatch title="Tertiary" value="tertiary" outline />
-                        <Swatch title="Quartenary" value="quartenary" />
+                        <Swatch title="quaternary" value="quaternary" />
                     </div>
                     <div className="style-guide-swatches" role="group">
                         <Swatch
@@ -151,7 +151,13 @@ const StyleGuide = () => {
                     </Highlight>
                 </StyleGuideSection>
                 <StyleGuideSection title="Call To Action">
-                    <CallToAction label="Take action now" link="/style-guide" />
+                    <CallToAction
+                        title="Take action now"
+                        links={[
+                            { label: "Style Guide", link: "/style-guide" },
+                            { label: "External Link", link: "/style-guide" },
+                        ]}
+                    />
                 </StyleGuideSection>
             </div>
         </Layout>

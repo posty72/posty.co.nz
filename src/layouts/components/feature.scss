@@ -1,6 +1,5 @@
 .feature {
     display: flex;
-    padding-top: 100px;
     padding-bottom: 100px;
     margin-bottom: $gap-standard;
 
@@ -8,6 +7,24 @@
 
     @media (--to-medium-screen-w) {
         flex-direction: column;
+    }
+
+    &.right {
+        flex-direction: row-reverse;
+
+        @media (--to-medium-screen-w) {
+            flex-direction: column;
+        }
+
+        .feature-info {
+            @media (--to-medium-screen-w) {
+                flex-direction: column;
+                padding-right: 0;
+                padding-left: rem(50);
+
+                text-align: left;
+            }
+        }
     }
 
     // Elements
