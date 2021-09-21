@@ -1,6 +1,8 @@
 .feature {
     display: flex;
-    margin-bottom: rem(40);
+    margin-bottom: $gap-standard;
+    padding-top: 100px;
+    padding-bottom: 100px;
 
     border-radius: rem(5);
 
@@ -18,14 +20,10 @@
         @media (--to-medium-screen-w) {
             padding-top: rem(10);
         }
+    }
 
-        > a {
-            color: $color-dark-tint-1;
-        }
-
-        &:hover {
-            text-decoration: underline;
-        }
+    &-subtitle {
+        color: $color-light-shade-2;
     }
 
     &-content {
@@ -36,49 +34,22 @@
     }
 
     &-image {
-        width: 100%;
-    }
-
-    &-image-anchor {
-        position: relative;
-
-        flex-shrink: 0;
-
-        @media (--from-medium-screen-w) {
-            max-height: rem(200);
-        }
-
-        &::after {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            z-index: 1;
-
-            width: 0;
-            height: 3px;
-
-            background-color: $color-primary;
-            content: "";
-
-            transition: all ease 0.8s;
-        }
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 8px 16px 16px rgba(0, 0, 0, 0.2);
     }
 
     &-info {
         display: flex;
         flex-direction: column;
+        flex-basis: 40%;
+        flex-shrink: 0;
+        justify-content: center;
+        text-align: right;
+        padding-right: rem(50);
 
         @media (--from-medium-screen-w) {
             padding-left: rem(20);
-        }
-    }
-
-    &-link {
-        padding-top: rem(20);
-        margin-top: auto;
-
-        &:hover {
-            text-decoration: underline;
         }
     }
 }

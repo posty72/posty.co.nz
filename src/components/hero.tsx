@@ -119,23 +119,18 @@ export const Hero = ({ title, subtitle, imageUrl }: HeroProps) => {
         for (let i = 0; i < pointsToUpdate.length; i++) {
             const { x: pointX, y: pointY } = pointsToUpdate[i];
             const distanceFromMouse = (x - pointX) ** 2 + (y - pointY) ** 2;
+            const distance = Math.trunc(Math.sqrt(distanceFromMouse));
+            const factor = distance / cursorRadius;
 
-            if (distanceFromMouse < cursorRadius * cursorRadius) {
-                const distance = Math.trunc(Math.sqrt(distanceFromMouse));
-                const factor = distance / cursorRadius;
+            const opacity = Math.max(
+                minAlpha,
+                Math.min((1 - minAlpha) * Math.abs(factor - 1), maxAlpha)
+            );
+            const size = Math.max(minSize, maxSize * Math.abs(factor - 1));
 
-                const opacity = Math.max(
-                    minAlpha,
-                    Math.min((1 - minAlpha) * Math.abs(factor - 1), maxAlpha)
-                );
-                const size = Math.max(minSize, maxSize * Math.abs(factor - 1));
-
-                pointsToUpdate[i].color = dotColor(opacity);
-                pointsToUpdate[i].size = size;
-                pointsToUpdate[i].x = fixedPoints[i].x;
-            } else {
-                pointsToUpdate[i] = { ...fixedPoints[i] }; // set back to position is the static array
-            }
+            pointsToUpdate[i].color = dotColor(opacity);
+            pointsToUpdate[i].size = size;
+            pointsToUpdate[i].x = fixedPoints[i].x;
         }
 
         setPoints(pointsToUpdate);

@@ -1,19 +1,30 @@
-import Link from "gatsby-link";
 import * as React from "react";
 
 interface FeatureProps {
     title: string;
-    slug: string;
-    excerpt: string;
+    subtitle: string;
+    content: React.ReactNode;
+    image: string;
+    imageDescription: string;
 }
 
-export const Feature = ({ title, slug, excerpt }: FeatureProps) => (
-    <article className="feature">
-        <div className="feature-info">
-            <h2 className="feature-title">
-                <Link to={slug}>{title}</Link>
-            </h2>
-            <p className="feature-content">{excerpt}</p>
-        </div>
-    </article>
+export const Feature = ({
+    title,
+    subtitle,
+    content,
+    image,
+    imageDescription,
+}: FeatureProps) => (
+    <div className="constrain-width large">
+        <article className="feature">
+            <div className="feature-info">
+                <h2 className="feature-subtitle">{subtitle}</h2>
+                <h2 className="feature-title">{title}</h2>
+                <div className="feature-content">{content}</div>
+            </div>
+            <div className="feature-image">
+                <img src={image} alt={imageDescription} />
+            </div>
+        </article>
+    </div>
 );

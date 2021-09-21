@@ -2,6 +2,7 @@ import * as React from "react";
 import { Layout } from "../components/layout";
 import { Highlight } from "../components/highlight";
 import { CallToAction } from "../components/call-to-action";
+import { Content } from "../components/content";
 import me from "../images/me.jpeg";
 
 const IndexPage = () => {
@@ -11,7 +12,7 @@ const IndexPage = () => {
             subtitle="I'm a Software Engineer"
             image={me}
         >
-            <div className="constrain-width small">
+            <Content className="constrain-width small">
                 <h4>
                     {"I'm"} a software engineer who has been working since 2013.{" "}
                 </h4>
@@ -22,7 +23,7 @@ const IndexPage = () => {
                     websites, native apps, web apps and infrastructure.
                 </p>
                 <br />
-            </div>
+            </Content>
             <Highlight title="Quick facts about me:">
                 <ol>
                     <li>
@@ -73,7 +74,7 @@ const IndexPage = () => {
                     tools like Terraform and building APIs using Python or Go.
                 </p>
 
-                <hr />
+                <br />
                 <h3>Present</h3>
                 <p>
                     {"I'm"} currently a software engineer for Plink Software in
@@ -90,18 +91,19 @@ const IndexPage = () => {
                     understand the product, my team and {"stakeholder's"}{" "}
                     problems. This means I need to be aware of a broad spectrum
                     of the digital product lifecycle, from ideation, research,
-                    and validation, right through to using Scrum methodology and
+                    and validation, right tbrough to using Scrum methodology and
                     delivering to end users.
                 </p>
 
-                <hr />
+                <br />
                 <h3>Future</h3>
                 <p>
                     The future is unknown. But if you want to talk more about
                     any opportunites, please get in touch.
                 </p>
-                <CallToAction label="Get in touch" link="/contact" />
+                <br />
             </div>
+            <CallToAction label="Get in touch" link="/contact" />
         </Layout>
     );
 };

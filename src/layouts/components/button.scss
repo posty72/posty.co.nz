@@ -9,6 +9,8 @@
     border-radius: rem(5);
     box-shadow: 0 0 rem(15) 2px $color-dark-alpha-1;
 
+    font-weight: $weight-semi-bold;
+
     transition: background ease 300ms;
 
     &.primary {
