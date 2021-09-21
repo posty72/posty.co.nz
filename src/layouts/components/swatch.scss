@@ -55,16 +55,16 @@ $--grid-spacing: 20;
         }
     }
 
-    &.colour-quartenary .swatch-inner {
-        background-color: $color-quartenary;
+    &.colour-quaternary .swatch-inner {
+        background-color: $color-quaternary;
 
         // Elements
         .tint-1 {
-            background-color: $color-quartenary-tint-1;
+            background-color: $color-quaternary-tint-1;
         }
 
         .shade-1 {
-            background-color: $color-quartenary-shade-1;
+            background-color: $color-quaternary-shade-1;
         }
     }
 

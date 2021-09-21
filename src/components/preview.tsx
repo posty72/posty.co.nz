@@ -6,12 +6,14 @@ interface PreviewProps {
 }
 
 export const Preview = ({ title, description }: PreviewProps) => (
-    <article
-        className="teaser"
-        itemScope={true}
-        itemType="http://schema.org/BlogPosting"
-    >
-        <h2 className="teaser-title">{title}</h2>
-        <p className="teaser-description">{description}</p>
-    </article>
+    <div className="constrain-width">
+        <article
+            className="teaser"
+            itemScope={true}
+            itemType="http://schema.org/BlogPosting"
+        >
+            <h2 className="teaser-title">{title}</h2>
+            <p className="teaser-description">{description}</p>
+        </article>
+    </div>
 );

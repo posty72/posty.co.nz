@@ -8,6 +8,8 @@
     font-size: rem(12);
     text-transform: uppercase;
 
-    background-color: $color-quartenary;
+    background-color: $color-quaternary;
     border-radius: rem(25);
+
+    filter: drop-shadow(4px 8px 8px rgba(0, 0, 0, 0.2));
 }
