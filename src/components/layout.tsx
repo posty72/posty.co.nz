@@ -17,6 +17,16 @@ export const Layout = ({ title, subtitle, children, image }: LayoutProps) => {
     const [navOpen, setNavOpen] = React.useState(false);
     const navClass = navOpen ? "nav-open" : "";
 
+    React.useEffect(() => {
+        if ("navigator" in window) {
+            navigator.serviceWorker.getRegistrations().then((registrations) => {
+                for (const registration of registrations) {
+                    registration.unregister();
+                }
+            });
+        }
+    }, []);
+
     React.useLayoutEffect(() => {
         setNavOpen(false);
     }, [globalThis.location?.pathname]);
