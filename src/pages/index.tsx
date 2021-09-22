@@ -1,8 +1,8 @@
 import * as React from "react";
-import { Layout } from "../components/layout";
-import { Highlight } from "../components/highlight";
 import { CallToAction } from "../components/call-to-action";
 import { Content } from "../components/content";
+import { Highlight } from "../components/highlight";
+import { Layout } from "../components/layout";
 import me from "../images/me.jpeg";
 
 const IndexPage = () => {
@@ -106,16 +106,6 @@ const IndexPage = () => {
                     any opportunities, please get in touch.
                 </p>
             </Content>
-            <CallToAction
-                title="Get in touch with me"
-                links={[
-                    { label: "Direct Message", link: "/contact" },
-                    {
-                        label: "LinkedIn",
-                        link: "https://www.linkedin.com/in/joshpost/",
-                    },
-                ]}
-            />
         </Layout>
     );
 };

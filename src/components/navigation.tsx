@@ -1,6 +1,7 @@
 /* eslint-disable jsx-a11y/no-noninteractive-element-to-interactive-role */
 import Link from "gatsby-link";
 import * as React from "react";
+import { PAGES, EXTERNAL_LINKS } from "../config/links";
 
 const NavItem = ({ to, label }: { to: string; label: string }) => (
     <li className="nav-item">
@@ -26,10 +27,33 @@ const Navigation = ({ toggleNav }: NavigationProps) => (
 
         <nav className="nav" role="menu">
             <ul className="nav-items">
-                <NavItem to="/work" label="Work" />
-                <NavItem to="/style-guide" label="Style Guide" />
+                <NavItem to={PAGES.work} label="Work" />
+                <NavItem to={PAGES.styleGuide} label="Style Guide" />
+
+                <div className="nav-item">
+                    <a
+                        className="nav-item-link"
+                        role="menuitem"
+                        href={EXTERNAL_LINKS.linkedIn}
+                        target="_blank"
+                        rel="noreferrer"
+                    >
+                        LinkedIn
+                    </a>
+                </div>
+                <div className="nav-item">
+                    <a
+                        className="nav-item-link"
+                        role="menuitem"
+                        href={EXTERNAL_LINKS.github}
+                        target="_blank"
+                        rel="noreferrer"
+                    >
+                        Github
+                    </a>
+                </div>
             </ul>
-            <Link to="/contact" className="button tertiary">
+            <Link to={PAGES.contact} className="button tertiary">
                 Contact Me
             </Link>
         </nav>

@@ -1,5 +1,6 @@
 import { Link } from "gatsby";
 import * as React from "react";
+import type { LinkInConfig } from "../config/links";
 import { classNames } from "../utility/class-names";
 
 interface CallToActionProps {
@@ -9,7 +10,7 @@ interface CallToActionProps {
 
 interface LinkItem {
     label: string;
-    link: string;
+    link: LinkInConfig;
 }
 
 export const CallToAction = ({ title, links = [] }: CallToActionProps) => {
