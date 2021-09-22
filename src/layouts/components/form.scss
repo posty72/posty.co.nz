@@ -1,24 +1,24 @@
 .form {
+    margin-bottom: $gap-standard;
+
     &-title {
         position: relative;
 
         padding-bottom: rem(5);
         margin-bottom: rem(40);
 
-        font-size: rem(24);
-        text-align: center;
-
         &::after {
-            position: absolute;
-            bottom: -7px;
-            left: 50%;
+            display: block;
+            width: rem(250);
+            margin-right: auto;
+            margin-left: 0;
 
-            width: 40px;
+            border: none;
+            border-bottom-color: $color-primary-tint-1;
+            border-bottom-style: solid;
+            border-bottom-width: 3px;
 
-            border-bottom: 2px solid $color-secondary;
             content: "";
-
-            transform: translateX(-50%);
         }
     }
 
@@ -29,8 +29,9 @@
         padding: 12px;
         margin-bottom: rem(20);
 
-        font-size: rem(18);
         font-family: $font-secondary;
+
+        font-size: rem(18);
 
         border: none;
         border-radius: 5px;
@@ -50,5 +51,13 @@
         background-color: $color-secondary;
         border: none;
         border-radius: 3px;
+    }
+
+    &-label {
+        display: block;
+        margin-bottom: 10px;
+
+        font-family: $font-primary;
+        font-weight: $weight-semi-bold;
     }
 }

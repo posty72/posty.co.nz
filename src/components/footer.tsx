@@ -8,7 +8,7 @@ export const Footer = () => {
 
     return (
         <footer className="footer">
-            {pathname !== PAGES.contact && (
+            {!pathname.startsWith(PAGES.contact) && (
                 <CallToAction
                     title="Get in touch with me"
                     links={[
