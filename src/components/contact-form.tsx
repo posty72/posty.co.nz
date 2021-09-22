@@ -1,10 +1,6 @@
 import * as React from "react";
 
-interface ContactFormProps {
-    showTitle: boolean;
-}
-
-export const ContactForm = ({ showTitle }: ContactFormProps) => {
+export const ContactForm = () => {
     const container = React.useRef<HTMLDivElement>(null);
     const form = React.useRef<HTMLFormElement>(null);
     const [messageSent, setMessageSent] = React.useState(false);
@@ -54,12 +50,8 @@ export const ContactForm = ({ showTitle }: ContactFormProps) => {
             ? "Thanks for getting in touch"
             : "Get in touch";
 
-        return <h4 className="form-title">{text}</h4>;
+        return <h1 className="form-title">{text}</h1>;
     };
-
-    if (isSending) {
-        return <p>Sending...</p>;
-    }
 
     return (
         <div
@@ -67,7 +59,7 @@ export const ContactForm = ({ showTitle }: ContactFormProps) => {
             ref={container}
             style={{ height: height || undefined }}
         >
-            {showTitle && <Title />}
+            <Title />
             {error && (
                 <p>
                     There was an error trying to send your message. Please try
@@ -80,39 +72,55 @@ export const ContactForm = ({ showTitle }: ContactFormProps) => {
                         type="hidden"
                         name="apikey"
                         value={"92509c25-14bb-4c90-8231-97b04e865390"}
+                        readOnly={isSending}
                     />
+
                     <input
                         type="hidden"
                         name="subject"
                         value="New Submission from Web3Forms"
+                        readOnly={isSending}
                     />
+
                     <input
                         type="checkbox"
                         name="botcheck"
                         id=""
+                        readOnly={isSending}
                         style={{ display: "none" }}
                     />
-                    <input
-                        className="form-input"
-                        type="text"
-                        name="name"
-                        placeholder="Name"
-                        required={true}
-                    />
-                    <input
-                        className="form-input"
-                        type="email"
-                        name="email"
-                        placeholder="Email"
-                        required={true}
-                    />
-                    <textarea
-                        className="form-text"
-                        name="message"
-                        placeholder="Message"
-                        required={true}
-                    />
-                    <button className="form-button">Send</button>
+                    <label htmlFor="name">
+                        <span className="form-label">Your name</span>
+                        <input
+                            className="form-input"
+                            type="text"
+                            name="name"
+                            required={true}
+                            readOnly={isSending}
+                        />
+                    </label>
+                    <label htmlFor="email">
+                        <span className="form-label">Your email address</span>
+                        <input
+                            className="form-input"
+                            type="email"
+                            name="email"
+                            required={true}
+                            readOnly={isSending}
+                        />
+                    </label>
+                    <label htmlFor="message">
+                        <span className="form-label">Write your message</span>
+                        <textarea
+                            className="form-text"
+                            name="message"
+                            required={true}
+                            readOnly={isSending}
+                        />
+                    </label>
+                    <button className="button secondary" disabled={isSending}>
+                        Send
+                    </button>
                 </form>
             )}
         </div>

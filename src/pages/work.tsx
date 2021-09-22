@@ -1,4 +1,6 @@
+/* eslint-disable max-lines */
 import * as React from "react";
+import { EXTERNAL_LINKS, PAGES } from "../config/links";
 import { CallToAction } from "../components/call-to-action";
 import { Feature } from "../components/feature";
 import { Layout } from "../components/layout";
@@ -55,6 +57,11 @@ const Work = () => {
                 image={yonderScreenshot}
                 imageDescription="A screenshot of the YonderHQ realtime chat interface"
             />
+            <div className="constrain-width">
+                <h2 className="heading-3">
+                    Companies, products and brands {"I've"} worked with...
+                </h2>
+            </div>
             <Tiles
                 items={[
                     {
@@ -83,23 +90,50 @@ const Work = () => {
                             </p>
                         ),
                         iconColour: "#056c95",
-                        tags: ["website", "dashboard", "iwi"],
+                        tags: ["website", "dashboard", "iwi", "api"],
                     },
                     {
                         title: "mnyou",
-                        description: <p></p>,
+                        description: (
+                            <p>
+                                Created the initial version of their mobile app
+                                using React Native. Went through an initial Lean
+                                MVP iteration to validate the viability of the
+                                product.
+                            </p>
+                        ),
                         iconColour: "#ef8c2e",
                         tags: ["mobile app", "hospitality"],
                     },
-                ]}
-            />
-            <CallToAction
-                title="Get in touch with me"
-                links={[
-                    { label: "Direct Message", link: "/contact" },
                     {
-                        label: "LinkedIn",
-                        link: "https://www.linkedin.com/in/joshpost/",
+                        title: "Metrix",
+                        description: (
+                            <p>
+                                Created an internal dashboard to track power
+                                events on metering equipment.
+                            </p>
+                        ),
+                        iconColour: "#ef8c2e",
+                        tags: ["dashboard", "energy"],
+                    },
+                    {
+                        title: "The Mindlab",
+                        description: <p></p>,
+                        iconColour: "#02d48a",
+                        tags: ["portal", "education"],
+                    },
+                    {
+                        title: "Three",
+                        description: (
+                            <p>
+                                Maintained a self-hosted video on demand
+                                platform and helped move to a cloud provider. I
+                                was heavily involved in advertising and making
+                                sure the video player worked smoothly.
+                            </p>
+                        ),
+                        iconColour: "#ff004f",
+                        tags: ["video on demand", "media"],
                     },
                 ]}
             />
