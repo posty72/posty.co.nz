@@ -79,7 +79,7 @@ export const ContactForm = ({ showTitle }: ContactFormProps) => {
                     <input
                         type="hidden"
                         name="apikey"
-                        value={process.env.WEB3FORMS_API_KEY}
+                        value={"92509c25-14bb-4c90-8231-97b04e865390"}
                     />
                     <input
                         type="hidden"
@@ -110,6 +110,7 @@ export const ContactForm = ({ showTitle }: ContactFormProps) => {
                         className="form-text"
                         name="message"
                         placeholder="Message"
+                        required={true}
                     />
                     <button className="form-button">Send</button>
                 </form>

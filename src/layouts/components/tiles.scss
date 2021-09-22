@@ -17,6 +17,8 @@
     }
 
     &-item {
+        display: flex;
+        flex-direction: column;
         padding: rem(20);
 
         color: $color-light;
@@ -39,6 +41,7 @@
         }
 
         &-icon {
+            flex-shrink: 0;
             margin-right: rem(20);
 
             border-radius: rem(10);
@@ -55,8 +58,12 @@
             background-color: $color-light;
         }
 
-        &-meta .pill:not(:last-of-type) {
-            margin-right: rem(10);
+        &-meta {
+            margin-top: auto;
+
+            .pill:not(:last-of-type) {
+                margin-right: rem(10);
+            }
         }
     }
 }

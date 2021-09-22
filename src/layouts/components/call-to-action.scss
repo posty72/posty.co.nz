@@ -1,13 +1,28 @@
 .call-to-action {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    justify-content: center;
+
+    min-height: 300px;
     padding-top: rem(20);
     padding-right: rem(20);
     padding-bottom: rem(20);
     padding-left: rem(20);
     margin-bottom: $gap-standard;
 
-    background-color: $color-secondary-shade-1;
+    background: $gradient-secondary;
 
-    border-radius: 10px;
+    background-color: $color-quaternary-shade-1;
+
+    &-inner {
+        display: flex;
+
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
 
     &-title {
         margin-bottom: 20px;
@@ -16,6 +31,9 @@
         font-family: $font-primary;
         font-size: 24px;
         font-weight: $weight-bold;
+    }
+
+    &-actions {
     }
 
     &-button {

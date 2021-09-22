@@ -10,12 +10,12 @@
     background: $gradient-standard;
 
     @media (--from-medium-screen-w) {
-        min-height: calc(50vh - 100px);
+        min-height: calc(35vh - 100px);
     }
 
     // States
     &.has-image {
-        min-height: calc(100vh - 100px);
+        min-height: calc(80vh - 100px);
         padding-top: rem(110);
 
         .hero-inner {
