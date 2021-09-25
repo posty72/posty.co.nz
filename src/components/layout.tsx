@@ -1,15 +1,16 @@
 import { graphql, StaticQuery } from "gatsby";
+import type { ImageFile } from "pages";
 import * as React from "react";
 import { Helmet } from "react-helmet";
-import { Hero } from "../components/hero";
 import { Header } from "../components/header";
+import { Hero } from "../components/hero";
 import "../layouts/index.scss";
 import { Footer } from "./footer";
 
 interface LayoutProps {
     title: string;
     subtitle?: string;
-    image?: string;
+    image?: ImageFile;
     children: React.ReactNode;
 }
 
@@ -70,7 +71,7 @@ export const Layout = ({ title, subtitle, children, image }: LayoutProps) => {
                         title={data.site.siteMetadata.title}
                         toggleNav={() => setNavOpen(!navOpen)}
                     />
-                    <Hero title={title} subtitle={subtitle} imageUrl={image} />
+                    <Hero title={title} subtitle={subtitle} image={image} />
                     <main className="main">{children}</main>
                     <Footer />
                 </div>

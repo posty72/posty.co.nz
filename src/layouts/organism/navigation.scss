@@ -66,8 +66,6 @@
         @media (--to-medium-screen-w) {
             flex: 0 0 auto;
             width: 100%;
-
-            font-size: rem(24);
         }
 
         &-link {
@@ -79,10 +77,20 @@
 
             font-size: rem(18);
             font-weight: $weight-light;
+
+            @media (--to-medium-screen-w) {
+                font-size: rem(24);
+            }
         }
     }
 
     .button {
-        margin: 0 auto;
+        @media (--to-medium-screen-w) {
+            padding-top: 20px;
+            padding-bottom: 20px;
+            margin: auto 20px 50px;
+
+            font-size: 24px;
+        }
     }
 }

@@ -1,9 +1,12 @@
 .feature {
     display: flex;
-    padding-bottom: 100px;
     margin-bottom: $gap-standard;
 
     border-radius: rem(5);
+
+    @media (--from-medium-screen-w) {
+        padding-bottom: 100px;
+    }
 
     @media (--to-medium-screen-w) {
         flex-direction: column;
@@ -45,6 +48,10 @@
         display: box;
         overflow: hidden;
         -webkit-line-clamp: 2;
+
+        @media (--to-medium-screen-w) {
+            margin-bottom: 35px;
+        }
     }
 
     &-image {

@@ -21,7 +21,6 @@
     "prepare": "husky install"
   },
   "dependencies": {
-    "cspell": "^5.10.1",
     "cssnano": "^5.0.8",
     "gatsby": "^3.13.0",
     "gatsby-plugin-image": "^1.13.0",
@@ -56,6 +55,7 @@
     "@types/react-helmet": "^6.1.2",
     "@typescript-eslint/eslint-plugin": "^4.30.0",
     "@typescript-eslint/parser": "^4.30.0",
+    "cspell": "^5.10.1",
     "eslint": "^7.32.0",
     "eslint-config-prettier": "^8.1.0",
     "eslint-plugin-import": "^2.24.2",
