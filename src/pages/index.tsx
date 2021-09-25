@@ -1,16 +1,49 @@
+import type { PageProps } from "gatsby";
+import { graphql } from "gatsby";
 import * as React from "react";
 import { CallToAction } from "../components/call-to-action";
 import { Content } from "../components/content";
 import { Highlight } from "../components/highlight";
 import { Layout } from "../components/layout";
-import me from "../images/me.jpeg";
 
-const IndexPage = () => {
+export interface ImageQuery {
+    file: ImageFile;
+}
+
+export interface ImageFile {
+    childImageSharp: {
+        fluid: {
+            src: string;
+            srcSet: string;
+            srcWebp: string;
+            srcSetWebp: string;
+        };
+    };
+}
+
+export const query = graphql`
+    query {
+        file(relativePath: { eq: "me.jpeg" }) {
+            childImageSharp {
+                fluid(maxWidth: 500, quality: 100) {
+                    src
+                    srcSet
+                    srcWebp
+                    srcSetWebp
+                }
+            }
+        }
+    }
+`;
+
+const IndexPage = ({ data }: PageProps) => {
+    const { file } = data as ImageQuery;
+
     return (
         <Layout
             title="Kia ora, I'm Josh"
             subtitle="I'm a Software Engineer"
-            image={me}
+            image={file}
         >
             <Content>
                 <h4>

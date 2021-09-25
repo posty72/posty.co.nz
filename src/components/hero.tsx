@@ -1,3 +1,4 @@
+import type { ImageFile } from "pages";
 import * as React from "react";
 import { classNames } from "../utility/class-names";
 import { Profile } from "./profile";
@@ -5,7 +6,7 @@ import { Profile } from "./profile";
 interface HeroProps {
     title: string;
     subtitle?: string;
-    imageUrl?: string;
+    image?: ImageFile;
 }
 
 interface Point {
@@ -15,7 +16,7 @@ interface Point {
     color: string;
 }
 
-export const Hero = ({ title, subtitle, imageUrl }: HeroProps) => {
+export const Hero = ({ title, subtitle, image }: HeroProps) => {
     const canvasRef = React.useRef<HTMLCanvasElement>(null);
     const [points, setPoints] = React.useState<Point[]>([]);
     const spacing = 100;
@@ -144,7 +145,7 @@ export const Hero = ({ title, subtitle, imageUrl }: HeroProps) => {
 
     return (
         <div
-            className={classNames("hero", { "has-image": !!imageUrl })}
+            className={classNames("hero", { "has-image": !!image })}
             onMouseMove={handleHover}
             onMouseOut={handleLeave}
             onBlur={handleLeave}
@@ -153,7 +154,7 @@ export const Hero = ({ title, subtitle, imageUrl }: HeroProps) => {
             role="presentation"
         >
             <div className="hero-inner || constrain-width">
-                {(imageUrl && (
+                {(image && (
                     <>
                         <div className="hero-text">
                             <h1 className="hero-title">{title}</h1>
@@ -162,7 +163,7 @@ export const Hero = ({ title, subtitle, imageUrl }: HeroProps) => {
                             )}
                         </div>
                         <div className="hero-image">
-                            <Profile url={imageUrl} alt={title} />
+                            <Profile image={image} alt={title} />
                         </div>
                     </>
                 )) || (

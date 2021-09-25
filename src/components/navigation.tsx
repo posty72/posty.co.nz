@@ -3,13 +3,33 @@ import Link from "gatsby-link";
 import * as React from "react";
 import { PAGES, EXTERNAL_LINKS } from "../config/links";
 
-const NavItem = ({ to, label }: { to: string; label: string }) => (
-    <li className="nav-item">
-        <Link className="nav-item-link" role="menuitem" to={to}>
-            {label}
-        </Link>
-    </li>
-);
+interface NavItemProps {
+    to: string;
+    label: string;
+    external?: true;
+}
+
+const NavItem = ({ to, label, external }: NavItemProps) => {
+    return (
+        <li className="nav-item">
+            {(external && (
+                <a
+                    className="nav-item-link"
+                    role="menuitem"
+                    href={to}
+                    target="_blank"
+                    rel="noreferrer"
+                >
+                    {label}
+                </a>
+            )) || (
+                <Link className="nav-item-link" role="menuitem" to={to}>
+                    {label}
+                </Link>
+            )}
+        </li>
+    );
+};
 
 interface NavigationProps {
     toggleNav: () => void;
@@ -29,29 +49,12 @@ const Navigation = ({ toggleNav }: NavigationProps) => (
             <ul className="nav-items">
                 <NavItem to={PAGES.work} label="Work" />
                 <NavItem to={PAGES.styleGuide} label="Style Guide" />
-
-                <div className="nav-item">
-                    <a
-                        className="nav-item-link"
-                        role="menuitem"
-                        href={EXTERNAL_LINKS.linkedIn}
-                        target="_blank"
-                        rel="noreferrer"
-                    >
-                        LinkedIn
-                    </a>
-                </div>
-                <div className="nav-item">
-                    <a
-                        className="nav-item-link"
-                        role="menuitem"
-                        href={EXTERNAL_LINKS.github}
-                        target="_blank"
-                        rel="noreferrer"
-                    >
-                        Github
-                    </a>
-                </div>
+                <NavItem
+                    to={EXTERNAL_LINKS.linkedIn}
+                    label="LinkedIn"
+                    external
+                />
+                <NavItem to={EXTERNAL_LINKS.github} label="GitHub" external />
             </ul>
             <Link to={PAGES.contact} className="button tertiary">
                 Contact Me

@@ -33,7 +33,8 @@
     "semibolditalic",
     "stylelint",
     "Tipu",
-    "truetype"
+    "truetype",
+    "webp"
   ],
   "flagWords": [],
   "ignorePaths": [
