@@ -34,7 +34,7 @@
     "gatsby-source-filesystem": "^3.13.0",
     "gatsby-transformer-remark": "^4.10.0",
     "gatsby-transformer-sharp": "^3.13.0",
-    "node-sass": "^4.14.1",
+    "node-sass": "^7.0.0",
     "postcss": "^8.3.6",
     "postcss-color-function": "^4.1.0",
     "postcss-css-variables": "^0.18.0",
