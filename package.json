@@ -22,7 +22,7 @@
   },
   "dependencies": {
     "cssnano": "^5.0.8",
-    "gatsby": "^3.13.0",
+    "gatsby": "^5.13.7",
     "gatsby-plugin-image": "^1.13.0",
     "gatsby-plugin-manifest": "^3.13.0",
     "gatsby-plugin-postcss": "^4.13.0",
