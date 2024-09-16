@@ -1,7 +1,9 @@
 {
-  "name": "website-nextjs",
-  "version": "0.1.0",
+  "name": "posty.co.nz",
+  "version": "2.0.0",
   "private": true,
+  "description": "posty",
+  "author": "Josh Post",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
