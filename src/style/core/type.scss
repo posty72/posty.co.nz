@@ -1,0 +1,40 @@
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+
+  transition: opacity 250ms ease;
+
+  &:hover {
+    opacity: 0.9;
+  }
+}
+
+p {
+  margin-bottom: 15px;
+
+  font-family: var(--font-secondary);
+  line-height: 1.8;
+}
+
+li {
+  font-family: var(--font-secondary);
+  line-height: 1.8;
+
+  &::marker {
+    color: var(--color-primary-tint-1);
+  }
+}
+
+ul,
+ol {
+  padding-left: 20px;
+  margin-bottom: 15px;
+}
+
+blockquote {
+  padding: 20px;
+  margin: 0 0 10px;
+
+  background-color: var(--color-light-shade-1);
+  border-left: 3px solid var(--color-secondary);
+}

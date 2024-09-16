@@ -1,0 +1,105 @@
+/* 
+    Brothers
+*/
+@font-face {
+  font-family: Comfortaa;
+  font-style: normal;
+  font-weight: var(--weight-regular);
+  src: url("../../app/fonts/comfortaa/comfortaa-regular.ttf") format("truetype");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Comfortaa;
+  font-style: normal;
+  font-weight: var(--weight-light);
+  src: url("../../app/fonts/comfortaa/comfortaa-light.ttf") format("truetype");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Comfortaa;
+  font-style: normal;
+  font-weight: var(--weight-semi-bold);
+  src: url("../../app/fonts/comfortaa/comfortaa-semibold.ttf")
+    format("truetype");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Comfortaa;
+  font-style: normal;
+  font-weight: var(--weight-bold);
+  src: url("../../app/fonts/comfortaa/comfortaa-bold.ttf") format("truetype");
+  font-display: swap;
+}
+
+/* 
+    Open Sans
+*/
+@font-face {
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: var(--weight-bold);
+  src: url("../../app/fonts/open-sans/opensans-bold.ttf") format("truetype");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Open Sans;
+  font-style: italic;
+  font-weight: var(--weight-bold);
+  src: url("../../app/fonts/open-sans/opensans-bolditalic.ttf")
+    format("truetype");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Open Sans;
+  font-style: italic;
+  font-weight: var(--weight-regular);
+  src: url("../../app/fonts/open-sans/opensans-italic.ttf") format("truetype");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: var(--weight-light);
+  src: url("../../app/fonts/open-sans/opensans-light.ttf") format("truetype");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Open Sans;
+  font-style: italic;
+  font-weight: var(--weight-light);
+  src: url("../../app/fonts/open-sans/opensans-lightitalic.ttf")
+    format("truetype");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: var(--weight-regular);
+  src: url("../../app/fonts/open-sans/opensans-regular.ttf") format("truetype");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: var(--weight-semi-bold);
+  src: url("../../app/fonts/open-sans/opensans-semibold.ttf") format("truetype");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Open Sans;
+  font-style: italic;
+  font-weight: var(--weight-semi-bold);
+  src: url("../../app/fonts/open-sans/opensans-semibolditalic.ttf")
+    format("truetype");
+  font-display: swap;
+}

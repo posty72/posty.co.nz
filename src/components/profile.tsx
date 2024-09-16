@@ -1,24 +1,18 @@
-import type { ImageFile } from "pages";
-import * as React from "react";
+import Image, { StaticImageData } from "next/image";
 
 interface ProfileProps {
-    image: ImageFile;
-    alt: string;
-    caption?: string;
+  image: StaticImageData;
+  alt: string;
+  caption?: string;
 }
 
 export const Profile = ({ alt, caption, image }: ProfileProps) => {
-    return (
-        <figure className="profile">
-            <img
-                className="profile-image"
-                src={image.childImageSharp.fluid.srcWebp}
-                srcSet={image.childImageSharp.fluid.srcSetWebp}
-                alt={alt}
-            />
-            {caption && (
-                <figcaption className="profile-caption">{caption}</figcaption>
-            )}
-        </figure>
-    );
+  return (
+    <figure className="profile">
+      <Image className="profile-image" src={image} alt={alt} />
+      {caption && (
+        <figcaption className="profile-caption">{caption}</figcaption>
+      )}
+    </figure>
+  );
 };
