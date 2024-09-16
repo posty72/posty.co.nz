@@ -1,18 +1,12 @@
-"use client";
-
-import * as React from "react";
-import { useState } from "react";
-import Navigation from "./navigation";
-import Link from "next/link";
 import { classNames } from "@/utility/class-names";
+import Link from "next/link";
+import Navigation from "./navigation";
 
 interface HeaderProps {
   title: string;
 }
 
 export const Header = ({ title }: HeaderProps) => {
-  const [navOpen, setNavOpen] = useState(false);
-
   return (
     <header className={"header gradient-fade"} itemScope={true}>
       <div className={classNames("header-inner", "constrain-width")}>
@@ -24,7 +18,7 @@ export const Header = ({ title }: HeaderProps) => {
           </h2>
         </div>
 
-        <Navigation toggleNav={() => setNavOpen(!navOpen)} />
+        <Navigation />
       </div>
     </header>
   );
