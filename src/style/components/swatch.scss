@@ -1,0 +1,149 @@
+.swatch {
+  @media (max-width: 800px) {
+    margin-bottom: var(--grid-spacing);
+  }
+
+  // Types
+  &.outline .swatch-inner {
+    color: var(--color-dark);
+
+    // Elements
+    .swatch-title::after {
+      color: var(--color-dark);
+    }
+  }
+
+  // Colours
+  &.colour-primary .swatch-inner {
+    background-color: var(--color-primary);
+
+    // Elements
+    .tint-1 {
+      background-color: var(--color-primary-tint-1);
+    }
+
+    .shade-1 {
+      background-color: var(--color-primary-shade-1);
+    }
+  }
+
+  &.colour-secondary .swatch-inner {
+    background-color: var(--color-secondary);
+
+    // Elements
+    .tint-1 {
+      background-color: var(--color-secondary-tint-1);
+    }
+
+    .shade-1 {
+      background-color: var(--color-secondary-shade-1);
+    }
+  }
+
+  &.colour-tertiary .swatch-inner {
+    background-color: var(--color-tertiary);
+
+    // Elements
+    .tint-1 {
+      background-color: var(--color-tertiary-tint-1);
+    }
+
+    .shade-1 {
+      background-color: var(--color-tertiary-shade-1);
+    }
+  }
+
+  &.colour-quaternary .swatch-inner {
+    background-color: var(--color-quaternary);
+
+    // Elements
+    .tint-1 {
+      background-color: var(--color-quaternary-tint-1);
+    }
+
+    .shade-1 {
+      background-color: var(--color-quaternary-shade-1);
+    }
+  }
+
+  &.colour-gradient-standard .swatch-inner {
+    background-image: var(--gradient-standard);
+  }
+  &.colour-gradient-secondary .swatch-inner {
+    background-image: var(--gradient-secondary);
+  }
+  &.colour-gradient-tertiary .swatch-inner {
+    background-image: var(--gradient-tertiary);
+  }
+
+  // Elements
+  &-inner {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding-top: 40px;
+    padding-bottom: 40px;
+    overflow: hidden;
+
+    color: var(--color-light);
+
+    border-radius: 15px;
+    box-shadow: 0 4px 6px 0 var(--color-dark-alpha-1);
+
+    @media (min-width: 601px) {
+      padding-bottom: 60px;
+    }
+  }
+
+  &-child,
+  &-title {
+    margin-bottom: 0;
+  }
+
+  &-child,
+  &-title::after {
+    font-size: 12px;
+  }
+
+  &-child {
+    padding: 10px 20px;
+  }
+
+  &-title {
+    flex-basis: 100%;
+
+    text-align: center;
+  }
+
+  &-title,
+  &-variation {
+    &::after {
+      display: block;
+
+      text-transform: uppercase;
+
+      opacity: 0.8;
+    }
+  }
+
+  &-variations {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    display: flex;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+
+    list-style: none;
+  }
+
+  &-variation {
+    flex-basis: 50%;
+    height: 20px;
+  }
+}

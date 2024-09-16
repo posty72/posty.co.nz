@@ -1,0 +1,65 @@
+.form {
+  margin-bottom: var(--gap-standard);
+
+  &-title {
+    position: relative;
+
+    padding-bottom: 5px;
+    margin-bottom: 40px;
+
+    &::after {
+      display: block;
+      width: 250px;
+      margin-right: auto;
+      margin-left: 0;
+
+      border: none;
+      border-bottom-color: var(--color-primary-tint-1);
+      border-bottom-style: solid;
+      border-bottom-width: 3px;
+
+      content: "";
+    }
+  }
+
+  &-input,
+  &-text {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+
+    font-family: var(--font-secondary);
+
+    font-size: 18px;
+
+    border: none;
+    border-radius: 5px;
+    box-shadow: inset 0 0 3px 2px rgba(0, 0, 0, 0.2);
+
+    appearance: none;
+  }
+
+  &-text {
+    height: 200px;
+  }
+
+  &-button {
+    padding: 10px 20px;
+
+    color: var(--color-light);
+    font-size: 20px;
+
+    background-color: var(--color-secondary);
+    border: none;
+    border-radius: 3px;
+  }
+
+  &-label {
+    display: block;
+    margin-bottom: 10px;
+
+    font-family: var(--font-primary);
+    font-weight: var(--weight-semi-bold);
+  }
+}

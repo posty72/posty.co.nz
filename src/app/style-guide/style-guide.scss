@@ -1,0 +1,52 @@
+.style-guide {
+  &-section {
+    margin-bottom: 100px;
+
+    &-heading {
+      margin-bottom: 20px;
+
+      .heading-2 {
+        margin-bottom: 10px;
+
+        line-height: 1;
+      }
+    }
+
+    &-subtitle {
+      color: var(--color-dark-tint-2);
+    }
+
+    &-break {
+      width: 250px;
+      margin-right: auto;
+      margin-left: 0;
+
+      border: none;
+      border-bottom-color: var(--color-primary-tint-1);
+      border-bottom-style: solid;
+      border-bottom-width: 3px;
+    }
+  }
+
+  &-swatches {
+    margin-bottom: 40px;
+
+    @media (min-width: 601px) {
+      display: grid;
+      grid-gap: 20px;
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
+
+  &-loaders {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-evenly;
+
+    text-align: center;
+  }
+
+  &-buttons .button {
+    margin-left: 20px;
+  }
+}

@@ -1,0 +1,43 @@
+.highlight {
+  padding: 20px;
+  margin-bottom: var(--gap-standard);
+
+  color: var(--color-light);
+  font-size: 18px;
+
+  background-color: var(--color-quaternary-tint-1);
+  background-image: var(--gradient-tertiary);
+  border-radius: 10px;
+  filter: drop-shadow(4px 8px 8px rgba(255, 162, 0, 0.3));
+
+  &-title {
+    font-size: 28px;
+    text-align: center;
+
+    &::after {
+      display: block;
+
+      width: 250px;
+      margin-top: 5px;
+      margin-right: auto;
+      margin-left: auto;
+
+      border: none;
+      border-bottom-color: var(--color-light-shade-1);
+      border-bottom-style: solid;
+      border-bottom-width: 3px;
+      content: "";
+    }
+  }
+
+  li::marker {
+    color: var(--color-light-alpha-1);
+    font-size: 75%;
+  }
+
+  a {
+    color: var(--color-light);
+    font-weight: var(--weight-semi-bold);
+    text-decoration: underline;
+  }
+}

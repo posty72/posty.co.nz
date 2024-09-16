@@ -1,27 +1,31 @@
-/* eslint-disable react/jsx-max-depth */
-import { Link } from "gatsby";
+"use client";
+
 import * as React from "react";
+import { useState } from "react";
 import Navigation from "./navigation";
+import Link from "next/link";
+import { classNames } from "@/utility/class-names";
 
 interface HeaderProps {
-    title: string;
-    toggleNav: () => void;
+  title: string;
 }
 
-export const Header = ({ title, toggleNav }: HeaderProps) => {
-    return (
-        <header className="header" itemScope={true}>
-            <div className="header-inner || constrain-width">
-                <div className="header-text">
-                    <h2 className="header-title" itemProp="title">
-                        <Link className="header-link" to="/">
-                            {title}
-                        </Link>
-                    </h2>
-                </div>
+export const Header = ({ title }: HeaderProps) => {
+  const [navOpen, setNavOpen] = useState(false);
 
-                <Navigation toggleNav={toggleNav} />
-            </div>
-        </header>
-    );
+  return (
+    <header className={"header gradient-fade"} itemScope={true}>
+      <div className={classNames("header-inner", "constrain-width")}>
+        <div className={"header-text"}>
+          <h2 className={"header-title"} itemProp="title">
+            <Link className={"header-link"} href="/">
+              {title}
+            </Link>
+          </h2>
+        </div>
+
+        <Navigation toggleNav={() => setNavOpen(!navOpen)} />
+      </div>
+    </header>
+  );
 };
